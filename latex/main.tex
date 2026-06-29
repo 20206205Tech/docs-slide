@@ -98,13 +98,19 @@ Lớp: & Toán Tin 02 - K65
 % pdfpagemode=FullScreen, % Mở tài liệu ở chế độ toàn màn hình khi bắt đầu
 % }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newif\ifdev
+\devtrue
+% \devfalse
+
+\ifdev
+
+\setbeamercolor{background canvas}{bg=black} % Thiết lập nền toàn bộ slide thành màu đen
+\setbeamercolor{normal text}{fg=white} % Thiết lập màu chữ mặc định là trắng
+
+\fi
+
 \begin{document}
 % \begin{footnotesize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \input{doc}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
