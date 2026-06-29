@@ -1,0 +1,36 @@
+flowchart TD
+    %% Styling
+    classDef tf fill:#844FBA,stroke:#fff,stroke-width:2px,color:#fff;
+    classDef ext fill:#f39c12,stroke:#fff,stroke-width:2px,color:#fff;
+    classDef supa fill:#3ECF8E,stroke:#fff,stroke-width:2px,color:#fff;
+    classDef env fill:#f8f9f9,stroke:#bdc3c7,stroke-width:2px,stroke-dasharray: 5 5;
+
+    TF["Terraform Cloud<br/>Org: 20206205tech | Workspace: infra-supabase"]:::tf
+    Org["Supabase Organization<br/>lzpbqmedjxywckgdnoqx"]:::supa
+
+    Google["Google OAuth Provider<br/>Client ID & Client Secret"]:::ext
+    SMTP["SMTP Server<br/>smtp.gmail.com:587<br/>Sender: support@20206205.tech"]:::ext
+
+    TF -->|Quản lý hạ tầng thông qua API| Org
+
+    subgraph ENV [Môi trường DEV & PROD]
+        direction TB
+        P_ENV["Supabase Project<br/>project-[ENV]-by-terraform<br/>Region: ap-southeast-1"]:::supa
+        Auth_ENV{"Authentication Settings<br/>jwt_exp: 3600s mặc định"}
+
+        P_ENV --- Auth_ENV
+
+        URL_ENV["site_url<br/>DEV: http://localhost:3000/auth/callback<br/>PROD: https://20206205.tech/auth/callback"]
+        Allow_ENV["allow_list<br/>https://20206205tech.github.io/auth-callback"]
+
+        Auth_ENV -->|Luồng Callback chính| URL_ENV
+        Auth_ENV -->|Callback dự phòng| Allow_ENV
+    end
+
+    Org -->|Khởi tạo dự án| P_ENV
+
+    Google -->|external_google_enabled = true| Auth_ENV
+
+    Auth_ENV -->|rate_limit_email_sent = 100<br/>Gửi Email Confirmation & Recovery| SMTP
+
+    class ENV env;

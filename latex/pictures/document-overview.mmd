@@ -1,0 +1,78 @@
+%% ==============================================================================
+%% ==============================================================================
+%% ==============================================================================
+%% QUY ĐỊNH THỐNG NHẤT TRONG DỰ ÁN (Mermaid)
+
+%% PHẦN TÀI LIỆU QUY ĐỊNH PHẢI GIỮ NGUYÊN Ở ĐẦU
+%% PHẢI GIỮ ĐÚNG TÊN BIẾN, NẾU SƠ ĐỒ HIỆN TẠI KHÔNG ĐÚNG THÌ PHẢI SỬA LẠI
+%% TRONG HỆ THỐNG CHỈ CÓ CONVERSATION VÀ PAYMENT LÀ internal_nest
+%% KHI CÓ AI, LLM BÊN NGOÀI THÌ DÙNG external_service. Ví dụ: CloudflareAI(["Cloudflare Workers AI"]):::external_service
+
+%% classDef external_service fill:#00a86b,stroke:#fff,stroke-width:1px,color:#fff
+%% classDef internal_nest fill:#e0234e,stroke:#fff,stroke-width:1px,color:#fff
+%% classDef internal_python fill:#3776ab,stroke:#fff,stroke-width:1px,color:#fff
+
+%% classDef db_color fill:#e8f5e9,stroke:#4caf50,stroke-width:2px,color:#000
+%% classDef vdb_color fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#c62828
+%% classDef file_db_color fill:#fffde7,stroke:#fbc02d,stroke-width:2px,color:#000
+
+%% classDef client fill:#171717,stroke:#fff,stroke-width:2px,color:#fff
+%% Client["Client (Next.js)"]:::client
+%% classDef gateway fill:#003459,stroke:#fff,stroke-width:2px,color:#fff
+%% Kong["Kong API Gateway"]:::gateway
+
+%% classDef queue_color fill:#ffe0b2,stroke:#f57c00,stroke-width:2px,color:#e65100
+%% Kafka[["Kafka"]]:::queue_color
+%% RabbitMQ[["RabbitMQ"]]:::queue_color
+
+%% style cache_color fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#c62828
+%% Redis[("Redis")]:::cache_color
+
+%% classDef rtc fill:#1fd5f9,stroke:#fff,stroke-width:2px,color:#fff
+%% LiveKit["LiveKit Server"]:::rtc
+
+%% ==============================================================================
+%% ==============================================================================
+%% ==============================================================================
+
+flowchart TB
+%% Khai báo các class theo chuẩn quy định
+classDef external_service fill:#00a86b,stroke:#fff,stroke-width:1px,color:#fff
+classDef internal_nest fill:#e0234e,stroke:#fff,stroke-width:1px,color:#fff
+classDef internal_python fill:#3776ab,stroke:#fff,stroke-width:1px,color:#fff
+
+classDef db_color fill:#e8f5e9,stroke:#4caf50,stroke-width:2px,color:#000
+classDef vdb_color fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#c62828
+classDef file_db_color fill:#fffde7,stroke:#fbc02d,stroke-width:2px,color:#000
+
+classDef queue_color fill:#ffe0b2,stroke:#f57c00,stroke-width:2px,color:#e65100
+classDef rtc fill:#1fd5f9,stroke:#fff,stroke-width:2px,color:#fff
+
+%% Shared Infrastructure
+Kafka[["Kafka"]]:::queue_color
+CloudflareAI(["Cloudflare Workers AI"]):::external_service
+Postgres[("PostgreSQL (Application DB)")]:::db_color
+R2[("Cloudflare R2 (Object Storage)")]:::file_db_color
+Milvus[("Milvus (Vector DB)")]:::vdb_color
+
+%% Subdomains
+DocumentService["Document Service (FastAPI)"]:::internal_python
+DocumentWorker["Document Worker (Celery)"]:::internal_python
+RabbitMQ[["RabbitMQ"]]:::queue_color
+
+%% Luồng nội bộ của Document Subdomain
+DocumentService -->|"Gửi tác vụ bất đồng bộ"| RabbitMQ
+RabbitMQ -->|"Nhận tác vụ xử lý"| DocumentWorker
+
+%% Event Broker
+Kafka -.->|"Consume: payment_success \n(Cập nhật VIP subscription)"| DocumentService
+
+%% Giao tiếp CSDL & Storage của Document Domain
+DocumentService -->|"Đọc/Ghi dữ liệu người dùng"| Postgres
+DocumentWorker -->|"Cập nhật trạng thái xử lý"| Postgres
+
+DocumentService -->|"Tải lên file / Đọc Presigned URL"| R2
+DocumentWorker -->|"Đọc file thô / Lưu Content & Summary"| R2
+
+DocumentWorker -->|"Gửi Text / Nhận Summary"| CloudflareAI
+DocumentWorker -->|"Đồng bộ Vector Embeddings"| Milvus

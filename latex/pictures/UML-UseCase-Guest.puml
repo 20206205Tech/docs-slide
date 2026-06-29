@@ -1,0 +1,30 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor "Guest" as Guest
+actor "Supabase" as Supabase << System >>
+
+rectangle "Chức năng dành cho Guest" {
+  usecase "Xem trang chủ" as UC_Home #e5e7eb
+  usecase "Xem giới thiệu hệ thống" as UC_Intro #e5e7eb
+  usecase "Xem bảng giá gói thuê bao VIP" as UC_Pricing #f59e0b
+  usecase "Nghe thử giọng nói" as UC_SampleVoice #06b6d4
+  usecase "Đăng ký với Email" as UC_Register #00a86b
+  usecase "Đăng nhập với Email hoặc Google" as UC_Login #00a86b
+  usecase "Xem chia sẻ công khai" as UC_PublicShare #ec4899
+
+  UC_Home ..> UC_Intro : <<include>>
+  UC_Home ..> UC_Pricing : <<include>>
+  UC_Home ..> UC_SampleVoice : <<include>>
+}
+
+Guest -- UC_Home #blue
+Guest -- UC_Register #blue
+Guest -- UC_Login #blue
+Guest -- UC_PublicShare #blue
+
+UC_Register -- Supabase #green
+UC_Login -- Supabase #green
+@enduml

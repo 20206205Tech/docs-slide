@@ -1,0 +1,45 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor "Guest" as Guest
+actor "User" as User
+together {
+actor "Supabase" as Supabase << System >>
+actor "Payment Gateway" as PaymentGateway << System >>
+actor "Neon API" as NeonAPI << System >>
+}
+User -|> Guest
+
+rectangle "Chức năng dành cho User" {
+  usecase "Quản lý bảo mật 2FA" as UC_MFA #00a86b
+  usecase "Quản lý hồ sơ cá nhân" as UC_Profile #00a86b
+  usecase "Đổi / Quên mật khẩu" as UC_Password #00a86b
+
+  usecase "Hỏi đáp pháp lý" as UC_Chat #ec4899
+  usecase "Đánh dấu trò chuyện" as UC_Bookmark #ec4899
+  usecase "Chia sẻ trò chuyện" as UC_Share #ec4899
+
+  usecase "Mua gói thuê bao VIP" as UC_PurchaseVIP #f59e0b
+  usecase "Tra cứu lịch sử giao dịch" as UC_TransactionHistory #f59e0b
+
+  usecase "Cấu hình cài đặt" as UC_Settings #3b82f6
+}
+
+User -- UC_MFA #blue
+User -- UC_Profile #blue
+User -- UC_Password #blue
+User -- UC_Settings #blue
+User -- UC_Chat #blue
+User -- UC_Bookmark #blue
+User -- UC_Share #blue
+
+UC_MFA --- Supabase #green
+UC_Profile --- Supabase #green
+UC_Password --- Supabase #green
+User -- UC_PurchaseVIP #blue
+UC_PurchaseVIP --- PaymentGateway #green
+User -- UC_TransactionHistory #blue
+UC_Settings --- NeonAPI #green
+@enduml
