@@ -1,0 +1,19 @@
+[project]
+name = "docs-latex"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "environs>=15.0.1",
+    "google-api-python-client>=2.198.0",
+    "google-auth-oauthlib>=1.4.0",
+    "loguru>=0.7.3",
+    "pytz>=2026.2",
+    "requests>=2.34.2",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.6.0",
+]

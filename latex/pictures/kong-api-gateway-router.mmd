@@ -1,0 +1,84 @@
+%% ==============================================================================
+%% ==============================================================================
+%% ==============================================================================
+%% QUY ĐỊNH THỐNG NHẤT TRONG DỰ ÁN (Mermaid)
+
+%% PHẦN TÀI LIỆU QUY ĐỊNH PHẢI GIỮ NGUYÊN Ở ĐẦU
+%% PHẢI GIỮ ĐÚNG TÊN BIẾN, NẾU SƠ ĐỒ HIỆN TẠI KHÔNG ĐÚNG THÌ PHẢI SỬA LẠI
+%% TRONG HỆ THỐNG CHỈ CÓ CONVERSATION VÀ PAYMENT LÀ internal_nest
+%% KHI CÓ AI, LLM BÊN NGOÀI THÌ DÙNG external_service. Ví dụ: CloudflareAI(["Cloudflare Workers AI"]):::external_service
+
+%% classDef external_service fill:#00a86b,stroke:#fff,stroke-width:1px,color:#fff
+%% classDef internal_nest fill:#e0234e,stroke:#fff,stroke-width:1px,color:#fff
+%% classDef internal_python fill:#3776ab,stroke:#fff,stroke-width:1px,color:#fff
+
+%% classDef db_color fill:#e8f5e9,stroke:#4caf50,stroke-width:2px,color:#000
+%% classDef vdb_color fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#c62828
+%% classDef file_db_color fill:#fffde7,stroke:#fbc02d,stroke-width:2px,color:#000
+
+%% classDef client fill:#171717,stroke:#fff,stroke-width:2px,color:#fff
+%% Client["Client (Next.js)"]:::client
+%% classDef gateway fill:#003459,stroke:#fff,stroke-width:2px,color:#fff
+%% Kong["Kong API Gateway"]:::gateway
+
+%% classDef queue_color fill:#ffe0b2,stroke:#f57c00,stroke-width:2px,color:#e65100
+%% Kafka[["Kafka"]]:::queue_color
+%% RabbitMQ[["RabbitMQ"]]:::queue_color
+
+%% style cache_color fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#c62828
+%% Redis[("Redis")]:::cache_color
+
+%% classDef rtc fill:#1fd5f9,stroke:#fff,stroke-width:2px,color:#fff
+%% LiveKit["LiveKit Server"]:::rtc
+
+%% ==============================================================================
+%% ==============================================================================
+%% ==============================================================================
+
+graph LR
+
+%% --- ĐỊNH NGHĨA LỚP MÀU ---
+classDef client fill:#171717,stroke:#fff,stroke-width:2px,color:#fff
+classDef gateway fill:#003459,stroke:#fff,stroke-width:2px,color:#fff
+classDef external_service fill:#00a86b,stroke:#fff,stroke-width:1px,color:#fff
+classDef internal_nest fill:#e0234e,stroke:#fff,stroke-width:1px,color:#fff
+classDef internal_python fill:#3776ab,stroke:#fff,stroke-width:1px,color:#fff
+
+%% --- ĐỊNH NGHĨA CÁC NODE VỚI TÊN BIẾN CHUẨN ---
+Client["Client (Next.js)"]:::client
+Kong["Kong API Gateway"]:::gateway
+
+%% External Services (Màu xanh lá)
+AuthService["Auth Service (Supabase)"]:::external_service
+SettingService["Setting Service (Neon API)"]:::external_service
+
+%% Internal NestJS Services (Màu đỏ)
+PaymentService["Payment Service (Heroku)"]:::internal_nest
+ConvService["Conversation Service"]:::internal_nest
+
+%% Internal Python Services (Màu xanh dương Python)
+PersonaService["Persona Service"]:::internal_python
+ChatbotService["Chatbot + Voice Agent"]:::internal_python
+DocumentService["Document (Docling)"]:::internal_python
+VBPLService["VBPL Service"]:::internal_python
+PhapDienService["PhapDien Service"]:::internal_python
+
+%% --- LUỒNG ĐI (ROUTE MAPPING) ---
+Client -->|Request| Kong
+
+%% Route tới External Services
+Kong -- "/supabase-auth-service/*" --> AuthService
+Kong -- "/neon-setting-service/*" --> SettingService
+
+%% Route tới NestJS Services
+Kong -- "/code-payment-service/*" --> PaymentService
+Kong -- "/code-conversation-service/*" --> ConvService
+
+%% Route tới Python Services
+Kong -- "/code-persona-service/*" --> PersonaService
+Kong -- "/code-chatbot-service/*" --> ChatbotService
+Kong -- "/code-document-service/*" --> DocumentService
+
+%% Route tới các Service dữ liệu mới
+Kong -- "/data-pipeline-vbplnew-service/*" --> VBPLService
+Kong -- "/data-pipeline-phapdien-service/*" --> PhapDienService

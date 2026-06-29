@@ -1,0 +1,165 @@
+\documentclass[notheorems,hyperref={bookmarks=true},usepdftitle=false]{beamer}
+\hypersetup{
+  pdfpagemode=FullScreen,
+  pdftitle={Ứng dụng thiết kế hướng miền xây dựng kiến trúc vi dịch vụ cho bài toán quản lý hóa đơn điện tử},
+  pdfauthor={Vũ Văn Nghĩa - 20206205}
+}
+\usepackage[utf8]{vietnam}
+\usepackage{mdframed}
+\usepackage[english]{babel}
+\usepackage{ulem}
+\usepackage{pifont}
+\usepackage[mathscr]{eucal}
+\usepackage{amsfonts,amsmath, amsthm, amssymb,amsxtra,latexsym,amscd,graphics,graphpap}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{amsbsy}
+\usepackage{epsfig}
+\usepackage{natbib}
+\usepackage{cases} 
+
+\usepackage{pdfpages}
+\usepackage{multicol}
+\usepackage{subfigure}
+\usepackage{multimedia}
+\usepackage{boxedminipage}
+\usepackage{tikz}
+\usepackage{nicefrac}
+\setbeamertemplate{theorems}[numbered]
+\usetheme{Boadilla} 
+
+\usecolortheme{rose} 
+\usefonttheme[onlylarge]{structurebold}
+\usefonttheme{professionalfonts}
+\setbeamercolor{title}{fg=red!80!black,bg=blue!20!white}
+\setbeamertemplate{section in head/foot shaded}[default][20]
+\setbeamertemplate{subsection in head/foot shaded}[default][20]
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamerfont{small}{size=\small}
+\setbeamerfont{footnote}{size=\footnotesize}
+\setbeamerfont{script}{size=\scriptsize}
+\setbeamerfont{tiny}{size=\tiny}
+
+\theoremstyle{plain}
+\renewcommand{\thetable}{\Roman{table}}
+
+\mode<presentation>
+\setbeamertemplate{navigation symbols}{} 
+
+\usepackage{wrapfig}
+\usepackage{multicol}
+
+\title[{\makebox[.15\paperwidth]{Khoa Toán  - Tin}}]{  dụng thiết kế hướng miền   xây dựng kiến trúc vi dịch vụ cho   bài toán quản lý hóa đơn điện tử}
+
+
+
+
+
+\author[Vũ Văn Nghĩa   - 20206205]{ 
+  Khoa Toán - Tin \\
+  Đồ án II \\[0.2cm]
+  \begin{tabular}{ll}
+    Giảng viên hướng dẫn: & TS. Vũ Thành Nam \\
+    Sinh viên thực hiện: & Vũ Văn Nghĩa \\
+    Mã số sinh viên: & 20206205 \\
+    Lớp: & Toán Tin 02 - K65
+  \end{tabular}
+}
+% \date{Hà Nội, \today} 
+\date{Hà Nội, 07/2026} 
+
+\renewcommand{\sfdefault}{cmss}
+\renewcommand{\rmdefault}{cmr}
+\renewcommand{\ttdefault}{cmtt}
+\numberwithin{equation}{section}
+\usepackage{array}
+\usepackage{ragged2e}
+\justifying
+\usepackage{blindtext}
+\renewcommand{\baselinestretch}{1.15}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newtheorem{prop}{Proposition}
+\usepackage{amsmath}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{hypothesis}{Hypothesis}
+
+\renewcommand{\thedefinition}{\arabic{section}.\arabic{definition}}
+\providecommand{\thelemma}{}
+\renewcommand{\thelemma}{\arabic{section}.\arabic{lemma}}
+\renewcommand{\thetheorem}{\arabic{section}.\arabic{theorem}}
+
+\usepackage{esvect}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% \hypersetup{
+%     pdfpagelayout=TwoPageRight, % Chuyển sang trang bên phải khi nhấp chuột trái hoặc phải
+%     pdfpagemode=FullScreen,     % Mở tài liệu ở chế độ toàn màn hình khi bắt đầu
+% }
+\begin{document}
+
+% \begin{footnotesize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{}
+\maketitle
+\end{frame}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AtBeginSection[] % Do nothing for \section*
+{
+    \begin{frame}<beamer>
+        \frametitle{Mục lục}
+        \tableofcontents[currentsection, currentsubsection]
+    \end{frame}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Mục lục}
+\tableofcontents
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mở đầu}
+\begin{frame}{Mở đầu}
+    \begin{itemize}
+       \item  Trong quá trình hoạt động kinh doanh, doanh nghiệp thường có nhu cầu chuyển đổi mô hình kinh doanh linh hoạt để có thể tồn tại và phát triển khi thị trường thay đổi. Từ đó, đáp ứng nhu cầu của khách hàng, mang lại ưu thế cạnh tranh so với các đối thủ.
+    \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}{Ví dụ}
+% \begin{itemize}
+% \item Google bắt đầu từ công cụ tìm kiếm nhưng sau đó đã mở rộng   như: Dịch vụ đám mây,  Thư điện tử, Dịch vụ bản đồ, \dots
+% \item Amazon từ hiệu sách trực tuyến đã trở thành thị trường cho nhà cung cấp khác như: Thương mại điện tử, Dịch vụ đám mây, \dots
+%     \end{itemize}
+% \begin{figure}[H]
+% \centering
+% \includegraphics[scale = 0.3]{pictures/kien_truc_vi_dich_vu_cua_amazon.png}
+% \caption{Kiến trúc vi dịch vụ của Amazon}
+% \end{figure}
+% \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Mở đầu}
+    \begin{itemize}
+        \item  Để xây dựng được kiến trúc vi dịch vụ tốt, cần phải tạo ra các dịch vụ nhỏ phù hợp và duy trì tính độc lập. Trong đồ án này, em sử dụng thiết kế hướng miền để phân tích và xây dựng kiến trúc vi dịch vụ.
+
+% Theo quy định của Nghị định 123/2020/NĐ - CP, tất cả các doanh nghiệp, tổ chức và hộ kinh doanh đều bắt buộc phải sử dụng hóa điện tử. Vì vậy, nhu cầu sử dụng và xử lý hóa đơn điện tử trở nên rất lớn. Do đó trong đồ án này, em chọn chủ đề \emph{"Sử dụng thiết kế hướng miền xây dựng kiến trúc vi dịch vụ cho bài toán quản lý hóa đơn điện tử"}. Chủ đề này là một xu hướng quan trọng trong phát triển phần mềm và mang lại nhiều lợi ích trong việc cải thiện quá trình quản lý hóa đơn điện tử.
+    \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Cảm ơn}
+\centering
+\Huge{Thanks for listening!}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

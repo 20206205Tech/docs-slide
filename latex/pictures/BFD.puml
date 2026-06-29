@@ -1,0 +1,64 @@
+@startwbs
+<style>
+wbsDiagram {
+  :depth(0) {
+    BackgroundColor LightBlue
+  }
+  :depth(1) {
+    BackgroundColor LightPink
+  }
+  :depth(2) {
+    BackgroundColor LightYellow
+  }
+  :depth(3) {
+    BackgroundColor LightGreen
+  }
+}
+</style>
+
+* Hệ thống tư vấn pháp luật AI
+
+** Phân hệ Chung (Generic Subdomain)
+*** Dịch vụ Xác thực (Auth Service)
+**** Đăng ký với Email
+**** Đăng nhập với Email hoặc Google
+**** Quản lý bảo mật 2FA
+**** Đổi/Quên mật khẩu
+**** Quản lý thông tin cá nhân
+*** Dịch vụ Cài đặt (Settings Service)
+**** Quản lý cài đặt cá nhân
+*** Dịch vụ Thanh toán (Payment Service)
+**** Hiển thị bảng giá gói thuê bao VIP
+**** Mua gói thuê bao VIP
+**** Tra cứu lịch sử giao dịch
+**** Quản trị các gói thuê bao VIP (ADMIN)
+**** Tích hợp cổng thanh toán
+
+** Phân hệ Cốt lõi (Core Subdomain)
+*** Dịch vụ Trò chuyện (Conversation Service)
+**** Hỏi đáp pháp lý
+**** Đánh dấu trò chuyện
+**** Chia sẻ trò chuyện
+**** Truy vấn suy luận pháp lý (VIP)
+**** Đàm thoại thời gian thực qua giọng nói (VIP)
+*** Dịch vụ Chatbot (Chatbot Service)
+**** Xử lý giao tiếp
+**** Truy xuất lịch sử trò chuyện
+**** Truy xuất chi tiết trò chuyện
+**** Tương tác giao tiếp với LiveKit server
+
+** Phân hệ Hỗ trợ (Supporting Subdomain)
+*** Dịch vụ Tài liệu (Document Service)
+**** Tải lên tài liệu (VIP)
+**** Theo dõi trạng thái xử lý tài liệu
+**** Thử lại xử lý tài liệu do bị lỗi
+*** Dịch vụ Nhân vật (Persona Service)
+**** Cung cấp danh sách nhân vật
+**** Quản trị nhân vật (ADMIN)
+**** Quản trị TTS Engine (ADMIN)
+**** Quản trị giọng nói (Voices) (ADMIN)
+**** Đồng bộ giọng nói ElevenLabs (ADMIN)
+*** Quản trị Bảng điều khiển (Admin Dashboard)
+**** Luồng dữ liệu VBPL
+**** Luồng dữ liệu Pháp Điển
+@endwbs

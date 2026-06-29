@@ -1,0 +1,28 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor "User" as User
+actor "Admin" as Admin
+actor "ElevenLabs" as ElevenLabs << System >>
+
+Admin -|> User
+
+rectangle "Chức năng dành cho Admin" {
+  usecase "Quản lý nhân vật" as UC_ManagePersona #06b6d4
+  usecase "Quản lý giọng nói\n(Engine, Voice)" as UC_ManageVoice #06b6d4
+  usecase "Đồng bộ giọng nói\nElevenLabs" as UC_SyncElevenLabs #06b6d4
+  usecase "Quản lý gói thuê bao VIP" as UC_ManagePlans #f59e0b
+  usecase "Theo dõi luồng dữ liệu" as UC_PipelineReport #a076e9
+
+  UC_SyncElevenLabs ..> UC_ManageVoice : <<extend>>
+}
+
+Admin -- UC_ManagePersona #blue
+Admin -- UC_ManageVoice #blue
+Admin -- UC_ManagePlans #blue
+Admin -- UC_PipelineReport #blue
+
+UC_SyncElevenLabs --- ElevenLabs #green
+@enduml

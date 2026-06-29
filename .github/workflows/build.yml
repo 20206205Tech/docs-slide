@@ -1,0 +1,87 @@
+name: Build LaTeX and Deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "latex/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "latex/**"
+
+# Thêm quyền ghi để Github Actions có thể push lên nhánh gh-pages
+permissions:
+  contents: write
+
+jobs:
+  build_pdf_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Disable Dev Mode
+        run: python python/disable_dev.py
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: latex
+          root_file: main.tex
+
+      - name: Rename PDF file
+        run: mv latex/main.pdf latex/VuVanNghia-20206205.pdf
+
+      - name: Upload PDF as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-pdf
+          path: latex/VuVanNghia-20206205.pdf
+
+      - name: Prepare Web Files
+        if: github.ref == 'refs/heads/main'
+        run: |
+          mkdir public
+          # Copy file PDF vào thư mục public
+          cp latex/VuVanNghia-20206205.pdf public/
+
+          # Tạo một file index.html tự động chuyển hướng người dùng thẳng đến file PDF
+          echo '<!DOCTYPE html><html><head><title>Tài liệu LaTeX</title><meta http-equiv="refresh" content="0; url=VuVanNghia-20206205.pdf" /></head><body><p>Đang chuyển hướng đến PDF... Nếu không thành công, <a href="VuVanNghia-20206205.pdf">bấm vào đây</a>.</p></body></html>' > public/index.html
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+
+      # --- PHẦN TÍCH HỢP DOPPLER VÀ UPLOAD LÊN DRIVE ---
+
+      - name: Install Doppler CLI
+        if: github.ref == 'refs/heads/main'
+        uses: dopplerhq/cli-action@v1
+
+      - name: Install uv
+        if: github.ref == 'refs/heads/main'
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        if: github.ref == 'refs/heads/main'
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: ".python-version"
+
+      - name: Install dependencies
+        if: github.ref == 'refs/heads/main'
+        run: uv sync
+
+      - name: Upload PDF to Google Drive
+        if: github.ref == 'refs/heads/main'
+        env:
+          DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
+        run: |
+          doppler run -p 20206205tech -c prod -- uv run python python/upload_to_drive.py

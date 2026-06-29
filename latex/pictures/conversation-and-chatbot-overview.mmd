@@ -1,0 +1,92 @@
+%% ==============================================================================
+%% ==============================================================================
+%% ==============================================================================
+%% QUY ĐỊNH THỐNG NHẤT TRONG DỰ ÁN (Mermaid)
+
+%% PHẦN TÀI LIỆU QUY ĐỊNH PHẢI GIỮ NGUYÊN Ở ĐẦU
+%% PHẢI GIỮ ĐÚNG TÊN BIẾN, NẾU SƠ ĐỒ HIỆN TẠI KHÔNG ĐÚNG THÌ PHẢI SỬA LẠI
+%% TRONG HỆ THỐNG CHỈ CÓ CONVERSATION VÀ PAYMENT LÀ internal_nest
+%% KHI CÓ AI, LLM BÊN NGOÀI THÌ DÙNG external_service. Ví dụ: CloudflareAI(["Cloudflare Workers AI"]):::external_service
+
+%% classDef external_service fill:#00a86b,stroke:#fff,stroke-width:1px,color:#fff
+%% classDef internal_nest fill:#e0234e,stroke:#fff,stroke-width:1px,color:#fff
+%% classDef internal_python fill:#3776ab,stroke:#fff,stroke-width:1px,color:#fff
+
+%% classDef db_color fill:#e8f5e9,stroke:#4caf50,stroke-width:2px,color:#000
+%% classDef vdb_color fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#c62828
+%% classDef file_db_color fill:#fffde7,stroke:#fbc02d,stroke-width:2px,color:#000
+
+%% classDef client fill:#171717,stroke:#fff,stroke-width:2px,color:#fff
+%% Client["Client (Next.js)"]:::client
+%% classDef gateway fill:#003459,stroke:#fff,stroke-width:2px,color:#fff
+%% Kong["Kong API Gateway"]:::gateway
+
+%% classDef queue_color fill:#ffe0b2,stroke:#f57c00,stroke-width:2px,color:#e65100
+%% Kafka[["Kafka"]]:::queue_color
+%% RabbitMQ[["RabbitMQ"]]:::queue_color
+
+%% style cache_color fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#c62828
+%% Redis[("Redis")]:::cache_color
+
+%% classDef rtc fill:#1fd5f9,stroke:#fff,stroke-width:2px,color:#fff
+%% LiveKit["LiveKit Server"]:::rtc
+
+%% ==============================================================================
+%% ==============================================================================
+%% ==============================================================================
+
+flowchart TD
+classDef external_service fill:#00a86b,stroke:#fff,stroke-width:1px,color:#fff
+classDef internal_nest fill:#e0234e,stroke:#fff,stroke-width:1px,color:#fff
+classDef internal_python fill:#3776ab,stroke:#fff,stroke-width:1px,color:#fff
+
+classDef db_color fill:#e8f5e9,stroke:#4caf50,stroke-width:2px,color:#000
+classDef vdb_color fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#c62828
+classDef file_db_color fill:#fffde7,stroke:#fbc02d,stroke-width:2px,color:#000
+
+classDef queue_color fill:#ffe0b2,stroke:#f57c00,stroke-width:2px,color:#e65100
+classDef rtc fill:#1fd5f9,stroke:#fff,stroke-width:2px,color:#fff
+
+%% ==============================================================================
+
+%% Khai báo node Storage & DBs
+R2Storage[(Cloudflare R2 Storage)]:::file_db_color
+ChatbotDB[(Chatbot DB)]:::db_color
+ConvDB[(Conversation DB)]:::db_color
+
+subgraph VectorDBs [Vector Database]
+Milvus[(Milvus DB)]:::vdb_color
+Pinecone[(Pinecone)]:::vdb_color
+Qdrant[(Qdrant)]:::vdb_color
+end
+
+%% Khai báo node Queue & RTC chuẩn xác
+Kafka[["Kafka"]]:::queue_color
+RabbitMQ[["RabbitMQ"]]:::queue_color
+LiveKit["LiveKit Server"]:::rtc
+
+%% Các Service Python
+PersonaService["Persona Service"]:::internal_python
+ChatbotService["Chatbot Service"]:::internal_python
+
+%% Service NestJS (Chỉ Conversation & Payment được dùng internal_nest)
+ConvService["Conversation Service"]:::internal_nest
+
+%% Các liên kết luồng dữ liệu
+Kafka -->|"Event: payment_success"| ConvService
+ConvService <-->|"gRPC (text)"| ChatbotService
+
+ConvService -->|"Publish: chat_deletions & share_events"| RabbitMQ
+
+ConvService -->|"Cấp Token JWT cho Client"| LiveKit
+ChatbotService -->|"REST API cấu hình nhân vật"| PersonaService
+ChatbotService <-->|"LiveKit Agent kết nối voice"| LiveKit
+
+ChatbotService -->|"User Documents"| Milvus
+ChatbotService -->|"VBPL"| Pinecone
+ChatbotService -->|"Pháp Điển"| Qdrant
+
+RabbitMQ -->|"Consume & Xử lý sự kiện"| ChatbotService
+ChatbotService -->|"Tải lên/Xóa file chia sẻ"| R2Storage
+ChatbotService --> ChatbotDB
+ConvService --> ConvDB

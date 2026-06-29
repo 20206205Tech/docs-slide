@@ -1,0 +1,25 @@
+@startuml
+autonumber
+
+participant "NestJS Service" as Publisher
+queue "RabbitMQ Main Queue" as MQ_Main
+queue "RabbitMQ Retry Queue (TTL 20s)" as MQ_Retry
+participant "Python Consumer" as Worker
+queue "RabbitMQ DLQ" as MQ_DLQ
+
+Publisher -> MQ_Main: Publish message (e.g. share_generated)
+
+group #F0F8FF Vòng lặp thử lại (Retry Loop)
+    note over MQ_Main, Worker: Vòng lặp thử lại (Retry Loop) tối đa 5 lần
+    MQ_Main -> Worker: Consume message (Lần n)
+    note over Worker: Xử lý thất bại (Lỗi DB, Lỗi R2...)
+
+    alt retry_count < 5
+        Worker -> MQ_Retry: Publish to Retry Queue (x-retry-count + 1)
+        MQ_Retry --> MQ_Main: Hết thời gian chờ (TTL 20s) -> Quay lại Main Queue
+    else retry_count >= 5
+        Worker -> MQ_Main: Reject / Nack (requeue=false)
+        MQ_Main -> MQ_DLQ: Broker tự động định tuyến sang DLQ (Dead Letter Exchange)
+    end
+end
+@enduml

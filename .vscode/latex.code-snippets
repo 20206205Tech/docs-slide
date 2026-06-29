@@ -1,0 +1,56 @@
+{
+  "Chèn link URL": {
+    "prefix": "nghia-latex-url",
+    "body": ["\\url{${1:https://example.com}}"],
+    "description": "Chèn một đường dẫn URL",
+  },
+  "Chèn hình ảnh (Figure)": {
+    "prefix": "nghia-latex-figure",
+    "body": [
+      "\\begin{figure}[H]",
+      "\\centering",
+      "\\includegraphics[scale = ${1:0.2}]{pictures/${2:filename}}",
+      "\\caption{${3:caption_text}}",
+      "\\end{figure}",
+    ],
+    "description": "Chèn môi trường figure kèm ảnh và caption",
+  },
+  "Tạo danh sách (Itemize)": {
+    "prefix": "nghia-latex-itemize",
+    "body": [
+      "\\begin{itemize}",
+      "\\item",
+      "${1:Nội dung mục 1}",
+      "\\item",
+      "${2:Nội dung mục 2}",
+      "\\item",
+      "${3:Nội dung mục 3}",
+      "\\end{itemize}",
+    ],
+    "description": "Tạo danh sách bullet points cơ bản",
+  },
+  "In nghiêng (Textit)": {
+    "prefix": "nghia-latex-italic",
+    "body": ["\\textit{${1:In nghiêng đoạn văn bản}}"],
+    "description": "In nghiêng đoạn văn bản",
+  },
+  "In đậm (Textbf)": {
+    "prefix": "nghia-latex-bold",
+    "body": ["\\textbf{${1:In đậm đoạn văn bản}}"],
+    "description": "In đậm đoạn văn bản",
+  },
+  "Tạo khối (Block)": {
+    "prefix": "nghia-latex-block",
+    "body": [
+      "\\begin{block}{${1:Tiêu đề block}}",
+      "${2:Nội dung block}",
+      "\\end{block}",
+    ],
+    "description": "Tạo môi trường block (thường dùng trong Beamer)",
+  },
+  "Chèn đoạn văn bản mẫu (Lorem Ipsum)": {
+    "prefix": "nghia-latex-lipsum",
+    "body": ["", "", "", "", "", "", "\\lipsum[1]", "", "", "", "", ""],
+    "description": "Chèn đoạn văn bản mẫu Lorem Ipsum",
+  },
+}
