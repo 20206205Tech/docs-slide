@@ -1,0 +1,60 @@
+@startuml
+actor "User" as User
+participant "Web Frontend" as Frontend
+participant "API Gateway\n(Kong)" as Kong
+participant "Conversation Service" as ConvService
+database "Conversation Database" as DB
+
+== Luồng Đánh dấu cuộc trò chuyện (Bookmark Flow) ==
+User -> Frontend: Chọn cuộc hội thoại cần lưu, bấm "Bookmark"
+activate Frontend
+
+Frontend -> Kong: GET /code-conversation-service/bookmarks\n[Headers: Authorization: Bearer <token>]
+activate Kong
+Kong -> ConvService: Chuyển tiếp yêu cầu lấy danh sách thư mục
+activate ConvService
+ConvService -> DB: Truy vấn danh sách thư mục của User
+activate DB
+DB --> ConvService: Danh sách thư mục
+deactivate DB
+ConvService --> Kong: Trả về danh sách thư mục (HTTP 200 OK)
+deactivate ConvService
+Kong --> Frontend: Trả về danh sách thư mục
+deactivate Kong
+
+Frontend -> User: Hiển thị form chọn thư mục & ghi chú
+
+opt #AliceBlue Nếu User muốn tạo thư mục mới
+    User -> Frontend: Nhập tên thư mục mới
+    Frontend -> Kong: POST /code-conversation-service/bookmarks\n{ folderName }
+    activate Kong
+    Kong -> ConvService: Chuyển tiếp yêu cầu tạo thư mục
+    activate ConvService
+    ConvService -> DB: Tạo thư mục mới (INSERT BookmarkFolder)
+    activate DB
+    DB --> ConvService: Thư mục mới được tạo
+    deactivate DB
+    ConvService --> Kong: Trả về thông tin thư mục (HTTP 201 Created)
+    deactivate ConvService
+    Kong --> Frontend: Trả về thư mục mới
+    deactivate Kong
+    Frontend -> Frontend: Cập nhật danh sách thư mục
+end
+
+User -> Frontend: Chọn thư mục (folderId), nhập ghi chú (note), bấm "Lưu"
+Frontend -> Kong: PUT /code-conversation-service/bookmarks/:folderId/item\n{ chatId, note }
+activate Kong
+Kong -> ConvService: Chuyển tiếp yêu cầu lưu bookmark
+activate ConvService
+ConvService -> DB: Kiểm tra Chat và INSERT/UPDATE Bookmark (chatId, note, folderId)
+activate DB
+DB --> ConvService: Đã lưu thành công
+deactivate DB
+ConvService --> Kong: Trả về kết quả thành công (HTTP 200 OK)
+deactivate ConvService
+Kong --> Frontend: Trả về kết quả thành công
+deactivate Kong
+
+Frontend --> User: Hiển thị thông báo "Đã lưu vào Bookmark"
+deactivate Frontend
+@enduml

@@ -1,0 +1,76 @@
+%% ==============================================================================
+%% ==============================================================================
+%% ==============================================================================
+%% QUY ĐỊNH THỐNG NHẤT TRONG DỰ ÁN (Mermaid)
+
+%% PHẦN TÀI LIỆU QUY ĐỊNH PHẢI GIỮ NGUYÊN Ở ĐẦU
+%% PHẢI GIỮ ĐÚNG TÊN BIẾN, NẾU SƠ ĐỒ HIỆN TẠI KHÔNG ĐÚNG THÌ PHẢI SỬA LẠI
+%% TRONG HỆ THỐNG CHỈ CÓ CONVERSATION VÀ PAYMENT LÀ internal_nest
+%% KHI CÓ AI, LLM BÊN NGOÀI THÌ DÙNG external_service. Ví dụ: CloudflareAI(["Cloudflare Workers AI"]):::external_service
+
+%% classDef external_service fill:#00a86b,stroke:#fff,stroke-width:1px,color:#fff
+%% classDef internal_nest fill:#e0234e,stroke:#fff,stroke-width:1px,color:#fff
+%% classDef internal_python fill:#3776ab,stroke:#fff,stroke-width:1px,color:#fff
+
+%% classDef db_color fill:#e8f5e9,stroke:#4caf50,stroke-width:2px,color:#000
+%% classDef vdb_color fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#c62828
+%% classDef file_db_color fill:#fffde7,stroke:#fbc02d,stroke-width:2px,color:#000
+
+%% classDef client fill:#171717,stroke:#fff,stroke-width:2px,color:#fff
+%% Client["Client (Next.js)"]:::client
+%% classDef gateway fill:#003459,stroke:#fff,stroke-width:2px,color:#fff
+%% Kong["Kong API Gateway"]:::gateway
+
+%% classDef queue_color fill:#ffe0b2,stroke:#f57c00,stroke-width:2px,color:#e65100
+%% Kafka[["Kafka"]]:::queue_color
+%% RabbitMQ[["RabbitMQ"]]:::queue_color
+
+%% style cache_color fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#c62828
+%% Redis[("Redis")]:::cache_color
+
+%% classDef rtc fill:#1fd5f9,stroke:#fff,stroke-width:2px,color:#fff
+%% LiveKit["LiveKit Server"]:::rtc
+
+%% ==============================================================================
+%% ==============================================================================
+%% ==============================================================================
+
+flowchart TD
+%% Khai báo classDef chuẩn theo quy định
+classDef external_service fill:#00a86b,stroke:#fff,stroke-width:1px,color:#fff
+classDef internal_nest fill:#e0234e,stroke:#fff,stroke-width:1px,color:#fff
+classDef internal_python fill:#3776ab,stroke:#fff,stroke-width:1px,color:#fff
+
+classDef queue_color fill:#ffe0b2,stroke:#f57c00,stroke-width:2px,color:#e65100
+classDef cache_color fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#c62828
+
+%% Khai báo node và gán class trực tiếp bằng :::
+Redis[("Redis")]:::cache_color
+PaymentGateway(("Cổng Thanh Toán")):::external_service
+AuthService["Auth Service (supabase)"]:::external_service
+Brevo(("Brevo")):::external_service
+Kafka[["Kafka"]]:::queue_color
+
+%% subgraph CoreDomain [Core Subdomain]
+ConversationService["Conversation Service"]:::internal_nest
+%% end
+
+%% subgraph SupportDomain [Supporting Subdomain]
+DocumentService["Document Service"]:::internal_python
+%% end
+
+%% subgraph GenericDomain [Generic Subdomain]
+PaymentService["Payment Service"]:::internal_nest
+%% end
+
+%% Sắp xếp thứ tự các liên kết để định hình layout trái -> phải
+PaymentService <-->|"Cache và BullMQ"| Redis
+PaymentService <-->|"Xử lý giao dịch"| PaymentGateway
+PaymentService <-->|"Lấy thông tin người dùng"| AuthService
+PaymentService <-->|"Gửi email"| Brevo
+PaymentService -->|"Publish Event: payment_success"| Kafka
+
+%% ConversationService <-->|"Event: Chat & Share"| Kafka
+
+Kafka -.->|"Consume Event: payment_success"| DocumentService
+Kafka -.->|"Consume Event: payment_success"| ConversationService

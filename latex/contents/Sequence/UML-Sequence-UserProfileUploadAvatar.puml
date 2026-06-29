@@ -1,0 +1,43 @@
+@startuml
+actor "User" as User
+participant "Web Frontend" as Frontend
+participant "API Gateway\n(Kong)" as Kong
+participant "Supabase Backend\n(Storage, DB, Auth)" as AuthService
+
+== Luồng 2: Tải lên và Cập nhật Ảnh đại diện (Upload Avatar) ==
+User -> Frontend: Chọn ảnh mới từ thiết bị và nhấn "Tải lên"
+activate Frontend
+
+Frontend -> Frontend: Sinh tên file ngẫu nhiên (userId_random.ext)
+Frontend -> Kong: POST /supabase-auth-service/storage/v1/object/avatars/{fileName} (Binary File)
+activate Kong
+note over Kong: Kong tự động thêm thông tin apikey trong header
+
+Kong -> AuthService: Chuyển tiếp yêu cầu upload file
+activate AuthService
+
+AuthService -> AuthService: Lưu trữ file vật lý\ntrong bucket 'avatars'
+
+AuthService --> Kong: Upload thành công
+deactivate AuthService
+Kong --> Frontend: Upload thành công
+deactivate Kong
+
+Frontend -> Frontend: Khởi tạo URL ảnh công khai\n(public/avatars/{fileName})
+Frontend -> Kong: PATCH /supabase-auth-service/rest/v1/profiles?id=eq.{userId} (avatar_url)
+activate Kong
+note over Kong: Kong tự động thêm thông tin apikey trong header
+
+Kong -> AuthService: Chuyển tiếp yêu cầu cập nhật avatar_url
+activate AuthService
+
+AuthService -> AuthService: Cập nhật avatar_url của User\ntrong bảng profiles
+
+AuthService --> Kong: Trả về bản ghi đã cập nhật
+deactivate AuthService
+Kong --> Frontend: Trả về bản ghi đã cập nhật
+deactivate Kong
+
+Frontend -> User: Hiển thị ảnh đại diện mới cập nhật!
+deactivate Frontend
+@enduml

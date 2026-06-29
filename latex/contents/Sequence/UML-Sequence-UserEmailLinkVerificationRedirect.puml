@@ -1,0 +1,30 @@
+@startuml
+actor "User" as User
+participant "API Gateway\n(Kong)" as Kong
+participant "Auth Service\n(Supabase)" as AuthService
+participant "Web Frontend" as Frontend
+
+== Luồng Người dùng Click liên kết trong Email ==
+User -> Kong: Click link khôi phục trong Email
+activate Kong
+note over Kong: Kong tự động thêm thông tin apikey trong header
+
+Kong -> AuthService: Gửi token xác minh khôi phục
+activate AuthService
+
+AuthService -> AuthService: Xác minh token khôi phục hợp lệ
+
+AuthService --> Kong: HTTP 302 Redirect về Frontend (/auth/callback?type=recovery) kèm token trong Hash
+deactivate AuthService
+
+Kong --> User: HTTP 302 Redirect về Frontend (/auth/callback?type=recovery) kèm token trong Hash
+deactivate Kong
+
+User -> Frontend: Tải trang Callback với URL Hash
+activate Frontend
+
+Frontend -> Frontend: Phát hiện tham số type = recovery
+Frontend -> Frontend: Lưu trữ Access Token từ Hash
+Frontend --> User: Chuyển hướng sang /auth/mfa?next=/auth/reset-password
+deactivate Frontend
+@enduml

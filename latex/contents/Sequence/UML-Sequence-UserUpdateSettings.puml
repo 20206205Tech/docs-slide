@@ -1,0 +1,29 @@
+@startuml
+actor "User" as User
+participant "Web Frontend" as Frontend
+participant "API Gateway\n(Kong)" as Kong
+participant "Setting Service\n(Neon API)" as SettingService
+
+== Luồng 2: Cập nhật thông tin Cài đặt (Update Settings) ==
+User -> Frontend: Thay đổi thiết lập (ví dụ: Theme, câu hỏi ví dụ, auto expand reasoning)
+activate Frontend
+
+Frontend -> Kong: POST /neon-setting-service (SettingItem[]) \n[Headers: Authorization: Bearer <token>]
+activate Kong
+note over Kong: Kong tự động thêm (để UPSERT):\n- tham số on_conflict=user_id,key trên URL\n- header Prefer: resolution=merge-duplicates
+
+Kong -> SettingService: Chuyển tiếp cấu hình mới
+activate SettingService
+
+SettingService -> SettingService: Cập nhật hoặc thêm mới (Upsert) cấu hình của User
+
+SettingService --> Kong: Phản hồi thành công (HTTP 200/201)
+deactivate SettingService
+
+Kong --> Frontend: Phản hồi thành công
+deactivate Kong
+
+Frontend -> Frontend: Áp dụng cài đặt cục bộ
+Frontend --> User: Hiển thị trạng thái cài đặt mới
+deactivate Frontend
+@enduml

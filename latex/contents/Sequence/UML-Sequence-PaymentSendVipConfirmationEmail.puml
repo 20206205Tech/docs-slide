@@ -1,0 +1,41 @@
+@startuml
+participant "Event Bus\n(NestJS CQRS)" as EventBus
+participant "SubscriptionPurchased\nEvent Handler" as Handler
+database "Payment DB" as DB
+participant "Supabase Profile Service" as Profile
+participant "Brevo Email Adapter" as Email
+actor "User" as User
+
+== Pha 5: Local handler gửi email xác nhận thanh toán VIP ==
+
+EventBus -> Handler: handle(SubscriptionPurchasedEvent)
+activate Handler
+
+Handler -> DB: findTransactionBySubscriptionId(subscriptionId)
+activate DB
+DB --> Handler: Transaction\npaymentMetadata.customer_email,\ntransactionRef
+deactivate DB
+
+alt Không có customer_email trong metadata
+Handler -> Handler: Ghi log cảnh báo\nvà bỏ qua gửi email
+else Có customer_email
+Handler -> Profile: getProfile(userId)
+activate Profile
+Profile --> Handler: fullName hoặc null
+deactivate Profile
+
+Handler -> DB: findPlanById(planId)
+activate DB
+DB --> Handler: Plan hoặc null
+deactivate DB
+
+Handler -> Email: sendPaymentSuccessEmail\n(customerEmail, customerName,\nplanName, transactionRef)
+activate Email
+Email --> Handler: OK
+deactivate Email
+
+Email --> User: Email xác nhận thanh toán thành công
+end
+
+deactivate Handler
+@enduml

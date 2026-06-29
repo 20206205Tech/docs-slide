@@ -1,0 +1,38 @@
+@startuml
+actor "User" as User
+participant "Web Frontend" as Frontend
+participant "API Gateway\n(Kong)" as Kong
+participant "Payment Service" as PaymentService
+database "Payment DB" as DB
+
+== Luồng nghiệp vụ: Tra cứu lịch sử giao dịch ==
+
+User -> Frontend: Click xem "Lịch sử giao dịch"
+activate Frontend
+
+Frontend -> Kong: GET /code-payment-service/subscriptions/history\n?skip=0&limit=20\n[Authorization: Bearer <token>]
+activate Kong
+Kong -> PaymentService: Chuyển tiếp yêu cầu đã xác thực
+activate PaymentService
+
+PaymentService -> DB: findAllByUserId(userId, skip, limit)
+activate DB
+DB --> PaymentService: Danh sách Transaction
+deactivate DB
+
+PaymentService -> DB: countAllByUserId(userId)
+activate DB
+DB --> PaymentService: total
+deactivate DB
+
+PaymentService -> PaymentService: Map TransactionHistoryItem\n{id, plan_id, base_amount,\ndiscount_amount, final_amount,\npayment_status, payment_method,\npaid_at, created_at}
+PaymentService --> Kong: BaseResponse\n{ data: { items, total } }
+deactivate PaymentService
+Kong --> Frontend: Trả về BaseResponse
+deactivate Kong
+
+Frontend -> Frontend: apiHelper bóc data\nHistoryList fallback final_amount/payment_status
+Frontend --> User: Hiển thị bảng lịch sử giao dịch
+deactivate Frontend
+
+@enduml

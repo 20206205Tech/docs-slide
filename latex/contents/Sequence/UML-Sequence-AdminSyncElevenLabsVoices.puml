@@ -1,0 +1,51 @@
+@startuml
+actor "Admin" as Admin
+participant "Web Frontend" as Frontend
+participant "API Gateway\n(Kong)" as Kong
+participant "Persona Service" as PersonaService
+participant "ElevenLabs API" as ElevenLabs
+database "Persona DB" as DB
+
+== Luồng Thiết lập và đồng bộ giọng nói từ ElevenLabs (Sync ElevenLabs Voices) ==
+Admin -> Frontend: Mở trang Cấu hình giọng nói, bấm "Đồng bộ từ ElevenLabs"
+activate Frontend
+
+Frontend -> Kong: POST /code-persona-service/voices/sync-elevenlabs\n[Headers: Authorization: Bearer <token>]
+activate Kong
+Kong -> PersonaService: Chuyển tiếp yêu cầu đồng bộ
+activate PersonaService
+
+PersonaService -> ElevenLabs: GET /v1/voices\n[Headers: xi-api-key: <elevenlabs_api_key>]
+activate ElevenLabs
+ElevenLabs --> PersonaService: Trả về danh sách giọng nói (JSON)
+deactivate ElevenLabs
+
+PersonaService -> DB: Lấy Engine có code='elevenlabs'
+activate DB
+DB --> PersonaService: Engine elevenlabs
+deactivate DB
+
+loop #LightCyan Duyệt qua từng giọng nói nhận được
+    PersonaService -> DB: Kiểm tra tồn tại theo voice_code
+    activate DB
+    DB --> PersonaService: Kết quả kiểm tra
+    deactivate DB
+
+    alt #LightGreen Chưa tồn tại trong hệ thống
+        PersonaService -> DB: INSERT Voice mới (voice_code, engine_id, is_active=true)
+        activate DB
+        DB --> PersonaService: OK
+        deactivate DB
+    else #LightYellow Đã tồn tại
+        PersonaService -> PersonaService: Bỏ qua, không cập nhật bản ghi hiện có
+    end
+end
+
+PersonaService --> Kong: Trả về kết quả đồng bộ (HTTP 200 OK - synced_count, synced_codes)
+deactivate PersonaService
+Kong --> Frontend: Trả về kết quả thành công
+deactivate Kong
+
+Frontend --> Admin: Hiển thị thông báo "Đồng bộ thành công X giọng nói từ ElevenLabs"
+deactivate Frontend
+@enduml

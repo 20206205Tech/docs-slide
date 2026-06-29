@@ -1,0 +1,61 @@
+\paragraph{Sơ đồ tuần tự luồng cấp token voice chat qua LiveKit}
+
+Luồng nghiệp vụ này mô tả
+quá trình Web Frontend xin Access Token
+để người dùng tham gia phòng voice chat trên LiveKit.
+Conversation Service kiểm tra quyền VIP,
+tạo token bằng LiveKit SDK
+và nhúng metadata để Voice Agent
+sử dụng khi xử lý cuộc trò chuyện.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{contents/Sequence/UML-Sequence-UserVoiceLiveKitToken.png}
+\caption{Sơ đồ tuần tự luồng cấp token voice chat qua LiveKit}
+\end{figure}
+
+\subparagraph{Mô tả tổng quan}
+
+\begin{itemize}
+
+\item \textbf{Yêu cầu cấp quyền đàm thoại:}
+Giao diện gửi yêu cầu
+cấp quyền tham gia đàm thoại giọng nói
+kèm định danh cuộc trò chuyện,
+danh sách tài liệu phân tích, cấu hình lập luận nâng cao và định danh nhân vật qua cổng API.
+
+\item \textbf{Kiểm tra gói dịch vụ:}
+Dịch vụ trò chuyện
+kiểm tra thông tin gói thuê bao VIP của người dùng,
+nếu không hợp lệ hoặc hết hạn sẽ trả
+về thông báo lỗi từ chối quyền truy cập.
+
+\item \textbf{Tạo mã quyền truy cập:}
+Dịch vụ trò chuyện
+tạo mã quyền truy cập đàm thoại thời gian thực
+đính kèm thông tin định danh cuộc trò chuyện,
+định danh người dùng, danh sách tài liệu phân tích, cấu hình lập luận nâng cao và định danh nhân vật.
+
+\item \textbf{Tham gia đàm thoại:}
+Giao diện người dùng sử dụng token
+cùng địa chỉ máy chủ đàm thoại
+để tham gia vào phòng đàm thoại thời gian thực
+tương ứng với cuộc trò chuyện.
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3}
+
+\begin{tabular}{|l|l|p{5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Phân loại} & \textbf{Vai trò trong hệ thống} \\ \hline
+User & Actor & Người dùng bắt đầu phiên voice chat. \\ \hline
+Web Frontend & Component & Giao diện web Next.js. \\ \hline
+API Gateway (Kong) & Component & Cổng API chuyển tiếp các yêu cầu API. \\ \hline
+Conversation Service & Microservice & Kiểm tra VIP và tạo Access Token bằng LiveKit SDK. \\ \hline
+Conversation Database & Database & Lưu trạng thái subscription được đồng bộ từ Payment Service. \\ \hline
+LiveKit Cloud & External Service & Hạ tầng cho phiên đàm thoại thời gian thực. \\ \hline
+\end{tabular}
+\caption{Các thành phần tham gia luồng cấp token voice chat qua LiveKit}
+\end{table}

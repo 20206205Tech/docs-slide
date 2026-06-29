@@ -1,0 +1,15 @@
+% DANH MỤC HÌNH VẼ
+
+\newpage
+\phantomsection
+
+\renewcommand{\listfigurename}{DANH MỤC HÌNH VẼ} % ĐẶT TÊN TIÊU ĐỀ
+\addcontentsline{toc}{section}{DANH MỤC HÌNH VẼ} % THÊM VÀO MỤC LỤC
+\makeatletter
+\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{5.5em}}
+\makeatother
+{\let\oldnumberline\numberline
+\renewcommand{\numberline}[1]{\oldnumberline{Hình~#1}}
+\listoffigures}
+
+\newpage

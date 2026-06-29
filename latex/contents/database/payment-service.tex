@@ -1,0 +1,97 @@
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|p{6cm}|}
+\hline
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Mô tả} \\ \hline
+id & uuid & Khóa chính định danh gói dịch vụ. \\ \hline
+name & varchar & Tên gói thanh toán dịch vụ. \\ \hline
+duration\_months & int4 & Thời hạn sử dụng của gói dịch vụ. \\ \hline
+price & numeric & Giá tiền của gói dịch vụ. \\ \hline
+is\_active & bool & Trạng thái hoạt động của gói. \\ \hline
+created\_at & timestamptz & Thời gian gói dịch vụ được tạo. \\ \hline
+updated\_at & timestamptz & Thời gian cập nhật gói dịch vụ gần nhất. \\ \hline
+version & int4 & Số phiên bản của bản ghi. \\ \hline
+features & \_text & Mảng danh sách mô tả các tính năng. \\ \hline
+\end{tabular}
+\caption{Bảng \texttt{plan} lưu thông tin các gói dịch vụ}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|p{6cm}|}
+\hline
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Mô tả} \\ \hline
+id & uuid & Khóa chính định danh lượt đăng ký gói. \\ \hline
+user\_id & varchar & ID người dùng thực hiện đăng ký gói. \\ \hline
+plan\_id & uuid & ID gói dịch vụ liên kết tương ứng. \\ \hline
+period\_start & timestamptz & Thời điểm bắt đầu hiệu lực. \\ \hline
+period\_end & timestamptz & Thời điểm hết hạn hiệu lực. \\ \hline
+status & subscription\_status\_enum & Trạng thái gói đăng ký (active, expired, canceled,...). \\ \hline
+created\_at & timestamptz & Thời gian đăng ký gói dịch vụ. \\ \hline
+updated\_at & timestamptz & Thời gian cập nhật trạng thái đăng ký. \\ \hline
+version & int4 & Số phiên bản của bản ghi. \\ \hline
+\end{tabular}
+\caption{Bảng \texttt{subscription} quản lý đăng ký dịch vụ của người dùng}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|p{6cm}|}
+\hline
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Mô tả} \\ \hline
+id & uuid & Khóa chính định danh giao dịch thanh toán. \\ \hline
+user\_id & varchar & ID người dùng thực hiện giao dịch thanh toán. \\ \hline
+subscription\_id & uuid & ID đăng ký dịch vụ liên quan. \\ \hline
+plan\_id & uuid & ID gói dịch vụ đăng ký tương ứng. \\ \hline
+base\_amount & numeric & Số tiền gốc chưa áp dụng giảm giá. \\ \hline
+discount\_amount & numeric & Số tiền được khấu trừ/giảm giá. \\ \hline
+final\_amount & numeric & Số tiền thực tế thanh toán cuối cùng. \\ \hline
+payment\_method & varchar & Phương thức thanh toán. \\ \hline
+transaction\_ref & varchar & Mã tham chiếu giao dịch đối tác cổng thanh toán. \\ \hline
+payment\_status & enum & Trạng thái thanh toán của giao dịch (pending, completed, failed,...). \\ \hline
+provider\_transaction\_id & varchar & Mã giao dịch trả về từ cổng thanh toán. \\ \hline
+payment\_metadata & jsonb & Dữ liệu cấu trúc JSON bổ sung của giao dịch thanh toán. \\ \hline
+paid\_at & timestamptz & Thời điểm hoàn tất thanh toán thực tế. \\ \hline
+created\_at & timestamptz & Thời gian tạo bản ghi giao dịch. \\ \hline
+updated\_at & timestamptz & Thời gian cập nhật thông tin giao dịch. \\ \hline
+version & int4 & Phiên bản của dữ liệu. \\ \hline
+\end{tabular}
+\caption{Bảng \texttt{transaction} lưu thông tin giao dịch thanh toán}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|p{6cm}|}
+\hline
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Mô tả} \\ \hline
+id & uuid & Khóa chính của tin nhắn outbox đồng bộ dữ liệu. \\ \hline
+aggregate\_type & varchar & Loại thực thể gốc phát sinh sự kiện nghiệp vụ. \\ \hline
+aggregate\_id & uuid & ID định danh duy nhất của thực thể phát sinh sự kiện. \\ \hline
+event\_type & varchar & Loại sự kiện nghiệp vụ phát đi (ví dụ: user.created). \\ \hline
+payload & jsonb & Nội dung thông điệp chi tiết ở định dạng JSON. \\ \hline
+status & varchar & Trạng thái xử lý sự kiện (pending, processed, failed). \\ \hline
+retry\_count & int4 & Số lần hệ thống đã thử lại khi gửi sự kiện thất bại. \\ \hline
+created\_at & timestamptz & Thời gian khởi tạo sự kiện outbox. \\ \hline
+processed\_at & timestamptz & Thời điểm sự kiện được xuất bản thành công lên Kafka. \\ \hline
+\end{tabular}
+\caption{Bảng \texttt{outbox\_messages} lưu sự kiện thanh toán gửi Kafka}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|p{6cm}|}
+\hline
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Mô tả} \\ \hline
+id & uuid & Khóa chính của tin nhắn outbox lưu trữ lịch sử. \\ \hline
+aggregate\_type & varchar & Loại thực thể gốc của sự kiện được lưu trữ lịch sử. \\ \hline
+aggregate\_id & uuid & ID định danh duy nhất của thực thể phát sinh sự kiện được lưu trữ. \\ \hline
+event\_type & varchar & Loại sự kiện nghiệp vụ đã phát. \\ \hline
+payload & jsonb & Nội dung chi tiết thông điệp định dạng JSON. \\ \hline
+status & varchar & Trạng thái hoàn thành cuối cùng của sự kiện outbox. \\ \hline
+retry\_count & int4 & Tổng số lần đã thử lại trong toàn bộ vòng đời của sự kiện. \\ \hline
+created\_at & timestamptz & Thời gian tạo sự kiện ban đầu. \\ \hline
+processed\_at & timestamptz & Thời điểm sự kiện được xử lý và xuất bản lên Kafka trước khi lưu trữ. \\ \hline
+archived\_at & timestamptz & Thời điểm hệ thống di chuyển bản ghi từ bảng outbox chính sang bảng lưu trữ (archive). \\ \hline
+\end{tabular}
+\caption{Bảng \texttt{outbox\_messages\_archive} sao chép dữ liệu bảng Outbox}
+\end{table}

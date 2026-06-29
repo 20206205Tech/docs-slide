@@ -1,0 +1,62 @@
+@startuml
+queue "RabbitMQ\n(Celery Broker)" as RabbitMQ
+participant "Document Worker\n(Celery Task)" as Worker
+database "Document DB" as DocumentDB
+participant "Cloudflare R2" as R2
+participant "Text Extractor /\nSummarizer" as Processor
+database "Milvus\nVector Store" as Milvus
+
+== Luồng nghiệp vụ: Xử lý tài liệu trong nền ==
+
+RabbitMQ -> Worker: Consume process_document_task(doc_id)
+activate Worker
+
+Worker -> DocumentDB: Query Document by doc_id
+activate DocumentDB
+DocumentDB --> Worker: Document metadata\nuser_id, filename, has_file
+deactivate DocumentDB
+
+Worker -> DocumentDB: UPDATE status=PROCESSING
+activate DocumentDB
+DocumentDB --> Worker: OK
+deactivate DocumentDB
+
+Worker -> R2: Download file gốc\n{user_id}/document/{doc_id}{ext}
+activate R2
+R2 --> Worker: Temp file
+deactivate R2
+
+Worker -> Processor: Trích xuất text,\nchunk và tạo summary
+activate Processor
+Processor --> Worker: parsed_content, summary, chunks
+deactivate Processor
+
+Worker -> R2: Upload parsed content\n{user_id}/content/{doc_id}
+activate R2
+R2 --> Worker: OK
+deactivate R2
+
+Worker -> R2: Upload summary\n{user_id}/summary/{doc_id}
+activate R2
+R2 --> Worker: OK
+deactivate R2
+
+Worker -> Milvus: Upsert vector chunks\nmetadata={user_id, doc_id, filename}
+activate Milvus
+Milvus --> Worker: OK
+deactivate Milvus
+
+Worker -> DocumentDB: UPDATE status=COMPLETED,\nhas_content=true, has_summary=true
+activate DocumentDB
+DocumentDB --> Worker: OK
+deactivate DocumentDB
+
+Worker --> RabbitMQ: Acknowledge task
+deactivate Worker
+
+alt #F2F4F7 Lỗi xử lý
+Worker -> DocumentDB: UPDATE status=FAILED, error_message
+Worker --> RabbitMQ: Retry hoặc reject theo cấu hình Celery
+end
+
+@enduml

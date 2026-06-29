@@ -1,0 +1,58 @@
+@startuml
+actor "User" as User
+participant "Payment Gateway\n(VNPay/MoMo/ZaloPay/SePay)" as Gateway
+participant "API Gateway\n(Kong)" as Kong
+participant "Payment Service" as PaymentService
+participant "Payment Gateway Selector" as GatewaySelector
+database "Payment DB" as DB
+
+== Pha 2: Gateway gửi callback/IPN và Payment Service xác minh giao dịch ==
+
+User -> Gateway: Thực hiện thanh toán\n(Nhập thẻ/Quét mã QR)
+activate Gateway
+Gateway --> User: Hiển thị kết quả thanh toán
+
+Gateway -> Kong: GET/POST /code-payment-service/subscriptions/payment-callback/{provider}\n(query/body theo provider)
+activate Kong
+Kong -> PaymentService: Chuyển tiếp callback public
+activate PaymentService
+
+PaymentService -> GatewaySelector: verifyIpn(requestData, provider)
+activate GatewaySelector
+GatewaySelector --> PaymentService: { isValid, isSuccess, txnRef, amount,\nproviderTransId, message }
+deactivate GatewaySelector
+
+alt #LightPink IPN không hợp lệ
+PaymentService --> Kong: Provider-specific error response
+Kong --> Gateway: VNPay RspCode=97 hoặc lỗi tương ứng
+else #LightYellow IPN hợp lệ
+PaymentService -> DB: Find Transaction by txnRef
+activate DB
+DB --> PaymentService: Transaction hoặc null
+deactivate DB
+
+alt Không tìm thấy Transaction hoặc amount không khớp
+PaymentService --> Kong: Provider-specific error response
+Kong --> Gateway: Báo lỗi xác minh giao dịch
+else Transaction đã expired hoặc không còn pending
+PaymentService --> Kong: success=true\nmessage trạng thái hiện tại
+Kong --> Gateway: Provider-specific success response
+else Transaction đang pending và gateway báo thất bại
+PaymentService -> PaymentService: failPayment()\nmark transaction='failed'
+PaymentService -> DB: Save Transaction
+activate DB
+DB --> PaymentService: OK
+deactivate DB
+PaymentService --> Kong: success=false\nmessage từ gateway
+Kong --> Gateway: Provider-specific failure response
+else Transaction đang pending và gateway báo thành công
+PaymentService -> PaymentService: Merge payment metadata\nset providerTransId, paidAt
+PaymentService --> Kong: Tiếp tục xử lý pha 3\n(cập nhật success, subscription, outbox)
+Kong --> Gateway: Provider-specific success response\nsau khi pha 3 hoàn tất
+end
+end
+
+deactivate PaymentService
+deactivate Kong
+deactivate Gateway
+@enduml

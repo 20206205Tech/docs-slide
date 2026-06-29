@@ -1,0 +1,85 @@
+@startuml
+actor "User" as User
+participant "Web Frontend" as Frontend
+participant "API Gateway\n(Kong)" as Kong
+participant "Auth Service\n(Supabase)" as AuthService
+participant "Authenticator App" as AuthApp
+
+== Luồng 3: Hủy liên kết và thiết lập lại thiết bị MFA ==
+User -> Frontend: Chọn hủy liên kết thiết bị MFA hiện tại
+activate Frontend
+
+note over Frontend: Người dùng bắt buộc\nphải có phiên AAL2\ntrước khi đổi thiết bị.
+
+Frontend -> Kong: DELETE /supabase-auth-service/auth/v1/factors/{factorId}
+activate Kong
+note over Kong: Kong tự động thêm thông tin apikey trong header
+Kong -> AuthService: Yêu cầu hủy đăng ký factor (Unenroll Factor)
+activate AuthService
+
+AuthService -> AuthService: Xóa factor cũ\n(Cập nhật status = deleted)
+
+AuthService --> Kong: Xác nhận hủy đăng ký thành công
+deactivate AuthService
+Kong --> Frontend: Xác nhận hủy đăng ký thành công
+deactivate Kong
+
+Frontend -> Kong: GET /supabase-auth-service/auth/v1/user
+activate Kong
+note over Kong: Kong tự động thêm thông tin apikey trong header
+Kong -> AuthService: Lấy danh sách factors hiện tại
+activate AuthService
+AuthService --> Kong: Trả về danh sách factors rỗng
+deactivate AuthService
+Kong --> Frontend: Trả về danh sách factors rỗng
+deactivate Kong
+
+Frontend --> User: Hiển thị trạng thái chưa kích hoạt MFA và nút "Kích hoạt ngay"
+User -> Frontend: Chọn "Kích hoạt ngay" để sang /auth/mfa
+
+Frontend -> Kong: POST /supabase-auth-service/auth/v1/factors (TOTP)
+activate Kong
+note over Kong: Kong tự động thêm thông tin apikey trong header
+Kong -> AuthService: Yêu cầu enroll factor mới
+activate AuthService
+
+AuthService -> AuthService: Tạo factor mới (status = unverified)\nvà sinh Secret Key
+
+AuthService --> Kong: QR Code mới, Secret & Factor ID mới
+deactivate AuthService
+Kong --> Frontend: QR Code mới, Secret & Factor ID mới
+deactivate Kong
+
+Frontend -> User: Hiển thị QR Code mới & Secret Key mới
+User -> AuthApp: Quét mã QR bằng thiết bị mới
+activate AuthApp
+AuthApp --> User: Sinh mã TOTP mới (6 chữ số)
+deactivate AuthApp
+
+User -> Frontend: Nhập mã TOTP mới và nhấn "Xác nhận thiết bị mới"
+Frontend -> Kong: POST /supabase-auth-service/auth/v1/factors/{newFactorId}/challenge
+activate Kong
+note over Kong: Kong tự động thêm thông tin apikey trong header
+Kong -> AuthService: Yêu cầu tạo Challenge mới
+activate AuthService
+AuthService --> Kong: Trả về Challenge ID mới
+deactivate AuthService
+Kong --> Frontend: Trả về Challenge ID mới
+deactivate Kong
+
+Frontend -> Kong: POST /supabase-auth-service/auth/v1/factors/{newFactorId}/verify
+activate Kong
+note over Kong: Kong tự động thêm thông tin apikey trong header
+Kong -> AuthService: Gửi Challenge ID & mã TOTP mới
+activate AuthService
+
+AuthService -> AuthService: Xác thực TOTP và cập nhật\ntrạng thái factor mới thành 'verified'
+
+AuthService --> Kong: Trả về token nâng cấp AAL2 mới (aal = aal2)
+deactivate AuthService
+Kong --> Frontend: Trả về token nâng cấp AAL2 mới
+deactivate Kong
+
+Frontend --> User: Thiết lập lại thiết bị MFA thành công! (Phiên bảo mật AAL2 hoạt động)
+deactivate Frontend
+@enduml

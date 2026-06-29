@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[utf8]{vietnam}
+\usepackage{lipsum}
+\usepackage{tikz}
+\usepackage{tikzpagenodes}
+\usetikzlibrary{calc}
+\usepackage[a4paper, top=2cm, bottom=2cm, left=3.5cm, right=2.5cm]{geometry}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{enumitem} % Gói hỗ trợ tùy chỉnh danh sách
+\usepackage{xcolor}
+\usepackage{tcolorbox} % Gói hỗ trợ tùy chỉnh khung
+\usepackage{makecell} % Gói hỗ trợ tạo ô trong bảng
+\usepackage{longtable} % Gói hỗ trợ bảng dài nhiều trang
+% \usetikzlibrary{arrows.meta}
+% \usepackage{rotating} % Bắt buộc phải có
+% \usepackage{pdflscape} % Khuyên dùng pdflscape thay vì lscape để PDF xoay đúng chiều khi xem trên máy tính
+
+\setlength{\parindent}{0pt} % Không thụt lề
+
+\definecolor{RedHUST}{RGB}{205,5,5}
+% \setlist{format={\color{RedHUST}\bfseries}} % Đặt màu cho danh sách
+
+% Định nghĩa lại lệnh \lipsum gốc để tự động bọc trong màu RedHUST
+\let\oldlipsum\lipsum
+\renewcommand{\lipsum}[1][1-7]{{\color{RedHUST}\oldlipsum[#1]}}
+
+\definecolor{BlueSAMI}{RGB}{1,90,143}
+\setlist{format={\color{BlueSAMI}\bfseries}} % Đặt màu cho danh sách
+
+% Định nghĩa môi trường block
+\newenvironment{block}[1]
+{\begin{tcolorbox}[%
+colback=white, % Màu nền nội dung
+colframe=BlueSAMI, % Màu khung
+arc=3mm, % Góc bo tròn
+title={\textbf{#1}}, % Tiêu đề, in đậm
+colbacktitle=BlueSAMI, % Màu nền tiêu đề
+coltitle=white, % Màu chữ tiêu đề
+boxrule=2pt, % Độ dày của khung
+before upper={\tcbtitle\vskip0pt\par}
+]
+\begin{minipage}{\textwidth}}
+{\end{minipage}
+\end{tcolorbox}}
+
+\setlength{\headheight}{12.42429pt} % bug header foooter
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Đồ án tốt nghiệp}
+\rhead{Vũ Văn Nghĩa - 20206205}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Căn giữa tiêu đề mục lục
+\makeatletter
+\renewcommand{\tableofcontents}{
+\begin{center}
+\section*{\contentsname}
+\end{center}
+\@starttoc{toc}
+}
+\makeatother
+
+\numberwithin{figure}{section} % Đặt số ảnh theo section
+% Căn giữa tiêu đề danh sách hình ảnh
+\makeatletter
+\renewcommand{\listoffigures}{
+\begin{center}
+\section*{\listfigurename}
+\end{center}
+\@starttoc{lof}
+}
+\makeatother
+
+% \usepackage{microtype}
+% \usepackage{blindtext}
+
+% \usepackage{etoolbox}
+% \pretocmd{\section}{\clearpage}{}{}
+\usepackage{csquotes}
+
+% Tự động thêm chữ "CHƯƠNG" vào trước số section và định dạng lại các đề mục con
+\usepackage{titlesec}
+\renewcommand{\thesection}{CHƯƠNG \arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+
+% Định dạng hiển thị tiêu đề Chương (section) trong văn bản
+\titleformat{\section}[block]
+{\normalfont\Large\bfseries\centering} % Căn giữa, chữ in đậm, cỡ lớn
+{\thesection.} % Nhãn hiển thị (ví dụ: CHƯƠNG 1.)
+{1em} % Khoảng cách giữa nhãn và tiêu đề chương
+{}
+
+% Cấu hình Mục lục (TOC) tránh lỗi tràn lề và đè chữ khi thêm chữ "CHƯƠNG" viết hoa
+\usepackage[titles]{tocloft}
+\setlength{\cftsecnumwidth}{7.0em} % Độ rộng cột số hiệu Section (đủ chỗ cho CHƯƠNG X.)
+\setlength{\cftsubsecindent}{7.0em} % Thụt lề Subsection thẳng hàng với tiêu đề Section (7.0em)
+\setlength{\cftsubsecnumwidth}{3.0em} % Độ rộng cột số hiệu Subsection
+\setlength{\cftsubsubsecindent}{10.0em} % Thụt lề Subsubsection (7.0 + 3.0)
+\setlength{\cftsubsubsecnumwidth}{3.5em} % Độ rộng cột số hiệu Subsubsection
+
+\newif\ifdev
+% Chọn 1 trong 2 dòng dưới đây để bật/tắt chế độ:
+\devtrue % BẬT chế độ Dev
+% \devfalse % TẮT chế độ Dev (Production)
+
+\ifdev
+\pagecolor{black} % Thiết lập nền toàn bộ trang PDF thành màu đen
+\color{white} % Thiết lập màu chữ mặc định toàn trang là trắng
+\fi
+
+\begin{document}
+
+% \input{doc}
+% \input{index}
+
+\ifdev
+\input{doc}
+\else
+\input{index}
+\fi
+
+\end{document}

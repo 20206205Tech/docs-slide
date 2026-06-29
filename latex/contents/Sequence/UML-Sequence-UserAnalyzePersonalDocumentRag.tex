@@ -1,0 +1,69 @@
+\paragraph{Sơ đồ tuần tự luồng phân tích tài liệu cá nhân bằng reasoning pháp lý}
+
+Luồng nghiệp vụ này mô tả
+việc sử dụng tài liệu cá nhân
+đã upload trong truy vấn pháp lý.
+
+\subparagraph{Mô tả tổng quan}
+
+\begin{itemize}
+
+\item \textbf{Gửi yêu cầu phân tích:}
+Người dùng gửi câu hỏi
+kèm theo danh sách tài liệu
+thông qua giao diện trò chuyện.
+
+\item \textbf{Chuyển tiếp yêu cầu:}
+Dịch vụ trò chuyện chuyển tiếp yêu cầu
+đến dịch vụ chatbot
+thông qua giao thức kết nối gRPC
+và đính kèm thông tin xác thực tài khoản.
+
+\item \textbf{Truy vấn dữ liệu song song:}
+Dịch vụ chatbot
+truy vấn song song dữ liệu từ 4 nguồn:
+tài liệu cá nhân của người dùng (Milvus),
+tóm tắt tài liệu cá nhân (Cloudflare R2),
+văn bản pháp luật (Pinecone),
+và danh mục Pháp Điển (Qdrant).
+
+\item \textbf{Tổng hợp thông tin:}
+Dịch vụ chatbot
+kết hợp dữ liệu từ các nguồn trên,
+thực hiện xếp hạng kết quả,
+kiểm tra hiệu lực văn bản
+và tổng hợp các bước lập luận để đưa ra câu trả lời.
+
+\item \textbf{Truyền dữ liệu kết quả:}
+Kết quả được truyền trực tiếp từng phần
+về giao diện
+bao gồm cập nhật trạng thái xử lý,
+các phân đoạn nội dung câu trả lời
+và thông tin nguồn tài liệu trích dẫn.
+
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{contents/Sequence/UML-Sequence-UserAnalyzePersonalDocumentRag.png}
+\caption{Sơ đồ tuần tự luồng phân tích tài liệu cá nhân bằng reasoning pháp lý}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3}
+
+\begin{tabular}{|l|l|p{5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Phân loại} & \textbf{Vai trò trong hệ thống} \\ \hline
+User & Actor & Người dùng yêu cầu phân tích tài liệu cá nhân. \\ \hline
+Web Frontend & Component & Giao diện web Next.js. \\ \hline
+API Gateway (Kong) & Component & Cổng API chuyển tiếp các yêu cầu API. \\ \hline
+Conversation Service & Microservice & Nhận yêu cầu SSE và gọi Chatbot Service qua gRPC. \\ \hline
+Chatbot Service & Microservice & Điều phối \texttt{generation\_stream}, lưu message, reasoning steps và sources. \\ \hline
+LangGraph RAG & AI Pipeline & Điều phối luồng truy vấn song song và thực hiện reasoning. \\ \hline
+RAG Databases & Vector Stores \& Storage & Hệ thống lưu trữ và truy vấn song song: Milvus (tài liệu cá nhân), Cloudflare R2 (tóm tắt tài liệu), Pinecone (văn bản pháp luật) và Qdrant (Pháp Điển). \\ \hline
+Chatbot DB & Database & Lưu human message, AI message, reasoning steps và sources. \\ \hline
+\end{tabular}
+\caption{Các thành phần tham gia luồng phân tích tài liệu cá nhân bằng reasoning pháp lý}
+\end{table}

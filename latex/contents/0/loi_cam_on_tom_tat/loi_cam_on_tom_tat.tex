@@ -1,0 +1,108 @@
+{\centering \section*{Lời cảm ơn}}
+
+Qua thời gian học tập và rèn luyện tại
+\textit{Đại học Bách khoa Hà Nội},
+đến nay em đã hoàn thành đồ án tốt nghiệp.
+Trong thời gian học tập để có được kết quả hiện tại
+em xin chân thành cảm ơn tới các thầy cô giảng viên trong \textit{Khoa Toán Tin}
+đã giảng dạy, quan tâm và tạo điều kiện thuận lợi để em học tập rèn luyện trong suốt thời gian qua,
+giúp em trang bị những kiến thức, kỹ năng cần thiết
+để em có thể hoàn thành tốt nhất báo cáo này
+với
+đề tài:
+\textit{Xây dựng ứng dụng hỗ trợ tư vấn pháp luật sử dụng công nghệ trí tuệ nhân tạo}.
+
+Đồng thời, em xin gửi lời cảm ơn chân thành và sâu sắc đến \textit{Thầy TS. Trần Anh Tú},
+người thầy đã tận tình hỗ trợ,
+giúp đỡ và hướng dẫn em suốt thời gian thực hiện đồ án.
+Những kiến thức và kinh nghiệm mà em đã tiếp thu được trong quá trình này
+sẽ đóng góp quan trọng vào sự phát triển và thành công của em trong tương lai.
+Em xin gửi lời chúc sức khỏe tốt nhất đến thầy,
+hy vọng thầy luôn dồi dào sức khỏe, đam mê và nhiệt huyết trong công việc giảng dạy.
+
+Em cũng xin gửi lời cảm ơn tới bố mẹ
+đã dành nhiều thời gian chăm lo, động viên
+và giúp đỡ em để em đạt được thành công trong học tập.
+
+Mặc dù đã cố gắng nỗ lực học hỏi để hoàn thành đồ án,
+nhưng thời gian thực hiện đồ án có hạn,
+kiến thức của em còn hạn chế.
+Do vậy,
+không tránh khỏi những thiếu sót,
+em rất mong nhận được những ý kiến đóng góp quý báu của thầy cô
+để em có thể cải thiện một cách tốt nhất.
+
+\vspace{0.5cm} \emph{Em xin chân thành cảm ơn!}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\centering \section*{Tóm tắt nội dung đồ án}}
+
+% {
+% \color{RedHUST}
+
+% Tóm tắt nội dung của đồ án tốt nghiệp trong khoảng tối đa 300 chữ.
+% Phần tóm tắt cần nêu được các ý:
+% vấn đề cần thực hiện;
+% phương pháp thực hiện;
+% công cụ sử dụng (phần mềm, phần cứng…);
+% kết quả của đồ án có phù hợp với các vấn đề đã đặt ra hay không;
+% tính thực tế của đồ án,
+% định hướng phát triển mở rộng của đồ án (nếu có);
+% các kiến thức và kỹ năng mà sinh viên đã đạt được.
+
+% }
+
+Đồ án
+được thực hiện nhằm giải quyết nhu cầu tra cứu
+và giải đáp thông tin pháp luật Việt Nam
+(bao gồm Văn bản pháp luật và Pháp Điển) một cách chính xác, nhanh chóng và tự động hóa.
+
+Để tối ưu năng lực giải đáp,
+đồ án triển khai hệ thống
+Agentic RAG nâng cao sử dụng LangGraph.
+
+Về mặt kiến trúc, hệ thống được thiết kế theo kiến trúc vi dịch vụ (Microservice Architecture),
+ứng dụng phương pháp Thiết kế hướng miền (Domain-Driven Design - DDD)
+và các dịch vụ được điều phối qua Kong API Gateway.
+
+Để đảm bảo tính ổn định,
+hiệu năng cao,
+tận dụng điểm mạnh tài nguyên,
+thế mạnh framework ngôn ngữ lập trình
+và khả năng mở rộng,
+các dịch vụ giao tiếp đa dạng từ gRPC cho trò chuyện trực tiếp,
+giao tiếp bất đồng bộ giữa các dịch vụ NestJS và Python
+được xử lý thông qua RabbitMQ.
+Luồng nghiệp vụ
+quy trình thanh toán thuê bao VIP
+qua các cổng nội địa (VNPay, MoMo, ZaloPay, SePay),
+được đồng bộ
+sự kiện
+bằng nền tảng Kafka.
+Toàn bộ vòng đời ứng dụng
+được tự động hóa thông qua
+CI/CD trên GitHub Actions,
+đóng gói bằng Docker và triển khai vận hành trên
+cụm Kubernetes thông qua ArgoCD.
+
+Đồ án đã vận hành thành công một trợ lý pháp luật,
+đưa ra các tư vấn pháp lý với các bước suy luận logic
+và trích dẫn nguồn văn bản rõ ràng.
+Bên cạnh đó,
+ứng dụng còn mang đến trải nghiệm đàm thoại
+thời gian thực bằng cách tích hợp LiveKit
+cùng các mô hình xử lý giọng nói tiên tiến như Whisper (Speech-to-Text), Edge, Piper và ElevenLabs (Text-to-Speech).
+
+\begin{flushright}
+\begin{tabular}{c}
+% Hà Nội, \today \\
+\textit{Hà Nội, ngày \dots tháng \dots năm \dots} \\
+Sinh viên thực hiện \\
+\textit{(Ký và ghi rõ họ tên)} \\
+% Nghĩa \\
+% Vũ Văn Nghĩa
+\end{tabular}
+\end{flushright}

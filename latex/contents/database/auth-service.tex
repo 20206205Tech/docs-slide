@@ -1,0 +1,21 @@
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|p{6cm}|}
+\hline
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Mô tả} \\ \hline
+email & text & Địa chỉ email của quản trị viên. \\ \hline
+\end{tabular}
+\caption{Bảng \texttt{admin\_whitelist} lưu email để tạo vai trò ADMIN trong JWT}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|p{6cm}|}
+\hline
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Mô tả} \\ \hline
+id & uuid & Khóa chính, liên kết trực tiếp với ID tài khoản trong bảng users của auth. \\ \hline
+full\_name & text & Tên của người dùng. \\ \hline
+avatar\_url & text & Đường dẫn URL ảnh đại diện của người dùng. \\ \hline
+\end{tabular}
+\caption{Bảng \texttt{profiles} lưu hồ sơ thông tin người dùng}
+\end{table}

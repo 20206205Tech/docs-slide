@@ -1,0 +1,84 @@
+@startuml
+actor User as User
+participant "Conversation Service" as Conv
+database "Conversation DB" as ConvDB
+queue "RabbitMQ Broker" as RabbitMQ
+participant "Chatbot Service" as Chatbot
+database "Chatbot DB" as ChatbotDB
+participant "R2 Object Storage" as R2
+
+== Luồng Tạo Chia sẻ cuộc trò chuyện ==
+User -> Conv: POST /code-conversation-service/shared-chats\n(Kèm chat_id & last_message_id)
+activate Conv
+
+Conv -> ConvDB: Kiểm tra quyền sở hữu Chat
+activate ConvDB
+ConvDB --> Conv: OK
+deactivate ConvDB
+
+Conv -> ConvDB: INSERT Share (status='PENDING') & INSERT Outbox (ShareGeneratedEvent)
+activate ConvDB
+ConvDB --> Conv: Commit Transaction (Atomic)
+deactivate ConvDB
+
+Conv --> User: HTTP 201 Created (Trả về shareId & shareUrl tạm thời)
+deactivate Conv
+
+== Relayer quét Outbox gửi đi ==
+note over Conv, RabbitMQ: Cron job OutboxRelay quét DB định kỳ gửi event
+Conv -> ConvDB: SELECT PENDING OutboxEvents
+activate ConvDB
+ConvDB --> Conv: Danh sách events
+deactivate ConvDB
+
+Conv -> RabbitMQ: Publish 'ShareGeneratedEvent' (Queue: share_generated)
+activate RabbitMQ
+RabbitMQ --> Conv: Ack
+deactivate RabbitMQ
+
+Conv -> ConvDB: UPDATE Outbox status='DONE'
+activate ConvDB
+ConvDB --> Conv: OK
+deactivate ConvDB
+
+== Xử lý đồng bộ phía Chatbot ==
+RabbitMQ --> Chatbot: Consume 'ShareGeneratedEvent'
+activate Chatbot
+
+Chatbot -> ChatbotDB: Query tin nhắn của Chat đến lastMessageId
+activate ChatbotDB
+ChatbotDB --> Chatbot: Danh sách tin nhắn
+deactivate ChatbotDB
+
+note over Chatbot: Xử lý build nội dung chat thành JSONL
+
+Chatbot -> R2: Upload file JSONL (Key: shared_chats/{userId}/{shareId}.jsonl)
+activate R2
+R2 --> Chatbot: Trả về file_url
+deactivate R2
+
+Chatbot -> ChatbotDB: Lưu thông tin Share và Version mới để đồng bộ
+activate ChatbotDB
+ChatbotDB --> Chatbot: OK
+deactivate ChatbotDB
+
+Chatbot -> RabbitMQ: Publish 'ShareUploadCompletedEvent' (Queue: share_upload_completed)
+activate RabbitMQ
+RabbitMQ --> Chatbot: Ack
+deactivate RabbitMQ
+
+Chatbot --> RabbitMQ: Acknowledge (Hoàn thành Task gốc)
+deactivate Chatbot
+
+== Nhận thông tin upload hoàn tất ==
+RabbitMQ --> Conv: Consume 'ShareUploadCompletedEvent'
+activate Conv
+
+Conv -> ConvDB: Cập nhật Share (status='ACTIVE', fileUrl=fileUrl)
+activate ConvDB
+ConvDB --> Conv: OK
+deactivate ConvDB
+
+Conv --> RabbitMQ: Acknowledge
+deactivate Conv
+@enduml

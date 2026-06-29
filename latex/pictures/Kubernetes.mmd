@@ -1,0 +1,54 @@
+graph TB
+    %% subgraph External_World [Bên ngoài Cụm Kubernetes]
+        Client((Client))
+        LiveKit[LiveKit Server]
+    %% end
+
+    subgraph K8s_Cluster [Kubernetes]
+
+        %% Ingress & Gateway
+        Conversation[Conversation Service]
+
+        %% ClusterIP Services
+        %% subgraph ClusterIP_Services [Vùng bảo mật ClusterIP]
+            Rabbit_MQ[RabbitMQ Queue]
+            Rabbit_Worker[RabbitMQ Worker]
+            Redis[(Redis Cache)]
+            Chatbot["Chatbot Service <br> (gRPC, Voice)"]
+        %% end
+
+        %% No Service Deployments
+        %% VoiceAgent[Voice Agent <br> LiveKit Agent]
+        DocWorker[Document Worker <br> Celery]
+
+        %% Chatbot[Chatbot Service]
+        Persona[Persona Service]
+        DocService[Document Service]
+    end
+
+    %% Connections
+    Client --> Conversation
+
+    %% Internal Routing
+    Conversation -->|Text| Chatbot
+    %% Chatbot --> Chatbot
+
+    Chatbot <-->|Voice| LiveKit
+    Conversation <--> Rabbit_MQ
+    Chatbot <--> Rabbit_MQ
+
+    DocService --> Rabbit_Worker
+    Rabbit_Worker <--> DocWorker
+
+    Persona <--> Redis
+
+    %% No-Service active listening
+
+    %% Styling
+    classDef external fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef k8s fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
+    classDef secure fill:#ffe0b2,stroke:#f57c00,stroke-width:2px;
+
+    class Client,LiveKit external;
+    class K8s_Cluster,Conversation,Chatbot,Persona,DocService k8s;
+    class Rabbit_MQ,Rabbit_Worker,Redis,DocWorker secure;

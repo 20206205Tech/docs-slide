@@ -1,0 +1,72 @@
+@startuml
+actor "User" as User
+participant "Web Frontend" as Frontend
+participant "API Gateway\n(Kong)" as Kong
+participant "Conversation Service" as ConversationService
+participant "Chatbot Service\n(gRPC)" as ChatbotService
+participant "LangGraph RAG\n(LLM + State)" as RAG
+database "RAG Databases\n(Milvus, R2, Pinecone, Qdrant)" as RAG_DBs
+database "Chatbot DB" as ChatbotDB
+
+== Luồng nghiệp vụ: Phân tích tài liệu cá nhân bằng reasoning pháp lý ==
+
+User -> Frontend: Gửi câu hỏi kèm file_ids\nvà use_reasoning=true
+activate Frontend
+
+Frontend -> Kong: POST /code-conversation-service/chats/stream\n{ chat_id, query, file_ids, use_reasoning }
+activate Kong
+Kong -> ConversationService: Chuyển tiếp request SSE
+activate ConversationService
+
+ConversationService -> ChatbotService: AskAI(query, chat_id,\nfile_ids, use_reasoning)\n[gRPC metadata: authorization]
+activate ChatbotService
+
+ChatbotService -> ChatbotDB: save_chat_message(role='human')
+activate ChatbotDB
+ChatbotDB --> ChatbotService: OK
+deactivate ChatbotDB
+
+ChatbotService -> RAG: generation_stream(query, chat_id,\nuser_id, file_ids, use_reasoning)
+activate RAG
+
+par #LightCyan Lấy dữ liệu song song từ 4 nguồn
+    RAG -> RAG_DBs: RetrieveUserDocs (Milvus)\nexpr: doc_id in file_ids\nand user_id == current_user_id
+    activate RAG_DBs
+    RAG_DBs --> RAG: Uploaded document chunks
+    deactivate RAG_DBs
+else #LightYellow
+    RAG -> RAG_DBs: RetrieveUserDocsSummary (R2)\nkey: user_id/summary/file_id
+    activate RAG_DBs
+    RAG_DBs --> RAG: Document summaries
+    deactivate RAG_DBs
+else #LightBlue
+    RAG -> RAG_DBs: RetrieveVBPL (Pinecone)\nquery & filter by target_item_ids
+    activate RAG_DBs
+    RAG_DBs --> RAG: VBPL documents & metadata
+    deactivate RAG_DBs
+else #LightGreen
+    RAG -> RAG_DBs: RetrievePhapDien (Qdrant)\nquery
+    activate RAG_DBs
+    RAG_DBs --> RAG: Pháp Điển documents & metadata
+    deactivate RAG_DBs
+end
+
+RAG -> RAG: Rank, kiểm tra hiệu lực,\ntổng hợp lập luận và kết luận
+RAG --> ChatbotService: content_chunk,\nstatus_update,\nmetadata(full_answer, sources)
+deactivate RAG
+
+ChatbotService -> ChatbotDB: save_chat_message(role='ai',\nreasoning_steps, sources)
+activate ChatbotDB
+ChatbotDB --> ChatbotService: OK
+deactivate ChatbotDB
+
+ChatbotService --> ConversationService: AskResponse stream
+deactivate ChatbotService
+ConversationService --> Kong: SSE data\nstatus/content/metadata
+deactivate ConversationService
+Kong --> Frontend: Stream nội dung,\nreasoning steps và sources
+deactivate Kong
+Frontend --> User: Hiển thị phân tích tài liệu cá nhân
+deactivate Frontend
+
+@enduml

@@ -1,0 +1,46 @@
+@startuml
+participant "Outbox Relay Cron\n(Payment Service)" as Relay
+database "Payment DB" as DB
+queue "Kafka\n(dev/prod-payment-events)" as Kafka
+participant "Telegram Alert" as Telegram
+
+== Pha 4: Outbox Relay publish sự kiện mua VIP lên Kafka ==
+
+note over Relay: Cron chạy định kỳ
+activate Relay
+
+Relay -> DB: Load Outbox\nstatus='PENDING'\nhoặc FAILED còn lượt retry
+activate DB
+DB --> Relay: Danh sách OutboxEntity\n(eventType='SubscriptionPurchasedEvent')
+deactivate DB
+
+loop Từng outbox message
+Relay -> Relay: Validate payload\nsubscriptionId, userId, planId,\nperiodStart, periodEnd, version
+
+alt Payload hợp lệ và Kafka publish thành công
+Relay -> Kafka: publishSubscriptionPurchased(payload)\nkey=userId, value JSON, GZIP
+activate Kafka
+Kafka --> Relay: ACK
+deactivate Kafka
+
+Relay -> DB: UPDATE Outbox\nstatus='DONE', processedAt=now
+activate DB
+DB --> Relay: OK
+deactivate DB
+else Publish lỗi
+Relay -> DB: retryCount += 1\nstatus='FAILED' hoặc 'DEAD_LETTER'
+activate DB
+DB --> Relay: OK
+deactivate DB
+
+opt Vượt quá maxRetry=10
+Relay -> Telegram: sendDLQAlert(event, payload, error)
+activate Telegram
+Telegram --> Relay: Alert sent
+deactivate Telegram
+end
+end
+end
+
+deactivate Relay
+@enduml

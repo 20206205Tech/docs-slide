@@ -1,0 +1,69 @@
+@startuml
+actor "Admin" as Admin
+participant "Web Frontend" as Frontend
+participant "API Gateway\n(Kong)" as Kong
+participant "Persona Service" as PersonaService
+participant "Supabase Storage" as Storage
+database "Persona DB" as DB
+
+== Luồng Quản lý nhân vật (Tạo mới / Cập nhật Persona) ==
+opt #AliceBlue Tải lên Avatar nhân vật
+    Admin -> Frontend: Chọn ảnh đại diện nhân vật
+    Frontend -> Kong: POST /code-persona-service/personas/upload-avatar\n[Headers: Authorization: Bearer <token>] (Multipart File)
+    activate Kong
+    Kong -> PersonaService: Chuyển tiếp file tải lên
+    activate PersonaService
+    PersonaService -> Storage: Tải file lên bucket avatar
+    activate Storage
+    Storage --> PersonaService: Trả về avatar_url
+    deactivate Storage
+    PersonaService --> Kong: Trả về avatar_url (HTTP 200 OK)
+    deactivate PersonaService
+    Kong --> Frontend: Trả về avatar_url
+    deactivate Kong
+end
+
+opt #LightCyan Tải lên âm thanh giới thiệu
+    Admin -> Frontend: Chọn file âm thanh giới thiệu (MP3/WAV)
+    Frontend -> Kong: POST /code-persona-service/personas/upload-audio\n[Headers: Authorization: Bearer <token>] (Multipart File)
+    activate Kong
+    Kong -> PersonaService: Chuyển tiếp file tải lên
+    activate PersonaService
+    PersonaService -> Storage: Tải file lên bucket audio
+    activate Storage
+    Storage --> PersonaService: Trả về greeting_audio_url
+    deactivate Storage
+    PersonaService --> Kong: Trả về greeting_audio_url (HTTP 200 OK)
+    deactivate PersonaService
+    Kong --> Frontend: Trả về greeting_audio_url
+    deactivate Kong
+end
+
+Admin -> Frontend: Điền thông tin nhân vật (name, description, greeting_text, voice_uuid)
+Frontend -> Kong: POST /code-persona-service/personas\n(Hoặc PUT /code-persona-service/personas/{persona_id})\n{ name, gender, voice_uuid, description, avatar_url, greeting_audio_url, greeting_text, is_active }
+activate Kong
+Kong -> PersonaService: Chuyển tiếp yêu cầu lưu nhân vật
+activate PersonaService
+
+PersonaService -> DB: Kiểm tra sự tồn tại của voice_uuid
+activate DB
+DB --> PersonaService: Hợp lệ
+deactivate DB
+
+opt #LightYellow Nếu có greeting_text hoặc đổi voice_uuid
+    PersonaService -> Storage: Tự sinh và tải greeting_audio_url
+    Storage --> PersonaService: Trả về public URL
+end
+
+PersonaService -> DB: INSERT/UPDATE Persona record
+activate DB
+DB --> PersonaService: Đã lưu thành công
+deactivate DB
+
+PersonaService --> Kong: Trả về thông tin Persona vừa tạo/cập nhật (HTTP 201 Created / 200 OK)
+deactivate PersonaService
+Kong --> Frontend: Trả về kết quả thành công
+deactivate Kong
+
+Frontend --> Admin: Hiển thị thông báo "Tạo/Cập nhật nhân vật thành công"
+@enduml

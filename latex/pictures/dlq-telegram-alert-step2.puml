@@ -1,0 +1,17 @@
+@startuml
+autonumber
+
+queue "RabbitMQ DLQ" as MQ_DLQ
+participant "DLQ Consumer (Alert Service)" as DLQ_Consumer
+participant "Telegram Bot API" as TeleBot
+actor "Developer Group (Telegram)" as Developer
+
+group #FFF0F5 Xử lý DLQ & Cảnh báo Telegram
+    note over MQ_DLQ, Developer: Xử lý DLQ & Cảnh báo Telegram
+    MQ_DLQ -> DLQ_Consumer: Nhận tin nhắn lỗi từ DLQ
+    DLQ_Consumer -> DLQ_Consumer: Parse payload & Trích xuất nguyên nhân lỗi (Error stack)
+    DLQ_Consumer -> TeleBot ++: POST /sendMessage (Chat ID, Markdown format)
+    TeleBot --> DLQ_Consumer --: 200 OK
+    TeleBot -> Developer: Hiển thị cảnh báo đỏ 🚨 (Kèm payload, Stacktrace)
+end
+@enduml

@@ -1,0 +1,113 @@
+\subsection{Đường ống dữ liệu}
+
+Đường ống dữ liệu
+bao gồm các chuỗi quy trình xử lý tự động
+từ một hoặc nhiều nguồn (source) đến một đích đến (destination) để lưu trữ, phân tích hoặc phục vụ cho các ứng dụng khác.
+Vì dự án này làm về miền nghiệp vụ pháp luật
+nên không cần thu thập dữ liệu từ nhiều nguồn khác nhau.
+Em sử dụng dữ liệu chính thống từ nhà nước là
+\textbf{Văn bản pháp luật}
+tại địa chỉ
+\url{https://vbpl.vn}
+và
+dữ liệu
+\textbf{Pháp Điển}
+tại địa chỉ
+\url{https://phapdien.moj.gov.vn/Pages/chi-tiet-bo-phap-dien.aspx}.
+Pháp Điển là tập hợp các quy phạm pháp luật đang còn hiệu lực của các văn bản quy phạm pháp luật do cơ quan nhà nước ở trung ương ban hành, từ Thông tư trở lên và trừ Hiến pháp.
+Pháp Điển
+giúp
+minh bạch hóa hệ thống,
+đảm bảo tính thống nhất,
+loại bỏ sự chồng chéo giữa các văn bản pháp luật.
+
+Giao diện nguồn dữ liệu Văn bản pháp luật
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.99\textwidth]{pictures/Home-vbpl.png}
+\caption[Giao diện nguồn dữ liệu Văn bản pháp luật]{Giao diện nguồn dữ liệu Văn bản pháp luật (Nguồn: \cite{vbpl-gioi-thieu})}
+\end{figure}
+
+Giao diện nguồn dữ liệu Pháp Điển
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.99\textwidth]{pictures/Home-PhapDien.png}
+\caption[Giao diện nguồn dữ liệu Pháp Điển]{Giao diện nguồn dữ liệu Pháp Điển (Nguồn: \cite{phapdien})}
+\end{figure}
+
+Sơ đồ thu thập dữ liệu chung:
+
+\begin{itemize}
+
+\item Sử dụng cron-job.org sẽ gửi một yêu cầu đến GitHub API đúng theo khung giờ cấu hình. Cách này giúp bypass cơ chế schedule mặc định của GitHub Actions thường xuyên bị trễ từ 15 đến 30 phút.
+
+\item Lấy thông tin dữ liệu công việc từ database postgres và có kết quả phục vụ báo cáo cho giao diện quản trị viên ADMIN.
+
+\item Sử dụng framework python Scrapy để thu thập dữ liệu.
+
+\item Tải lên file dữ liệu kết quả đã được xử lý lên Google Drive để lưu trữ lâu dài.
+
+\item Xử lý quy trình RAG với tài liệu và nhúng kết quả vào vector database để tối ưu tìm kiếm
+
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{pictures/crawl-data.excalidraw.png}
+\caption{Sơ đồ thu thập dữ liệu chung}
+\end{figure}
+
+Tại các bước sẽ sử dụng logic so sánh mã băm (hash)
+để bỏ qua văn bản không thay đổi nội dung
+giúp tiết kiệm tài nguyên
+và thời gian xử lý dữ liệu.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/data-pipeline-hash-skip.png}
+\caption{So sánh mã băm để bỏ qua văn bản}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/PhapDien-SERVICE.png}
+\caption{Kết quả swagger API thông tin đường ống dữ liệu Pháp Điển}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/VBPL-SERVICE.png}
+\caption{Kết quả swagger API thông tin đường ống dữ liệu Văn bản pháp luật}
+\end{figure}
+
+Thư viện dlt (Data Load Tool)
+là một thư viện Python
+mã nguồn mở
+giúp trích xuất dữ liệu từ nhiều nguồn khác nhau
+và tải chúng vào các tập dữ liệu có cấu trúc rõ ràng.
+Thay vì phải tự viết hàng trăm dòng code để định nghĩa bảng, ép kiểu dữ liệu và xử lý lỗi khi API thay đổi cấu trúc, Data Load Tool tự động hóa toàn bộ các công việc này một cách thông minh.
+Data Load Tool rất phù hợp với bài toán
+thu thập dữ liệu
+khi nguồn
+dữ liệu
+thay đổi cấu trúc.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{pictures/dlt-onepager-c61255330e30060ca8f2fa6d7b73b600.png}
+\caption[Giới thiệu về Data Load Tool]{Giới thiệu về Data Load Tool (Nguồn: \cite{dlthub-how-it-works})}
+\end{figure}
+
+Việc sử dụng Data Load Tool hỗ trợ
+tự động nội suy cấu trúc, kiểu dữ liệu
+và xử lý mượt mà các cấu trúc dữ liệu lồng nhau
+hỗ trợ tốt việc thay đổi nếu
+nguồn dữ liệu có sự thay đổi
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{pictures/dlt-auto.png}
+\caption{Data Load Tool tự động thích ứng nguồn dữ liệu có sự thay đổi}
+\end{figure}

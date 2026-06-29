@@ -1,0 +1,71 @@
+\paragraph{Đặc điểm người dùng hệ thống}
+
+Hệ thống phân chia người dùng
+thành 4 nhóm đối tượng chính
+với các đặc quyền được kế thừa
+và mở rộng dần theo cấp độ:
+
+\begin{itemize}
+
+\item \textbf{Khách vãng lai (Guest):}
+Là những người dùng chưa có tài khoản
+hoặc chưa đăng nhập vào hệ thống.
+Mục đích chính của họ
+là tìm hiểu thông tin cơ bản về ứng dụng
+và trải nghiệm thử các tính năng công khai.
+\textbf{Quyền hạn:}
+Có thể xem trang chủ bao gồm các thông tin:
+giới thiệu hệ thống, bảng giá các gói thuê bao VIP
+và nghe thử các mẫu giọng nói của các nhân vật.
+Bên cạnh đó, họ có thể đăng ký tài khoản với Email
+hoặc đăng nhập với Email hoặc Google.
+
+\item \textbf{Người dùng cơ bản (User):}
+Là những cá nhân đã đăng ký, đăng nhập
+và xác thực 2FA
+thành công vào hệ thống.
+Đây là tệp khách hàng tiêu chuẩn
+sử dụng các tính năng
+hỏi đáp pháp lý cơ bản.
+Tác nhân này kế thừa toàn bộ quyền của \textbf{Guest}.
+\textbf{Quyền hạn:}
+Có thể
+thay đổi cấu hình cài đặt cá nhân,
+quản lý hồ sơ thông tin cá nhân,
+thực hiện đổi mật khẩu hoặc khôi phục mật khẩu,
+đồng thời nâng cao bảo mật tài khoản bằng cách kích hoạt hoặc thay đổi thiết bị xác thực hai lớp (2FA/TOTP).
+Có thể hỏi đáp pháp lý cơ bản với AI (nhập văn bản hoặc thu âm bằng micro),
+sử dụng các công cụ hỗ trợ như đánh dấu cuộc trò chuyện (bookmark) kèm ghi chú, đồng thời có thể tạo liên kết chia sẻ cuộc trò chuyện cho người khác hoặc thu hồi quyền truy cập bất cứ lúc nào.
+Bên cạnh đó, người dùng có thể thực hiện nâng cấp/mua gói thuê bao VIP.
+
+\item \textbf{Người dùng VIP (VIP):}
+Là những người dùng đã thanh toán
+và đăng ký gói thuê bao VIP.
+Họ có nhu cầu giải quyết
+các vấn đề pháp lý phức tạp,
+cần phân tích tài liệu chuyên sâu
+hoặc muốn tương tác rảnh tay qua giọng nói.
+Tác nhân này kế thừa toàn bộ quyền của User.
+\textbf{Quyền hạn:}
+Được sử dụng các tính năng cao cấp bao gồm:
+Đàm thoại trực tiếp với AI bằng giọng nói
+(Voice chat qua LiveKit),
+tải lên các tài liệu, hợp đồng cá nhân để AI phân tích
+và được phép sử dụng công nghệ suy luận (reasoning) nâng cao
+để giải quyết các truy vấn pháp lý phức tạp.
+
+\item \textbf{Quản trị viên (Admin):}
+Là nhân sự thuộc ban quản trị, vận hành hệ thống.
+Họ có kiến thức
+về quản lý hệ thống,
+theo dõi luồng dữ liệu (Data Pipeline)
+và cấu hình các dịch vụ tích hợp giọng nói.
+Tác nhân này kế thừa toàn bộ quyền cơ bản của User.
+\textbf{Quyền hạn:}
+Có toàn quyền truy cập trang quản trị để:
+quản lý các nhân vật,
+thiết lập và quản lý hệ thống chuyển đổi văn bản thành giọng nói
+(TTS Engine và Voices),
+quản lý các gói thuê bao VIP
+và theo dõi các báo cáo về luồng xử lý dữ liệu pháp luật (Data Pipeline).
+\end{itemize}

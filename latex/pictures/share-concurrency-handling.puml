@@ -1,0 +1,50 @@
+@startuml
+actor "Client (FE)" as Client
+participant "NestJS (Conversation)" as NestJS
+database "DB (NestJS)" as NestDB
+queue "RabbitMQ Broker" as RabbitMQ
+participant "Python (Chatbot)" as Python
+database "DB (Python)" as PythonDB
+database "Cloudflare R2" as R2
+
+== 1. Tạo Share & Xóa Chat xảy ra đồng thời ==
+note over Client, NestJS: Tạo Share & Xóa Chat xảy ra đồng thời
+Client -> NestJS ++: POST /shares (Tạo Share)
+NestJS -> NestDB: Lưu Share (PENDING) & Outbox (share_generated)
+NestJS --> Client --: 200 OK (Đã nhận yêu cầu share)
+
+Client -> NestJS ++: DELETE /chats/{id} (Xóa Chat)
+NestJS -> NestDB: Cập nhật Chat (isActive = false) & Outbox (chat_deleted)
+NestJS --> Client --: 200 OK (Đã ẩn chat trên UI)
+
+== 2. Outbox gửi đồng thời 2 sự kiện sang RabbitMQ ==
+note over NestDB, RabbitMQ: Outbox gửi đồng thời 2 sự kiện sang RabbitMQ
+NestDB --> RabbitMQ: Publish dev_share_generated & dev_chat_deletions
+
+== 3. TH: Sự kiện Xóa Chat xử lý trước (hoặc đồng thời) ==
+note over RabbitMQ, Python: TH: Sự kiện Xóa Chat xử lý trước (hoặc đồng thời)
+RabbitMQ -> Python ++: Nhận dev_chat_deletions
+Python -> PythonDB: Cập nhật Chat (is_active = False) (Xóa mềm)
+Python --> RabbitMQ --: Ack
+
+== 4. Python xử lý sự kiện Tạo Share ==
+note over RabbitMQ, Python: Python xử lý sự kiện Tạo Share
+RabbitMQ -> Python ++: Nhận dev_share_generated
+Python -> PythonDB ++: Truy vấn lịch sử Chat (Vẫn truy vấn được vì chỉ xóa mềm)
+PythonDB --> Python --: Trả về danh sách tin nhắn
+Python -> R2 ++: Upload file tĩnh shared_chats/{userId}/{share_id}.jsonl
+R2 --> Python --: URL tệp tin R2
+Python -> RabbitMQ: Publish dev_share_upload_completed (is_success = true, file_url)
+Python --> RabbitMQ --: Ack
+
+== 5. NestJS nhận kết quả hoàn thành upload ==
+note over RabbitMQ, NestJS: NestJS nhận kết quả hoàn thành upload
+RabbitMQ -> NestJS ++: Nhận dev_share_upload_completed
+NestJS -> NestDB: Cập nhật Share (ACTIVE, fileUrl)
+NestJS --> RabbitMQ --: Ack
+
+== 6. Khách xem link share: Đọc trực tiếp từ R2 (Không cần Chat gốc) ==
+note over Client, R2: Khách xem link share: Đọc trực tiếp từ R2 (Không cần Chat gốc)
+Client -> R2 ++: GET /shared_chats/{userId}/{share_id}.jsonl
+R2 --> Client --: Trả về nội dung hội thoại tĩnh
+@enduml

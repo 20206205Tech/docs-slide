@@ -1,0 +1,55 @@
+@startuml
+actor "User" as User
+participant "LiveKit Cloud" as LiveKit
+participant "Voice Agent\n(Chatbot Service)" as VoiceAgent
+participant "Persona Service" as PersonaService
+participant "DynamicTTS" as DynamicTTS
+participant "RAG / LangGraph" as RAG
+database "Chatbot DB" as ChatbotDB
+
+== Luồng nghiệp vụ: Đàm thoại trực tiếp với AI bằng giọng nói ==
+
+User -> LiveKit: Gửi audio stream vào room chat_id
+activate LiveKit
+LiveKit -> VoiceAgent: Forward audio tới LiveKit Agent
+activate VoiceAgent
+
+VoiceAgent -> VoiceAgent: Khởi tạo session\nLLM + STT + DynamicTTS + VAD
+VoiceAgent -> VoiceAgent: Đọc participant metadata\nchat_id, user_id, file_ids,\nuse_reasoning, persona_id
+
+opt persona_id có thay đổi hoặc chưa resolve
+VoiceAgent -> PersonaService: GET /code-persona-service/personas\n?page=1&size=1&persona_id={persona_id}
+activate PersonaService
+PersonaService --> VoiceAgent: voice_code, tts_engine, greeting_text
+deactivate PersonaService
+VoiceAgent -> DynamicTTS: update_voice(voice_code, tts_engine)
+end
+
+VoiceAgent -> VoiceAgent: STT + VAD chuyển audio thành text
+
+alt Người dùng hỏi pháp luật hoặc trả lời xác nhận Có/Không
+VoiceAgent -> RAG: search_law(query, chat_id, user_id,\nfile_ids, use_reasoning, is_voice=true)
+activate RAG
+RAG --> VoiceAgent: content_chunk,\nstatus_update,\nmetadata(sources)
+deactivate RAG
+VoiceAgent -> LiveKit: Publish data channel status/sources
+else Câu hỏi hội thoại thông thường
+VoiceAgent -> VoiceAgent: LLM tạo câu trả lời trực tiếp
+end
+
+VoiceAgent -> DynamicTTS: synthesize/stream câu trả lời
+activate DynamicTTS
+DynamicTTS --> VoiceAgent: Audio stream\nPersona TTS hoặc ElevenLabs
+deactivate DynamicTTS
+
+VoiceAgent -> LiveKit: Publish audio phản hồi
+LiveKit --> User: Phát giọng nói AI và cập nhật UI
+
+VoiceAgent -> ChatbotDB: Lưu transcript,\nreasoning_steps, sources, persona_id
+activate ChatbotDB
+ChatbotDB --> VoiceAgent: OK
+deactivate ChatbotDB
+
+deactivate VoiceAgent
+deactivate LiveKit
+@enduml

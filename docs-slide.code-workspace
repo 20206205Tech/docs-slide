@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"latex-workshop.synctex.afterBuild.enabled": true,
+		"latex-workshop.view.pdf.viewer": "tab",
+		"workbench.editorAssociations": {
+			"*.pdf": "latex-workshop-pdf-hook"
+		},
+		"latex-workshop.formatting.latex": "latexindent"
+	}
+}

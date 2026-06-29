@@ -1,0 +1,44 @@
+\paragraph{Sơ đồ tuần tự luồng cập nhật thông tin cài đặt}
+
+Luồng nghiệp vụ này mô tả
+quy trình lưu các thay đổi thiết lập của người dùng
+thông qua Setting Service (Neon API).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{contents/Sequence/UML-Sequence-UserUpdateSettings.png}
+\caption{Sơ đồ tuần tự luồng cập nhật thông tin cài đặt}
+\end{figure}
+
+\subparagraph{Mô tả tổng quan}
+
+\begin{itemize}
+
+\item \textbf{Thay đổi cài đặt:}
+Người dùng điều chỉnh các tùy chọn cấu hình trên giao diện cài đặt.
+Giao diện cập nhật các cài đặt này ở trình duyệt
+và gửi yêu cầu cập nhật cài đặt qua cổng API đến dịch vụ cấu hình cài đặt.
+
+\item \textbf{Cập nhật CSDL:}
+Dịch vụ cấu hình cài đặt thực hiện thêm mới
+hoặc cập nhật thông tin cài đặt của người dùng vào CSDL cài đặt.
+
+\item \textbf{Đồng bộ giao diện:}
+Giao diện cập nhật
+và hiển thị trạng thái cài đặt mới theo thông tin đã được ghi nhận.
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3}
+
+\begin{tabular}{|l|l|p{5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Phân loại} & \textbf{Vai trò trong hệ thống} \\ \hline
+User & Actor & Người dùng thực hiện thay đổi cấu hình thiết lập. \\ \hline
+Web Frontend & Component & Giao diện web Next.js. \\ \hline
+API Gateway (Kong) & Component & Cổng API chuyển tiếp các yêu cầu API. \\ \hline
+Setting Service (Neon API) & Microservice & Dịch vụ tiếp nhận các thiết lập mới, thực hiện cập nhật hoặc thêm mới (Upsert) cấu hình của người dùng. \\ \hline
+\end{tabular}
+\caption{Các thành phần tham gia luồng cập nhật thông tin cài đặt}
+\end{table}

@@ -1,0 +1,84 @@
+@startuml
+actor "User" as User
+participant "Web Frontend" as Frontend
+participant "API Gateway\n(Kong)" as Kong
+participant "Conversation Service" as ConversationService
+database "Conversation DB" as ConversationDB
+participant "Chatbot Service\n(gRPC + LangGraph)" as ChatbotService
+database "Chatbot DB" as ChatbotDB
+
+== Luồng nhắn tin văn bản qua SSE ==
+
+User -> Frontend: Nhập truy vấn\nvà tùy chọn useReasoning
+activate Frontend
+
+Frontend -> Kong: POST /code-conversation-service/chats/stream\n{ chat_id, query, file_ids, use_reasoning }\n[Authorization: Bearer <token>]
+activate Kong
+Kong -> ConversationService: Chuyển tiếp request SSE
+activate ConversationService
+
+opt use_reasoning=true
+ConversationService -> ConversationDB: isVip(userId)\ntrong user_subscriptions
+activate ConversationDB
+ConversationDB --> ConversationService: true nếu is_active=true\nvà period_end >= now
+deactivate ConversationDB
+end
+
+alt #F2F4F7 Không có VIP hợp lệ khi cần reasoning
+ConversationService --> Kong: ForbiddenException\n"Reasoning yêu cầu gói VIP"
+Kong --> Frontend: HTTP/SSE error 403
+Frontend --> User: Toast yêu cầu nâng cấp VIP
+else Được phép tiếp tục
+ConversationService -> ConversationDB: findById(chat_id)\nkiểm tra chat active
+activate ConversationDB
+ConversationDB --> ConversationService: Chat hoặc null
+deactivate ConversationDB
+
+alt #F2F4F7 Không tìm thấy chat active
+ConversationService --> Kong: ChatNotFoundException
+Kong --> Frontend: Hiển thị lỗi
+else Chat hợp lệ
+ConversationService -> ChatbotService: AskAI(query, chat_id, file_ids, use_reasoning)\n[gRPC metadata: authorization]
+activate ChatbotService
+
+ChatbotService -> ChatbotService: verify_token(Authorization)\nlấy user_id từ token
+ChatbotService -> ChatbotDB: save_chat_message(role='human', content=query)
+activate ChatbotDB
+ChatbotDB --> ChatbotService: OK
+deactivate ChatbotDB
+
+ChatbotService -> ChatbotService: generation_stream(query, chat_id,\nuser_id, file_ids, use_reasoning)
+
+par #LightCyan Luồng dữ liệu AI
+ChatbotService --> ConversationService: AskResponse(type='status')
+ConversationService --> Kong: SSE data { type='status', message }
+Kong --> Frontend: Cập nhật reasoning_steps/status
+
+ChatbotService --> ConversationService: AskResponse(type='content')
+ConversationService --> Kong: SSE data { type='content', message }
+Kong --> Frontend: Append nội dung trả lời
+
+ChatbotService --> ConversationService: AskResponse(type='metadata')
+ConversationService --> Kong: SSE data { type='metadata', message: JSON }
+Kong --> Frontend: Cập nhật full_answer, sources,\npending_confirmation
+else #LightYellow Luồng heartbeat
+ConversationService --> Kong: SSE heartbeat mỗi 10s
+Kong --> Frontend: keep-alive
+end
+
+ChatbotService -> ChatbotDB: save_chat_message(role='ai', content=full_answer,\nreasoning_steps, sources, pending_confirmation)
+activate ChatbotDB
+ChatbotDB --> ChatbotService: OK
+deactivate ChatbotDB
+
+ChatbotService -> ChatbotService: update_chat_title nếu có topic\nstart background topic/history summary
+deactivate ChatbotService
+
+Frontend --> User: Hiển thị câu trả lời\nkèm reasoning steps và nguồn
+end
+end
+
+deactivate ConversationService
+deactivate Kong
+deactivate Frontend
+@enduml

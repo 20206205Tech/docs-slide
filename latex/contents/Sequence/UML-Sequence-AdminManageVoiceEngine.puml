@@ -1,0 +1,29 @@
+@startuml
+actor "Admin" as Admin
+participant "Web Frontend" as Frontend
+participant "API Gateway\n(Kong)" as Kong
+participant "Persona Service" as PersonaService
+database "Persona DB" as DB
+
+== Luồng Quản lý Engine giọng nói (Create/Update Engine) ==
+Admin -> Frontend: Mở trang quản lý Engine và nhập cấu hình
+activate Frontend
+
+Frontend -> Kong: POST /code-persona-service/engines\nHoặc PUT /code-persona-service/engines/{engine_id}\n[Headers: Authorization: Bearer <token>]\n{ code, name, is_active }
+activate Kong
+Kong -> PersonaService: Chuyển tiếp yêu cầu tạo/cập nhật Engine
+activate PersonaService
+
+PersonaService -> DB: INSERT/UPDATE Engine\n(code, name, is_active)
+activate DB
+DB --> PersonaService: OK
+deactivate DB
+
+PersonaService --> Kong: Trả về thông tin Engine đã lưu\n(HTTP 200/201 OK)
+deactivate PersonaService
+Kong --> Frontend: Trả về kết quả thành công
+deactivate Kong
+
+Frontend --> Admin: Hiển thị trạng thái Engine đã được lưu
+deactivate Frontend
+@enduml

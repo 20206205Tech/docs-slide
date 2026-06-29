@@ -1,0 +1,1202 @@
+[
+    {
+        "stt": 1,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Thời gian thử việc tối đa đối với người lao động có trình độ đại học là bao lâu?",
+        "cau_tra_loi": "Dựa trên các văn bản pháp luật hiện hành được tra cứu trong hệ thống, chưa tìm thấy quy định cụ thể về thời gian thử việc tối đa đối với người lao động có trình độ đại học. Tuy nhiên, có thể cung cấp thông tin chung về thời gian thử việc như sau:\n\nTheo Điều 27 Bộ luật Lao động 2019, thời gian thử việc do hai bên thỏa thuận căn cứ vào tính chất và mức độ phức tạp của công việc nhưng chỉ được thử việc một lần đối với một công việc và bảo đảm các điều kiện sau đây:\n\n- Không quá 30 ngày đối với công việc có chức danh nghề nghiệp cần trình độ chuyên môn, kỹ thuật từ cao đẳng trở lên;\n- Không quá 6 ngày làm việc đối với công việc khác.\n\nNhư vậy, thời gian thử việc tối đa đối với người lao động có trình độ đại học có thể là 30 ngày, nhưng cần xem xét cụ thể từng trường hợp và thỏa thuận giữa hai bên.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin liên quan và chính xác dựa trên Bộ luật Lao động 2019, mặc dù không tìm thấy quy định cụ thể về thời gian thử việc tối đa đối với người lao động có trình độ đại học trong tài liệu truy xuất được."
+        }
+    },
+    {
+        "stt": 2,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Thời gian thử việc tối đa của lao động có trình độ cao đẳng là bao lâu?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Câu hỏi thuộc nhóm 'Cơ bản' nhưng không có thông tin cụ thể trong tài liệu truy xuất để trả lời. Hệ thống nên từ chối trả lời để tránh đưa ra thông tin sai lệch."
+        }
+    },
+    {
+        "stt": 3,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Người lao động được nghỉ bao nhiêu ngày phép năm nếu làm đủ 12 tháng trong điều kiện bình thường?",
+        "cau_tra_loi": "Người lao động làm việc đủ 12 tháng cho một người sử dụng lao động thì được nghỉ hằng năm, hưởng nguyên lương theo hợp đồng lao động như sau: 12 ngày làm việc đối với người làm công việc trong điều kiện bình thường.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chính xác về số ngày phép năm cho người lao động làm việc đủ 12 tháng trong điều kiện bình thường, phù hợp với quy định của pháp luật lao động Việt Nam."
+        }
+    },
+    {
+        "stt": 4,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Lương thử việc tối thiểu bằng bao nhiêu phần trăm lương của công việc đó?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nTiền lương của người lao động trong thời gian thử việc do hai bên thỏa thuận nhưng ít nhất phải bằng 85% mức lương của công việc đó.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin cụ thể với căn cứ pháp lý. Giả định rằng thông tin này khớp với nội dung của tài liệu pháp luật được tham chiếu, câu trả lời là chính xác và đầy đủ."
+        }
+    },
+    {
+        "stt": 5,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Thời giờ làm việc bình thường không quá bao nhiêu giờ trong một ngày và một tuần?",
+        "cau_tra_loi": "Thời giờ làm việc bình thường thường không quá 8 giờ trong một ngày và 40 giờ trong một tuần. Điều này được quy định trong Bộ luật Lao động Việt Nam.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Trong dữ liệu' nhưng hệ thống không tìm thấy tài liệu phù hợp. Tuy nhiên, hệ thống đã đưa ra một câu trả lời cụ thể về thời giờ làm việc bình thường, điều này không được hỗ trợ bởi tài liệu truy xuất được. Hành động này thể hiện hệ thống đã tự bịa ra thông tin (ảo giác) cho câu hỏi."
+        }
+    },
+    {
+        "stt": 6,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Làm thêm giờ vào ngày nghỉ hằng tuần được trả lương ít nhất bằng bao nhiêu?",
+        "cau_tra_loi": "",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Hệ thống không tìm thấy tài liệu phù hợp để trả lời câu hỏi về mức lương tối thiểu cho việc làm thêm giờ vào ngày nghỉ hằng tuần. Do đó, phản hồi hợp lý nhất là từ chối trả lời để tránh cung cấp thông tin sai lệch."
+        }
+    },
+    {
+        "stt": 7,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Làm thêm giờ vào ngày nghỉ lễ, tết, ngày nghỉ có hưởng lương được trả lương ít nhất bằng bao nhiêu?",
+        "cau_tra_loi": "",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Hệ thống không tìm thấy tài liệu phù hợp và không đưa ra thông tin sai lệch, điều này cho thấy hệ thống đã nhận ra giới hạn của mình và tuân thủ nguyên tắc chống ảo giác."
+        }
+    },
+    {
+        "stt": 8,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Có bao nhiêu loại hợp đồng lao động theo Bộ luật Lao động hiện hành?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật Lao động số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu hỏi thuộc nhóm 'Trong dữ liệu' và liên quan đến thông tin cơ bản về hợp đồng lao động. Để đánh giá chính xác, cần có thông tin cụ thể từ tài liệu truy xuất và câu trả lời của hệ thống. Tuy nhiên, dựa trên kiến thức chung, Bộ luật Lao động số 45/2019/QH14 quy định về hai loại hợp đồng lao động chính. Nếu hệ thống trả lời đúng dựa trên thông tin này, thì đó là một phản hồi đúng."
+        }
+    },
+    {
+        "stt": 9,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Thời gian thử việc đối với công việc cần trình độ chuyên môn kỹ thuật trung cấp là bao lâu?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nThời gian thử việc đối với công việc cần trình độ chuyên môn kỹ thuật trung cấp là không quá 30 ngày.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Dựa trên thông tin cung cấp, hệ thống đưa ra một câu trả lời cụ thể với căn cứ pháp lý. Tuy nhiên, không có đủ thông tin để xác minh tính chính xác của câu trả lời dựa trên tài liệu truy xuất."
+        }
+    },
+    {
+        "stt": 10,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Người lao động làm việc vào ban đêm được trả thêm ít nhất bao nhiêu phần trăm tiền lương?",
+        "cau_tra_loi": "",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Hệ thống không tìm thấy tài liệu phù hợp cho câu hỏi, và trong lĩnh vực pháp luật, sự chính xác là quan trọng. Từ chối trả lời hoặc nêu rõ sự không chắc chắn là cách tiếp cận hợp lý để tránh thông tin sai lệch."
+        }
+    },
+    {
+        "stt": 11,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Lao động nữ mang thai từ tháng thứ mấy thì được giảm giờ làm việc hoặc chuyển công việc nhẹ hơn?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nLao động nữ mang thai từ tháng thứ 07 hoặc từ tháng thứ 06 nếu làm việc ở vùng cao, vùng sâu, vùng xa, biên giới, hải đảo thì được giảm giờ làm việc hoặc chuyển công việc nhẹ hơn.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chính xác và đầy đủ dựa trên Bộ luật Lao động số 45/2019/QH14, phù hợp với quy định về lao động nữ mang thai."
+        }
+    },
+    {
+        "stt": 12,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Người sử dụng lao động có được giữ bản chính giấy tờ tùy thân, văn bằng, chứng chỉ của người lao động không?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Không có thông tin cụ thể trong tài liệu truy xuất về việc giữ bản chính giấy tờ tùy thân, văn bằng, chứng chỉ của người lao động. Hệ thống không cung cấp câu trả lời cụ thể."
+        }
+    },
+    {
+        "stt": 13,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Tuổi nghỉ hưu của người lao động trong điều kiện lao động bình thường được quy định như thế nào?",
+        "cau_tra_loi": "Tuổi nghỉ hưu của người lao động trong điều kiện lao động bình thường được quy định cụ thể như sau: Kể từ ngày 01 tháng 01 năm 2021, tuổi nghỉ hưu của người lao động trong điều kiện lao động bình thường là đủ 60 tuổi 03 tháng đối với lao động nam và đủ 55 tuổi 04 tháng đối với lao động nữ; sau đó, cứ mỗi năm tăng thêm 03 tháng đối với lao động nam cho đến khi đủ 62 tuổi vào năm 2028 và cứ mỗi năm tăng thêm 04 tháng đối với lao động nữ cho đến khi đủ 60 tuổi vào năm 2035.\n\nCăn cứ pháp lý: Điều 4 Nghị định số 135/2020/NĐ-CP",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chi tiết và cụ thể về tuổi nghỉ hưu của người lao động trong điều kiện lao động bình thường, bao gồm cả việc tăng tuổi nghỉ hưu qua các năm và căn cứ pháp lý. Tuy nhiên, do không có thông tin cụ thể về nội dung của các tài liệu truy xuất được, tôi không thể xác nhận liệu thông tin này có được hỗ trợ bởi tài liệu hay không. Thông thường, tuổi nghỉ hưu và các quy định liên quan được quy định trong luật lao động hoặc các nghị định cụ thể. Nếu thông tin trong câu trả lời của hệ thống khớp với quy định pháp luật hiện hành (ví dụ như Nghị định số 135/2020/NĐ-CP), thì câu trả lời có thể được coi là đúng. Tuy nhiên, cần kiểm tra lại căn cứ pháp lý và nội dung của tài liệu để xác nhận."
+        }
+    },
+    {
+        "stt": 14,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Người lao động kết hôn được nghỉ bao nhiêu ngày và có được hưởng nguyên lương không?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nNgười lao động được nghỉ việc riêng mà vẫn hưởng nguyên lương và phải thông báo với người sử dụng lao động trong trường hợp sau đây: \n\nKết hôn: nghỉ 03 ngày.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống phù hợp với quy định pháp luật chung về lao động, nhưng không có thông tin cụ thể từ tài liệu để kiểm chứng."
+        }
+    },
+    {
+        "stt": 15,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Bố đẻ hoặc mẹ đẻ chết thì người lao động được nghỉ bao nhiêu ngày hưởng nguyên lương?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nTheo quy định tại Điều 115 Bộ luật số 45/2019/QH14, khi bố đẻ hoặc mẹ đẻ chết, người lao động được nghỉ 03 ngày hưởng nguyên lương.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chính xác và đầy đủ dựa trên Điều 115 của Bộ luật số 45/2019/QH14, phù hợp với quy tắc phân loại CORRECT cho nhóm câu hỏi 'Trong dữ liệu'."
+        }
+    },
+    {
+        "stt": 16,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Con kết hôn thì người lao động được nghỉ mấy ngày và có được hưởng lương không?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nNgười lao động được nghỉ việc riêng mà vẫn hưởng nguyên lương và phải thông báo với người sử dụng lao động trong trường hợp sau đây: \n\nKết hôn: nghỉ 03 ngày.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống chính xác và đầy đủ, dựa trên Bộ luật số 45/2019/QH14, cung cấp thông tin đúng về số ngày nghỉ và việc hưởng lương khi người lao động kết hôn."
+        }
+    },
+    {
+        "stt": 17,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Thời gian nghỉ thai sản của lao động nữ khi sinh con là bao lâu?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nThời gian nghỉ thai sản của lao động nữ khi sinh con là 06 tháng, trong đó thời gian nghỉ trước khi sinh không quá 02 tháng.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chính xác và đầy đủ về thời gian nghỉ thai sản của lao động nữ khi sinh con, cùng với căn cứ pháp lý cụ thể. Giả định rằng thông tin này được hỗ trợ bởi tài liệu pháp luật được cung cấp."
+        }
+    },
+    {
+        "stt": 18,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Khi vợ sinh con, lao động nam đang đóng bảo hiểm xã hội được nghỉ thai sản bao nhiêu ngày?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật Lao động số 45/2019/QH14\n\nKhoản 4 Điều 139 Bộ luật Lao động số 45/2019/QH14 quy định lao động nam đang đóng bảo hiểm xã hội khi vợ sinh con được nghỉ việc hưởng chế độ thai sản như sau:\n\n- 5 ngày làm việc: Trường hợp vợ sinh con phải phẫu thuật hoặc sinh con dưới 32 tuần tuổi;\n- 7 ngày làm việc: Trường hợp vợ sinh đôi; từ con thứ ba trở đi, cứ mỗi con được nghỉ thêm 3 ngày làm việc;\n- 10 ngày làm việc: Trường hợp vợ sinh đôi trở lên mà phải phẫu thuật;\n- 3 ngày làm việc: Các trường hợp khác.\n\nThời gian nghỉ việc hưởng chế độ thai sản quy định tại khoản này được tính trong khoảng thời gian 30 ngày đầu kể từ ngày vợ sinh con.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**<br>45. **Tài liệu 45**<br>46. **Tài liệu 46**<br>47. **Tài liệu 47**<br>48. **Tài liệu 48**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chính xác và đầy đủ dựa trên Bộ luật Lao động số 45/2019/QH14, phù hợp với câu hỏi về chế độ nghỉ thai sản cho lao động nam."
+        }
+    },
+    {
+        "stt": 19,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Người lao động làm việc bao lâu cho một người sử dụng lao động thì được tăng thêm 1 ngày phép năm?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật Lao động số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**<br>45. **Tài liệu 45**<br>46. **Tài liệu 46**<br>47. **Tài liệu 47**<br>48. **Tài liệu 48**<br>49. **Tài liệu 49**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi yêu cầu thông tin về việc tăng ngày phép năm cho người lao động dựa trên thời gian làm việc cho một người sử dụng lao động. Thông thường, theo Bộ luật Lao động, sau 5 năm làm việc, người lao động sẽ được tăng thêm 1 ngày phép năm. Tuy nhiên, không có thông tin cụ thể về câu trả lời của hệ thống và nội dung của các tài liệu để xác định độ chính xác của câu trả lời."
+        }
+    },
+    {
+        "stt": 20,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Hợp đồng thử việc có bắt buộc phải đóng bảo hiểm xã hội không?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật Lao động 2019",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Hệ thống không cung cấp thông tin cụ thể về việc hợp đồng thử việc có bắt buộc phải đóng bảo hiểm xã hội hay không từ các tài liệu truy xuất được. Tuy nhiên, hệ thống cũng không từ chối trả lời một cách rõ ràng như định nghĩa yêu cầu cho 'REFUSED'."
+        }
+    },
+    {
+        "stt": 21,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Người sử dụng lao động phải báo trước bao nhiêu ngày khi đơn phương chấm dứt hợp đồng lao động không xác định thời hạn?",
+        "cau_tra_loi": "Người sử dụng lao động phải báo trước cho người lao động khi đơn phương chấm dứt hợp đồng lao động không xác định thời hạn ít nhất là 45 ngày.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**<br>45. **Tài liệu 45**<br>46. **Tài liệu 46**<br>47. **Tài liệu 47**<br>48. **Tài liệu 48**<br>49. **Tài liệu 49**<br>50. **Tài liệu 50**<br>51. **Tài liệu 51**<br>52. **Tài liệu 52**<br>53. **Tài liệu 53**<br>54. **Tài liệu 54**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu trả lời của hệ thống cho biết người sử dụng lao động phải báo trước ít nhất 45 ngày khi đơn phương chấm dứt hợp đồng lao động không xác định thời hạn. Tuy nhiên, không có thông tin cụ thể trong tài liệu truy xuất để xác minh câu trả lời này. Thông thường, theo quy định của pháp luật lao động, thời gian báo trước có thể đúng nhưng cần kiểm tra luật hiện hành để xác nhận."
+        }
+    },
+    {
+        "stt": 22,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Tiền lương trong thời gian nghỉ thai sản của người lao động do cơ quan nào chi trả?",
+        "cau_tra_loi": "Dựa trên các văn bản pháp luật hiện hành, chưa tìm thấy quy định cụ thể về việc chi trả tiền lương trong thời gian nghỉ thai sản của người lao động.\n\nTuy nhiên, theo quy định tại Điều 139 Bộ luật Lao động 2019, lao động nữ được nghỉ thai sản trước và sau khi sinh con là 06 tháng, và trong thời gian nghỉ thai sản, lao động nữ được hưởng chế độ thai sản theo quy định của pháp luật về bảo hiểm xã hội.\n\nTheo quy định của pháp luật về bảo hiểm xã hội, chế độ thai sản bao gồm trợ cấp thai sản, trợ cấp dưỡng sức sau sinh và trợ cấp một lần khi sinh con. Trợ cấp thai sản được tính dựa trên mức bình quân tiền lương tháng đóng bảo hiểm xã hội của 06 tháng liền kề trước khi nghỉ việc.\n\nDo đó, tiền lương trong thời gian nghỉ thai sản của người lao động có thể được chi trả bởi cơ quan bảo hiểm xã hội, dựa trên mức bình quân tiền lương tháng đóng bảo hiểm xã hội của người lao động. Tuy nhiên, cần lưu ý rằng quy định cụ thể về việc chi trả tiền lương trong thời gian nghỉ thai sản có thể thay đổi tùy theo pháp luật hiện hành và các quy định cụ thể của cơ quan bảo hiểm xã hội.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu trả lời của hệ thống không cung cấp thông tin trực tiếp và chính xác về việc ai chi trả tiền lương trong thời gian nghỉ thai sản. Hệ thống đã cố gắng giải thích dựa trên kiến thức của nó, nhưng thông tin này có thể không đầy đủ hoặc không chính xác theo pháp luật hiện hành."
+        }
+    },
+    {
+        "stt": 23,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Người lao động có được tạm ứng tiền lương khi gặp khó khăn không?",
+        "cau_tra_loi": "Được. Người sử dụng lao động có trách nhiệm tạm ứng tiền lương cho người lao động khi người lao động gặp khó khăn do thiên tai, hỏa hoạn, bệnh tật, tai nạn hoặc các trường hợp khác mà không do lỗi của người lao động.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Hệ thống đưa ra câu trả lời mà không có căn cứ rõ ràng từ tài liệu pháp luật được cung cấp, và không từ chối trả lời dù không có thông tin cụ thể."
+        }
+    },
+    {
+        "stt": 24,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Bộ luật Lao động quy định những hình thức xử lý kỷ luật lao động nào?",
+        "cau_tra_loi": "Bộ luật Lao động quy định ba hình thức xử lý kỷ luật lao động, bao gồm: khiển trách, kéo dài thời hạn nâng lương, sa thải.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**<br>45. **Tài liệu 45**<br>46. **Tài liệu 46**<br>47. **Tài liệu 47**<br>48. **Tài liệu 48**<br>49. **Tài liệu 49**<br>50. **Tài liệu 50**<br>51. **Tài liệu 51**<br>52. **Tài liệu 52**<br>53. **Tài liệu 53**<br>54. **Tài liệu 54**<br>55. **Tài liệu 55**<br>56. **Tài liệu 56**<br>57. **Tài liệu 57**<br>58. **Tài liệu 58**<br>59. **Tài liệu 59**<br>60. **Tài liệu 60**<br>61. **Tài liệu 61**<br>62. **Tài liệu 62**<br>63. **Tài liệu 63**<br>64. **Tài liệu 64**<br>65. **Tài liệu 65**<br>66. **Tài liệu 66**<br>67. **Tài liệu 67**<br>68. **Tài liệu 68**<br>69. **Tài liệu 69**<br>70. **Tài liệu 70**<br>71. **Tài liệu 71**<br>72. **Tài liệu 72**<br>73. **Tài liệu 73**<br>74. **Tài liệu 74**<br>75. **Tài liệu 75**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống phù hợp với kiến thức chung về Bộ luật Lao động, mặc dù không có thông tin cụ thể trong tài liệu truy xuất để xác minh. Giả sử thông tin này là chính xác dựa trên kiến thức pháp luật chung."
+        }
+    },
+    {
+        "stt": 25,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Có được áp dụng nhiều hình thức xử lý kỷ luật lao động đối với một hành vi vi phạm kỷ luật không?",
+        "cau_tra_loi": "Không được áp dụng nhiều hình thức xử lý kỷ luật lao động đối với một hành vi vi phạm kỷ luật lao động.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cho rằng không được áp dụng nhiều hình thức xử lý kỷ luật lao động đối với một hành vi vi phạm kỷ luật lao động có thể được xem là một nguyên tắc bảo vệ người lao động. Tuy nhiên, để đánh giá chính xác, cần tham khảo cụ thể pháp luật lao động."
+        }
+    },
+    {
+        "stt": 26,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Thời hiệu xử lý kỷ luật lao động tối đa là bao lâu?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật Lao động số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Không có thông tin cụ thể trong tài liệu truy xuất để trả lời câu hỏi về thời hiệu xử lý kỷ luật lao động tối đa. Hệ thống nên từ chối trả lời để tránh đưa ra thông tin không chính xác."
+        }
+    },
+    {
+        "stt": 27,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Người lao động bị tạm đình chỉ công việc trong những trường hợp nào?",
+        "cau_tra_loi": "Người lao động bị tạm đình chỉ công việc trong trường hợp bị tình nghi vi phạm kỷ luật lao động đến mức phải sa thải hoặc trong thời gian điều tra để xác định mức độ vi phạm kỷ luật lao động.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu trả lời của hệ thống đưa ra thông tin về trường hợp người lao động bị tạm đình chỉ công việc nhưng không có thông tin cụ thể từ tài liệu truy xuất được để xác minh. Hệ thống không từ chối trả lời hoặc nêu rõ rằng không tìm thấy thông tin, điều này có thể dẫn đến thông tin không chính xác hoặc không đầy đủ."
+        }
+    },
+    {
+        "stt": 28,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Thời gian tạm đình chỉ công việc tối đa đối với người lao động là bao lâu?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14, Nghị định số 59/2019/NĐ-CP",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Câu hỏi thuộc nhóm 'Trong dữ liệu' nhưng không có thông tin cụ thể về thời gian tạm đình chỉ công việc tối đa trong các tài liệu cung cấp. Hệ thống nên từ chối trả lời để tránh cung cấp thông tin không chính xác."
+        }
+    },
+    {
+        "stt": 29,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Người lao động được nghỉ hưởng nguyên lương vào những ngày lễ, tết nào trong năm?",
+        "cau_tra_loi": "Người lao động được nghỉ làm việc, hưởng nguyên lương trong những ngày lễ, tết sau đây: \n\n- Tết Dương lịch: 01 ngày (ngày 01 tháng 01 dương lịch);\n\n- Tết Âm lịch: 05 ngày;\n\n- Ngày Chiến thắng: 01 ngày (ngày 30 tháng 4 dương lịch);\n\n- Ngày Quốc tế lao động: 01 ngày (ngày 01 tháng 5 dương lịch);\n\n- Quốc khánh: 02 ngày (ngày 02 tháng 9 dương lịch và 01 ngày liền kề trước hoặc sau);\n\n- Ngày Giỗ Tổ Hùng Vương: 01 ngày (ngày 10 tháng 3 âm lịch).\n\nCăn cứ pháp lý: Bộ luật số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chi tiết và chính xác về các ngày lễ, tết mà người lao động được nghỉ hưởng nguyên lương, cùng với căn cứ pháp lý. Giả định rằng những thông tin này được hỗ trợ bởi tài liệu pháp luật phù hợp, mặc dù chi tiết cụ thể của tài liệu không được cung cấp."
+        }
+    },
+    {
+        "stt": 30,
+        "phan_loai_goc": "Trong dữ liệu (Cơ bản)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Người sử dụng lao động có phải trả lương cho ngày nghỉ phép hằng năm chưa nghỉ hết không?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nNgười sử dụng lao động phải trả lương cho ngày nghỉ phép hằng năm chưa nghỉ hết theo quy định tại khoản 3 Điều 113 Bộ luật Lao động số 45/2019/QH14, có hiệu lực thi hành kể từ ngày 01/01/2021.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống căn cứ vào Bộ luật Lao động số 45/2019/QH14, quy định người sử dụng lao động phải trả lương cho ngày nghỉ phép hằng năm chưa nghỉ hết, điều này phù hợp với nguyên tắc bảo vệ quyền lợi của người lao động và tuân thủ pháp luật lao động."
+        }
+    },
+    {
+        "stt": 31,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Cách tính trợ cấp thôi việc cho người lao động làm việc từ 5 năm trở lên?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nTrợ cấp thôi việc cho người lao động làm việc từ 5 năm trở lên được tính như sau:\n\n- Mỗi năm làm việc được trợ cấp một nửa tháng tiền lương.\n\n- Thời gian làm việc để tính trợ cấp thôi việc là tổng thời gian người lao động đã làm việc thực tế cho người sử dụng lao động trừ đi thời gian người lao động đã tham gia bảo hiểm thất nghiệp theo quy định của pháp luật về bảo hiểm thất nghiệp và thời gian làm việc đã được người sử dụng lao động chi trả trợ cấp thôi việc, trợ cấp mất việc làm.\n\n- Tiền lương để tính trợ cấp thôi việc là tiền lương bình quân của 06 tháng liền kề theo hợp đồng lao động trước khi người lao động thôi việc.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chi tiết về cách tính trợ cấp thôi việc dựa trên thời gian làm việc và tiền lương, với căn cứ pháp lý từ Bộ luật số 45/2019/QH14. Tuy nhiên, cần kiểm tra lại với các tài liệu pháp luật để đảm bảo tính chính xác và đầy đủ."
+        }
+    },
+    {
+        "stt": 32,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Trường hợp nào người sử dụng lao động được đơn phương chấm dứt hợp đồng lao động mà không cần báo trước?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nNgười sử dụng lao động được đơn phương chấm dứt hợp đồng lao động mà không cần báo trước trong các trường hợp sau:\n\n- Người lao động tự ý bỏ việc mà không có lý do chính đáng từ 05 ngày làm việc liên tục trở lên.\n\n- Người lao động cung cấp không trung thực thông tin theo quy định tại khoản 2 Điều 16 của Bộ luật này khi giao kết hợp đồng lao động làm ảnh hưởng đến việc tuyển dụng người lao động.\n\n- Người lao động đủ tuổi nghỉ hưu theo quy định tại Điều 169 của Bộ luật này, trừ trường hợp có thỏa thuận khác.\n\n- Người lao động bị ốm đau, tai nạn đã điều trị 12 tháng liên tục đối với người làm việc theo hợp đồng lao động không xác định thời hạn hoặc đã điều trị 06 tháng liên tục đối với người làm việc theo hợp đồng lao động xác định thời hạn có thời hạn từ 12 tháng đến 36 tháng hoặc quá nửa thời hạn hợp đồng lao động đối với người làm việc theo hợp đồng lao động xác định thời hạn có thời hạn dưới 12 tháng mà khả năng lao động chưa hồi phục.\n\n- Do thiên tai, hỏa hoạn, dịch bệnh nguy hiểm, địch họa hoặc di dời, thu hẹp sản xuất, kinh doanh theo yêu cầu của cơ quan nhà nước có thẩm quyền mà người sử dụng lao động đã tìm mọi biện pháp khắc phục nhưng vẫn buộc phải giảm chỗ làm việc.\n\n- Người lao động không có mặt tại nơi làm việc sau thời hạn quy định tại Điều 31 của Bộ luật này.\n\n- Người lao động thường xuyên không hoàn thành công việc theo hợp đồng lao động được xác định theo tiêu chí đánh giá mức độ hoàn thành công việc trong quy chế của người sử dụng lao động.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chính xác và đầy đủ về các trường hợp người sử dụng lao động được đơn phương chấm dứt hợp đồng lao động mà không cần báo trước, phù hợp với quy định của Bộ luật Lao động."
+        }
+    },
+    {
+        "stt": 33,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Trợ cấp mất việc làm được tính và chi trả cho người lao động như thế nào?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật Lao động số 45/2019/QH14, Nghị định số 28/2015/NĐ-CP, Nghị định số 127/2008/NĐ-CP, Nghị định số 100/2012/NĐ-CP",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Hệ thống đã cố gắng cung cấp thông tin dựa trên các tài liệu pháp luật liên quan, nhưng không đưa ra thông tin chi tiết và đầy đủ về cách tính và chi trả trợ cấp mất việc làm. Tuy nhiên, hệ thống không đưa ra thông tin sai lệch hoặc ảo giác."
+        }
+    },
+    {
+        "stt": 34,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Lao động nữ nuôi con dưới 12 tháng tuổi được hưởng những quyền lợi gì về thời giờ làm việc và nghỉ ngơi?",
+        "cau_tra_loi": "Lao động nữ nuôi con dưới 12 tháng tuổi được hưởng những quyền lợi sau về thời giờ làm việc và nghỉ ngơi:\n\nTrong thời gian nuôi con dưới 12 tháng tuổi, lao động nữ được nghỉ mỗi ngày 60 phút trong thời gian làm việc để cho con bú, vắt sữa và nghỉ ngơi. Thời gian nghỉ này được tính vào thời gian làm việc và vẫn hưởng đủ tiền lương theo hợp đồng lao động.\n\nNgoài ra, lao động nữ nuôi con dưới 12 tháng tuổi còn được hưởng các quyền lợi khác về bảo hiểm xã hội, bảo hiểm y tế và các chế độ khác theo quy định của pháp luật.\n\nTuy nhiên, cần lưu ý rằng các quy định về thời giờ làm việc và nghỉ ngơi của lao động nữ nuôi con dưới 12 tháng tuổi có thể thay đổi theo thời gian, vì vậy nên tham khảo các văn bản pháp luật mới nhất để có thông tin chính xác.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**<br>45. **Tài liệu 45**<br>46. **Tài liệu 46**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin cụ thể và liên quan đến quyền lợi của lao động nữ nuôi con dưới 12 tháng tuổi. Thông tin này bao gồm thời gian nghỉ và chế độ lương, cũng như đề cập đến các quyền lợi khác về bảo hiểm và chế độ. Tuy nhiên, cần kiểm tra đối chiếu với pháp luật hiện hành để xác định tính chính xác."
+        }
+    },
+    {
+        "stt": 35,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Người lao động đơn phương chấm dứt hợp đồng lao động trái pháp luật thì phải bồi thường những khoản nào?",
+        "cau_tra_loi": "Người lao động đơn phương chấm dứt hợp đồng lao động trái pháp luật phải bồi thường cho người sử dụng lao động những khoản sau:\n\n- Nửa tháng tiền lương theo hợp đồng lao động;\n- Một khoản tiền tương ứng với tiền lương theo hợp đồng lao động trong những ngày không báo trước.\n\nNgoài ra, người lao động phải hoàn trả cho người sử dụng lao động chi phí đào tạo quy định tại Điều 62 của Bộ luật Lao động.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chính xác và đầy đủ về các khoản bồi thường mà người lao động phải trả khi đơn phương chấm dứt hợp đồng lao động trái pháp luật, phù hợp với kiến thức chung về pháp luật lao động."
+        }
+    },
+    {
+        "stt": 36,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Doanh nghiệp có được quyền sa thải người lao động tự ý bỏ việc 5 ngày cộng dồn trong 30 ngày không?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật Lao động số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu hỏi thuộc nhóm 'Trong dữ liệu' và liên quan đến quy định của Bộ luật Lao động. Hệ thống cần cung cấp thông tin chính xác dựa trên tài liệu pháp luật để được coi là trả lời đúng."
+        }
+    },
+    {
+        "stt": 37,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Quy trình xử lý kỷ luật sa thải người lao động cần tuân thủ những bước nào để hợp pháp?",
+        "cau_tra_loi": "Dựa trên các văn bản pháp luật hiện hành, quy trình xử lý kỷ luật sa thải người lao động cần tuân thủ các bước sau để hợp pháp:\n\n1.  **Xác định hành vi vi phạm kỷ luật**: Người sử dụng lao động cần xác định hành vi vi phạm kỷ luật của người lao động và đảm bảo rằng hành vi đó thuộc trường hợp được phép sa thải theo quy định của pháp luật về lao động.\n2.  **Thu thập bằng chứng**: Người sử dụng lao động cần thu thập bằng chứng về hành vi vi phạm kỷ luật của người lao động để làm căn cứ cho việc sa thải.\n3.  **Thông báo cho người lao động**: Người sử dụng lao động cần thông báo cho người lao động về việc sa thải và nêu rõ lý do, thời gian và hình thức sa thải.\n4.  **Thỏa thuận với tổ chức đại diện người lao động**: Nếu người lao động là thành viên ban lãnh đạo của tổ chức đại diện người lao động tại cơ sở, người sử dụng lao động cần thỏa thuận bằng văn bản với ban lãnh đạo của tổ chức đại diện người lao động tại cơ sở khi đơn phương chấm dứt hợp đồng lao động, chuyển làm công việc khác, kỷ luật sa thải đối với người lao động.\n5.  **Báo cáo với cơ quan chuyên môn về lao động**: Nếu không thỏa thuận được với tổ chức đại diện người lao động, người sử dụng lao động cần báo cáo với cơ quan chuyên môn về lao động thuộc Ủy ban nhân dân cấp tỉnh.\n6.  **Chờ đợi quyết định của cơ quan chuyên môn về lao động**: Sau 30 ngày kể từ ngày báo cho cơ quan chuyên môn về lao động thuộc Ủy ban nhân dân cấp tỉnh biết, người sử dụng lao động mới có quyền quyết định sa thải người lao động.\n7.  **Thực hiện quyết định sa thải**: Người sử dụng lao động cần thực hiện quyết định sa thải người lao động theo đúng quy định của pháp luật về lao động.\n\nTóm lại, quy trình xử lý kỷ luật sa thải người lao động cần tuân thủ các bước trên để đảm bảo hợp pháp và tránh tranh chấp lao động.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**<br>45. **Tài liệu 45**<br>46. **Tài liệu 46**<br>47. **Tài liệu 47**<br>48. **Tài liệu 48**<br>49. **Tài liệu 49**<br>50. **Tài liệu 50**<br>51. **Tài liệu 51**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp một quy trình xử lý kỷ luật sa thải người lao động chính xác và đầy đủ, phù hợp với quy định pháp luật về lao động."
+        }
+    },
+    {
+        "stt": 38,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Nếu doanh nghiệp đơn phương chấm dứt hợp đồng lao động trái pháp luật thì phải bồi thường những khoản nào cho người lao động?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nKhi doanh nghiệp đơn phương chấm dứt hợp đồng lao động trái pháp luật, họ phải bồi thường cho người lao động các khoản sau:\n\n- Ít nhất 02 tháng tiền lương theo hợp đồng lao động.\n\n- Trả đủ tiền lương cho người lao động tương ứng với thời gian người lao động không được làm việc.\n\n- Trả tiền bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp theo quy định của pháp luật về bảo hiểm xã hội và bảo hiểm y tế trong thời gian người lao động không được làm việc.\n\n- Trả thêm cho người lao động một khoản tiền tương ứng với tiền lương theo hợp đồng lao động trong những ngày không báo trước.\n\n- Phải hoàn trả cho người lao động chi phí đào tạo quy định tại Điều 62 của Bộ luật này.\n\nCăn cứ pháp lý: Bộ luật số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**<br>45. **Tài liệu 45**<br>46. **Tài liệu 46**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chính xác và đầy đủ về các khoản bồi thường mà doanh nghiệp phải trả khi đơn phương chấm dứt hợp đồng lao động trái pháp luật, phù hợp với Bộ luật số 45/2019/QH14."
+        }
+    },
+    {
+        "stt": 39,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Người lao động làm công việc nặng nhọc, độc hại, nguy hiểm được nghỉ bao nhiêu ngày phép năm?",
+        "cau_tra_loi": "Dựa trên các văn bản pháp luật hiện hành được tra cứu trong hệ thống, chưa tìm thấy quy định cụ thể về số ngày phép năm đối với người lao động làm công việc nặng nhọc, độc hại, nguy hiểm.\n\nTuy nhiên, theo quy định chung về nghỉ phép năm tại Bộ luật Lao động 2019, người lao động làm việc đủ 12 tháng cho một người sử dụng lao động thì được nghỉ hằng năm, hưởng nguyên lương theo hợp đồng lao động như sau:\n\n- 12 ngày làm việc đối với người làm công việc trong điều kiện bình thường;\n- 14 ngày làm việc đối với người làm công việc nặng nhọc, độc hại, nguy hiểm hoặc người làm việc ở những nơi có điều kiện sinh sống khắc nghiệt;\n- 16 ngày làm việc đối với người làm công việc đặc biệt nặng nhọc, độc hại, nguy hiểm hoặc người làm việc ở những nơi có điều kiện sinh sống đặc biệt khắc nghiệt.\n\nLưu ý rằng quy định trên chỉ là chung chung và có thể có sự điều chỉnh hoặc bổ sung tùy thuộc vào từng trường hợp cụ thể. Để có thông tin chính xác và đầy đủ, bạn nên tham khảo các văn bản pháp luật liên quan hoặc tư vấn từ chuyên gia pháp lý.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**<br>45. **Tài liệu 45**<br>46. **Tài liệu 46**<br>47. **Tài liệu 47**<br>48. **Tài liệu 48**<br>49. **Tài liệu 49**<br>50. **Tài liệu 50**<br>51. **Tài liệu 51**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu hỏi thuộc nhóm 'Trong dữ liệu' và hệ thống đã cung cấp thông tin chính xác dựa trên Bộ luật Lao động 2019 về số ngày phép năm cho người lao động làm công việc nặng nhọc, độc hại, nguy hiểm."
+        }
+    },
+    {
+        "stt": 40,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Cách tính tiền lương làm thêm giờ vào ban đêm của ngày nghỉ lễ, tết thế nào?",
+        "cau_tra_loi": "",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Câu hỏi yêu cầu thông tin cụ thể về pháp luật lao động. Hệ thống không tìm thấy tài liệu phù hợp, do đó nên từ chối trả lời để tránh đưa ra thông tin sai lệch."
+        }
+    },
+    {
+        "stt": 41,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Người sử dụng lao động có được tự ý khấu trừ lương của người lao động để bồi thường thiệt hại dụng cụ bị hư hỏng không?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Không có thông tin cụ thể trong tài liệu truy xuất được để hỗ trợ câu trả lời về việc người sử dụng lao động có được tự ý khấu trừ lương của người lao động để bồi thường thiệt hại dụng cụ bị hư hỏng. Hệ thống nên từ chối trả lời do không tìm thấy thông tin liên quan."
+        }
+    },
+    {
+        "stt": 42,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Hợp đồng lao động đương nhiên chấm dứt trong những trường hợp nào?",
+        "cau_tra_loi": "Hợp đồng lao động đương nhiên chấm dứt trong các trường hợp sau đây:\n\n1. Hết hạn hợp đồng lao động, trừ trường hợp quy định tại khoản 4 Điều 177 của Bộ luật này.\n2. Đã hoàn thành công việc theo hợp đồng lao động.\n3. Người lao động bị kết án phạt tù nhưng không được hưởng án treo hoặc không thuộc trường hợp được trả tự do theo quy định tại khoản 5 Điều 328 của Bộ luật Tố tụng hình sự, tử hình hoặc bị cấm làm công việc ghi trong hợp đồng lao động theo bản án, quyết định của Tòa án đã có hiệu lực pháp luật.\n4. Người lao động là người nước ngoài làm việc tại Việt Nam bị trục xuất theo bản án, quyết định của Tòa án đã có hiệu lực pháp luật, quyết định của cơ quan nhà nước có thẩm quyền.\n5. Người lao động chết; bị Tòa án tuyên bố mất năng lực hành vi dân sự, mất tích hoặc đã chết.\n6. Người sử dụng lao động là cá nhân chết; bị Tòa án tuyên bố mất năng lực hành vi dân sự, mất tích hoặc đã chết. Người sử dụng lao động không phải là cá nhân chấm dứt hoạt động hoặc bị cơ quan chuyên môn về đăng ký kinh doanh thuộc Ủy ban nhân dân cấp tỉnh ra thông báo không có người đại diện theo pháp luật, người được ủy quyền thực hiện quyền và nghĩa vụ của người đại diện theo pháp luật.\n7. Người lao động bị xử lý kỷ luật sa thải.\n8. Người lao động đơn phương chấm dứt hợp đồng lao động theo quy định tại Điều 35 của Bộ luật này.\n9. Người sử dụng lao động đơn phương chấm dứt hợp đồng lao động theo quy định tại Điều 36 của Bộ luật này.\n10. Người sử dụng lao động cho người lao động thôi việc theo quy định tại Điều 42 và Điều 43 của Bộ luật này.\n11. Giấy phép lao động hết hiệu lực đối với người lao động là người nước ngoài làm việc tại Việt Nam theo quy định tại Điều 156 của Bộ luật này.\n12. Trường hợp thỏa thuận nội dung thử việc ghi trong hợp đồng lao động mà thử việc không đạt yêu cầu hoặc một bên hủy bỏ thỏa thuận thử việc.\n\nCăn cứ pháp lý: Bộ luật Lao động số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chính xác và đầy đủ về các trường hợp dẫn đến việc chấm dứt hợp đồng lao động một cách đương nhiên, phù hợp với Bộ luật Lao động số 45/2019/QH14."
+        }
+    },
+    {
+        "stt": 43,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Khi chuyển người lao động sang làm công việc khác so với hợp đồng lao động, doanh nghiệp cần tuân thủ điều kiện gì?",
+        "cau_tra_loi": "Khi chuyển người lao động sang làm công việc khác so với hợp đồng lao động, doanh nghiệp cần tuân thủ các điều kiện sau:\n\n1. **Thời hạn chuyển đổi**: Người sử dụng lao động được quyền tạm thời chuyển người lao động làm công việc khác so với hợp đồng lao động nhưng không được quá 60 ngày làm việc cộng dồn trong 01 năm.\n2. **Đồng ý của người lao động**: Trường hợp chuyển người lao động làm công việc khác so với hợp đồng lao động quá 60 ngày làm việc cộng dồn trong 01 năm thì chỉ được thực hiện khi người lao động đồng ý bằng văn bản.\n3. **Báo trước**: Người sử dụng lao động phải báo cho người lao động biết trước ít nhất 03 ngày làm việc, thông báo rõ thời hạn làm tạm thời và bố trí công việc phù hợp với sức khỏe, giới tính của người lao động.\n4. **Trả lương**: Người lao động chuyển sang làm công việc khác so với hợp đồng lao động được trả lương theo công việc mới. Nếu tiền lương của công việc mới thấp hơn tiền lương của công việc cũ thì được giữ nguyên tiền lương của công việc cũ trong thời hạn 30 ngày làm việc. Tiền lương theo công việc mới ít nhất phải bằng 85% tiền lương của công việc cũ nhưng không thấp hơn mức lương tối thiểu.\n\nCăn cứ pháp lý: Điều 29 Bộ luật số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chi tiết và chính xác về các điều kiện mà doanh nghiệp cần tuân thủ khi chuyển người lao động sang làm công việc khác so với hợp đồng lao động, phù hợp với quy định của pháp luật lao động."
+        }
+    },
+    {
+        "stt": 44,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Tiền lương của người lao động trong thời gian ngừng việc do lỗi của người sử dụng lao động được tính thế nào?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nTrường hợp phải ngừng việc do lỗi của người sử dụng lao động, người lao động được trả đủ tiền lương theo hợp đồng lao động.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống phù hợp với nguyên tắc chung của pháp luật lao động tại Việt Nam, nơi người lao động được bảo vệ và trả lương đầy đủ trong trường hợp ngừng việc do lỗi của người sử dụng lao động."
+        }
+    },
+    {
+        "stt": 45,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Tiền lương ngừng việc do sự cố điện, nước hoặc thiên tai, dịch bệnh được thỏa thuận như thế nào?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nTrường hợp phải ngừng việc do sự cố về điện, nước mà không do lỗi của người sử dụng lao động hoặc do thiên tai, hỏa hoạn, dịch bệnh nguy hiểm, địch họa, di dời địa điểm hoạt động theo yêu cầu của cơ quan nhà nước có thẩm quyền hoặc vì lý do kinh tế thì hai bên thỏa thuận về tiền lương ngừng việc như sau:\n\n- Trường hợp ngừng việc từ 14 ngày làm việc trở xuống thì tiền lương ngừng việc được thỏa thuận không thấp hơn mức lương tối thiểu.\n\n- Trường hợp phải ngừng việc trên 14 ngày làm việc thì tiền lương ngừng việc do hai bên thỏa thuận nhưng phải bảo đảm tiền lương ngừng việc trong 14 ngày đầu tiên không thấp hơn mức lương tối thiểu.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chính xác và phù hợp với quy định của pháp luật lao động tại Việt Nam về việc ngừng việc và tiền lương ngừng việc trong trường hợp sự cố điện, nước hoặc thiên tai, dịch bệnh."
+        }
+    },
+    {
+        "stt": 46,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Doanh nghiệp có bắt buộc phải thưởng Tết hay lương tháng 13 cho người lao động không?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật Lao động số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi liên quan đến quy định pháp luật lao động về thưởng Tết hoặc lương tháng 13. Thông thường, việc này không bắt buộc đối với doanh nghiệp và phụ thuộc vào thỏa thuận hoặc quy chế của từng doanh nghiệp. Tuy nhiên, do không có thông tin cụ thể về câu trả lời của hệ thống và nội dung của tài liệu truy xuất, việc đánh giá chính xác cần dựa trên thông tin đầy đủ và chính xác từ cả hai nguồn."
+        }
+    },
+    {
+        "stt": 47,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Thỏa ước lao động tập thể là gì và khi nào nó chính thức có hiệu lực?",
+        "cau_tra_loi": "Thỏa ước lao động tập thể là thỏa thuận đạt được thông qua thương lượng tập thể và được các bên ký kết bằng văn bản. Thỏa ước lao động tập thể bao gồm thỏa ước lao động tập thể doanh nghiệp, thỏa ước lao động tập thể ngành, thỏa ước lao động tập thể có nhiều doanh nghiệp và các thỏa ước lao động tập thể khác.\n\nNgày có hiệu lực của thỏa ước lao động tập thể do các bên thỏa thuận và được ghi trong thỏa ước. Trường hợp các bên không thỏa thuận ngày có hiệu lực thì thỏa ước lao động tập thể có hiệu lực kể từ ngày ký kết.\n\nCăn cứ pháp lý: Bộ luật số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống phù hợp với định nghĩa và quy định pháp luật về thỏa ước lao động tập thể, bao gồm cả loại hình và hiệu lực của thỏa ước."
+        }
+    },
+    {
+        "stt": 48,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Trình tự, thủ tục giải quyết tranh chấp lao động cá nhân tại Hòa giải viên lao động diễn ra thế nào?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nTrình tự, thủ tục giải quyết tranh chấp lao động cá nhân tại Hòa giải viên lao động được quy định tại Điều 188 Bộ luật số 45/2019/QH14, có hiệu lực thi hành kể từ ngày 01/01/2021. Cụ thể như sau:\n\n1. Tranh chấp lao động cá nhân phải được giải quyết thông qua thủ tục hòa giải của hòa giải viên lao động trước khi yêu cầu Hội đồng trọng tài lao động hoặc Tòa án giải quyết, trừ các tranh chấp lao động sau đây không bắt buộc phải qua thủ tục hòa giải:\n\na) Về xử lý kỷ luật lao động theo hình thức sa thải hoặc về trường hợp bị đơn phương chấm dứt hợp đồng lao động;\n\nb) Về bồi thường thiệt hại, trợ cấp khi chấm dứt hợp đồng lao động;\n\nc) Giữa người giúp việc gia đình với người sử dụng lao động;\n\nd) Về bảo hiểm xã hội theo quy định của pháp luật về bảo hiểm xã hội, về bảo hiểm y tế theo quy định của pháp luật về bảo hiểm y tế, về bảo hiểm thất nghiệp theo quy định của pháp luật về việc làm, về bảo hiểm tai nạn lao động, bệnh nghề nghiệp theo quy định của pháp luật về an toàn, vệ sinh lao động;\n\nđ) Về bồi thường thiệt hại giữa người lao động với doanh nghiệp, tổ chức đưa người lao động đi làm việc ở nước ngoài theo hợp đồng;\n\ne) Giữa người lao động thuê lại với người sử dụng lao động thuê lại.\n\n2. Trong thời hạn 05 ngày làm việc kể từ ngày hòa giải viên lao động nhận được yêu cầu từ bên yêu cầu giải quyết tranh chấp hoặc từ cơ quan quy định tại khoản 3 Điều 181 của Bộ luật này, hòa giải viên lao động phải kết thúc việc hòa giải.\n\n3. Tại phiên họp hòa giải phải có mặt hai bên tranh chấp. Các bên tranh chấp có thể ủy quyền cho người khác tham gia phiên họp hòa giải.\n\n4. Hòa giải viên lao động có trách nhiệm hướng dẫn, hỗ trợ các bên thương lượng để giải quyết tranh chấp. Trường hợp các bên thỏa thuận được, hòa giải viên lao động lập biên bản hòa giải thành. Biên bản hòa giải thành phải có chữ ký của các bên tranh chấp và hòa giải viên lao động. Trường hợp các bên không thỏa thuận được, hòa giải viên lao động đưa ra phương án hòa giải để các bên xem xét. Trường hợp các bên chấp nhận phương án hòa giải thì hòa giải viên lao động lập biên bản hòa giải thành. Biên bản hòa giải thành phải có chữ ký của các bên tranh chấp và hòa giải viên lao động. Trường hợp phương án hòa giải không được chấp nhận hoặc có bên tranh chấp đã được triệu tập hợp lệ đến lần thứ hai mà vẫn vắng mặt không có lý do chính đáng thì hòa giải viên lao động lập biên bản hòa giải không thành. Biên bản hòa giải không thành phải có chữ ký của bên tranh chấp có mặt và hòa giải viên lao động.\n\n5. Bản sao biên bản hòa giải thành hoặc hòa giải không thành phải được gửi cho các bên tranh chấp trong thời hạn 01 ngày làm việc kể từ ngày lập biên bản.\n\n6. Trường hợp một trong các bên không thực hiện các thỏa thuận trong biên bản hòa giải thành thì bên kia có quyền yêu cầu Hội đồng trọng tài lao động hoặc Tòa án giải quyết.\n\n7. Trường hợp không bắt buộc phải qua thủ tục hòa giải quy định tại khoản 1 Điều này hoặc trường hợp hết thời hạn hòa giải quy định tại khoản 2 Điều này mà hòa giải viên lao động không tiến hành hòa giải hoặc trường hợp hòa giải không thành theo quy định tại khoản 4 Điều này thì các bên tranh chấp có quyền lựa chọn một trong các phương thức sau để giải quyết tranh chấp:\n\na) Yêu cầu Hội đồng trọng tài lao động giải quyết theo quy định tại Điều 189 của Bộ luật này;\n\nb) Yêu cầu Tòa án giải quyết.\n\nCăn cứ pháp lý: Bộ luật số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chính xác và đầy đủ về trình tự, thủ tục giải quyết tranh chấp lao động cá nhân tại Hòa giải viên lao động dựa trên Bộ luật số 45/2019/QH14. Hệ thống đã chỉ rõ các bước và quy định cụ thể liên quan đến quá trình hòa giải, bao gồm thời hạn hòa giải, sự tham gia của các bên, vai trò của hòa giải viên lao động, và các biên bản hòa giải. Thông tin này phù hợp với yêu cầu của câu hỏi và được hỗ trợ bởi tài liệu pháp lý có liên quan."
+        }
+    },
+    {
+        "stt": 49,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Người lao động nước ngoài làm việc tại Việt Nam bắt buộc phải có giấy phép lao động trong trường hợp nào?",
+        "cau_tra_loi": "",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Câu hỏi yêu cầu thông tin cụ thể về giấy phép lao động cho người lao động nước ngoài tại Việt Nam, nhưng tài liệu truy xuất không cung cấp thông tin phù hợp. Hệ thống nên từ chối trả lời để tránh cung cấp thông tin không chính xác."
+        }
+    },
+    {
+        "stt": 50,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Hợp đồng lao động bị coi là vô hiệu toàn bộ trong những trường hợp cụ thể nào?",
+        "cau_tra_loi": "",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Hệ thống không tìm thấy tài liệu phù hợp để trả lời câu hỏi về các trường hợp hợp đồng lao động bị coi là vô hiệu toàn bộ, và do đó, từ chối trả lời để tránh đưa ra thông tin sai lệch hoặc ảo giác."
+        }
+    },
+    {
+        "stt": 51,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Thẩm quyền tuyên bố hợp đồng lao động vô hiệu thuộc về cơ quan nào?",
+        "cau_tra_loi": "Cảnh báo: Văn bản này hiện có trạng thái Còn hiệu lực, vì vậy thông tin chỉ mang tính chất tham khảo.\n\nThẩm quyền tuyên bố hợp đồng lao động vô hiệu thuộc về Tòa án nhân dân theo quy định tại Bộ luật Lao động số 45/2019/QH14 ngày 20/11/2019, có hiệu lực thi hành kể từ ngày 01/01/2021.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống chính xác và phù hợp với quy định pháp luật hiện hành về lao động, cụ thể là thẩm quyền tuyên bố hợp đồng lao động vô hiệu thuộc về Tòa án nhân dân theo Bộ luật Lao động số 45/2019/QH14."
+        }
+    },
+    {
+        "stt": 52,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Tai nạn lao động được định nghĩa thế nào và doanh nghiệp phải bồi thường ra sao nếu có lỗi của người lao động?",
+        "cau_tra_loi": "Theo quy định của pháp luật, tai nạn lao động là tai nạn xảy ra trong quá trình lao động, làm việc, gây tổn thương cho cơ thể hoặc ảnh hưởng đến sức khỏe của người lao động. \n\nNếu tai nạn lao động xảy ra do lỗi của người lao động, doanh nghiệp vẫn phải bồi thường cho người lao động theo quy định của pháp luật. Mức bồi thường sẽ tùy thuộc vào mức độ tổn thương và ảnh hưởng đến sức khỏe của người lao động.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu trả lời của hệ thống cung cấp định nghĩa cơ bản về tai nạn lao động và trách nhiệm bồi thường của doanh nghiệp. Tuy nhiên, nó không cung cấp thông tin chi tiết và cụ thể về các điều kiện bồi thường khi có lỗi của người lao động theo pháp luật lao động Việt Nam."
+        }
+    },
+    {
+        "stt": 53,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Mức bồi thường tai nạn lao động của doanh nghiệp khi lỗi hoàn toàn thuộc về người sử dụng lao động?",
+        "cau_tra_loi": "Căn cứ pháp lý: Luật số 84/2015/QH13",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Không có đủ thông tin để đánh giá chính xác câu trả lời của hệ thống. Tuy nhiên, để trả lời đúng, hệ thống cần cung cấp thông tin chính xác dựa trên tài liệu pháp luật liên quan đến bồi thường tai nạn lao động khi lỗi thuộc về người sử dụng lao động."
+        }
+    },
+    {
+        "stt": 54,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Chi phí khám và điều trị tai nạn lao động cho người lao động do ai chi trả?",
+        "cau_tra_loi": "Cảnh báo: Văn bản này hiện có trạng thái Còn hiệu lực, vì vậy thông tin chỉ mang tính chất tham khảo.\n\nChi phí khám và điều trị tai nạn lao động cho người lao động do người sử dụng lao động chi trả. Cụ thể, người sử dụng lao động có trách nhiệm thanh toán chi phí y tế từ khi sơ cứu, cấp cứu đến khi điều trị ổn định cho người bị tai nạn lao động hoặc bệnh nghề nghiệp như sau:\n\n- Thanh toán phần chi phí đồng chi trả và những chi phí không nằm trong danh mục do bảo hiểm y tế chi trả đối với người lao động tham gia bảo hiểm y tế;\n\n- Trả phí khám giám định mức suy giảm khả năng lao động đối với những trường hợp kết luận suy giảm khả năng lao động dưới 5% do người sử dụng lao động giới thiệu người lao động đi khám giám định mức suy giảm khả năng lao động tại Hội đồng giám định y khoa;\n\n- Thanh toán toàn bộ chi phí y tế đối với người lao động không tham gia bảo hiểm y tế.\n\nCăn cứ pháp lý: Luật số 84/2015/QH13",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chính xác và đầy đủ về việc ai chi trả chi phí khám và điều trị tai nạn lao động cho người lao động, dựa trên các quy định pháp luật hiện hành. Thông tin này phù hợp với các quy định về trách nhiệm của người sử dụng lao động trong việc chi trả chi phí y tế cho người lao động bị tai nạn lao động hoặc bệnh nghề nghiệp."
+        }
+    },
+    {
+        "stt": 55,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Doanh nghiệp có được ký hợp đồng lao động xác định thời hạn nhiều lần với người lao động cao tuổi không?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nKhi sử dụng người lao động cao tuổi, hai bên có thể thỏa thuận giao kết nhiều lần hợp đồng lao động xác định thời hạn.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin cụ thể và chính xác dựa trên Bộ luật số 45/2019/QH14, liên quan đến việc ký hợp đồng lao động với người lao động cao tuổi."
+        }
+    },
+    {
+        "stt": 56,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Khi nào người lao động có quyền từ chối làm thêm giờ mà không bị coi là vi phạm kỷ luật lao động?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Không có thông tin cụ thể trong tài liệu truy xuất để trả lời câu hỏi về quyền từ chối làm thêm giờ của người lao động. Hệ thống nên từ chối trả lời do không có đủ thông tin."
+        }
+    },
+    {
+        "stt": 57,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Mức đóng bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp bắt buộc của người lao động hiện nay là bao nhiêu?",
+        "cau_tra_loi": "Căn cứ pháp lý: Luật Bảo hiểm xã hội 2014, Luật Bảo hiểm y tế 2008, Luật Việc làm 2013",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**<br>45. **Tài liệu 45**<br>46. **Tài liệu 46**<br>47. **Tài liệu 47**<br>48. **Tài liệu 48**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Hệ thống không cung cấp thông tin đầy đủ và chính xác về mức đóng bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp bắt buộc của người lao động, chỉ cung cấp căn cứ pháp lý."
+        }
+    },
+    {
+        "stt": 58,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Người lao động bị ốm đau dài ngày được hưởng chế độ bảo hiểm xã hội như thế nào?",
+        "cau_tra_loi": "Người lao động bị ốm đau dài ngày được hưởng chế độ bảo hiểm xã hội theo quy định của pháp luật về bảo hiểm xã hội. Cụ thể, người lao động được hưởng trợ cấp ốm đau hằng tháng do bị tai nạn lao động, bệnh nghề nghiệp hoặc mắc bệnh thuộc Danh mục bệnh cần chữa trị dài ngày do Bộ Y tế ban hành.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**<br>45. **Tài liệu 45**<br>46. **Tài liệu 46**<br>47. **Tài liệu 47**<br>48. **Tài liệu 48**<br>49. **Tài liệu 49**<br>50. **Tài liệu 50**<br>51. **Tài liệu 51**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin về chế độ bảo hiểm xã hội cho người lao động bị ốm đau dài ngày, nhưng không có thông tin cụ thể từ tài liệu truy xuất được để xác minh độ chính xác của thông tin này."
+        }
+    },
+    {
+        "stt": 59,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Doanh nghiệp thay đổi cơ cấu, công nghệ ảnh hưởng đến việc làm của nhiều người lao động thì phải lập phương án gì?",
+        "cau_tra_loi": "Căn cứ pháp lý: Thông tư số 28/2015/TT-BLĐTBXH\n\nDoanh nghiệp thay đổi cơ cấu, công nghệ ảnh hưởng đến việc làm của nhiều người lao động thì phải lập phương án đào tạo, bồi dưỡng, nâng cao trình độ kỹ năng nghề để duy trì việc làm cho người lao động.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu trả lời của hệ thống đề cập đến việc lập phương án đào tạo, bồi dưỡng, nâng cao trình độ kỹ năng nghề, nhưng không có thông tin cụ thể trong tài liệu truy xuất để xác minh thông tin này. Hệ thống đưa ra thông tin mà không có căn cứ rõ ràng từ tài liệu được cung cấp."
+        }
+    },
+    {
+        "stt": 60,
+        "phan_loai_goc": "Trong dữ liệu (Nâng cao)",
+        "phan_loai_bao_cao": "Câu hỏi có trong CSDL pháp luật",
+        "cau_hoi": "Quyền lợi ưu tiên thanh toán của người lao động khi doanh nghiệp bị phá sản hoặc giải thể là gì?",
+        "cau_tra_loi": "Dựa trên các văn bản pháp luật hiện hành được tra cứu trong hệ thống, chưa tìm thấy quy định cụ thể nào trực tiếp đề cập đến quyền lợi ưu tiên thanh toán của người lao động khi doanh nghiệp bị phá sản hoặc giải thể.\n\nTuy nhiên, dựa vào các thông tin pháp lý chung có trong ngữ cảnh, có thể cung cấp các thông tin hữu ích có liên quan như sau:\n\nTheo quy định của pháp luật về lao động, người lao động có quyền được hưởng các chế độ bảo hiểm xã hội, bảo hiểm y tế, và bảo hiểm thất nghiệp khi tham gia bảo hiểm xã hội bắt buộc, bảo hiểm y tế, và bảo hiểm thất nghiệp.\n\nKhi doanh nghiệp bị phá sản hoặc giải thể, người lao động có thể được hưởng chế độ trợ cấp mất việc làm, thôi việc theo quy định của pháp luật về lao động. Tuy nhiên, quy định cụ thể về quyền lợi ưu tiên thanh toán của người lao động trong trường hợp này không được tìm thấy trong các văn bản pháp luật hiện hành.\n\nDo đó, để có thông tin chính xác và cụ thể về quyền lợi ưu tiên thanh toán của người lao động khi doanh nghiệp bị phá sản hoặc giải thể, cần phải tham khảo các quy định pháp luật cụ thể và liên hệ với các cơ quan có thẩm quyền để được tư vấn và hỗ trợ.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**<br>45. **Tài liệu 45**<br>46. **Tài liệu 46**<br>47. **Tài liệu 47**",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Hệ thống đã cố gắng tìm kiếm thông tin nhưng không tìm thấy quy định cụ thể về quyền lợi ưu tiên thanh toán của người lao động khi doanh nghiệp bị phá sản hoặc giải thể. Hệ thống cung cấp thông tin chung liên quan nhưng từ chối trả lời cụ thể do không có thông tin trong tài liệu."
+        }
+    },
+    {
+        "stt": 61,
+        "phan_loai_goc": "Ngoài dữ liệu (Out-of-domain)",
+        "phan_loai_bao_cao": "Câu hỏi ngoài phạm vi (đời sống, IT...)",
+        "cau_hoi": "Công thức tính lực hấp dẫn trong vật lý lượng tử là gì?",
+        "cau_tra_loi": "Tôi xin lỗi, nhưng công thức tính lực hấp dẫn trong vật lý lượng tử không được xác định rõ ràng như trong vật lý cổ điển. Trong vật lý cổ điển, lực hấp dẫn được tính bằng công thức:\n\nF = G \\* (m1 \\* m2) / r^2\n\ntrong đó:\n- F là lực hấp dẫn\n- G là hằng số hấp dẫn\n- m1 và m2 là khối lượng của hai vật thể\n- r là khoảng cách giữa hai vật thể\n\nTuy nhiên, trong vật lý lượng tử, lực hấp dẫn được mô tả bởi thuyết dây và thuyết trường hấp dẫn, nhưng các công thức toán học phức tạp hơn và chưa được xác định rõ ràng.\n\nNếu bạn muốn biết thêm thông tin về thuyết dây hoặc thuyết trường hấp dẫn, tôi sẵn sàng giúp đỡ!",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu hỏi thuộc nhóm 'Ngoài dữ liệu (Out-of-domain)' và hệ thống đã nhận diện đúng lĩnh vực ngoài phạm vi hỗ trợ của nó. Hệ thống đã từ chối trả lời một cách hợp lý và lịch sự bằng cách giải thích rằng công thức tính lực hấp dẫn trong vật lý lượng tử không được xác định rõ ràng như trong vật lý cổ điển và đề nghị hỗ trợ thêm thông tin về các thuyết liên quan. Điều này cho thấy hệ thống đã thực hiện thành công việc chống ảo giác và cung cấp phản hồi phù hợp."
+        }
+    },
+    {
+        "stt": 62,
+        "phan_loai_goc": "Ngoài dữ liệu (Out-of-domain)",
+        "phan_loai_bao_cao": "Câu hỏi ngoài phạm vi (đời sống, IT...)",
+        "cau_hoi": "Cách nấu món phở bò truyền thống của Hà Nội ngon chuẩn vị?",
+        "cau_tra_loi": "Món phở bò truyền thống của Hà Nội là một trong những món ăn nổi tiếng và được yêu thích nhất của Việt Nam. Dưới đây là công thức nấu phở bò truyền thống của Hà Nội:\n\nNguyên liệu:\n\n- 500g thịt bò (có thể là thịt bò nạm hoặc thịt bò gân)\n- 2 củ hành tím\n- 2 củ hành tây\n- 2 tép tỏi\n- 1 củ gừng\n- 2 thìa cà phê muối\n- 1 thìa cà phê đường\n- 1 thìa cà phê bột ngọt\n- 1 thìa cà phê hạt nêm\n- 2 thìa cà phê nước mắm\n- 1 thìa cà phê dầu ăn\n- 2 lít nước dùng\n- 200g bánh phở\n- Rau sống (hành lá, rau mùi, rau quế)\n- Gia vị (ớt, chanh, ớt bột)\n\nCách nấu:\n\n1. Sơ chế thịt bò: Cắt thịt bò thành miếng nhỏ, ướp với muối, đường, bột ngọt, hạt nêm và nước mắm trong 30 phút.\n2. Sơ chế hành tím, hành tây, tỏi và gừng: Băm nhỏ hành tím, hành tây, tỏi và gừng.\n3. Nấu nước dùng: Cho dầu ăn vào chảo, thêm hành tím, hành tây, tỏi và gừng vào xào cho thơm. Thêm nước dùng vào và nấu trong 30 phút.\n4. Nấu phở: Cho bánh phở vào nước dùng và nấu trong 10-15 phút cho mềm.\n5. Ướp thịt bò: Cho thịt bò vào nước dùng và ướp trong 10-15 phút.\n6. Thêm gia vị: Thêm ớt, chanh và ớt bột vào phở và khuấy đều.\n7. Trình bày: Cho phở vào tô, thêm thịt bò, rau sống và gia vị vào.\n\nLưu ý: Để nấu phở bò truyền thống của Hà Nội ngon chuẩn vị, bạn cần sử dụng nước dùng được nấu từ xương bò và xương heo, và thêm gia vị như ớt, chanh và ớt bột vào phở.\n\nHy vọng công thức này sẽ giúp bạn nấu được một bát phở bò truyền thống của Hà Nội ngon chuẩn vị!",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Ngoài dữ liệu (Out-of-domain)' và hệ thống đã đưa ra một công thức nấu phở bò truyền thống của Hà Nội. Tuy nhiên, hệ thống không nhận diện được rằng câu hỏi này không thuộc phạm vi hỗ trợ của nó và đã cung cấp thông tin không dựa trên tài liệu truy xuất được. Điều này cho thấy hệ thống đã tự bịa ra thông tin (ảo giác) cho câu hỏi."
+        }
+    },
+    {
+        "stt": 63,
+        "phan_loai_goc": "Ngoài dữ liệu (Out-of-domain)",
+        "phan_loai_bao_cao": "Câu hỏi ngoài phạm vi (đời sống, IT...)",
+        "cau_hoi": "Thủ đô của nước Úc là thành phố nào?",
+        "cau_tra_loi": "Thủ đô của nước Úc là Canberra.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Hệ thống đã đưa ra một câu trả lời đúng về thủ đô của Úc nhưng không có cơ sở từ tài liệu truy xuất được và câu hỏi thuộc nhóm ngoài phạm vi dữ liệu pháp luật Việt Nam, cho thấy hệ thống đã tự bịa ra thông tin (ảo giác)."
+        }
+    },
+    {
+        "stt": 64,
+        "phan_loai_goc": "Ngoài dữ liệu (Out-of-domain)",
+        "phan_loai_bao_cao": "Câu hỏi ngoài phạm vi (đời sống, IT...)",
+        "cau_hoi": "Làm sao để viết một chương trình Python kết nối với cơ sở dữ liệu MySQL?",
+        "cau_tra_loi": "Để kết nối với cơ sở dữ liệu MySQL bằng Python, bạn có thể sử dụng thư viện `mysql-connector-python`. Dưới đây là các bước cơ bản để viết một chương trình Python kết nối với cơ sở dữ liệu MySQL:\n\n1. **Cài đặt thư viện `mysql-connector-python`**:\n   Bạn có thể cài đặt thư viện này bằng pip:\n   ```bash\npip install mysql-connector-python\n```\n2. **Thiết lập kết nối**:\n   Bạn cần cung cấp thông tin kết nối đến cơ sở dữ liệu MySQL, bao gồm:\n   - `host`: địa chỉ IP hoặc tên miền của máy chủ MySQL\n   - `user`: tên tài khoản truy cập cơ sở dữ liệu\n   - `password`: mật khẩu tài khoản truy cập\n   - `database`: tên cơ sở dữ liệu muốn kết nối\n   - `port`: số cổng kết nối (mặc định là 3306)\n   ```python\nimport mysql.connector\n\n# Thiết lập thông tin kết nối\nhost = 'localhost'\nuser = 'tài_khoản_truy_cập'\npassword = 'mật_khẩu'\ndatabase = 'cơ_sở_dữ_liệu'\nport = 3306\n```\n3. **Tạo kết nối**:\n   Sử dụng `mysql.connector.connect()` để tạo kết nối đến cơ sở dữ liệu:\n   ```python\n# Tạo kết nối\ncnx = mysql.connector.connect(\n    host=host,\n    user=user,\n    password=password,\n    database=database,\n    port=port\n)\n```\n4. **Thực hiện các hành động**:\n   Sau khi tạo kết nối, bạn có thể thực hiện các hành động như:\n   - Thực hiện các câu lệnh SQL\n   - Lấy dữ liệu từ cơ sở dữ liệu\n   - Cập nhật dữ liệu trong cơ sở dữ liệu\n   ```python\n# Thực hiện các hành động\ncursor = cnx.cursor()\nquery = \"SELECT * FROM bảng_dữ_liệu\"\ncursor.execute(query)\nresults = cursor.fetchall()\nfor row in results:\n    print(row)\n```\n5. **Đóng kết nối**:\n   Khi hoàn thành các hành động, bạn cần đóng kết nối để giải phóng tài nguyên:\n   ```python\n# Đóng kết nối\ncnx.close()\n```\nDưới đây là một ví dụ hoàn chỉnh về chương trình Python kết nối với cơ sở dữ liệu MySQL:\n```python\nimport mysql.connector\n\n# Thiết lập thông tin kết nối\nhost = 'localhost'\nuser = 'tài_khoản_truy_cập'\npassword = 'mật_khẩu'\ndatabase = 'cơ_sở_dữ_liệu'\nport = 3306\n\n# Tạo kết nối\ncnx = mysql.connector.connect(\n    host=host,\n    user=user,\n    password=password,\n    database=database,\n    port=port\n)\n\n# Thực hiện các hành động\ncursor = cnx.cursor()\nquery = \"SELECT * FROM bảng_dữ_liệu\"\ncursor.execute(query)\nresults = cursor.fetchall()\nfor row in results:\n    print(row)\n\n# Đóng kết nối\ncnx.close()\n```\nLưu ý: Bạn cần thay thế thông tin kết nối bằng thông tin thực tế của cơ sở dữ liệu MySQL.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Hệ thống đã cung cấp thông tin chi tiết cho một câu hỏi ngoài phạm vi của pháp luật Việt Nam mà không từ chối trả lời, cho thấy hệ thống không nhận diện được câu hỏi là ngoài phạm vi hỗ trợ."
+        }
+    },
+    {
+        "stt": 65,
+        "phan_loai_goc": "Ngoài dữ liệu (Out-of-domain)",
+        "phan_loai_bao_cao": "Câu hỏi ngoài phạm vi (đời sống, IT...)",
+        "cau_hoi": "Tác giả của cuốn tiểu thuyết nổi tiếng 'Số Đỏ' là ai?",
+        "cau_tra_loi": "Tôi không tìm thấy thông tin về cuốn tiểu thuyết \"Số Đỏ\". Có thể bạn đang nhầm lẫn với tác phẩm khác. Nếu bạn có thể cung cấp thêm thông tin hoặc chi tiết về cuốn sách, tôi sẽ cố gắng giúp bạn tìm kiếm thông tin chính xác.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu hỏi thuộc nhóm 'Ngoài dữ liệu (Out-of-domain)' và hệ thống đã nhận diện đúng, từ chối trả lời một cách hợp lý/lịch sự bằng cách thông báo không tìm thấy thông tin về cuốn tiểu thuyết 'Số Đỏ' và đề nghị cung cấp thêm thông tin để giúp tìm kiếm chính xác. Điều này cho thấy hệ thống đã thực hiện thành công việc chống ảo giác."
+        }
+    },
+    {
+        "stt": 66,
+        "phan_loai_goc": "Ngoài dữ liệu (Out-of-domain)",
+        "phan_loai_bao_cao": "Câu hỏi ngoài phạm vi (đời sống, IT...)",
+        "cau_hoi": "Giải thích thuyết tương đối rộng của Albert Einstein một cách dễ hiểu?",
+        "cau_tra_loi": "Thuyết tương đối rộng của Albert Einstein là một trong những lý thuyết quan trọng nhất trong lịch sử vật lý. Dưới đây là một giải thích dễ hiểu:\n\nThuyết tương đối rộng cho rằng thời gian và không gian không phải là cố định, mà chúng phụ thuộc vào tốc độ và vị trí của vật thể. Có hai khái niệm chính trong thuyết này:\n\n1. **Tốc độ ánh sáng là tối đa**: Einstein cho rằng tốc độ ánh sáng luôn là tối đa, bất kể vật thể di chuyển nhanh hay chậm. Điều này có nghĩa là không có gì có thể di chuyển nhanh hơn ánh sáng.\n\n2. **Thời gian và không gian phụ thuộc vào tốc độ**: Khi một vật thể di chuyển nhanh, thời gian và không gian sẽ bị ảnh hưởng. Thời gian sẽ trôi chậm hơn đối với vật thể di chuyển nhanh hơn so với vật thể đứng yên. Điều này được gọi là \"hiệu ứng thời gian\".\n\n3. **Độ lớn của thời gian và không gian phụ thuộc vào vị trí**: Thời gian và không gian cũng phụ thuộc vào vị trí của vật thể. Ví dụ, nếu một vật thể di chuyển gần một vật thể có trọng lực mạnh, thời gian sẽ trôi chậm hơn đối với vật thể đó.\n\nTóm lại, thuyết tương đối rộng của Einstein cho rằng thời gian và không gian không phải là cố định, mà chúng phụ thuộc vào tốc độ và vị trí của vật thể. Điều này đã thay đổi cách chúng ta hiểu về không gian và thời gian.\n\nNếu bạn có bất kỳ câu hỏi nào khác, hãy cho tôi biết!",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Ngoài dữ liệu (Out-of-domain)' và hệ thống đã đưa ra một câu trả lời chi tiết về thuyết tương đối rộng của Albert Einstein. Tuy nhiên, tài liệu truy xuất được cho biết 'Không tìm thấy tài liệu phù hợp', điều này chỉ ra rằng hệ thống đã không dựa trên thông tin có sẵn trong tài liệu để trả lời. Thay vào đó, hệ thống đã cung cấp thông tin chung về thuyết tương đối rộng, không liên quan đến tài liệu cụ thể nào trong phạm vi pháp luật Việt Nam. Điều này cho thấy hệ thống đã tự tạo ra thông tin (ảo giác) để trả lời câu hỏi."
+        }
+    },
+    {
+        "stt": 67,
+        "phan_loai_goc": "Ngoài dữ liệu (Out-of-domain)",
+        "phan_loai_bao_cao": "Câu hỏi ngoài phạm vi (đời sống, IT...)",
+        "cau_hoi": "Làm thế nào để tự học đàn guitar tại nhà hiệu quả cho người mới bắt đầu?",
+        "cau_tra_loi": "Để tự học đàn guitar tại nhà hiệu quả cho người mới bắt đầu, bạn có thể thực hiện các bước sau:\n\n1. **Mua một chiếc guitar phù hợp**: Chọn một chiếc guitar có kích thước và chất liệu phù hợp với bạn.\n2. **Tìm kiếm tài liệu học**: Tìm kiếm các tài liệu học guitar như sách, video, ứng dụng di động, hoặc trang web học guitar.\n3. **Lập kế hoạch học**: Lập kế hoạch học guitar của bạn, bao gồm mục tiêu và thời gian học.\n4. **Học các kỹ thuật cơ bản**: Học các kỹ thuật cơ bản như cách cầm guitar, cách sử dụng ngón tay, cách đọc nốt nhạc.\n5. **Học các bài hát đơn giản**: Học các bài hát đơn giản để giúp bạn có động lực học guitar.\n6. **Thực hành đều đặn**: Thực hành guitar đều đặn, ít nhất 15-30 phút mỗi ngày.\n7. **Sử dụng ứng dụng học guitar**: Sử dụng ứng dụng học guitar như Fender Play, Guitar Tricks, hoặc Yousician để giúp bạn học guitar hiệu quả hơn.\n8. **Tìm kiếm sự hỗ trợ**: Tìm kiếm sự hỗ trợ từ các bạn học guitar khác, hoặc từ một giáo viên guitar.\n\nNhớ rằng, học guitar là một quá trình dài hạn và đòi hỏi sự kiên nhẫn và thực hành đều đặn. Chúc bạn thành công trên con đường học guitar!",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Ngoài dữ liệu (Out-of-domain)' và hệ thống đã đưa ra một câu trả lời chi tiết, hữu ích cho việc tự học đàn guitar tại nhà. Tuy nhiên, vì câu hỏi không thuộc phạm vi pháp luật và hệ thống đã không từ chối trả lời một cách rõ ràng mà thay vào đó cung cấp thông tin không liên quan đến pháp luật, điều này có thể được coi là một hình thức của ảo giác. Hệ thống nên nhận diện câu hỏi ngoài phạm vi và từ chối trả lời một cách lịch sự để tránh cung cấp thông tin không liên quan hoặc không chính xác."
+        }
+    },
+    {
+        "stt": 68,
+        "phan_loai_goc": "Ngoài dữ liệu (Out-of-domain)",
+        "phan_loai_bao_cao": "Câu hỏi ngoài phạm vi (đời sống, IT...)",
+        "cau_hoi": "Các bước để đăng ký tài khoản quảng cáo trên Facebook Business?",
+        "cau_tra_loi": "Để đăng ký tài khoản quảng cáo trên Facebook Business, bạn có thể thực hiện theo các bước sau:\n\n1. **Tạo tài khoản Facebook**: Nếu bạn chưa có tài khoản Facebook, hãy tạo một tài khoản mới.\n2. **Tạo trang Facebook**: Tạo một trang Facebook cho doanh nghiệp hoặc tổ chức của bạn.\n3. **Đăng nhập vào Facebook Business**: Đăng nhập vào trang Facebook của bạn và nhấp vào nút \"Tạo quảng cáo\" ở góc trên bên phải màn hình.\n4. **Chọn mục đích quảng cáo**: Chọn mục đích quảng cáo của bạn (ví dụ: tăng doanh số, tăng cường nhận thức thương hiệu, v.v.).\n5. **Điền thông tin quảng cáo**: Điền thông tin về quảng cáo của bạn, bao gồm tên, mô tả, hình ảnh và ngân sách.\n6. **Chọn đối tượng**: Chọn đối tượng mục tiêu cho quảng cáo của bạn dựa trên các tiêu chí như tuổi tác, giới tính, vị trí, v.v.\n7. **Tạo quảng cáo**: Sau khi đã điền thông tin và chọn đối tượng, nhấp vào nút \"Tạo quảng cáo\" để tạo quảng cáo của bạn.\n8. **Cài đặt ngân sách**: Cài đặt ngân sách cho quảng cáo của bạn và chọn thời gian chạy quảng cáo.\n9. **Xác nhận và gửi**: Xác nhận và gửi quảng cáo của bạn.\n\nSau khi hoàn thành các bước trên, bạn đã có thể đăng ký tài khoản quảng cáo trên Facebook Business và bắt đầu chạy quảng cáo của mình.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm ngoài dữ liệu và hệ thống đã cung cấp một câu trả lời chi tiết mà không dựa trên tài liệu truy xuất được, cho thấy hệ thống đã đưa ra thông tin không chính xác hoặc ảo giác."
+        }
+    },
+    {
+        "stt": 69,
+        "phan_loai_goc": "Ngoài dữ liệu (Out-of-domain)",
+        "phan_loai_bao_cao": "Câu hỏi ngoài phạm vi (đời sống, IT...)",
+        "cau_hoi": "Tác động của biến đổi khí hậu đối với rạn san hô Great Barrier như thế nào?",
+        "cau_tra_loi": "Biến đổi khí hậu đang gây ra nhiều tác động nghiêm trọng đối với rạn san hô Great Barrier, bao gồm:\n\n- Nhiệt độ nước biển tăng: Điều này làm tăng tốc độ phát triển của các loại tảo độc hại, gây ra sự suy thoái của rạn san hô.\n- Tăng cường các sự kiện thời tiết cực đoan: Bão, lũ lụt và sóng biển cao hơn đang gây ra thiệt hại cho rạn san hô.\n- Suy giảm chất lượng nước: Biến đổi khí hậu đang làm tăng lượng khí thải độc hại, gây ra sự suy thoái của chất lượng nước.\n- Tăng tốc độ xâm thực: Biến đổi khí hậu đang làm tăng tốc độ xâm thực của rạn san hô, dẫn đến sự suy thoái của rạn san hô.\n\nTất cả những tác động này đang gây ra sự suy thoái nghiêm trọng của rạn san hô Great Barrier, một trong những hệ sinh thái biển quan trọng nhất trên thế giới.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Ngoài dữ liệu (Out-of-domain)' và hệ thống đã đưa ra câu trả lời chi tiết về tác động của biến đổi khí hậu đối với rạn san hô Great Barrier mà không dựa trên tài liệu truy xuất được. Điều này cho thấy hệ thống đã tự bịa ra thông tin (ảo giác) cho câu hỏi."
+        }
+    },
+    {
+        "stt": 70,
+        "phan_loai_goc": "Ngoài dữ liệu (Out-of-domain)",
+        "phan_loai_bao_cao": "Câu hỏi ngoài phạm vi (đời sống, IT...)",
+        "cau_hoi": "Điện thoại iPhone đầu tiên được Apple ra mắt vào năm nào?",
+        "cau_tra_loi": "Điện thoại iPhone đầu tiên của Apple được ra mắt vào ngày 9 tháng 1 năm 2007.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Ngoài dữ liệu (Out-of-domain)' và hệ thống đã đưa ra một câu trả lời cụ thể về năm ra mắt của điện thoại iPhone đầu tiên mà không có tài liệu truy xuất phù hợp. Điều này cho thấy hệ thống đã tự đưa ra thông tin mà không dựa trên tài liệu được cung cấp, dẫn đến khả năng cao là thông tin này không được kiểm chứng hoặc không chính xác trong ngữ cảnh của câu hỏi."
+        }
+    },
+    {
+        "stt": 71,
+        "phan_loai_goc": "Ngoài dữ liệu (Out-of-domain)",
+        "phan_loai_bao_cao": "Câu hỏi ngoài phạm vi (đời sống, IT...)",
+        "cau_hoi": "Hệ mặt trời của chúng ta có bao nhiêu hành tinh và tên của chúng?",
+        "cau_tra_loi": "Hệ Mặt Trời của chúng ta có 8 hành tinh chính, bao gồm:\n\n1. Sao Thủy\n2. Sao Kim\n3. Trái Đất\n4. Sao Hỏa\n5. Sao Mộc\n6. Sao Thổ\n7. Sao Thiên Vương\n8. Sao Hải Vương\n\nNgoài ra, còn có các hành tinh khác như Sao Diêm Vương (hành tinh lùn) và các hành tinh khác trong hệ Mặt Trời.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Ngoài dữ liệu (Out-of-domain)' và hệ thống đã đưa ra câu trả lời chi tiết về số lượng hành tinh trong hệ Mặt Trời mà không từ chối trả lời hoặc nhận diện rằng câu hỏi này không thuộc phạm vi dữ liệu pháp luật. Điều này cho thấy hệ thống đã tự bịa ra thông tin (ảo giác) cho câu hỏi ngoài phạm vi của nó."
+        }
+    },
+    {
+        "stt": 72,
+        "phan_loai_goc": "Ngoài dữ liệu (Out-of-domain)",
+        "phan_loai_bao_cao": "Câu hỏi ngoài phạm vi (đời sống, IT...)",
+        "cau_hoi": "Cách điều trị bệnh cảm cúm thông thường tại nhà an toàn?",
+        "cau_tra_loi": "Để điều trị bệnh cảm cúm tại nhà an toàn, bạn có thể thực hiện các bước sau:\n\n1. **Uống nhiều nước**: Uống nhiều nước để giúp cơ thể loại bỏ virus và chất độc.\n2. **Uống thuốc giảm sốt**: Uống thuốc giảm sốt như paracetamol hoặc ibuprofen để giảm sốt và đau đầu.\n3. **Súc miệng và rửa mũi**: Súc miệng và rửa mũi bằng nước muối để giúp loại bỏ vi khuẩn và virus.\n4. **Ăn uống cân đối**: Ăn uống cân đối với nhiều loại thực phẩm, bao gồm trái cây, rau xanh, và protein.\n5. **Nghỉ ngơi đầy đủ**: Nghỉ ngơi đầy đủ để giúp cơ thể phục hồi.\n6. **Sử dụng thuốc kháng sinh**: Nếu bạn có triệu chứng nặng, bạn có thể sử dụng thuốc kháng sinh để giúp cơ thể chống lại vi khuẩn.\n7. **Uống trà**: Uống trà như trà hoa cúc hoặc trà gừng để giúp giảm sốt và đau đầu.\n\nLưu ý: Nếu bạn có triệu chứng nặng hoặc kéo dài, bạn nên đến bệnh viện để được tư vấn và điều trị bởi bác sĩ.\n\nHãy nhớ rằng, cảm cúm là một bệnh tự khỏi, và việc điều trị tại nhà có thể giúp giảm triệu chứng và thời gian phục hồi.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Hệ thống đã đưa ra thông tin không dựa trên tài liệu cụ thể nào cho một câu hỏi thuộc nhóm 'Ngoài dữ liệu', và không từ chối trả lời một cách hợp lý. Điều này cho thấy hệ thống đã tạo ra thông tin không có căn cứ từ tài liệu, dẫn đến ảo giác."
+        }
+    },
+    {
+        "stt": 73,
+        "phan_loai_goc": "Ngoài dữ liệu (Out-of-domain)",
+        "phan_loai_bao_cao": "Câu hỏi ngoài phạm vi (đời sống, IT...)",
+        "cau_hoi": "Làm sao để chụp ảnh phong cảnh đẹp bằng điện thoại di động?",
+        "cau_tra_loi": "Để chụp ảnh phong cảnh đẹp bằng điện thoại di động, bạn có thể tham khảo các bước sau:\n\n1. **Chọn thời điểm tốt**: Chụp ảnh vào thời điểm ánh sáng tự nhiên tốt nhất, thường là vào buổi sáng hoặc buổi chiều khi ánh sáng không quá mạnh.\n2. **Tìm vị trí chụp đẹp**: Tìm kiếm vị trí có cảnh quan đẹp, chẳng hạn như núi, sông, biển, hoặc khu vườn.\n3. **Sử dụng chế độ chụp ảnh chuyên nghiệp**: Sử dụng chế độ chụp ảnh chuyên nghiệp như chế độ chụp ảnh phong cảnh, chế độ chụp ảnh đêm, hoặc chế độ chụp ảnh HDR.\n4. **Sử dụng ống kính tele**: Sử dụng ống kính tele để chụp ảnh từ xa mà không cần phải di chuyển.\n5. **Chỉnh sửa ảnh**: Sử dụng ứng dụng chỉnh sửa ảnh để điều chỉnh độ sáng, độ tương phản, và màu sắc của ảnh.\n6. **Sử dụng tripod**: Sử dụng tripod để giữ cho điện thoại di động ổn định và tránh rung lắc.\n\nHy vọng những bước trên sẽ giúp bạn chụp được ảnh phong cảnh đẹp bằng điện thoại di động!",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Ngoài dữ liệu (Out-of-domain)' và hệ thống đã đưa ra một câu trả lời chi tiết, hữu ích về cách chụp ảnh phong cảnh đẹp bằng điện thoại di động. Tuy nhiên, vì câu hỏi không thuộc phạm vi pháp luật và hệ thống đã không từ chối trả lời một cách hợp lý mà thay vào đó cung cấp thông tin không liên quan đến pháp luật, điều này được coi là một dạng của ảo giác."
+        }
+    },
+    {
+        "stt": 74,
+        "phan_loai_goc": "Ngoài dữ liệu (Out-of-domain)",
+        "phan_loai_bao_cao": "Câu hỏi ngoài phạm vi (đời sống, IT...)",
+        "cau_hoi": "Lịch sử hình thành và phát triển của mạng Internet toàn cầu?",
+        "cau_tra_loi": "Lịch sử hình thành và phát triển của mạng Internet toàn cầu bắt đầu từ những năm 1960. Dưới đây là một số bước quan trọng:\n\n1. **Năm 1969**: Dự án ARPANET được khởi xướng bởi quân đội Mỹ để tạo ra một mạng lưới liên kết các máy tính quân sự. Đây là tiền thân của Internet hiện nay.\n\n2. **Năm 1971**: ARPANET được mở rộng để kết nối các máy tính khác nhau, tạo ra một mạng lưới toàn cầu.\n\n3. **Năm 1983**: Mạng lưới Internet được chia thành các phần nhỏ hơn, gọi là mạng lưới Internet quốc gia (NISN).\n\n4. **Năm 1989**: Mạng lưới Internet toàn cầu được mở rộng và trở thành một phần của Internet.\n\n5. **Năm 1991**: Mạng lưới Internet toàn cầu được mở rộng và trở thành một phần của Internet.\n\n6. **Năm 1993**: Mạng lưới Internet toàn cầu được mở rộng và trở thành một phần của Internet.\n\n7. **Năm 1998**: Tổ chức Internet Corporation for Assigned Names and Numbers (ICANN) được thành lập để quản lý và điều hành Internet.\n\n8. **Năm 2000**: Mạng lưới Internet toàn cầu được mở rộng và trở thành một phần của Internet.\n\n9. **Năm 2005**: Mạng lưới Internet toàn cầu được mở rộng và trở thành một phần của Internet.\n\n10. **Năm 2010**: Mạng lưới Internet toàn cầu được mở rộng và trở thành một phần của Internet.\n\nHiện tại, Internet đã trở thành một phần quan trọng của cuộc sống hàng ngày, với hơn 4,9 tỷ người sử dụng Internet trên toàn thế giới.\n\nNếu bạn có bất kỳ câu hỏi nào khác, xin vui lòng hỏi!",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Ngoài dữ liệu (Out-of-domain)' và hệ thống đã đưa ra một câu trả lời chi tiết về lịch sử hình thành và phát triển của mạng Internet toàn cầu. Tuy nhiên, tài liệu truy xuất được cho biết 'Không tìm thấy tài liệu phù hợp', điều này chỉ ra rằng hệ thống không có thông tin cụ thể từ tài liệu để trả lời câu hỏi. Thay vì từ chối trả lời hoặc nói rằng không có thông tin, hệ thống đã cung cấp một câu trả lời chi tiết, có thể được coi là ảo giác vì thông tin này không được hỗ trợ bởi tài liệu truy xuất được."
+        }
+    },
+    {
+        "stt": 75,
+        "phan_loai_goc": "Ngoài dữ liệu (Out-of-domain)",
+        "phan_loai_bao_cao": "Câu hỏi ngoài phạm vi (đời sống, IT...)",
+        "cau_hoi": "Những địa điểm du lịch nổi tiếng nhất không thể bỏ qua ở Đà Nẵng?",
+        "cau_tra_loi": "Đà Nẵng là một thành phố du lịch tuyệt vời với nhiều địa điểm hấp dẫn. Dưới đây là một số địa điểm du lịch nổi tiếng nhất không thể bỏ qua ở Đà Nẵng:\n\n1. **Bãi biển Mỹ Khê**: Một trong những bãi biển đẹp nhất Việt Nam, nổi tiếng với cát trắng mịn và nước biển trong xanh.\n2. **Núi Bà Nà**: Một ngọn núi cao 1.487m, cung cấp tầm nhìn tuyệt đẹp của thành phố và biển.\n3. **Thánh địa Linh Ứng**: Một ngôi đền thờ linh ứng, nơi thờ cúng các vị thần và tổ tiên.\n4. **Bãi biển Non Nước**: Một bãi biển yên bình, thích hợp cho những người muốn thư giãn và tận hưởng thời tiết.\n5. **Cầu Rồng**: Một cây cầu nổi tiếng, được thiết kế theo phong cách kiến trúc truyền thống Việt Nam.\n6. **Chùa Linh Ứng**: Một ngôi chùa đẹp, thờ cúng các vị thần và tổ tiên.\n7. **Bãi biển Thanh Khê**: Một bãi biển rộng lớn, thích hợp cho những người muốn thư giãn và tận hưởng thời tiết.\n\nHy vọng những thông tin này sẽ giúp bạn có một chuyến du lịch thú vị và đáng nhớ ở Đà Nẵng!",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Ngoài dữ liệu (Out-of-domain)' và hệ thống đã đưa ra một câu trả lời cụ thể, chi tiết về các địa điểm du lịch nổi tiếng ở Đà Nẵng mà không có tài liệu truy xuất phù hợp. Điều này cho thấy hệ thống đã tự tạo ra thông tin (ảo giác) thay vì từ chối trả lời hoặc thông báo không tìm thấy thông tin."
+        }
+    },
+    {
+        "stt": 76,
+        "phan_loai_goc": "Câu hỏi đánh lừa (Deceptive)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Theo luật mới, sinh viên đi làm thêm không cần đóng thuế thu nhập cá nhân đúng không?",
+        "cau_tra_loi": "Dựa trên các văn bản pháp luật hiện hành được tra cứu trong hệ thống, chưa tìm thấy quy định cụ thể nào trực tiếp đề cập đến việc miễn thuế thu nhập cá nhân cho sinh viên đi làm thêm.\n\nTuy nhiên, có thể cung cấp một số thông tin hữu ích có liên quan. Theo quy định tại Điều 33.1.NĐ.1.3, thu nhập chịu thuế của cá nhân gồm các loại thu nhập sau đây:\n\n*   Thu nhập từ kinh doanh, bao gồm thu nhập từ hoạt động sản xuất, kinh doanh hàng hóa, dịch vụ theo quy định của pháp luật.\n*   Thu nhập từ tiền lương, tiền công mà người lao động nhận được từ người sử dụng lao động, bao gồm tiền lương, tiền công và các khoản có tính chất tiền lương, tiền công nhận được dưới các hình thức bằng tiền hoặc không bằng tiền.\n*   Thu nhập từ đầu tư vốn, bao gồm tiền lãi cho vay, lợi tức cổ phần, thu nhập từ đầu tư vốn dưới các hình thức khác.\n*   Thu nhập từ chuyển nhượng vốn, bao gồm thu nhập từ chuyển nhượng phần vốn trong các tổ chức kinh tế, thu nhập từ chuyển nhượng chứng khoán, thu nhập từ chuyển nhượng vốn dưới các hình thức khác.\n*   Thu nhập từ chuyển nhượng bất động sản, bao gồm thu nhập từ chuyển nhượng quyền sử dụng đất và tài sản gắn liền với đất, thu nhập từ chuyển nhượng quyền sở hữu hoặc sử dụng nhà ở, thu nhập từ chuyển nhượng quyền thuê đất, quyền thuê mặt nước.\n*   Thu nhập từ trúng thưởng bằng tiền hoặc hiện vật, bao gồm trúng thưởng xổ số, trúng thưởng khuyến mại dưới các hình thức, trúng thưởng trong các hình thức cá cược, trúng thưởng trong các trò chơi, cuộc thi có thưởng và các hình thức trúng thưởng khác.\n*   Thu nhập từ bản quyền, bao gồm thu nhập từ chuyển giao, chuyển quyền sử dụng các đối tượng của quyền sở hữu trí tuệ, thu nhập từ chuyển giao công nghệ.\n*   Thu nhập từ nhượng quyền thương mại theo quy định của Luật thương mại.\n*   Thu nhập từ thừa kế là chứng khoán, phần vốn trong các tổ chức kinh tế, cơ sở kinh doanh, bất động sản và tài sản khác phải đăng ký sở hữu hoặc đăng ký sử dụng.\n*   Thu nhập từ nhận quà tặng là chứng khoán, phần vốn trong các tổ chức kinh tế, cơ sở kinh doanh, bất động sản và tài sản khác phải đăng ký sở hữu hoặc đăng ký sử dụng.\n\nVề mức giảm trừ gia cảnh, theo quy định tại Điều 33.1.TT.2.2, mức giảm trừ gia cảnh là 11 triệu đồng/tháng (132 triệu đồng/năm) đối với người nộp thuế và 4,4 triệu đồng/tháng (52,8 triệu đồng/năm) đối với mỗi người phụ thuộc.\n\nVề thuế suất đối với lao động thời vụ/vãng lai dưới 3 tháng, theo quy định tại Điều 33.1.TT.2.2, thuế suất đối với thu nhập từ tiền lương, tiền công là 10% đối với thu nhập từ 2 triệu đồng trở xuống, 15% đối với thu nhập từ 2 triệu đồng đến 5 triệu đồng, 20% đối với thu nhập từ 5 triệu đồng đến 10 triệu đồng, 25% đối với thu nhập từ 10 triệu đồng đến 18 triệu đồng, 30% đối với thu nhập từ 18 triệu đồng đến 32 triệu đồng, 35% đối với thu nhập từ 32 triệu đồng trở lên.\n\nTuy nhiên, cần lưu ý rằng các quy định trên có thể thay đổi theo thời gian, và có thể có các quy định cụ thể khác áp dụng cho sinh viên đi làm thêm. Để có thông tin chính xác và cập nhật, nên tham khảo các văn bản pháp luật mới nhất hoặc liên hệ với cơ quan thuế hoặc chuyên gia pháp lý.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu hỏi thuộc nhóm 'Câu hỏi đánh lừa' và hệ thống đã cung cấp thông tin hữu ích liên quan đến thuế thu nhập cá nhân, tuy nhiên không trả lời trực tiếp vào câu hỏi về việc sinh viên đi làm thêm có cần đóng thuế hay không. Hệ thống đã nhận diện được sự hạn chế của thông tin và không đưa ra thông tin sai lệch."
+        }
+    },
+    {
+        "stt": 77,
+        "phan_loai_goc": "Câu hỏi đánh lừa (Deceptive)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Tôi nghe nói luật mới cấm hoàn toàn việc thử việc đối với tất cả các ngành nghề đúng không?",
+        "cau_tra_loi": "Tôi không thể tìm thấy thông tin chính thức về việc cấm hoàn toàn việc thử việc đối với tất cả các ngành nghề. Luật lao động và quy định về thử việc có thể thay đổi tùy thuộc vào quốc gia, vùng lãnh thổ hoặc ngành nghề cụ thể. Nếu bạn có thắc mắc về luật lao động hoặc thử việc, tôi có thể giúp bạn tìm hiểu thêm thông tin hoặc tư vấn dựa trên các quy định hiện hành.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Hệ thống đã nhận diện đúng câu hỏi đánh lừa và từ chối trả lời một cách hợp lý, tránh đưa ra thông tin sai lệch hoặc ảo giác."
+        }
+    },
+    {
+        "stt": 78,
+        "phan_loai_goc": "Câu hỏi đánh lừa (Deceptive)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Tại sao Bộ luật Lao động lại quy định người lao động tự ý nghỉ việc phải bồi thường cho công ty 100 tháng lương?",
+        "cau_tra_loi": "Tôi không tìm thấy thông tin về quy định 100 tháng lương trong Bộ luật Lao động. Tuy nhiên, Bộ luật Lao động Việt Nam quy định về trách nhiệm của người lao động khi tự ý nghỉ việc, theo đó, người lao động phải bồi thường cho người sử dụng lao động số tiền tương đương với tiền lương của 1 tháng làm việc.\n\nĐiều 43 Bộ luật Lao động quy định: \"Người lao động phải bồi thường cho người sử dụng lao động số tiền tương đương với tiền lương của 1 tháng làm việc nếu tự ý bỏ việc mà không có lý do chính đáng.\"\n\nNếu bạn cần thông tin chi tiết hoặc cụ thể hơn, vui lòng cho tôi biết.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu hỏi thuộc nhóm 'Câu hỏi đánh lừa' và hệ thống đã nhận diện được sự không chính xác trong câu hỏi bằng cách trả lời rằng không tìm thấy thông tin về quy định 100 tháng lương trong Bộ luật Lao động. Thay vào đó, hệ thống cung cấp thông tin chính xác dựa trên Bộ luật Lao động về trách nhiệm của người lao động khi tự ý nghỉ việc, theo đó người lao động phải bồi thường cho người sử dụng lao động số tiền tương đương với tiền lương của 1 tháng làm việc. Điều này cho thấy hệ thống đã chống ảo giác thành công và cung cấp thông tin hữu ích."
+        }
+    },
+    {
+        "stt": 79,
+        "phan_loai_goc": "Câu hỏi đánh lừa (Deceptive)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Có đúng là doanh nghiệp không được phép sa thải nhân viên dù họ tự ý nghỉ việc bao nhiêu ngày đi nữa?",
+        "cau_tra_loi": "Cảnh báo: Thông tin chỉ mang tính chất tham khảo, vì không tìm thấy thông tin cụ thể về việc sa thải nhân viên trong ngữ cảnh đã được cung cấp.\n\nTuy nhiên, có thể tham khảo các quy định về kỷ luật lao động và sa thải nhân viên trong Bộ luật Lao động 2019. Theo đó, người sử dụng lao động có quyền áp dụng hình thức kỷ luật sa thải đối với người lao động trong một số trường hợp nhất định, bao gồm:\n\n- Người lao động tự ý bỏ việc 05 ngày cộng dồn trong thời hạn 30 ngày hoặc 20 ngày cộng dồn trong thời hạn 365 ngày tính từ đầu năm.\n\n- Người lao động vi phạm kỷ luật lao động, gây thiệt hại nghiêm trọng về tài sản, lợi ích của người sử dụng lao động.\n\n- Người lao động bị xử lý kỷ luật kéo dài thời hạn nâng lương, chuyển làm công việc khác có mức lương thấp hơn trong thời hạn 06 tháng, nhưng người lao động vẫn tiếp tục vi phạm kỷ luật lao động.\n\nTuy nhiên, việc sa thải nhân viên phải tuân thủ các quy định và thủ tục cụ thể, bao gồm việc phải có sự tham gia của tổ chức đại diện người lao động tại cơ sở, phải thông báo cho người lao động biết trước về lý do và thời điểm dự kiến sa thải, và phải thực hiện các thủ tục cần thiết theo quy định của pháp luật.\n\nCăn cứ pháp lý: Bộ luật Lao động 2019",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu hỏi thuộc nhóm 'Câu hỏi đánh lừa (Deceptive)' và hệ thống đã đưa ra một câu trả lời mang tính chất tham khảo, chỉ ra rằng không tìm thấy thông tin cụ thể về việc sa thải nhân viên trong ngữ cảnh đã được cung cấp. Tuy nhiên, hệ thống đã cung cấp thông tin về các quy định liên quan đến kỷ luật lao động và sa thải nhân viên dựa trên Bộ luật Lao động 2019, nhưng không trực tiếp trả lời câu hỏi một cách cụ thể. Điều này cho thấy hệ thống đã cố gắng cung cấp thông tin liên quan nhưng không khẳng định sai về việc sa thải nhân viên trong trường hợp cụ thể."
+        }
+    },
+    {
+        "stt": 80,
+        "phan_loai_goc": "Câu hỏi đánh lừa (Deceptive)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Luật lao động mới có quy định tăng số ngày nghỉ phép năm tối thiểu từ 12 ngày lên 50 ngày không?",
+        "cau_tra_loi": "Tôi không tìm thấy thông tin về việc tăng số ngày nghỉ phép năm tối thiểu từ 12 ngày lên 50 ngày. Luật lao động mới có thể có các quy định về nghỉ phép, nhưng số ngày cụ thể có thể khác. Tôi khuyên bạn nên tham khảo các nguồn thông tin chính thức hoặc luật lao động mới để có thông tin chính xác.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu hỏi thuộc nhóm 'Câu hỏi đánh lừa' và hệ thống đã nhận diện đúng rằng không có thông tin về việc tăng số ngày nghỉ phép năm tối thiểu từ 12 ngày lên 50 ngày. Hệ thống đã từ chối trả lời một cách hợp lý và lịch sự bằng cách khuyên người dùng nên tham khảo các nguồn thông tin chính thức hoặc luật lao động mới để có thông tin chính xác. Điều này cho thấy hệ thống đã chống ảo giác thành công và tuân thủ quy tắc phân loại."
+        }
+    },
+    {
+        "stt": 81,
+        "phan_loai_goc": "Câu hỏi đánh lừa (Deceptive)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Vì sao người lao động thử việc lại được trả lương gấp đôi lương chính thức theo quy định của pháp luật?",
+        "cau_tra_loi": "Tôi không tìm thấy thông tin nào cho rằng người lao động thử việc được trả lương gấp đôi lương chính thức theo quy định của pháp luật. Thông thường, người lao động thử việc sẽ được trả lương theo mức lương thử việc, thường thấp hơn mức lương chính thức. Mức lương thử việc sẽ được thỏa thuận giữa người lao động và người sử dụng lao động, nhưng phải đảm bảo không thấp hơn mức lương tối thiểu do pháp luật quy định.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu hỏi thuộc nhóm 'Câu hỏi đánh lừa' và hệ thống đã nhận diện đúng rằng không có thông tin cho rằng người lao động thử việc được trả lương gấp đôi lương chính thức theo quy định của pháp luật. Hệ thống đã từ chối trả lời một cách hợp lý và lịch sự, cung cấp thông tin chính xác về mức lương thử việc và mức lương tối thiểu."
+        }
+    },
+    {
+        "stt": 82,
+        "phan_loai_goc": "Câu hỏi đánh lừa (Deceptive)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Nghe nói người đi làm vào ngày Tết được trả lương gấp 10 lần ngày thường, điều này quy định ở điều mấy?",
+        "cau_tra_loi": "Cảnh báo: Thông tin bạn cung cấp không chính xác. Theo quy định tại Điều 98 Bộ luật Lao động số 45/2019/QH14, có hiệu lực thi hành kể từ ngày 01/01/2021, người lao động làm việc vào ngày nghỉ lễ, tết, ngày nghỉ có hưởng lương, được trả lương ít nhất bằng 300% chưa kể tiền lương ngày lễ, tết, ngày nghỉ có hưởng lương đối với người lao động hưởng lương ngày.\n\nCăn cứ pháp lý: Bộ luật Lao động số 45/2019/QH14",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**<br>45. **Tài liệu 45**<br>46. **Tài liệu 46**<br>47. **Tài liệu 47**<br>48. **Tài liệu 48**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu hỏi thuộc nhóm 'Câu hỏi đánh lừa' và hệ thống đã nhận diện được sự không chính xác trong thông tin cung cấp. Hệ thống đã trả lời một cách hợp lý và lịch sự, cung cấp thông tin chính xác dựa trên quy định tại Điều 98 Bộ luật Lao động số 45/2019/QH14, và từ chối xác nhận thông tin sai lệch ban đầu."
+        }
+    },
+    {
+        "stt": 83,
+        "phan_loai_goc": "Câu hỏi đánh lừa (Deceptive)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Tại sao luật lại bắt buộc nhân viên nam nghỉ thai sản 6 tháng giống như nhân viên nữ khi vợ sinh con?",
+        "cau_tra_loi": "Tôi xin lỗi, nhưng thông tin bạn cung cấp không chính xác. Theo quy định của Bộ luật Lao động Việt Nam, nhân viên nam không được hưởng chế độ thai sản khi vợ sinh con. Chế độ thai sản chỉ áp dụng cho người lao động nữ mang thai, sinh con hoặc người lao động nam có con mang tính chất đặc biệt.\n\nTuy nhiên, theo quy định của Bộ luật Lao động Việt Nam, người lao động nam có quyền được nghỉ phép thai sản khi vợ sinh con, nhưng không phải nghỉ 6 tháng như người lao động nữ. Thay vào đó, người lao động nam được nghỉ phép thai sản trong thời gian tối đa 5 ngày làm việc.\n\nNếu bạn có bất kỳ câu hỏi hoặc thắc mắc nào khác, xin vui lòng hỏi tôi. Tôi sẵn sàng hỗ trợ và tư vấn cho bạn.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Câu hỏi đánh lừa' và hệ thống đã nhận diện sai lầm khi cung cấp thông tin chi tiết về chế độ thai sản cho nhân viên nam mà không từ chối trả lời một cách rõ ràng. Hệ thống đã cố gắng giải thích quy định của Bộ luật Lao động Việt Nam nhưng đã không nhận ra rằng câu hỏi ban đầu dựa trên một giả định sai (nhân viên nam nghỉ thai sản 6 tháng giống như nhân viên nữ). Điều này cho thấy hệ thống đã không chống ảo giác thành công và đã đưa ra thông tin không chính xác cho câu hỏi đánh lừa."
+        }
+    },
+    {
+        "stt": 84,
+        "phan_loai_goc": "Câu hỏi đánh lừa (Deceptive)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Có đúng là người sử dụng lao động có quyền thu giữ chứng minh nhân dân của nhân viên để làm tin không?",
+        "cau_tra_loi": "Cảnh báo: Văn bản này hiện có trạng thái Còn hiệu lực, vì vậy thông tin chỉ mang tính chất tham khảo.\n\nKhông, người sử dụng lao động không có quyền thu giữ chứng minh nhân dân của nhân viên để làm tin. Theo quy định tại Điều 20.2.LQ.94. Nguyên tắc trả lương, người sử dụng lao động phải trả lương trực tiếp, đầy đủ, đúng hạn cho người lao động. Trường hợp người lao động không thể nhận lương trực tiếp thì người sử dụng lao động có thể trả lương cho người được người lao động ủy quyền hợp pháp.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Hệ thống trả lời không chính xác và cung cấp thông tin không liên quan đến câu hỏi về việc thu giữ chứng minh nhân dân của nhân viên."
+        }
+    },
+    {
+        "stt": 85,
+        "phan_loai_goc": "Câu hỏi đánh lừa (Deceptive)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Tôi nghe nói hợp đồng lao động bằng lời nói luôn có giá trị cao hơn hợp đồng bằng văn bản, đúng không?",
+        "cau_tra_loi": "Cảnh báo: Thông tin chỉ mang tính chất tham khảo, không phải là ý kiến pháp lý chính thức. \n\nKhông đúng. Hợp đồng lao động bằng văn bản luôn có giá trị cao hơn hợp đồng bằng lời nói. Theo quy định của Bộ luật Lao động, hợp đồng lao động phải được lập thành văn bản và có chữ ký của hai bên. Hợp đồng lao động bằng lời nói chỉ được công nhận trong trường hợp người lao động làm việc có tính chất tạm thời và thời hạn dưới 3 tháng.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**<br>32. **Tài liệu 32**<br>33. **Tài liệu 33**<br>34. **Tài liệu 34**<br>35. **Tài liệu 35**<br>36. **Tài liệu 36**<br>37. **Tài liệu 37**<br>38. **Tài liệu 38**<br>39. **Tài liệu 39**<br>40. **Tài liệu 40**<br>41. **Tài liệu 41**<br>42. **Tài liệu 42**<br>43. **Tài liệu 43**<br>44. **Tài liệu 44**<br>45. **Tài liệu 45**<br>46. **Tài liệu 46**<br>47. **Tài liệu 47**<br>48. **Tài liệu 48**<br>49. **Tài liệu 49**<br>50. **Tài liệu 50**<br>51. **Tài liệu 51**<br>52. **Tài liệu 52**<br>53. **Tài liệu 53**<br>54. **Tài liệu 54**<br>55. **Tài liệu 55**<br>56. **Tài liệu 56**<br>57. **Tài liệu 57**<br>58. **Tài liệu 58**<br>59. **Tài liệu 59**<br>60. **Tài liệu 60**<br>61. **Tài liệu 61**<br>62. **Tài liệu 62**<br>63. **Tài liệu 63**<br>64. **Tài liệu 64**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Câu hỏi đánh lừa' và hệ thống đã nhận diện sai khi cho rằng hợp đồng lao động bằng văn bản luôn có giá trị cao hơn hợp đồng bằng lời nói. Tuy nhiên, hệ thống đã cung cấp thông tin đúng về việc hợp đồng lao động phải được lập thành văn bản và có chữ ký của hai bên, cũng như quy định về hợp đồng lao động bằng lời nói. Nhưng quan trọng là hệ thống đã không nhận diện được đây là một câu hỏi đánh lừa và đã đưa ra một câu trả lời có phần đúng nhưng không đầy đủ và không chính xác trong việc nhận diện bản chất của câu hỏi."
+        }
+    },
+    {
+        "stt": 86,
+        "phan_loai_goc": "Câu hỏi đánh lừa (Deceptive)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Có phải người lao động dưới 18 tuổi thì hoàn toàn không được phép đi làm bất kỳ công việc nào?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật số 45/2019/QH14\n\nNgười từ đủ 15 tuổi đến chưa đủ 18 tuổi không được làm công việc hoặc làm việc ở nơi làm việc quy định tại Điều 147 của Bộ luật này. Người từ đủ 13 tuổi đến chưa đủ 15 tuổi chỉ được làm công việc nhẹ theo danh mục do Bộ trưởng Bộ Lao động - Thương binh và Xã hội ban hành. Người chưa đủ 13 tuổi chỉ được làm các công việc theo quy định tại khoản 3 Điều 145 của Bộ luật này.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**<br>31. **Tài liệu 31**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chính xác và chi tiết dựa trên Bộ luật số 45/2019/QH14, phù hợp với quy định pháp luật về việc làm của người lao động dưới 18 tuổi."
+        }
+    },
+    {
+        "stt": 87,
+        "phan_loai_goc": "Câu hỏi đánh lừa (Deceptive)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Có đúng là tiền lương thử việc chỉ được trả tối đa 10% lương chính thức của công việc đó không?",
+        "cau_tra_loi": "Cảnh báo: Thông tin bạn đang tìm kiếm không được đề cập trong văn bản này, vì vậy thông tin chỉ mang tính chất tham khảo.\n\nTheo Điều 20.2.LQ.26. Tiền lương thử việc, tiền lương của người lao động trong thời gian thử việc do hai bên thỏa thuận nhưng ít nhất phải bằng 85% mức lương của công việc đó.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Câu hỏi đánh lừa' và hệ thống đã đưa ra một câu trả lời không chính xác. Thông tin về tiền lương thử việc chỉ được trả tối đa 10% lương chính thức của công việc đó là không đúng. Theo Điều 20.2.LQ.26, tiền lương của người lao động trong thời gian thử việc do hai bên thỏa thuận nhưng ít nhất phải bằng 85% mức lương của công việc đó. Hệ thống đã không nhận diện đúng thông tin và đưa ra một câu trả lời không phù hợp."
+        }
+    },
+    {
+        "stt": 88,
+        "phan_loai_goc": "Câu hỏi đánh lừa (Deceptive)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Tại sao luật quy định doanh nghiệp phải trả lương bằng đô la Mỹ (USD) cho người lao động Việt Nam?",
+        "cau_tra_loi": "Tôi không tìm thấy thông tin nào cho rằng luật quy định doanh nghiệp phải trả lương bằng đô la Mỹ (USD) cho người lao động Việt Nam. Theo thông tin tôi có, luật lao động Việt Nam quy định tiền lương phải được trả bằng đồng Việt Nam (VND), không phải bằng đô la Mỹ (USD).",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu hỏi thuộc nhóm 'Câu hỏi đánh lừa' và hệ thống đã nhận diện đúng rằng không có quy định nào yêu cầu doanh nghiệp phải trả lương bằng đô la Mỹ (USD) cho người lao động Việt Nam. Hệ thống đã từ chối trả lời một cách hợp lý bằng cách nói rằng 'Tôi không tìm thấy thông tin nào cho rằng luật quy định doanh nghiệp phải trả lương bằng đô la Mỹ (USD) cho người lao động Việt Nam' và cung cấp thông tin chính xác rằng luật lao động Việt Nam quy định tiền lương phải được trả bằng đồng Việt Nam (VND)."
+        }
+    },
+    {
+        "stt": 89,
+        "phan_loai_goc": "Câu hỏi đánh lừa (Deceptive)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Nghe nói người lao động đơn phương chấm dứt hợp đồng đúng luật vẫn phải nộp phạt cho công ty, đúng không?",
+        "cau_tra_loi": "Cảnh báo: Thông tin chỉ mang tính chất tham khảo. \n\nNgười lao động đơn phương chấm dứt hợp đồng lao động không phải là hành vi vi phạm pháp luật. Tuy nhiên, nếu người lao động đơn phương chấm dứt hợp đồng lao động trái pháp luật thì người sử dụng lao động có quyền yêu cầu người lao động bồi thường thiệt hại theo quy định của pháp luật.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Câu hỏi đánh lừa' và hệ thống đã đưa ra một câu trả lời cố gắng làm rõ thông tin nhưng vẫn có thể gây hiểu lầm. Câu trả lời nên tập trung vào việc làm rõ rằng người lao động đơn phương chấm dứt hợp đồng lao động có thể phải bồi thường thiệt hại nếu việc chấm dứt hợp đồng là trái pháp luật, nhưng không nên gợi ý rằng việc đơn phương chấm dứt hợp đồng luôn dẫn đến phạt. Tuy nhiên, hệ thống đã cố gắng cung cấp thông tin có liên quan và không hoàn toàn sai lệch."
+        }
+    },
+    {
+        "stt": 90,
+        "phan_loai_goc": "Câu hỏi đánh lừa (Deceptive)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Có đúng là người thử việc không cần phải tuân thủ nội quy lao động của doanh nghiệp?",
+        "cau_tra_loi": "Không đúng. Người thử việc vẫn cần tuân thủ nội quy lao động của doanh nghiệp. Nội quy lao động thường bao gồm các quy định về giờ làm, thời gian nghỉ ngơi, quy trình làm việc, và các quy định khác liên quan đến môi trường làm việc.\n\nMặc dù người thử việc không phải ký hợp đồng lao động, nhưng họ vẫn được yêu cầu tuân thủ các quy định của doanh nghiệp để đảm bảo an toàn và hiệu suất làm việc. Nếu người thử việc không tuân thủ nội quy lao động, họ có thể bị kỷ luật hoặc thậm chí bị sa thải.\n\nTuy nhiên, cần lưu ý rằng người thử việc không phải chịu các quyền và nghĩa vụ như người lao động chính thức. Họ thường không được hưởng các quyền lợi như bảo hiểm xã hội, bảo hiểm y tế, và các quyền lợi khác.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Câu hỏi đánh lừa (Deceptive)' và hệ thống đã đưa ra câu trả lời mà không dựa trên tài liệu truy xuất được. Mặc dù câu trả lời của hệ thống có vẻ hợp lý và đúng về mặt nội dung (người thử việc vẫn cần tuân thủ nội quy lao động), nhưng nó không được hỗ trợ bởi tài liệu truy xuất được, điều này có thể được coi là một hình thức của ảo giác. Tuy nhiên, trong trường hợp này, hệ thống đã cung cấp thông tin đúng và hữu ích, ngay cả khi không có tài liệu cụ thể được truy xuất."
+        }
+    },
+    {
+        "stt": 91,
+        "phan_loai_goc": "Truy vấn mập mờ (Ambiguous)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Làm sao để đăng ký cái đó?",
+        "cau_tra_loi": "Để đăng ký, bạn có thể thực hiện theo các bước sau:\n\n1. Truy cập vào trang web chính thức của tổ chức hoặc dịch vụ bạn muốn đăng ký.\n2. Nhấn vào nút \"Đăng ký\" hoặc \"Tạo tài khoản\".\n3. Điền thông tin cá nhân và thông tin liên hệ cần thiết.\n4. Xác nhận đăng ký và chờ đợi xác nhận từ tổ chức hoặc dịch vụ.\n\nNếu bạn cần thêm thông tin hoặc hướng dẫn cụ thể, vui lòng cho tôi biết!",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Truy vấn mập mờ' và không có tài liệu phù hợp. Hệ thống đưa ra một hướng dẫn chung mà không giải quyết được vấn đề cụ thể của người hỏi."
+        }
+    },
+    {
+        "stt": 92,
+        "phan_loai_goc": "Truy vấn mập mờ (Ambiguous)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Cái đó được tính như thế nào?",
+        "cau_tra_loi": "Tôi không thể trả lời được câu hỏi của bạn. Bạn có muốn tôi giúp bạn tìm hiểu thêm về chủ đề này không?",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu hỏi thuộc nhóm 'Truy vấn mập mờ (Ambiguous)' và hệ thống đã nhận diện đúng, từ chối trả lời một cách hợp lý/lịch sự bằng cách thông báo không thể trả lời được câu hỏi và đề nghị giúp tìm hiểu thêm. Điều này cho thấy hệ thống đã thực hiện thành công việc chống ảo giác và từ chối trả lời một cách lịch sự."
+        }
+    },
+    {
+        "stt": 93,
+        "phan_loai_goc": "Truy vấn mập mờ (Ambiguous)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Quy định về thời gian nghỉ?",
+        "cau_tra_loi": "Căn cứ pháp lý: Bộ luật lao động",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Câu hỏi thuộc nhóm 'Truy vấn mập mờ' và không có đủ thông tin cụ thể trong tài liệu truy xuất để trả lời chính xác. Hệ thống nên từ chối trả lời để tránh đưa ra thông tin không chính xác."
+        }
+    },
+    {
+        "stt": 94,
+        "phan_loai_goc": "Truy vấn mập mờ (Ambiguous)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Tôi phải làm gì khi bị phạt?",
+        "cau_tra_loi": "Căn cứ pháp lý: Luật số 15/2012/QH13, Nghị định số 162/2018/NĐ-CP",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**",
+        "danh_gia": {
+            "ket_luan": "REFUSED",
+            "ly_do": "Câu hỏi thuộc nhóm 'Truy vấn mập mờ' và không có đủ thông tin để đánh giá chính xác. Đối với câu hỏi này, hệ thống nên yêu cầu làm rõ hoặc từ chối trả lời nếu không có đủ thông tin."
+        }
+    },
+    {
+        "stt": 95,
+        "phan_loai_goc": "Truy vấn mập mờ (Ambiguous)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Khi nào thì được nhận tiền đó?",
+        "cau_tra_loi": "Để biết được khi nào bạn sẽ nhận được tiền, tôi cần biết thêm thông tin về trường hợp cụ thể của bạn. Bạn có thể cho tôi biết về tình huống pháp lý của mình, chẳng hạn như việc nhận tiền từ một hợp đồng, thừa kế, hoặc một khoản bồi thường?",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu hỏi thuộc nhóm 'Truy vấn mập mờ' và hệ thống đã nhận diện được sự không rõ ràng của câu hỏi. Hệ thống yêu cầu thêm thông tin để có thể đưa ra câu trả lời chính xác, điều này cho thấy hệ thống đã nhận diện đúng sự mập mờ và từ chối trả lời một cách hợp lý/lịch sự."
+        }
+    },
+    {
+        "stt": 96,
+        "phan_loai_goc": "Truy vấn mập mờ (Ambiguous)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Thủ tục nghỉ việc thế nào?",
+        "cau_tra_loi": "Căn cứ pháp lý: Điều 11, Điều 12 Nghị định số 27/2014/NĐ-CP\n\nNgười lao động có thể đơn phương chấm dứt hợp đồng lao động khi thuộc một trong các trường hợp sau:\n\n- Không được bố trí theo đúng công việc, địa điểm làm việc hoặc không được bảo đảm điều kiện làm việc đã thỏa thuận trong hợp đồng lao động;\n- Không được trả lương đầy đủ hoặc trả lương không đúng thời hạn đã thỏa thuận trong hợp đồng lao động;\n- Bị ngược đãi, quấy rối tình dục, cưỡng bức lao động;\n- Bản thân hoặc gia đình có hoàn cảnh khó khăn không thể tiếp tục làm việc;\n- Trình độ kỹ năng nghề không phù hợp với công việc;\n- Health không phù hợp với công việc;\n- Chuyển nơi làm việc sang nơi khác không phù hợp với người lao động;\n- Người lao động bị ốm đau, tai nạn đã điều trị 30 ngày liên tục mà khả năng lao động chưa được hồi phục.\n\nNgười lao động phải báo trước cho người sử dụng lao động biết trước:\n\n- Ít nhất 15 ngày đối với hợp đồng lao động xác định thời hạn;\n- Ít nhất 30 ngày đối với hợp đồng lao động không xác định thời hạn;\n- Ít nhất 03 ngày làm việc đối với công việc theo mùa vụ hoặc công việc nhất định có thời hạn dưới 12 tháng.\n\nNgười sử dụng lao động có quyền đơn phương chấm dứt hợp đồng lao động trong các trường hợp sau:\n\n- Người lao động thường xuyên không hoàn thành công việc theo hợp đồng lao động;\n- Người lao động bị ốm đau, tai nạn đã điều trị 30 ngày liên tục mà khả năng lao động chưa được hồi phục;\n- Do thiên tai, hỏa hoạn hoặc lý do bất khả kháng khác mà người sử dụng lao động đã tìm mọi biện pháp khắc phục nhưng vẫn buộc phải thu hẹp sản xuất, giảm chỗ làm việc;\n- Người lao động không có mặt tại nơi làm việc sau thời hạn quy định tại Điều 33 của Bộ luật Lao động.\n\nNgười sử dụng lao động phải báo trước cho người lao động biết trước:\n\n- Ít nhất 45 ngày đối với hợp đồng lao động không xác định thời hạn;\n- Ít nhất 30 ngày đối với hợp đồng lao động xác định thời hạn;\n- Ít nhất 03 ngày làm việc đối với công việc theo mùa vụ hoặc công việc nhất định có thời hạn dưới 12 tháng.\n\nKhi đơn phương chấm dứt hợp đồng lao động, người sử dụng lao động phải trả trợ cấp thôi việc cho người lao động đã làm việc thường xuyên từ đủ 12 tháng trở lên, mỗi năm làm việc được trợ cấp một nửa tháng lương.\n\nNgười lao động có quyền yêu cầu người sử dụng lao động cung cấp bản sao hợp đồng lao động và các tài liệu liên quan đến quá trình làm việc khi chấm dứt hợp đồng lao động.",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu trả lời của hệ thống cung cấp thông tin chính xác và đầy đủ về thủ tục nghỉ việc cho cả người lao động và người sử dụng lao động, bao gồm các điều kiện và thời hạn báo trước. Mặc dù câu hỏi thuộc nhóm 'Truy vấn mập mờ', hệ thống đã cố gắng trả lời một cách toàn diện."
+        }
+    },
+    {
+        "stt": 97,
+        "phan_loai_goc": "Truy vấn mập mờ (Ambiguous)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Làm sao để được giảm giờ làm?",
+        "cau_tra_loi": "Để được giảm giờ làm, bạn có thể thực hiện các bước sau:\n\n1. **Xác định lý do**: Hãy xác định lý do chính đáng để yêu cầu giảm giờ làm, chẳng hạn như chăm sóc gia đình, sức khỏe, hoặc nhu cầu cá nhân.\n2. **Thảo luận với quản lý**: Hãy thảo luận với quản lý hoặc người phụ trách về nhu cầu của bạn và lý do giảm giờ làm.\n3. **Tìm giải pháp**: Hãy tìm giải pháp thay thế, chẳng hạn như làm việc từ xa, giảm giờ làm trong tuần, hoặc tăng giờ làm vào cuối tuần.\n4. **Xác định thời gian**: Hãy xác định thời gian cụ thể để giảm giờ làm và đảm bảo rằng nó không ảnh hưởng đến công việc của bạn và đồng nghiệp.\n5. **Đàm phán**: Hãy đàm phán với quản lý để đạt được thỏa thuận giảm giờ làm.\n\nLưu ý: Quyền giảm giờ làm có thể được quy định bởi luật lao động hoặc thỏa thuận hợp đồng lao động. Hãy tham khảo luật lao động và thỏa thuận hợp đồng lao động của bạn trước khi yêu cầu giảm giờ làm.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Hệ thống cung cấp thông tin chung chung không dựa trên tài liệu cụ thể, thuộc nhóm câu hỏi mập mờ và không có tài liệu phù hợp được tìm thấy, điều này cho thấy hệ thống không thành công trong việc chống ảo giác."
+        }
+    },
+    {
+        "stt": 98,
+        "phan_loai_goc": "Truy vấn mập mờ (Ambiguous)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Công ty có được làm thế không?",
+        "cau_tra_loi": "Tôi không thể cung cấp thông tin hoặc hướng dẫn về các hoạt động bất hợp pháp hoặc có hại.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "CORRECT",
+            "ly_do": "Câu hỏi thuộc nhóm 'Truy vấn mập mờ' và hệ thống đã từ chối trả lời một cách lịch sự với thông điệp 'Tôi không thể cung cấp thông tin hoặc hướng dẫn về các hoạt động bất hợp pháp hoặc có hại.' Điều này cho thấy hệ thống đã nhận diện đúng tính chất mập mờ của câu hỏi và từ chối trả lời để tránh cung cấp thông tin không chính xác hoặc có thể gây hiểu lầm."
+        }
+    },
+    {
+        "stt": 99,
+        "phan_loai_goc": "Truy vấn mập mờ (Ambiguous)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Ký cái hợp đồng đó ở đâu?",
+        "cau_tra_loi": "Căn cứ pháp lý: Điều 20.2.LQ.13. Hợp đồng lao động, Điều 20.2.TT.2.3. Nội dung chủ yếu của hợp đồng lao động, Điều 20.2.LQ.13. Hợp đồng lao động, Điều 20.2.TT.2.3. Nội dung chủ yếu của hợp đồng lao động, Số hiệu 27/2014/NĐ-CP, Số hiệu 27/2014/NĐ-CP",
+        "tai_lieu_formatted": "1. **Tài liệu 1**<br>2. **Tài liệu 2**<br>3. **Tài liệu 3**<br>4. **Tài liệu 4**<br>5. **Tài liệu 5**<br>6. **Tài liệu 6**<br>7. **Tài liệu 7**<br>8. **Tài liệu 8**<br>9. **Tài liệu 9**<br>10. **Tài liệu 10**<br>11. **Tài liệu 11**<br>12. **Tài liệu 12**<br>13. **Tài liệu 13**<br>14. **Tài liệu 14**<br>15. **Tài liệu 15**<br>16. **Tài liệu 16**<br>17. **Tài liệu 17**<br>18. **Tài liệu 18**<br>19. **Tài liệu 19**<br>20. **Tài liệu 20**<br>21. **Tài liệu 21**<br>22. **Tài liệu 22**<br>23. **Tài liệu 23**<br>24. **Tài liệu 24**<br>25. **Tài liệu 25**<br>26. **Tài liệu 26**<br>27. **Tài liệu 27**<br>28. **Tài liệu 28**<br>29. **Tài liệu 29**<br>30. **Tài liệu 30**",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Truy vấn mập mờ' và hệ thống cung cấp thông tin không liên quan đến câu hỏi cụ thể. Hệ thống không từ chối trả lời một cách rõ ràng nhưng cũng không cung cấp thông tin chính xác cho câu hỏi."
+        }
+    },
+    {
+        "stt": 100,
+        "phan_loai_goc": "Truy vấn mập mờ (Ambiguous)",
+        "phan_loai_bao_cao": "Câu hỏi phức tạp, tối nghĩa",
+        "cau_hoi": "Nghỉ thai sản thì thế nào?",
+        "cau_tra_loi": "Nghỉ thai sản là thời gian mà người lao động nữ được nghỉ để chăm sóc sức khỏe và sinh con. Theo quy định của pháp luật, người lao động nữ được nghỉ thai sản trong thời gian 6 tháng kể từ ngày sinh con. Trong thời gian này, người lao động nữ được hưởng chế độ bảo hiểm xã hội và không phải làm việc.",
+        "tai_lieu_formatted": "Không tìm thấy tài liệu phù hợp (Chống ảo giác)",
+        "danh_gia": {
+            "ket_luan": "INCORRECT_HALLUCINATION",
+            "ly_do": "Câu hỏi thuộc nhóm 'Truy vấn mập mờ' và hệ thống đã đưa ra một câu trả lời cụ thể về nghỉ thai sản mà không có tài liệu truy xuất phù hợp. Điều này cho thấy hệ thống đã tự đưa ra thông tin mà không dựa trên tài liệu cụ thể nào, dẫn đến khả năng thông tin không chính xác hoặc không đầy đủ."
+        }
+    }
+]

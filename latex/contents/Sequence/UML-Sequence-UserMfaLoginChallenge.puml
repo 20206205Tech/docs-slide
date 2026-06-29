@@ -1,0 +1,62 @@
+@startuml
+actor "User" as User
+participant "Web Frontend" as Frontend
+participant "API Gateway\n(Kong)" as Kong
+participant "Auth Service\n(Supabase)" as AuthService
+participant "Authenticator App" as AuthApp
+
+== Luồng 2: Xác thực 2FA khi Đăng nhập (MFA Login Challenge) ==
+User -> Frontend: Thực hiện đăng nhập (Email / Google)
+activate Frontend
+
+Frontend -> Kong: Gửi credentials đăng nhập
+activate Kong
+note over Kong: Kong tự động thêm thông tin apikey trong header
+
+Kong -> AuthService: Xác thực tài khoản
+activate AuthService
+
+AuthService -> AuthService: Kiểm tra tài khoản và cấu hình 2FA\n(Phát hiện đã bật 2FA - Factor ID active)
+
+AuthService --> Kong: Trả về token với cấp độ AAL1 (aal = aal1)
+deactivate AuthService
+Kong --> Frontend: Trả về token với cấp độ AAL1
+deactivate Kong
+
+Frontend -> Frontend: Phát hiện AAL1, chuyển hướng sang trang nhập TOTP (/auth/mfa)
+Frontend -> User: Hiển thị giao diện nhập mã TOTP
+User -> AuthApp: Lấy mã TOTP mới
+activate AuthApp
+AuthApp --> User: Sinh mã TOTP mới (6 chữ số)
+deactivate AuthApp
+
+User -> Frontend: Nhập mã TOTP
+Frontend -> Kong: POST /supabase-auth-service/auth/v1/factors/{factorId}/challenge
+activate Kong
+note over Kong: Kong tự động thêm thông tin apikey trong header
+
+Kong -> AuthService: Tạo Challenge
+activate AuthService
+AuthService --> Kong: Challenge ID
+deactivate AuthService
+Kong --> Frontend: Challenge ID
+deactivate Kong
+
+Frontend -> Kong: POST /supabase-auth-service/auth/v1/factors/{factorId}/verify (Challenge ID, TOTP)
+activate Kong
+note over Kong: Kong tự động thêm thông tin apikey trong header
+
+Kong -> AuthService: Kiểm tra Challenge & mã TOTP
+activate AuthService
+
+AuthService -> AuthService: Xác minh mã TOTP hợp lệ
+
+AuthService --> Kong: Trả về token nâng cấp AAL2 (aal = aal2)
+deactivate AuthService
+Kong --> Frontend: Trả về token nâng cấp AAL2
+deactivate Kong
+
+Frontend -> Frontend: Lưu trữ Token AAL2 mới
+Frontend --> User: Đăng nhập thành công, chuyển hướng vào hệ thống (/chat)
+deactivate Frontend
+@enduml

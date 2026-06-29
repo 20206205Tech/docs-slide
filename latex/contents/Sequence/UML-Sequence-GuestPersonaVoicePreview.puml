@@ -1,0 +1,15 @@
+@startuml
+actor "Guest" as Guest
+participant "Web Frontend" as Frontend
+participant "Bucket \n(Cloudflare R2 / Supabase Storage)" as Storage
+
+== Luồng Nghe thử mẫu giọng nói của nhân vật ==
+Guest -> Frontend: Click "Nghe thử" một nhân vật
+activate Frontend
+Frontend -> Storage: Tải file âm thanh mẫu (GET URL)
+activate Storage
+Storage --> Frontend: Trả về dữ liệu âm thanh (.mp3/.wav stream)
+deactivate Storage
+Frontend --> Guest: Phát âm thanh nghe thử
+deactivate Frontend
+@enduml

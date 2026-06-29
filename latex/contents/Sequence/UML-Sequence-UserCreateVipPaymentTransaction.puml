@@ -1,0 +1,90 @@
+@startuml
+actor "User" as User
+participant "Web Frontend" as Frontend
+participant "API Gateway\n(Kong)" as Kong
+participant "Payment Service" as PaymentService
+database "Payment DB" as DB
+participant "Redis (BullMQ)" as Redis
+participant "Payment Gateway Selector" as GatewaySelector
+participant "Payment Gateway\n(VNPay/MoMo/ZaloPay/SePay)" as Gateway
+
+== Pha 1: Khởi tạo giao dịch mua gói thuê bao VIP ==
+
+User -> Frontend: Chọn mua gói thuê bao VIP\n(Click "Nâng cấp VIP")
+activate Frontend
+Frontend -> Kong: POST /code-payment-service/subscriptions/purchase\n[Authorization: Bearer <token>]\n{ plan_id, redirect_url }
+activate Kong
+Kong -> PaymentService: Chuyển tiếp yêu cầu mua gói thuê bao VIP
+activate PaymentService
+
+PaymentService -> DB: Query Plan bằng plan_id
+activate DB
+DB --> PaymentService: Trả về thông tin gói thuê bao VIP
+deactivate DB
+
+PaymentService -> DB: Query Subscription bằng userId
+activate DB
+DB --> PaymentService: Trả về Subscription hiện tại nếu có
+deactivate DB
+
+PaymentService -> PaymentService: Chuẩn bị Subscription\n(tái sử dụng nếu đã có)
+
+opt Chưa có Subscription
+PaymentService -> DB: INSERT Subscription\n(status='pending')
+activate DB
+DB --> PaymentService: OK
+deactivate DB
+end
+
+PaymentService -> PaymentService: Lấy PAYMENT_DEFAULT_PROVIDER\n(mặc định 'vnpay')
+
+PaymentService -> DB: INSERT Transaction\n(paymentStatus='pending', txnRef, finalAmount,\npaymentMethod=defaultProvider)
+activate DB
+DB --> PaymentService: OK
+deactivate DB
+
+PaymentService -> Redis: Đăng ký job PAYMENT_TIMEOUT_QUEUE\n{ transactionId }, delay = 10 phút
+activate Redis
+Redis --> PaymentService: OK
+deactivate Redis
+
+PaymentService -> GatewaySelector: createPaymentUrl\n(txn_ref, amount, description, client_ip,\nuser_id, provider=defaultProvider)
+activate GatewaySelector
+GatewaySelector -> Gateway: Chọn provider và tạo link thanh toán
+activate Gateway
+Gateway --> GatewaySelector: Trả về Payment URL
+deactivate Gateway
+GatewaySelector --> PaymentService: Trả về Payment URL
+deactivate GatewaySelector
+
+PaymentService --> Kong: HTTP 201\n{ success, message, data: { payment_url } }
+deactivate PaymentService
+Kong --> Frontend: Trả về BaseResponse
+deactivate Kong
+Frontend -> Frontend: apiHelper bóc data\n=> { payment_url }
+Frontend --> User: Chuyển hướng đến Payment Gateway URL
+deactivate Frontend
+
+opt #LightYellow Sau 10 phút nếu transaction vẫn pending
+Redis -> PaymentService: Nhận job payment-timeout\n{ transactionId }
+activate PaymentService
+PaymentService -> DB: Query Transaction bằng transactionId
+activate DB
+DB --> PaymentService: Trả về Transaction
+deactivate DB
+
+alt #LightPink Transaction vẫn pending
+PaymentService -> DB: UPDATE Transaction\n(status='expired')
+activate DB
+DB --> PaymentService: OK
+deactivate DB
+PaymentService -> DB: UPDATE Subscription\n(status='expired')
+activate DB
+DB --> PaymentService: OK
+deactivate DB
+else #LightGreen Transaction đã success/failed/expired
+PaymentService -> PaymentService: Bỏ qua xử lý timeout
+end
+deactivate PaymentService
+end
+@enduml

@@ -1,0 +1,55 @@
+\paragraph{Sơ đồ tuần tự luồng theo dõi báo cáo VBPL pipeline}
+
+Luồng nghiệp vụ này mô tả
+quy trình quản trị viên
+(Admin)
+theo dõi, giám sát số lượng văn bản pháp luật (VBPL) được thu thập từ vbpl.vn
+và tiến độ xử lý của các bước trong đường ống dữ liệu
+qua giao diện bảng điều khiển (Admin Dashboard).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{contents/Sequence/UML-Sequence-AdminVbplPipelineReport.png}
+\caption{Sơ đồ tuần tự luồng theo dõi báo cáo VBPL pipeline}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3}
+
+\begin{tabular}{|l|l|p{5cm}|}
+\hline
+\textbf{Thành phần} & \textbf{Phân loại} & \textbf{Vai trò trong hệ thống} \\ \hline
+Admin & Actor & Quản trị viên
+truy cập bảng điều khiển để giám sát hệ thống. \\ \hline
+Web Frontend & Component & Giao diện web Next.js. \\ \hline
+API Gateway (Kong) & Component & Cổng API chuyển tiếp các yêu cầu API. \\ \hline
+VBPL Pipeline Service & Microservice & Dịch vụ thu thập văn bản pháp luật, cung cấp số liệu tổng hợp về tổng số văn bản, trạng thái workflow. \\ \hline
+Pipeline Database & Database & CSDL lưu trữ kết quả thống kê tiến độ các bước workflow. \\ \hline
+\end{tabular}
+\caption{Các thành phần tham gia luồng theo dõi báo cáo VBPL pipeline}
+\end{table}
+
+\subparagraph{Mô tả tổng quan}
+
+\begin{itemize}
+
+\item \textbf{Yêu cầu xem báo cáo:}
+Quản trị viên
+truy cập màn hình báo cáo.
+Giao diện gửi các yêu cầu thống kê qua
+cổng API tới dịch vụ xử lý dữ liệu văn bản pháp luật
+lấy tổng số văn bản đã thu thập và thời gian cập nhật mới nhất, lấy số lượng văn bản
+ở từng bước xử lý dữ liệu,
+lấy thống kê theo trạng thái xử lý, theo năm ban hành, theo loại văn bản, theo trạng thái hiệu lực và theo lĩnh vực/ngành luật.
+
+\item \textbf{Xử lý thống kê:}
+Dịch vụ xử lý dữ liệu
+văn bản pháp luật truy vấn CSDL,
+tổng hợp số lượng văn bản theo các tiêu chí và phản hồi về giao diện.
+
+\item \textbf{Biểu diễn thông tin:}
+Giao diện nhận dữ liệu, tổng hợp và hiển thị dưới dạng các biểu đồ
+giúp quản trị viên
+theo dõi chi tiết trạng thái xử lý của toàn hệ thống.
+\end{itemize}
