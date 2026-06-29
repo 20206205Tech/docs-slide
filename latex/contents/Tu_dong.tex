@@ -1,0 +1,32 @@
+\AtBeginSection[] % Do nothing for \section*
+{
+\begin{frame}<beamer>
+\frametitle{Mục lục}
+
+\begin{multicols}{2}
+\tableofcontents[
+currentsection,
+subsectionstyle=hide/hide,
+subsubsectionstyle=hide/hide
+]
+\end{multicols}
+
+\end{frame}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AtBeginSubsection[]
+{
+\begin{frame}<beamer>
+\frametitle{Mục lục}
+
+\begin{multicols}{2}
+\tableofcontents[
+currentsection,
+currentsubsection,
+subsectionstyle=show/shaded/hide,
+subsubsectionstyle=show/show/shaded/hide
+]
+\end{multicols}
+
+\end{frame}
+}
