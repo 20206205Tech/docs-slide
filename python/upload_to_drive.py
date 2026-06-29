@@ -8,7 +8,7 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
 # ID thư mục Google Drive bạn đã cung cấp
-GOOGLE_DRIVE_FOLDER_ID = "1pEg4GjFHZBeVbFxQ1BkmiGdt0HwnOYE1"
+GOOGLE_DRIVE_FOLDER_ID = "1GVo-Vus0E2b4_SKf3XoYZd9mZA5oqE8U"
 SCOPES = ["https://www.googleapis.com/auth/drive.file"]
 
 # Đường dẫn tới file PDF (từ thư mục python/ trỏ ngược ra thư mục latex/)
