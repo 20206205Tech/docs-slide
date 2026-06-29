@@ -1,0 +1,12 @@
+\begin{frame}{Quy trình tự động hóa CI/CD bằng GitHub Actions}
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.55\textheight,width=0.9\textwidth,keepaspectratio]{pictures/cicd-by-github-action.excalidraw.png}
+\caption{Sơ đồ tổng quan CI/CD bằng Github Action trong dự án}
+\end{figure}
+
+\note{
+Sơ đồ quy trình CI/CD tự động trong dự án sử dụng GitHub Actions.
+Dự án kết hợp giữa runner miễn phí của GitHub và self-hosted runner trên VPS của riêng mình. Khi có sự thay đổi mã nguồn, hệ thống tự động chạy các kiểm thử (unit test), phân tích chất lượng mã qua SonarQube, sau đó đóng gói mã nguồn thành Docker Image, đẩy lên Docker Hub và tự động cập nhật kho lưu trữ GitOps để ArgoCD triển khai lên cụm Kubernetes.
+}
+\end{frame}

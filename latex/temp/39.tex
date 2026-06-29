@@ -1,0 +1,12 @@
+\begin{frame}{Kiến trúc Dịch vụ Tài liệu (Document Service)}
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.55\textheight,width=0.9\textwidth,keepaspectratio]{pictures/document-overview.png}
+\caption{Sơ đồ tổng quan dịch vụ văn bản}
+\end{figure}
+
+\note{
+Dịch vụ tài liệu (Document Service) tiếp nhận, lưu trữ và quản lý tài liệu do người dùng VIP tải lên.
+Khi nhận được tệp tin (PDF, DOCX), dịch vụ sẽ gửi yêu cầu xử lý bất đồng bộ thông qua RabbitMQ tới Document Worker. Tài liệu sẽ được trích xuất nội dung sang định dạng Markdown, tự động tóm tắt nội dung chính và tiến hành vector hóa để lưu trữ vào Vector Database Milvus phục vụ cho việc hỏi đáp trên tài liệu.
+}
+\end{frame}

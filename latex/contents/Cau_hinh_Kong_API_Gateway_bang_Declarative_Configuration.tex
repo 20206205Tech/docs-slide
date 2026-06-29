@@ -1,0 +1,12 @@
+\begin{frame}{Cấu hình Kong API Gateway bằng Declarative Configuration}
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.55\textheight,width=0.9\textwidth,keepaspectratio]{pictures/request-response-result-Kong-API-Gateway.excalidraw.png}
+\caption{Sử dụng Deck và database postgres cấu hình Kong API Gateway}
+\end{figure}
+
+\note{
+Kong API Gateway đóng vai trò là cổng vào duy nhất của hệ thống vi dịch vụ.
+Thay vì cấu hình thủ công qua Admin API, dự án sử dụng công cụ decK để quản lý cấu hình Kong dưới dạng file khai báo `kong.yaml` lưu trên Git. Khi có thay đổi, GitHub Actions sẽ tự động kiểm tra cú pháp (deck validate), so sánh khác biệt (deck diff) và đồng bộ cấu hình (deck sync) vào CSDL PostgreSQL của Kong.
+}
+\end{frame}

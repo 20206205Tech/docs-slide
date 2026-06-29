@@ -1,0 +1,12 @@
+\begin{frame}{Kiến trúc Dịch vụ Chatbot và Trò chuyện}
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.55\textheight,width=0.9\textwidth,keepaspectratio]{pictures/conversation-and-chatbot-overview.png}
+\caption{Sơ đồ tổng quan dịch vụ trò chuyện và dịch vụ chatbot}
+\end{figure}
+
+\note{
+Sơ đồ mối quan hệ giữa Dịch vụ trò chuyện (NestJS) và Dịch vụ chatbot (Python).
+Dịch vụ trò chuyện chịu trách nhiệm quản lý luồng trò chuyện của người dùng, lưu trữ lịch sử chat, quản lý thư mục, chia sẻ trò chuyện. Khi có tin nhắn mới, dịch vụ trò chuyện sẽ gửi yêu cầu qua giao thức gRPC hiệu năng cao đến dịch vụ chatbot (Python) để xử lý logic Agentic RAG và trả về câu trả lời dưới dạng stream.
+}
+\end{frame}

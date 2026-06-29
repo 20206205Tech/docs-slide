@@ -1,0 +1,12 @@
+\begin{frame}{Sơ đồ tổng quan các dịch vụ trong hệ thống}
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.55\textheight,width=0.9\textwidth,keepaspectratio]{pictures/Microservice-all.excalidraw.png}
+\caption{Sơ đồ tổng quan các dịch vụ của hệ thống}
+\end{figure}
+
+\note{
+Sơ đồ kiến trúc tổng thể các vi dịch vụ trong hệ thống và cơ chế giao tiếp giữa chúng.
+Tất cả các dịch vụ đều sử dụng Supabase để xác thực thông tin JWT của người dùng. Khi người dùng gửi yêu cầu, thông tin JWT chứa các thông tin như email, quyền hạn (role) sẽ được giải mã để xác thực. Các dịch vụ cũng kết nối với CSDL Postgres riêng thông qua mô hình Database per Service.
+}
+\end{frame}
