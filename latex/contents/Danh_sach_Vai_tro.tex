@@ -1,0 +1,58 @@
+Hướng dẫn tô màu cho bảng đẹp hơn
+
+\begin{frame}{Danh sách Vai trò}
+\begin{table}
+\centering
+\caption{Bảng vai trò và chức năng trong hệ thống} % <-- Lệnh caption được thêm ở đây
+
+% Bây giờ cả hai cột đều có thể dùng 'l' (căn trái) hoặc 'c' (căn giữa)
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Vai trò} & \textbf{Chức năng} \\
+\hline
+
+% Dòng 1: Guest
+Guest &
+\makecell[l]{ % [l] để căn trái các dòng bên trong ô
+Giới thiệu, nghe thử giọng nói, xem gói VIP \\
+Đăng ký email,
+Đăng nhập \textbf{
+\textcolor{blue}{G}%
+\textcolor{red}{o}%
+\textcolor{yellow}{o}%
+\textcolor{blue}{g}%
+\textcolor{green}{l}%
+\textcolor{red}{e}
+}
+} \\
+\hline
+
+% Dòng 2: User
+User &
+\makecell[l]{
+Đăng nhập và quản lý tài khoản, cài đặt \\
+Thực hiện trò chuyện, đánh dấu và chia sẻ \\
+Mua gói VIP và xem lịch sử
+} \\
+\hline
+
+% Dòng 3: VIP
+VIP &
+\makecell[l]{
+Tài liệu cá nhân \\
+Sử dụng giọng nói \\
+Suy luận nâng cao
+} \\
+\hline
+
+% Dòng 4: Admin
+Admin &
+\makecell[l]{
+Quản lý nhân vật \\
+Quản lý gói VIP \\
+Báo cáo Data pipeline
+} \\
+\hline
+\end{tabular}
+\end{table}
+\end{frame}
