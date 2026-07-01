@@ -1,0 +1,66 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+    StartPhase(("Từ Giai đoạn Trước")):::first
+    RetrieveDispatcher(RetrieveDispatcher)
+    RetrievePhapDien(RetrievePhapDien)
+    RetrieveUserDocs(RetrieveUserDocs)
+    RetrieveUserDocsSummary(RetrieveUserDocsSummary)
+    RetrieveVBPL(RetrieveVBPL)
+    JoinRetrieve(JoinRetrieve)
+    FastRag(FastRag)
+    Ranker(Ranker)
+    Browser(Browser)
+    Rewrite(Rewrite)
+    Advisor(Advisor)
+    CheckAnswer(CheckAnswer)
+    Fallback(Fallback)
+    __end__([<p>__end__</p>]):::last
+
+    StartPhase --> RetrieveDispatcher;
+
+    RetrieveDispatcher --> RetrievePhapDien;
+    RetrieveDispatcher --> RetrieveUserDocs;
+    RetrieveDispatcher --> RetrieveUserDocsSummary;
+    RetrieveDispatcher --> RetrieveVBPL;
+
+    RetrievePhapDien --> JoinRetrieve;
+    RetrieveUserDocs --> JoinRetrieve;
+    RetrieveUserDocsSummary --> JoinRetrieve;
+    RetrieveVBPL --> JoinRetrieve;
+
+    JoinRetrieve -. &nbsp;<span style='color:#2ecc71'>FAST_FORMATTING (fast mode)</span>&nbsp; .-> FastRag;
+    JoinRetrieve -. &nbsp;AGENTIC_RANKING&nbsp; .-> Ranker;
+
+    Ranker -. &nbsp;DOCUMENTS_FOUND&nbsp; .-> Advisor;
+    Ranker -. &nbsp;WEB_SEARCH&nbsp; .-> Browser;
+    Ranker -. &nbsp;NO_DOCUMENTS_FOUND&nbsp; .-> Rewrite;
+
+    Browser --> Advisor;
+    FastRag --> Advisor;
+
+    Rewrite --> RetrieveDispatcher;
+
+    Advisor -. &nbsp;CHECK_ANSWER&nbsp; .-> CheckAnswer;
+    Advisor -. &nbsp;<span style='color:#2ecc71'>FAST_COMPLETE (fast mode)</span>&nbsp; .-> __end__;
+
+    CheckAnswer -. &nbsp;FALLBACK&nbsp; .-> Fallback;
+    CheckAnswer -. &nbsp;INVALID_ANSWER&nbsp; .-> Rewrite;
+    CheckAnswer -. &nbsp;LEGAL_COMPLETE&nbsp; .-> __end__;
+
+    Fallback --> __end__;
+
+    classDef default fill:#f2f0ff,line-height:1.2
+
+    %% Đã thay đổi classDef first sang màu cam giống NextPhase
+    classDef first fill:#ffeaa7,stroke:#ff9f43,stroke-width:1.5px,color:#d35400;
+
+    classDef last fill:#bfb6fc
+    classDef fast fill:#e8f8f0,stroke:#2ecc71,stroke-width:1.5px,color:#1e7e34;
+    classDef reasoning fill:#e3f2fd,stroke:#0984e3,stroke-width:1.5px,color:#0b5ed7;
+
+    class CheckAnswer,Ranker,RetrieveDispatcher,Rewrite fast;
+    class Advisor,Browser,FastRag,JoinRetrieve,RetrievePhapDien,RetrieveUserDocs,RetrieveUserDocsSummary,RetrieveVBPL,Fallback reasoning;

@@ -1,0 +1,55 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+    __start__([<p>__start__</p>]):::first
+    CheckEffective(CheckEffective)
+    Classify(Classify)
+    Confirmer(Confirmer)
+    EntryDispatcher(EntryDispatcher)
+    EntryJoin(EntryJoin)
+    ExtractIdentity(ExtractIdentity)
+    General(General)
+    Linker(Linker)
+    Router(Router)
+    NextPhase(("Đến Giai đoạn Truy xuất"))
+    __end__([<p>__end__</p>]):::last
+
+    CheckEffective -. &nbsp;EFFECTIVE_ID_CONTINUE&nbsp; .-> NextPhase;
+    CheckEffective -. &nbsp;<span style='color:#ff9f43'>EXPIRATION_WARNING_STOP</span>&nbsp; .-> __end__;
+    Classify --> EntryJoin;
+    Confirmer -. &nbsp;<span style='color:#ff9f43'>CONFIRM_CONTINUE</span>&nbsp; .-> NextPhase;
+    Confirmer -. &nbsp;<span style='color:#ff9f43'>CONFIRM_STOP</span>&nbsp; .-> __end__;
+    EntryDispatcher --> Classify;
+    EntryDispatcher --> ExtractIdentity;
+    EntryDispatcher --> Linker;
+    EntryJoin -. &nbsp;<span style='color:#0984e3'>TYPE_LEGAL</span>&nbsp; .-> CheckEffective;
+    EntryJoin -. &nbsp;<span style='color:#0984e3'>TYPE_GENERAL</span>&nbsp; .-> General;
+    ExtractIdentity -. &nbsp;<span style='color:#e74c3c'>ROUTE_TO_CHECK_EFFECTIVE (voice mode)</span>&nbsp; .-> CheckEffective;
+    ExtractIdentity -. &nbsp;ROUTE_TO_JOIN_ENTRY&nbsp; .-> EntryJoin;
+    General -. &nbsp;<span style='color:#0984e3'>GENERAL_COMPLETE</span>&nbsp; .-> __end__;
+    Linker --> EntryJoin;
+    Router -. &nbsp;<span style='color:#2ecc71'>FAST_CLASSIFY (fast mode)</span>&nbsp; .-> Classify;
+    Router -. &nbsp;<span style='color:#ff9f43'>IS_CONFIRMATION</span>&nbsp; .-> Confirmer;
+    Router -. &nbsp;IS_NEXT_CHAT&nbsp; .-> EntryDispatcher;
+    Router -. &nbsp;<span style='color:#e74c3c'>EXTRACT_IDENTITY (voice mode)</span>&nbsp; .-> ExtractIdentity;
+    Router -. &nbsp;TOO_SHORT_MESSAGE&nbsp; .-> General;
+    __start__ --> Router;
+
+	classDef default fill:#f2f0ff,line-height:1.2
+    classDef first fill-opacity:0
+    classDef last fill:#bfb6fc
+    classDef fast fill:#e8f8f0,stroke:#2ecc71,stroke-width:1.5px,color:#1e7e34;
+    classDef reasoning fill:#e3f2fd,stroke:#0984e3,stroke-width:1.5px,color:#0b5ed7;
+
+    %% Thêm class màu cam mới ở đây
+    classDef orange fill:#ffeaa7,stroke:#ff9f43,stroke-width:1.5px,color:#d35400;
+
+    %% Đã xóa NextPhase khỏi nhóm fast
+    class CheckEffective,Classify,Confirmer,ExtractIdentity,General,Router fast;
+    class EntryDispatcher,EntryJoin,Linker reasoning;
+
+    %% Gán class màu cam cho NextPhase
+    class NextPhase orange;

@@ -63,7 +63,16 @@ Lớp: & Toán Tin 02 - K65
 \end{tabular}
 }
 % \date{Hà Nội, \today}
-\date{Hà Nội, 07/2026}
+% \date{Hà Nội, 07/2026}
+\date{\href{https://example.com}{Hà Nội, 07/2026}}
+
+% học thuộc
+% LLM... điểm yếu
+% RAG
+
+% Bổ sung
+% mfa
+% các sự kiện event
 
 \renewcommand{\sfdefault}{cmss}
 \renewcommand{\rmdefault}{cmr}
@@ -94,6 +103,7 @@ Lớp: & Toán Tin 02 - K65
 \usepackage{multirow}
 
 \usepackage{pgfpages}
+\usepackage{makecell}
 
 % \hypersetup{
 % pdfpagelayout=TwoPageRight, % Chuyển sang trang bên phải khi nhấp chuột trái hoặc phải
@@ -110,11 +120,18 @@ Lớp: & Toán Tin 02 - K65
 \setbeamercolor{background canvas}{bg=black} % Thiết lập nền toàn bộ slide thành màu đen
 \setbeamercolor{normal text}{fg=white} % Thiết lập màu chữ mặc định là trắng
 
-\setbeameroption{show notes on second screen=right} % Bật chức năng hiển thị ghi chú ở màn hình bên phải (màn hình phụ)
+% \setbeameroption{show notes on second screen=right} % Bật chức năng hiển thị ghi chú ở màn hình bên phải (màn hình phụ)
 
 \fi
 
 \begin{document}
 % \begin{footnotesize}
+
+\input{contents/Tieu_de}
+\input{contents/Muc_luc_tu_dong}
+
 \input{doc}
+
+\input{contents/Cam_on}
+
 \end{document}
