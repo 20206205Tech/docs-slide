@@ -1,12 +1,12 @@
-\begin{frame}{Tổng quan về đàm thoại giọng nói}
+\begin{frame}{Quản lý Hạ tầng dưới dạng mã}
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.7\textheight,width=0.9\textwidth,keepaspectratio]{pictures/voice-livekit-overview.png}
-\caption{Sơ đồ tích hợp LiveKit đàm thoại giọng nói}
+\includegraphics[height=0.7\textheight,width=0.9\textwidth,keepaspectratio]{pictures/infrastructure-as-code-IaC-terraform.excalidraw.png}
+\caption{Sơ đồ tổng quan quản lý hạ tầng bằng Terraform trong dự án}
 \end{figure}
 
 \note{
-Hệ thống tích hợp máy chủ LiveKit để cung cấp tính năng đàm thoại giọng nói với trợ lý ảo.
-Khi người dùng kết nối, Voice Agent hoạt động như một LiveKit Agent, chủ động kết nối và trao đổi âm thanh hai chiều thông qua giao thức WebRTC. Voice Agent tích hợp các mô hình VAD (phát hiện giọng nói), STT (chuyển giọng nói thành văn bản), LLM (suy luận phản hồi) và TTS (chuyển văn bản thành giọng nói) với độ trễ cực thấp.
+Để quản lý hạ tầng một cách nhất quán và tự động, dự án sử dụng Terraform dưới dạng Infrastructure as Code (IaC).
+Terraform tự động khởi tạo và cấu hình các tài nguyên bên thứ ba như: Supabase (Auth), LangSmith (giám sát RAG), Cloudflare (DNS và R2 Storage), Neon (PostgreSQL cho các vi dịch vụ), DigitalOcean (Crawl DB) và Heroku (Payment Service). Trạng thái hạ tầng được lưu trữ tập trung trên Terraform Cloud.
 }
 \end{frame}
