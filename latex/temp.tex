@@ -1,12 +1,12 @@
-\begin{frame}{Giao diện quản lý GitOps bằng ArgoCD}
+\begin{frame}{Tạo liên kết chia sẻ cuộc trò chuyện}
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.55\textheight,width=0.9\textwidth,keepaspectratio]{pictures/argocd-web-ui.png}
-\caption{Kết quả giao diện ArgoCD triển khai docker trong Kubernetes}
+\includegraphics[height=0.55\textheight,width=0.9\textwidth,keepaspectratio]{pictures/WebUI/WebUI-ShareCreate.png}
+\caption{Kết quả tạo liên kết chia sẻ}
 \end{figure}
 
 \note{
-ArgoCD được triển khai trong cụm Kubernetes để thực hiện quy trình Continuous Delivery (CD) theo mô hình GitOps.
-ArgoCD liên tục giám sát kho lưu trữ Git chứa các file cấu hình Kubernetes. Khi phát hiện có sự thay đổi (ví dụ: phiên bản Docker image mới), ArgoCD sẽ tự động đồng bộ (sync) và cập nhật các Pod đang chạy trên Kubernetes thực tế để khớp với cấu hình được khai báo trên Git.
+Giao diện cho phép người dùng VIP tạo liên kết chia sẻ công khai một cuộc trò chuyện cụ thể.
+Hệ thống hiển thị hộp thoại xác nhận, sau khi người dùng nhấn "Tạo liên kết", hệ thống sẽ chụp lại ảnh chụp (snapshot) nội dung cuộc trò chuyện hiện tại, đóng gói và tải lên Cloudflare R2, đồng thời sinh ra một đường dẫn URL duy nhất. Người dùng có thể sao chép đường dẫn này để gửi cho người khác hoặc thu hồi liên kết bất kỳ lúc nào.
 }
 \end{frame}
