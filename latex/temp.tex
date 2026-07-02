@@ -1,12 +1,13 @@
-\begin{frame}{Đường ống dữ liệu VBPL}
+\begin{frame}{Các bước trong đường ống dữ liệu VBPL cũ}
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.55\textheight,width=0.9\textwidth,keepaspectratio]{pictures/Data-Pipeline-VBPL.excalidraw.png}
-\caption{Sơ đồ tổng quan đường ống dữ liệu VBPL}
+\includegraphics[height=0.7\textheight,width=0.9\textwidth,keepaspectratio]{pictures/step0.excalidraw.png}
+\caption{Sơ đồ các bước thực hiện của đường ống dữ liệu VBPL cũ}
 \end{figure}
 
 \note{
-Do nguồn dữ liệu VBPL Việt Nam (VBPL) thay đổi cấu trúc trang web và API vào tháng 5/2026, dự án đã xây dựng lại đường ống dữ liệu mới.
-Đường ống dữ liệu này tự động hóa quy trình từ thu thập thông tin qua crawler, lưu trữ dữ liệu thô vào PostgreSQL, thực hiện tiền xử lý VBPL và cuối cùng là tích hợp vào RAG pipeline để cập nhật CSDL tri thức của trợ lý ảo.
+Sơ đồ chi tiết các bước thực hiện trong quy trình cũ của đường ống dữ liệu VBPL.
+Quy trình được chia thành 3 giai đoạn: Khởi tạo
+công việc (\texttt{step\_setup\_workflow}), thu thập tổng số lượng tài liệu (\texttt{step\_crawl\_document\_total}), tải nội dung chi tiết và cuối cùng là xử lý định dạng văn bản để chuẩn bị cho việc trích xuất thông tin.
 }
 \end{frame}
