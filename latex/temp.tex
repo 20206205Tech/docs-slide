@@ -1,12 +1,12 @@
-\begin{frame}{Kết quả Docker Image trên Docker Hub}
+\begin{frame}{Giao diện quản lý GitOps bằng ArgoCD}
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.55\textheight,width=0.9\textwidth,keepaspectratio]{pictures/docker-hub-web-ui2.png}
-\caption{Kết quả Docker Image được push lên Docker Hub}
-% \caption{Kết quả giao diện docker}
+\includegraphics[height=0.55\textheight,width=0.9\textwidth,keepaspectratio]{pictures/argocd-web-ui.png}
+\caption{Kết quả giao diện ArgoCD triển khai docker trong Kubernetes}
 \end{figure}
 
 \note{
-docker
+ArgoCD được triển khai trong cụm Kubernetes để thực hiện quy trình Continuous Delivery (CD) theo mô hình GitOps.
+ArgoCD liên tục giám sát kho lưu trữ Git chứa các file cấu hình Kubernetes. Khi phát hiện có sự thay đổi (ví dụ: phiên bản Docker image mới), ArgoCD sẽ tự động đồng bộ (sync) và cập nhật các Pod đang chạy trên Kubernetes thực tế để khớp với cấu hình được khai báo trên Git.
 }
 \end{frame}
