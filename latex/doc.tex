@@ -1,16 +1,16 @@
-% \section{Bài toán nghiệp vụ}
+\section{Bài toán nghiệp vụ}
 
-% \input{contents/Su_can_thiet}
-% \input{contents/Vai_tro_va_chuc_nang}
-% \input{contents/So_do_Use_Case_Khach_vang_lai}
-% \input{contents/So_do_Use_Case_Nguoi_dung_co_ban}
-% \input{contents/So_do_Use_Case_Nguoi_dung_VIP}
-% \input{contents/So_do_Use_Case_Quan_tri_vien}
+\input{contents/Su_can_thiet}
+\input{contents/Vai_tro_va_chuc_nang}
+\input{contents/So_do_Use_Case_Khach_vang_lai}
+\input{contents/So_do_Use_Case_Nguoi_dung_co_ban}
+\input{contents/So_do_Use_Case_Nguoi_dung_VIP}
+\input{contents/So_do_Use_Case_Quan_tri_vien}
 
 \section{Xây dựng hệ thống AI}
+
 \subsection{Đường ống dữ liệu}
 
-\ifdev
 \input{contents/Duong_ong_du_lieu_VBPL} % Đường ống dữ liệu VBPL
 \input{contents/Cac_buoc_trong_duong_ong_du_lieu_VBPL_cu} % Các bước trong đường ống dữ liệu VBPL cũ
 \input{contents/Cac_buoc_trong_duong_ong_du_lieu_VBPL_moi} % Các bước trong đường ống dữ liệu VBPL mới
@@ -22,17 +22,18 @@
 \input{contents/Agentic_RAG_voi_LangGraph_2} % Agentic RAG với LangGraph 2
 \input{contents/Agentic_RAG_voi_LangGraph_0} % Agentic RAG với LangGraph 0
 \input{contents/Tong_quan_cac_dich_vu} % Tổng quan các dịch vụ
-\input{dev}
-\fi
 
-% \input{contents/Tong_quan_Kien_truc_Vi_dich_vu_trong_Du_an}
+\section{Các dịch vụ hệ thống}
 
-% \section{Chi tiết các dịch vụ}
-% \section{Các dịch vụ hệ thống}
 % \input{contents/Kien_truc_Dich_vu_Thanh_toan_Payment_Service}
 % \input{contents/Kien_truc_Dich_vu_Tai_lieu_Document_Service}
 % \input{contents/Kien_truc_Dich_vu_Chatbot_va_Tro_chuyen}
 % \input{contents/Kien_truc_tich_hop_dam_thoai_thoi_gian_thuc_Voice_Agent}
+
+\ifdev
+\input{contents/Dich_vu_Thanh_toan} % Dịch vụ Thanh toán
+\input{dev}
+\fi
 
 % \section{Các công nghệ khác}
 % \input{contents/Quy_trinh_tu_dong_hoa_CICD_bang_GitHub_Actions}
