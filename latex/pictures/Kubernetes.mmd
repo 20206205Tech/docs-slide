@@ -4,7 +4,7 @@ graph TB
         LiveKit[LiveKit Server]
     %% end
 
-    subgraph K8s_Cluster [Kubernetes]
+    subgraph K8s_Cluster [" "]
 
         %% Ingress & Gateway
         Conversation[Conversation Service]
@@ -28,6 +28,8 @@ graph TB
 
     %% Connections
     Client --> Conversation
+    Client --> Persona
+    Client --> DocService
 
     %% Internal Routing
     Conversation -->|Text| Chatbot
