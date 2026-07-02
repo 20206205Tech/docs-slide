@@ -6,7 +6,7 @@ pdfauthor={Vũ Văn Nghĩa - 20206205}
 }
 \usepackage[utf8]{vietnam}
 \usepackage{mdframed}
-\usepackage[english]{babel}
+% \usepackage[english]{babel}
 \usepackage{ulem}
 \usepackage{pifont}
 \usepackage[mathscr]{eucal}
@@ -26,6 +26,7 @@ pdfauthor={Vũ Văn Nghĩa - 20206205}
 \usepackage{tikz}
 \usepackage{nicefrac}
 \setbeamertemplate{theorems}[numbered]
+\setbeamertemplate{caption}[numbered]
 \usetheme{Boadilla}
 
 \usecolortheme{rose}
@@ -78,6 +79,10 @@ Lớp: & Toán Tin 02 - K65
 \renewcommand{\rmdefault}{cmr}
 \renewcommand{\ttdefault}{cmtt}
 \numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\figurename}{Hình}
+\renewcommand{\tablename}{Bảng}
 \usepackage{array}
 \usepackage{ragged2e}
 \justifying
