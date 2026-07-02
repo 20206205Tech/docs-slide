@@ -1,12 +1,13 @@
-\begin{frame}{Đường ống dữ liệu Pháp Điển}
+\begin{frame}{Các bước trong đường ống dữ liệu Pháp Điển}
+
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.55\textheight,width=0.9\textwidth,keepaspectratio]{pictures/Data-Pipeline-PhapDien.excalidraw.png}
-\caption{Sơ đồ tổng quan đường ống dữ liệu Pháp Điển}
+\includegraphics[height=0.7\textheight,width=0.9\textwidth,keepaspectratio]{pictures/step3.excalidraw.png}
+\caption{Sơ đồ các bước thực hiện của đường ống dữ liệu Pháp Điển}
 \end{figure}
 
 \note{
-Bên cạnh VBPL, hệ thống còn tích hợp Bộ Pháp Điển Việt Nam. Sơ đồ này mô tả đường ống dữ liệu Pháp Điển.
-Dữ liệu Pháp Điển được tải về dưới dạng file nén ZIP từ Cổng thông tin điện tử Pháp Điển, sau đó được giải nén, chuyển đổi cấu trúc cây đề mục sang định dạng JSON, tải lên lưu trữ trên Google Drive và thực hiện vector hóa để lưu vào Vector Database.
+Sơ đồ mô tả quy trình từng bước của đường ống dữ liệu Pháp Điển.
+Quy trình bắt đầu từ việc tải file ZIP tự động (\texttt{step\_download\_zip}), tính toán mã băm MD5 để kiểm tra sự thay đổi dữ liệu so với phiên bản trước, giải nén và trích xuất cấu trúc đề mục ra các file JSON riêng biệt, sau đó chạy các tác vụ phân tích cấu trúc và lưu kết quả vector hóa.
 }
 \end{frame}
