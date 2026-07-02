@@ -1,12 +1,14 @@
-\begin{frame}{Dịch vụ Thanh toán}
+\begin{frame}{Dịch vụ Tài liệu}
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.7\textheight,width=0.9\textwidth,keepaspectratio]{pictures/payment-kafka-event.png}
-\caption{Sơ đồ tổng quan dịch vụ thanh toán}
+\includegraphics[height=0.7\textheight,width=0.9\textwidth,keepaspectratio]{pictures/document-overview.png}
+\caption{Sơ đồ tổng quan dịch vụ văn bản}
 \end{figure}
 
 \note{
-Dịch vụ thanh toán (Payment Service) chịu trách nhiệm quản lý thông tin các gói dịch vụ (Plans), quản lý thuê bao người dùng (Subscriptions) và tích hợp với cổng thanh toán ngoại vi.
-Khi người dùng thực hiện thanh toán thành công, dịch vụ này sẽ phát đi sự kiện \texttt{payment\_success} vào hệ thống truyền tin nhắn Kafka để các dịch vụ khác như Chatbot và Document cập nhật quyền VIP cho người dùng.
+Dịch vụ tài liệu (Document Service) tiếp nhận, lưu trữ và quản lý tài liệu do người dùng VIP tải lên.
+Khi nhận được tệp tin (PDF, DOCX), dịch vụ sẽ gửi yêu cầu xử lý bất đồng bộ thông qua RabbitMQ tới Document Worker. Tài liệu sẽ được trích xuất nội dung sang định dạng Markdown, tự động tóm tắt nội dung chính và tiến hành vector hóa để lưu trữ vào Vector Database Milvus phục vụ cho việc hỏi đáp trên tài liệu.
 }
 \end{frame}
+
+% => chia nhỏ nhẹ thue viện service ....
