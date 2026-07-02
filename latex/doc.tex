@@ -1,44 +1,54 @@
 \section{Bài toán nghiệp vụ}
+
 \input{contents/Su_can_thiet}
-\input{contents/Danh_sach_Vai_tro}
+\input{contents/Vai_tro_va_chuc_nang}
 \input{contents/So_do_Use_Case_Khach_vang_lai}
 \input{contents/So_do_Use_Case_Nguoi_dung_co_ban}
 \input{contents/So_do_Use_Case_Nguoi_dung_VIP}
 \input{contents/So_do_Use_Case_Quan_tri_vien}
 
 \section{Xây dựng hệ thống AI}
+
 \subsection{Đường ống dữ liệu}
-\input{contents/Duong_ong_du_lieu_van_ban_phap_luat_VBPL}
-\input{contents/Quy_trinh_cac_buoc_thu_thap_du_lieu_van_ban_phap_luat}
-\input{contents/Quy_trinh_cac_buoc_moi}
-\input{contents/Duong_ong_du_lieu_Phap_dien}
-\input{contents/Quy_trinh_cac_buoc_trong_duong_ong_du_lieu_Phap_dien}
+
+\input{contents/Duong_ong_du_lieu_VBPL}
+\input{contents/Cac_buoc_trong_duong_ong_du_lieu_VBPL_cu}
+\input{contents/Cac_buoc_trong_duong_ong_du_lieu_VBPL_moi}
+\input{contents/Duong_ong_du_lieu_Phap_Dien}
+\input{contents/Cac_buoc_trong_duong_ong_du_lieu_Phap_Dien}
 
 \subsection{Agentic RAG với LangGraph}
-\input{contents/Kien_truc_Agentic_RAG_bang_LangGraph}
-\input{contents/Tong_quan_Kien_truc_Vi_dich_vu_trong_Du_an}
+\input{contents/Agentic_RAG_voi_LangGraph_1}
+\input{contents/Agentic_RAG_voi_LangGraph_2}
+\input{contents/Agentic_RAG_voi_LangGraph_0}
+\input{contents/Tong_quan_cac_dich_vu}
 
-\section{Chi tiết các dịch vụ}
-\input{contents/Kien_truc_Dich_vu_Thanh_toan_Payment_Service}
-\input{contents/Kien_truc_Dich_vu_Tai_lieu_Document_Service}
-\input{contents/Kien_truc_Dich_vu_Chatbot_va_Tro_chuyen}
-\input{contents/Kien_truc_tich_hop_dam_thoai_thoi_gian_thuc_Voice_Agent}
+\section{Các dịch vụ hệ thống}
+
+\input{contents/Dich_vu_Thanh_toan}
+\input{contents/Dich_vu_Tai_lieu}
+\input{contents/Dich_vu_Tro_chuyen_va_Chatbot}
+\input{contents/Tong_quan_ve_dam_thoai_giong_noi}
 
 \section{Các công nghệ khác}
-\input{contents/Quy_trinh_tu_dong_hoa_CICD_bang_GitHub_Actions}
-\input{contents/Quan_ly_Ha_tang_duoi_dang_ma_IaC_bang_Terraform}
-\input{contents/Cau_hinh_Kong_API_Gateway_bang_Declarative_Configuration}
-\input{contents/docker}
-\input{contents/Cau_hinh_tai_nguyen_Kubernetes_trong_GitOps_Repository}
-\input{contents/Giao_dien_quan_ly_trien_khai_GitOps_bang_ArgoCD}
+\input{contents/Quy_trinh_tu_dong_hoa_bang_GitHub_Actions}
+\input{contents/Quan_ly_Ha_tang_duoi_dang_ma}
+\input{contents/Cau_hinh_Kong_API_Gateway}
+\input{contents/Ket_qua_Docker_Image_tren_Docker_Hub}
+\input{contents/Giao_dien_quan_ly_GitOps_bang_ArgoCD}
 
 \section{Giao diện kết quả}
-\input{contents/Giao_dien_Email_xac_thuc_dang_ky_tai_khoan}
-\input{contents/Giao_dien_Thiet_lap_xac_thuc_hai_lop_MFA_qua_ma_QR}
-\input{contents/Giao_dien_Tao_lien_ket_chia_se_cuoc_tro_chuyen}
-\input{contents/Giao_dien_Dang_ky_goi_VIP_thanh_cong}
-\input{contents/Giao_dien_Lua_chon_giong_noi_cua_tro_ly_ao}
-\input{contents/Giao_dien_Dam_thoai_giong_noi_thoi_gian_thuc_voi_tro_ly_ao}
+
+\input{contents/Email_xac_thuc_dang_ky_tai_khoan}
+\input{contents/Thiet_lap_xac_thuc_hai_lop_MFA_qua_ma_QR}
+\input{contents/Tao_lien_ket_chia_se_cuoc_tro_chuyen}
+\input{contents/Dang_ky_goi_VIP_thanh_cong}
+\input{contents/Lua_chon_giong_noi_cua_tro_ly_ao}
+\input{contents/Dam_thoai_giong_noi_voi_tro_ly_ao}
+
+\ifdev
+\input{dev}
+\fi
 
 \section{Kết luận \& Hướng phát triển}
 \input{contents/Ket_luan_cua_do_an}
@@ -46,7 +56,3 @@
 
 \section{Tài liệu tham khảo}
 \input{contents/Tai_lieu_tham_khao}
-
-\ifdev
-\input{dev}
-\fi
