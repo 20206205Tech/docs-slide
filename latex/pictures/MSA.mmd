@@ -52,6 +52,11 @@ classDef rtc fill:#1fd5f9,stroke:#fff,stroke-width:2px,color:#fff
 Client["Client (Next.js)"]:::client
 Kong["Kong API Gateway"]:::gateway
 
+%% --- ĐỊNH NGHĨA 2 SERVICE MỚI ---
+VBPLService["VBPL Service"]:::internal_python
+PhapDienService["PhapDien Service"]:::internal_python
+%% --------------------------------
+
 %% Các dịch vụ bên ngoài
 AuthService["Auth Service (Supabase)"]:::external_service
 SettingService["Setting Service (Neon API)"]:::external_service
@@ -73,16 +78,15 @@ DocumentService["Document (Docling)"]:::internal_python
 %% VectorDB sử dụng chuẩn vdb_color
 VectorDB[("Vector Database")]:::vdb_color
 
-%% --- ĐỊNH NGHĨA 2 SERVICE MỚI ---
-VBPLService["VBPL Service"]:::internal_python
-PhapDienService["PhapDien Service"]:::internal_python
-%% --------------------------------
-
 LiveKit <-->|Stream| ChatbotService
 ConvService -->|Get Token| LiveKit
 
 Client --> Kong
 Client <-->|WebRTC| LiveKit
+
+Kong --> VBPLService
+Kong --> PhapDienService
+
 
 Kong --> AuthService
 Kong --> SettingService
@@ -91,8 +95,6 @@ Kong --> ConvService
 Kong --> PersonaService
 
 %% --- KẾT NỐI 2 SERVICE MỚI VỚI GATEWAY ---
-Kong --> VBPLService
-Kong --> PhapDienService
 %% -----------------------------------------
 
 ConvService <-->|gRPC & Message Queue| ChatbotService
