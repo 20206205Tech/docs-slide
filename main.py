@@ -71,14 +71,28 @@ def main():
 
     print("=== BẮT ĐẦU TỐI ƯU HÓA SIÊU TỐC (CHỈ BIÊN DỊCH 1 LẦN) ===")
 
+    # Phát hiện cấu trúc và số lượng ảnh trong slide
+    num_images = len(re.findall(r"\\includegraphics", first_frame))
+    is_parallel = r"\begin{columns}" in first_frame
+    print(
+        f"Phát hiện: {num_images} ảnh. Cấu trúc xếp song song (columns): {is_parallel}"
+    )
+
     slides = []
     sizes = [val / 100.0 for val in range(50, 100)]
 
     for size in sizes:
-        # Thay đổi kích thước ảnh cho từng trường hợp thử nghiệm
+        # Xác định chiều cao tối đa cho mỗi ảnh dựa trên cấu trúc slide
+        if is_parallel or num_images <= 1:
+            img_height = size
+        else:
+            # Nếu xếp dọc, chia đều chiều cao tối đa của vùng thử nghiệm cho số lượng ảnh
+            img_height = size / num_images
+
+        # Thay đổi kích thước ảnh cho từng trường hợp thử nghiệm (khớp cả trường hợp có hoặc không có [options] sẵn)
         slide = re.sub(
-            r"\\includegraphics\[[^\]]+\]",
-            f"\\\\includegraphics[width=\\\\linewidth,height={size}\\\\textheight,keepaspectratio]",
+            r"\\includegraphics(?:\[[^\]]*\])?",
+            f"\\\\includegraphics[width=\\\\linewidth,height={img_height:.3f}\\\\textheight,keepaspectratio]",
             first_frame,
         )
         slides.append(slide)
@@ -134,9 +148,14 @@ def main():
         )
 
     # Ghi lại một slide duy nhất với kích thước tối ưu vào dev.tex
+    if is_parallel or num_images <= 1:
+        optimal_img_height = optimal_size
+    else:
+        optimal_img_height = optimal_size / num_images
+
     final_slide = re.sub(
-        r"\\includegraphics\[[^\]]+\]",
-        f"\\\\includegraphics[width=\\\\linewidth,height={optimal_size}\\\\textheight,keepaspectratio]",
+        r"\\includegraphics(?:\[[^\]]*\])?",
+        f"\\\\includegraphics[width=\\\\linewidth,height={optimal_img_height:.3f}\\\\textheight,keepaspectratio]",
         first_frame,
     )
     with open(output_path, "w", encoding="utf-8") as f:
