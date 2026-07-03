@@ -65,40 +65,43 @@ SettingService["Setting Service (Neon API)"]:::external_service
 PaymentService["Payment Service (Heroku)"]:::internal_nest
 ConvService["Conversation Service"]:::internal_nest
 
-%% Kafka theo quy chuẩn Message Queue
+%% Message Queues theo quy chuẩn queue_color
 Kafka[["Kafka"]]:::queue_color
+RabbitMQ[["RabbitMQ"]]:::queue_color
 
 LiveKit["LiveKit Server"]:::rtc
 
 %% Các dịch vụ internal Python
 PersonaService["Persona Service"]:::internal_python
 ChatbotService["Chatbot + Voice Agent"]:::internal_python
-DocumentService["Document (Docling)"]:::internal_python
+DocumentService["Document Service (Docling)"]:::internal_python
 
 %% VectorDB sử dụng chuẩn vdb_color
 VectorDB[("Vector Database")]:::vdb_color
 
 LiveKit <-->|Stream| ChatbotService
+Client <-->|WebRTC| LiveKit
 ConvService -->|Get Token| LiveKit
 
 Client --> Kong
-Client <-->|WebRTC| LiveKit
 
 Kong --> VBPLService
 Kong --> PhapDienService
 
-
 Kong --> AuthService
 Kong --> SettingService
 Kong --> PaymentService
-Kong --> ConvService
 Kong --> PersonaService
 
 %% --- KẾT NỐI 2 SERVICE MỚI VỚI GATEWAY ---
 %% -----------------------------------------
 
-ConvService <-->|gRPC & Message Queue| ChatbotService
-ChatbotService -->|REST | PersonaService
+%% Phân tách gRPC và RabbitMQ giữa ConvService và ChatbotService
+ConvService <-->|gRPC| ChatbotService
+ConvService == Publish / Consume ==> RabbitMQ
+RabbitMQ == Publish / Consume ==> ChatbotService
+
+ChatbotService -->|REST| PersonaService
 
 Kong --> ChatbotService
 
@@ -106,6 +109,7 @@ ChatbotService -->|Truy vấn| VectorDB
 DocumentService -.->|Xử lý & Lưu trữ| VectorDB
 
 PaymentService == Publish Event ==> Kafka
+Kong --> ConvService
 Kafka == Consume Event ==> ConvService
 Kafka == Consume Event ==> DocumentService
 
