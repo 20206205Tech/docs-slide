@@ -7,14 +7,17 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
-# ID thư mục Google Drive bạn đã cung cấp
-GOOGLE_DRIVE_FOLDER_ID = "1GVo-Vus0E2b4_SKf3XoYZd9mZA5oqE8U"
+# Mặc định (bản Prod), nếu có biến môi trường truyền từ GitHub Actions thì sẽ lấy giá trị đó
+GOOGLE_DRIVE_FOLDER_ID = os.environ.get(
+    "DRIVE_FOLDER_ID", "1TbMNTUkGjA3EUbt-8BYMx2oDWkntDqXM"
+)
 SCOPES = ["https://www.googleapis.com/auth/drive.file"]
 
-# Đường dẫn tới file PDF (từ thư mục python/ trỏ ngược ra thư mục latex/)
-PDF_LOCAL_PATH = os.path.join(
-    os.path.dirname(__file__), "..", "latex", "VuVanNghia-20206205.pdf"
-)
+# Lấy tên file động từ biến môi trường (mặc định là bản chính thức)
+PDF_FILE_NAME = os.environ.get("PDF_FILE_NAME", "VuVanNghia-20206205.pdf")
+
+# Đường dẫn tới file PDF
+PDF_LOCAL_PATH = os.path.join(os.path.dirname(__file__), "..", "latex", PDF_FILE_NAME)
 
 
 def get_hanoi_time(format_str="%d-%m-%Y_%H-%M-%S"):
@@ -44,11 +47,17 @@ def main():
     print("🔑 Đang xác thực Google Drive...")
     service = get_drive_service()
 
-    # Tạo tên file mới có kèm thời gian
+    # Tạo tên file mới có kèm thời gian và giữ nguyên tiền tố dev (nếu có)
     time_suffix = get_hanoi_time()
-    new_file_name = f"VuVanNghia-20206205_{time_suffix}.pdf"
 
-    print(f"🚀 Đang tải file lên với tên: {new_file_name}")
+    if PDF_FILE_NAME.startswith("dev-"):
+        new_file_name = f"dev-VuVanNghia-20206205_{time_suffix}.pdf"
+    else:
+        new_file_name = f"VuVanNghia-20206205_{time_suffix}.pdf"
+
+    print(
+        f"🚀 Đang tải file lên thư mục ID [{GOOGLE_DRIVE_FOLDER_ID}] với tên: {new_file_name}"
+    )
 
     file_metadata = {"name": new_file_name, "parents": [GOOGLE_DRIVE_FOLDER_ID]}
 

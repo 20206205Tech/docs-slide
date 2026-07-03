@@ -46,7 +46,7 @@ jobs:
         run: uv sync
 
       # =========================================================
-      # 2. BIÊN DỊCH VÀ UPLOAD BẢN DEV
+      # 2. BIÊN DỊCH VÀ UPLOAD BẢN DEV (KHÔNG chạy disable_dev)
       # =========================================================
       - name: Compile LaTeX document (Dev)
         uses: xu-cheng/latex-action@v3
@@ -61,7 +61,8 @@ jobs:
         if: github.ref == 'refs/heads/main'
         env:
           DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
-          PDF_FILE: latex/dev-VuVanNghia-20206205.pdf  # Truyền tên file qua biến môi trường
+          PDF_FILE_NAME: dev-VuVanNghia-20206205.pdf
+          DRIVE_FOLDER_ID: 1t6vSPxsAJmo-yTUYrxclnna0omL3q3OE
         run: |
           doppler run -p 20206205tech -c prod -- uv run python python/upload_to_drive.py
 
@@ -107,6 +108,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         env:
           DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
-          PDF_FILE: latex/VuVanNghia-20206205.pdf  # Truyền tên file chính thức
+          PDF_FILE_NAME: VuVanNghia-20206205.pdf
+          DRIVE_FOLDER_ID: 1TbMNTUkGjA3EUbt-8BYMx2oDWkntDqXM
         run: |
           doppler run -p 20206205tech -c prod -- uv run python python/upload_to_drive.py
