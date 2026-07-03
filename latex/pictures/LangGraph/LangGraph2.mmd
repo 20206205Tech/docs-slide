@@ -4,7 +4,7 @@ config:
     curve: linear
 ---
 graph TD;
-    StartPhase(("Từ Giai đoạn Trước")):::first
+    %% StartPhase(("Từ Giai đoạn Trước")):::first
     RetrieveDispatcher(RetrieveDispatcher)
     RetrievePhapDien(RetrievePhapDien)
     RetrieveUserDocs(RetrieveUserDocs)
@@ -20,7 +20,7 @@ graph TD;
     Fallback(Fallback)
     __end__([<p>__end__</p>]):::last
 
-    StartPhase --> RetrieveDispatcher;
+    %% StartPhase --> RetrieveDispatcher;
 
     RetrieveDispatcher --> RetrievePhapDien;
     RetrieveDispatcher --> RetrieveUserDocs;
@@ -56,7 +56,7 @@ graph TD;
     classDef default fill:#f2f0ff,line-height:1.2
 
     %% Đã thay đổi classDef first sang màu cam giống NextPhase
-    classDef first fill:#ffeaa7,stroke:#ff9f43,stroke-width:1.5px,color:#d35400;
+    %% classDef first fill:#ffeaa7,stroke:#ff9f43,stroke-width:1.5px,color:#d35400;
 
     classDef last fill:#bfb6fc
     classDef fast fill:#e8f8f0,stroke:#2ecc71,stroke-width:1.5px,color:#1e7e34;
