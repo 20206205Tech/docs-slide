@@ -22,16 +22,62 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Disable Dev Mode
-        run: python python/disable_dev.py
+      # =========================================================
+      # 1. CHUẨN BỊ MÔI TRƯỜNG PYTHON VÀ DOPPLER SỚM
+      # =========================================================
+      - name: Install Doppler CLI
+        if: github.ref == 'refs/heads/main'
+        uses: dopplerhq/cli-action@v1
 
-      - name: Compile LaTeX document
+      - name: Install uv
+        if: github.ref == 'refs/heads/main'
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        if: github.ref == 'refs/heads/main'
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: ".python-version"
+
+      - name: Install dependencies
+        if: github.ref == 'refs/heads/main'
+        run: uv sync
+
+      # =========================================================
+      # 2. BIÊN DỊCH VÀ UPLOAD BẢN DEV
+      # =========================================================
+      - name: Compile LaTeX document (Dev)
         uses: xu-cheng/latex-action@v3
         with:
           working_directory: latex
           root_file: main.tex
 
-      - name: Rename PDF file
+      - name: Rename PDF file to Dev
+        run: mv latex/main.pdf latex/dev-VuVanNghia-20206205.pdf
+
+      - name: Upload Dev PDF to Google Drive
+        if: github.ref == 'refs/heads/main'
+        env:
+          DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
+          PDF_FILE: latex/dev-VuVanNghia-20206205.pdf  # Truyền tên file qua biến môi trường
+        run: |
+          doppler run -p 20206205tech -c prod -- uv run python python/upload_to_drive.py
+
+      # =========================================================
+      # 3. CHẠY NHƯ BÌNH THƯỜNG (PROD MODE)
+      # =========================================================
+      - name: Disable Dev Mode
+        run: python python/disable_dev.py
+
+      - name: Compile LaTeX document (Prod)
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: latex
+          root_file: main.tex
+
+      - name: Rename PDF file (Prod)
         run: mv latex/main.pdf latex/VuVanNghia-20206205.pdf
 
       - name: Upload PDF as Artifact
@@ -57,31 +103,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
 
-      # --- PHẦN TÍCH HỢP DOPPLER VÀ UPLOAD LÊN DRIVE ---
-
-      - name: Install Doppler CLI
-        if: github.ref == 'refs/heads/main'
-        uses: dopplerhq/cli-action@v1
-
-      - name: Install uv
-        if: github.ref == 'refs/heads/main'
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
-
-      - name: Set up Python
-        if: github.ref == 'refs/heads/main'
-        uses: actions/setup-python@v5
-        with:
-          python-version-file: ".python-version"
-
-      - name: Install dependencies
-        if: github.ref == 'refs/heads/main'
-        run: uv sync
-
-      - name: Upload PDF to Google Drive
+      - name: Upload Prod PDF to Google Drive
         if: github.ref == 'refs/heads/main'
         env:
           DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
+          PDF_FILE: latex/VuVanNghia-20206205.pdf  # Truyền tên file chính thức
         run: |
           doppler run -p 20206205tech -c prod -- uv run python python/upload_to_drive.py

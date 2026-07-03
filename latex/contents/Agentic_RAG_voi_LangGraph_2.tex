@@ -1,15 +1,36 @@
-\begin{frame}{Agentic RAG với LangGraph 2}
+% Agentic RAG với LangGraph 2
+\begin{frame}{Agentic RAG với LangGraph}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth,height=0.74\textheight,keepaspectratio]{pictures/LangGraph/LangGraph2.png}
-\caption{Sơ đồ LangGraph của dự án}
+\caption{Sơ đồ LangGraph (Giai đoạn Truy xuất và Phản hồi)}
 \end{figure}
 
 \note{
-Đây là sơ đồ Agentic RAG của dự án được xây dựng bằng LangGraph. Hệ thống phân chia thông minh giữa mô hình nhỏ cho
+Tiếp tục
 
-cơ bản (màu xanh lá) và mô hình lớn cho các tác vụ suy luận phức tạp (màu xanh dương) để tối ưu chi phí và độ trễ.
-Mỗi tin nhắn đi qua Router để kiểm tra điều kiện và định tuyến qua các node như rewrite query, retrieve tài liệu và sinh câu trả lời.
+Giai đoạn Truy xuất và Phản hồi
+
+Hệ thống thực hiện truy xuất
+và lấy song song 4 nguồn dữ liệu:
+
+tài liệu cá nhân +
+tóm tắt tài liệu +
+vbpl+
+pháp điển
+
+Tiếp theo hệ thống
+
+Xếp hạng hạng tài liệu
+
+thử viết lại câu hỏi
+
+lấy thông tin web ở 2 trang web
+
+Từ dữ liệu tổng hợp được
+hệ thống đưa ra câu trả lời
+và đánh giá xem có bị ảo giác hay không
+
 }
 \end{frame}

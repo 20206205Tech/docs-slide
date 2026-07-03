@@ -18,6 +18,8 @@ def delete_empty_latex_files(directory):
         for file in files:
             if os.path.basename(file) == "dev.tex":
                 continue
+            if os.path.basename(file) == "temp.tex":
+                continue
             if file.endswith(".tex"):
                 file_path = os.path.join(root, file)
                 try:

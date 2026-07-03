@@ -1,15 +1,54 @@
-\begin{frame}{Agentic RAG với LangGraph 1}
+% Agentic RAG với LangGraph 1
+\begin{frame}{Agentic RAG với LangGraph}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth,height=0.74\textheight,keepaspectratio]{pictures/LangGraph/LangGraph1.png}
-\caption{Sơ đồ LangGraph của dự án}
+
+\caption{Sơ đồ LangGraph (Giai đoạn Tiếp nhận và Điều hướng)}
 \end{figure}
 
 \note{
-Đây là sơ đồ Agentic RAG của dự án được xây dựng bằng LangGraph. Hệ thống phân chia thông minh giữa mô hình nhỏ cho
 
-cơ bản (màu xanh lá) và mô hình lớn cho các tác vụ suy luận phức tạp (màu xanh dương) để tối ưu chi phí và độ trễ.
-Mỗi tin nhắn đi qua Router để kiểm tra điều kiện và định tuyến qua các node như rewrite query, retrieve tài liệu và sinh câu trả lời.
+Đây là sơ đồ Agentic RAG của dự án được xây dựng bằng LangGraph.
+
+% Hệ thống phân chia:
+
+% mô hình nhỏ
+% (màu xanh lá)
+% cho cơ bản
+
+% và mô hình lớn
+% (màu xanh dương)
+% cho các tác vụ suy luận phức tạp
+
+% để tối ưu chi phí và độ trễ.
+
+Ở giai đoạn đầu
+
+Tất cả yêu cầu đều đi qua Router để định tuyến xử lý theo đúng trạng thái
+
+Tiếp theo các node thực hiện các công việc đồng thời
+
+Phân loại +
+Trích xuất số hiệu văn bản +
+Tìm thông tin url (nếu có)
+
+Nếu câu hỏi thuộc loại chung hoặc quá ngắn thì
+hệ thống thực hiện trả lời theo logic chung giúp tiết kiệm tài nguyên
+
+Nếu có số hiệu văn bản thì
+hệ thống sẽ tra cứu hiệu lực
+
+Nếu đã hết hiệu lực
+thì tạm dừng ngay
+
+Nếu hết hiệu lực 1 phần
+thì tạm dừng và hỏi xác nhận
+
+Nếu còn hiệu lực hoặc có xác nhận từ người dùng
+thì sẽ đến bước
+Giai đoạn Truy xuất và Phản hồi
+
 }
 \end{frame}
