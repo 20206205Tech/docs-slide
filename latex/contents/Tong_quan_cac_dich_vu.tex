@@ -7,12 +7,8 @@
 
 \note{
 
-khối lượng công việc
-Do việc AI xử lý phức tạp như vậy
-
-Khả năng khả cứu
-
-tính tooans phức tjap
+Do khối lượng công việc AI
+xử lý phức tạp
 
 Hệ thống sử dụng kiến trúc Microservice
 
@@ -22,6 +18,7 @@ giúp
 
 % Ngôn ngữ khác nhau
 
+% rủi ro bảo mật pháp luật
 % mfa chặn hacker
 
 % Vbpl và pháp điển thực hiện thống kê dữ liệu đang có trong db
@@ -33,9 +30,12 @@ giúp
 Sơ đồ tổng quan về kiến trúc các vi dịch vụ được triển khai
 trong dự án này.
 Hệ thống được chia thành nhiều dịch vụ chuyên biệt như:
+
 Auth Service (xác thực), Document Service (quản lý tài liệu),
 Conversation Service (quản lý trò chuyện), Chatbot Service (trí tuệ nhân tạo)
+
 và Payment Service (thanh toán).
+
 Các dịch vụ này giao tiếp với nhau qua gRPC, REST API hoặc thông điệp bất đồng bộ qua Kafka/RabbitMQ.
 }
 \end{frame}
