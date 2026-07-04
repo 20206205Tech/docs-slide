@@ -65,7 +65,7 @@ PaymentService["Payment Service"]:::internal_nest
 
 %% Sắp xếp thứ tự các liên kết để định hình layout trái -> phải
 PaymentService <-->|"Cache và BullMQ"| Redis
-PaymentService <-->|"Xử lý giao dịch"| PaymentGateway
+PaymentService <-->|"Xử lý giao dịch (IPN)"| PaymentGateway
 PaymentService <-->|"Lấy thông tin người dùng"| AuthService
 PaymentService <-->|"Gửi email"| Brevo
 PaymentService -->|"Publish Event: payment_success"| Kafka
