@@ -10,7 +10,10 @@
 
 \note{
 
-Đây là sơ đồ Agentic RAG của dự án được xây dựng bằng LangGraph.
+Tiếp theo đến phần
+Agentic RAG được xây dựng bằng LangGraph.
+
+% Đây là sơ đồ Agentic RAG của dự án được xây dựng bằng LangGraph.
 
 % Hệ thống phân chia:
 
@@ -26,7 +29,7 @@
 
 Ở giai đoạn đầu
 
-Tất cả yêu cầu đều đi qua Router để định tuyến xử lý theo đúng trạng thái
+Tất cả yêu cầu đều đi qua Router để định tuyến xử lý theo trạng thái
 
 Tiếp theo các node thực hiện các công việc đồng thời
 
@@ -34,8 +37,11 @@ Phân loại +
 Trích xuất số hiệu văn bản +
 Tìm thông tin url (nếu có)
 
-Nếu câu hỏi thuộc loại chung hoặc quá ngắn thì
-hệ thống thực hiện trả lời theo logic chung giúp tiết kiệm tài nguyên
+Nếu câu hỏi
+thuộc loại chung hoặc quá ngắn
+thì
+hệ thống thực hiện trả lời thông thường
+giúp tiết kiệm tài nguyên
 
 Nếu có số hiệu văn bản thì
 hệ thống sẽ tra cứu hiệu lực
