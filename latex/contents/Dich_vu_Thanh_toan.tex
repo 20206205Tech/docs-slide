@@ -6,7 +6,29 @@
 \end{figure}
 
 \note{
-Dịch vụ thanh toán (Payment Service) chịu trách nhiệm quản lý thông tin các gói dịch vụ (Plans), quản lý thuê bao người dùng (Subscriptions) và tích hợp với cổng thanh toán ngoại vi.
-Khi người dùng thực hiện thanh toán thành công, dịch vụ này sẽ phát đi sự kiện \texttt{payment\_success} vào hệ thống truyền tin nhắn Kafka để các dịch vụ khác như Chatbot và Document cập nhật quyền VIP cho người dùng.
+
+Dịch vụ thanh toán
+
+% chịu trách nhiệm
+
+% quản lý thông tin các gói dịch vụ,
+% quản lý thuê bao người dùng
+% và tích hợp với cổng thanh toán.
+
+Dùng redis để cache gói và
+kết hợp bullMQ để hẹn giờ hết hạn thanh toán
+
+Khi nhận được thông báo IPN từ cổng thanh toán
+Dịch vụ thanh toán sẽ gọi supabase
+để lấy thông tin của người dùng
+và gửi email
+
+Khi người dùng thực hiện thanh toán thành công,
+dịch vụ này sẽ phát đi sự kiện
+vào hệ thống Kafka
+
+để các dịch vụ khác
+như tài liệu và trò chuyện
+cập nhật quyền VIP cho người dùng.
 }
 \end{frame}
