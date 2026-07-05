@@ -46,6 +46,7 @@ classDef file_db_color fill:#fffde7,stroke:#fbc02d,stroke-width:2px,color:#000
 
 classDef queue_color fill:#ffe0b2,stroke:#f57c00,stroke-width:2px,color:#e65100
 classDef rtc fill:#1fd5f9,stroke:#fff,stroke-width:2px,color:#fff
+classDef note_color fill:#fff59d,stroke:#fbc02d,stroke-width:1px,color:#000
 
 %% ==============================================================================
 
@@ -65,9 +66,13 @@ Kafka[["Kafka"]]:::queue_color
 RabbitMQ[["RabbitMQ"]]:::queue_color
 LiveKit["LiveKit Server"]:::rtc
 
+%% --- GHI CHÚ DLQ & TELEGRAM ---
+DLQNote>Tích hợp DLQ <br> & gửi cảnh báo qua Telegram]:::note_color
+DLQNote -.- RabbitMQ
+
 %% Các Service Python
 PersonaService["Persona Service"]:::internal_python
-ChatbotService["Chatbot Service"]:::internal_python
+ChatbotService["Chatbot Service (LangGraph)"]:::internal_python
 
 %% Service NestJS (Chỉ Conversation & Payment được dùng internal_nest)
 ConvService["Conversation Service"]:::internal_nest
