@@ -47,6 +47,7 @@ classDef file_db_color fill:#fffde7,stroke:#fbc02d,stroke-width:2px,color:#000
 
 classDef queue_color fill:#ffe0b2,stroke:#f57c00,stroke-width:2px,color:#e65100
 classDef rtc fill:#1fd5f9,stroke:#fff,stroke-width:2px,color:#fff
+classDef note_color fill:#fff59d,stroke:#fbc02d,stroke-width:1px,color:#000
 
 %% Shared Infrastructure
 Kafka[["Kafka"]]:::queue_color
@@ -60,6 +61,10 @@ DocumentService["Document Service (FastAPI)"]:::internal_python
 DocumentWorker["Document Worker <br> (Celery + Docling)"]:::internal_python
 RabbitMQ[["RabbitMQ"]]:::queue_color
 
+%% --- GHI CHÚ TÁI SỬ DỤNG KẾT QUẢ ---
+CacheNote>Tái sử dụng kết quả <br> nếu hash và size trùng lặp <br> của cùng người dùng]:::note_color
+CacheNote -.- DocumentWorker
+
 %% Luồng nội bộ của Document Subdomain
 DocumentService -->|"Gửi tác vụ bất đồng bộ"| RabbitMQ
 RabbitMQ -->|"Nhận tác vụ xử lý"| DocumentWorker
@@ -68,11 +73,11 @@ RabbitMQ -->|"Nhận tác vụ xử lý"| DocumentWorker
 Kafka -.->|"Consume: payment_success \n(Cập nhật VIP subscription)"| DocumentService
 
 %% Giao tiếp CSDL & Storage của Document Domain
-DocumentService -->|"Đọc/Ghi dữ liệu người dùng"| Postgres
-DocumentWorker -->|"Cập nhật trạng thái xử lý"| Postgres
+DocumentService -->|"Đọc/Ghi dữ liệu"| Postgres
+DocumentWorker -->|"Cập nhật <br> trạng thái xử lý"| Postgres
 
-DocumentService -->|"Tải lên file / Đọc Presigned URL"| R2
-DocumentWorker -->|"Đọc file thô / Lưu Content & Summary"| R2
+DocumentService -->|"Tải lên file"| R2
+DocumentWorker -->|"Đọc file Raw <br> Lưu Content & Summary"| R2
 
-DocumentWorker -->|"Gửi Text / Nhận Summary"| CloudflareAI
+DocumentWorker -->|"Gửi Text <br> Nhận Summary"| CloudflareAI
 DocumentWorker -->|"Đồng bộ Vector Embeddings"| Milvus

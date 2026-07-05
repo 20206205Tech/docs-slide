@@ -9,23 +9,21 @@
 
 Dịch vụ tài liệu
 tiếp nhận,
-lưu trữ
-và quản lý tài liệu do người dùng VIP tải lên.
+và xử lý
+tài liệu do người dùng VIP tải lên.
 
-Khi nhận được tệp tin
+Do công việc xử lý phức tạp
+Khi nhận được tài liệu
 dịch vụ sẽ gửi yêu cầu xử lý
 thông qua Celery
 và RabbitMQ tới Document Worker.
 
-Tài liệu sẽ được trích xuất nội dung
-sang định dạng Markdown,
-tự động tóm tắt nội dung
+Dùng Docling trích xuất nội dung sang định dạng Markdown,
+tự động tóm tắt
 và tiến hành vector hóa
 để lưu trữ vào Vector Database Milvus
-% phục vụ cho việc hỏi đáp trên tài liệu.
 
-% Tái sử dụng nếu trùng lặp
+Tái sử dụng kết quả nếu trùng lặp
 
-%
 }
 \end{frame}
