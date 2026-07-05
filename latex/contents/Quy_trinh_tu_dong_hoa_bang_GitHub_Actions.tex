@@ -2,28 +2,18 @@
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth,height=0.99\textheight,keepaspectratio]{pictures/cicd-by-github-action.excalidraw.png}
-\caption{Sơ đồ tổng quan CI/CD bằng Github Action trong dự án}
+\caption{Sơ đồ CI/CD bằng Github Action trong dự án}
 \end{figure}
 
 \note{
 
-% Để vận hành Microservice
+Để vận hành Microservice
 
-% Cần quá trình vận hành tự động
+Cần quá trình tự động
 
-Sơ đồ quy trình CI/CD tự động trong dự án sử dụng GitHub Actions.
-Dự án kết hợp giữa runner miễn phí của GitHub và self-hosted runner trên VPS của riêng mình
+Dự án sử dụng CI/CD bằng Github Action
 
-Khi có sự thay đổi mã nguồn,
-
-hệ thống tự động chạy các kiểm thử (unit test),
-
-phân tích chất lượng mã qua SonarQube,
-
-sau đó đóng gói mã nguồn thành Docker Image,
-
-đẩy lên Docker Hub và tự động cập nhật kho lưu trữ GitOps để ArgoCD
-triển khai lên cụm Kubernetes.
+kết hợp runner miễn phí và self-hosted trên VPS
 
 }
 \end{frame}
