@@ -79,7 +79,7 @@ ConvService["Conversation Service"]:::internal_nest
 
 %% Các liên kết luồng dữ liệu
 Kafka -->|"Event: payment_success"| ConvService
-ConvService <-->|"gRPC (text)"| ChatbotService
+ConvService <-->|"gRPC (query,chat_id,file_ids,use_reasoning)"| ChatbotService
 
 ConvService -->|"Publish: chat_deletions & share_events"| RabbitMQ
 
