@@ -6,10 +6,18 @@
 \end{figure}
 
 \note{
-ArgoCD được triển khai
-trong cụm Kubernetes để thực hiện quy trình Continuous Delivery (CD) theo mô hình GitOps.
-ArgoCD liên tục giám sát kho lưu trữ Git chứa các file cấu hình Kubernetes. Khi phát hiện có sự thay đổi (ví dụ: phiên bản Docker image mới),
 
-ArgoCD sẽ tự động đồng bộ (sync) và cập nhật các Pod đang chạy trên Kubernetes thực tế để khớp với cấu hình được khai báo trên Git.
+Để triển khai các docker image
+
+hệ thống sử dụng
+
+ArgoCD liên tục giám sát kho lưu trữ Git chứa các file cấu hình Kubernetes.
+
+Khi phát hiện có sự thay đổi
+
+ArgoCD sẽ tự động đồng bộ
+
+và cập nhật các Pod đang chạy trên Kubernetes
+
 }
 \end{frame}

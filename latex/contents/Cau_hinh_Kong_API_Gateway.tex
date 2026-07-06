@@ -6,13 +6,23 @@
 \end{figure}
 
 \note{
-Kong API Gateway đóng vai trò là cổng vào duy nhất của hệ thống vi dịch vụ.
-Thay vì cấu hình thủ công qua Admin API,
 
-dự án sử dụng công cụ decK để quản lý cấu hình Kong dưới dạng file khai báo `kong.yaml` lưu trên Git. Khi có thay đổi,
+Kong API Gateway
+đóng vai trò là cổng vào của hệ thống
 
-GitHub Actions sẽ tự động kiểm tra cú pháp (deck validate),
+điều hướng các yêu cầu đến đúng dịch vụ
 
-so sánh khác biệt (deck diff) và đồng bộ cấu hình (deck sync) vào CSDL PostgreSQL của Kong.
+dự án sử dụng công cụ decK
+để quản lý cấu hình Kong
+
+Khi có thay đổi,
+GitHub Actions sẽ tự động
+
+kiểm tra cú pháp (deck validate)
+
+so sánh khác biệt (deck diff)
+
+và đồng bộ cấu hình (deck sync)
+
 }
 \end{frame}
