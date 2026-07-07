@@ -104,41 +104,33 @@ def extract_and_clean_notes(file_paths):
 
 
 def generate_audio_from_lines(results, output_dir_str):
-    """Tính mã băm md5 cho từng dòng và dùng pyttsx3 để xuất thành file audio."""
     output_dir = Path(output_dir_str)
-    output_dir.mkdir(parents=True, exist_ok=True)  # Tạo thư mục nếu chưa có
-
-    # Khởi tạo engine pyttsx3
-    engine = pyttsx3.init()
-
-    # Cài đặt tốc độ nói (tùy chỉnh nếu cần, mặc định thường là 200)
-    engine.setProperty("rate", 180)
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"\nBắt đầu tạo audio và lưu vào: {output_dir}\n")
 
     for p, lines in results.items():
         print(f"-> Đang xử lý file: {Path(p).name}")
-        for line in lines:
-            # 1. Tính mã băm MD5 từ nội dung dòng (chuẩn hóa UTF-8)
-            # Mã băm MD5 luôn có độ dài cố định 32 ký tự Hex
-            line_hash = hashlib.md5(line.encode("utf-8")).hexdigest()
 
-            # Định dạng tên file: bằng mã băm
+        # KHỞI TẠO LẠI ENGINE Ở ĐÂY ĐỂ TRÁNH TREO
+        engine = pyttsx3.init()
+        engine.setProperty("rate", 180)
+
+        for line in lines:
+            line_hash = hashlib.md5(line.encode("utf-8")).hexdigest()
             audio_file_path = output_dir / f"{line_hash}.mp3"
 
-            # Kiểm tra nếu file đã tồn tại thì bỏ qua (tiết kiệm thời gian chạy lại)
             if audio_file_path.exists():
-                print(f"   [Đã có] {line_hash}.mp3 <- '{line[:30]}...'")
                 continue
 
-            # 2. Tạo file âm thanh từ text
             try:
-                print(f"   [Tạo mới] {line_hash}.mp3 <- '{line[:30]}...'")
                 engine.save_to_file(line, str(audio_file_path))
-                # Phải gọi runAndWait() để pyttsx3 thực hiện việc ghi file
                 engine.runAndWait()
             except Exception as e:
-                print(f"   [LỖI] Không thể tạo âm thanh cho dòng '{line}': {e}")
+                print(f"   [LỖI] Không thể tạo âm thanh: {e}")
+
+        # Xóa engine sau khi xong file để giải phóng bộ nhớ
+        del engine
 
 
 # Thực thi đoạn mã
