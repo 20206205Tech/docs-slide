@@ -94,3 +94,11 @@ repos:
         language: python
         files: \.tex$
         pass_filenames: false
+
+      - id: generate-audio-from-latex-notes
+        name: Generate Audio from LaTeX Notes
+        entry: python python/audio.py
+        language: python
+        files: \.tex$
+        pass_filenames: false
+        additional_dependencies: ["edge-tts"]
