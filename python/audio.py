@@ -1,184 +1,164 @@
-# import os
-# import re
-# import sys
-# import asyncio
-# import hashlib
-# import edge_tts
-# import env
+import hashlib
+import re
+from pathlib import Path
 
-# # Ensure console output handles UTF-8 for Vietnamese characters
-# if sys.stdout.encoding != "utf-8":
-#     try:
-#         sys.stdout.reconfigure(encoding="utf-8")
-#     except AttributeError:
-#         import codecs
-#         sys.stdout = codecs.getwriter("utf-8")(sys.stdout.buffer)
+import pyttsx3
 
-# def strip_latex_comments(text):
-#     """
-#     Remove comments from LaTeX text. Discard lines starting with % (comments).
-#     """
-#     lines = []
-#     for line in text.splitlines():
-#         stripped_line = line.strip()
-#         # If the line starts with a comment %, skip it entirely
-#         if stripped_line.startswith('%') and not stripped_line.startswith(r'\%'):
-#             continue
-#         # Otherwise, split by unescaped % to remove trailing comments
-#         cleaned_line = re.split(r'(?<!\\)%', line)[0]
-#         cleaned_line = cleaned_line.replace(r'\%', '%')
-#         lines.append(cleaned_line)
-#     return '\n'.join(lines)
 
-# def clean_note_text(text):
-#     """
-#     Strip comments, handle basic formatting commands, and normalize whitespace.
-#     """
-#     text = strip_latex_comments(text)
+def extract_tex_paths(doc_file_path):
+    doc_path = Path(doc_file_path)
+    base_dir = doc_path.parent
 
-#     # Strip basic LaTeX command markers but keep their content.
-#     # Replace 2-arg commands like \textcolor{color}{content} -> content
-#     text = re.sub(r'\\[a-zA-Z]+\{[^}]*\}\{([^}]+)\}', r'\1', text)
-#     # Then 1-arg commands like \textbf{content} -> content
-#     text = re.sub(r'\\[a-zA-Z]+\{([^}]+)\}', r'\1', text)
+    try:
+        with open(doc_path, "r", encoding="utf-8") as f:
+            content = f.read()
+    except FileNotFoundError:
+        print(f"Không tìm thấy file: {doc_path}")
+        return []
 
-#     # Replace LaTeX line break (\\) with newline
-#     text = text.replace(r'\\', '\n')
+    content_no_comments = re.sub(r"%.*$", "", content, flags=re.MULTILINE)
+    pattern = re.compile(r"\\input\{([^}]+)\}")
+    matches = pattern.findall(content_no_comments)
 
-#     # Replace whitespace characters (newlines, tabs, spaces) with a single space
-#     words = text.split()
-#     return ' '.join(words)
+    full_paths = []
+    for match in matches:
+        file_name = match if match.endswith(".tex") else f"{match}.tex"
+        full_path = base_dir / file_name
+        full_paths.append(str(full_path))
 
-# def extract_notes_from_tex(content):
-#     r"""
-#     Extract content from inside \note{...} blocks, handling nested braces correctly.
-#     """
-#     notes = []
-#     idx = 0
-#     while True:
-#         match = re.search(r'\\note\s*\{', content[idx:])
-#         if not match:
-#             break
+    return full_paths
 
-#         start_pos = idx + match.start()
-#         open_brace_idx = start_pos + match.end() - 1
 
-#         # Track nested braces
-#         brace_count = 1
-#         current_idx = open_brace_idx + 1
-#         while current_idx < len(content) and brace_count > 0:
-#             char = content[current_idx]
-#             if char == '{':
-#                 brace_count += 1
-#             elif char == '}':
-#                 brace_count -= 1
-#             current_idx += 1
+def extract_and_clean_notes(file_paths):
+    """Trích xuất nội dung \note{...}, xử lý ngoặc nhọn lồng nhau (nested braces),
 
-#         if brace_count == 0:
-#             note_content = content[open_brace_idx + 1 : current_idx - 1]
-#             notes.append(note_content)
-#             idx = current_idx
-#         else:
-#             idx = open_brace_idx + 1
+    và làm sạch văn bản theo yêu cầu.
+    """
+    all_cleaned_lines = {}
 
-#     return notes
+    for path in file_paths:
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                content = f.read()
 
-# def parse_doc_inputs(doc_path):
-#     r"""
-#     Parses doc.tex to find uncommented \input{...} paths in order.
-#     """
-#     if not os.path.exists(doc_path):
-#         print(f"Error: {doc_path} not found.")
-#         return []
+            notes_content = []
+            idx = 0
 
-#     inputs = []
-#     with open(doc_path, 'r', encoding='utf-8') as f:
-#         for line in f:
-#             # Strip comment lines or trailing comments
-#             stripped_line = line.strip()
-#             if stripped_line.startswith('%') and not stripped_line.startswith(r'\%'):
-#                 continue
-#             line_no_comment = re.split(r'(?<!\\)%', line)[0]
-#             # Match \input{path}
-#             matches = re.findall(r'\\input\{([^}]+)\}', line_no_comment)
-#             for m in matches:
-#                 inputs.append(m.strip())
-#     return inputs
+            # 1. Trích xuất toàn bộ khối \note{...}
+            while True:
+                start_idx = content.find(r"\note{", idx)
+                if start_idx == -1:
+                    break
 
-# async def generate_tts(text, output_file, voice="vi-VN-HoaiMyNeural"):
-#     """
-#     Generates TTS for text using edge_tts with retries.
-#     """
-#     retries = 3
-#     for attempt in range(retries):
-#         try:
-#             communicate = edge_tts.Communicate(text, voice)
-#             await communicate.save(output_file)
-#             print(f"Successfully generated audio for: '{text[:30]}...' -> {os.path.basename(output_file)}")
-#             return True
-#         except Exception as e:
-#             print(f"Attempt {attempt + 1} failed for text '{text[:30]}...': {e}")
-#             if attempt < retries - 1:
-#                 await asyncio.sleep(2)
-#             else:
-#                 raise e
-#     return False
+                open_braces = 0
+                content_start = start_idx + 6  # Bỏ qua chuỗi '\note{'
+                content_end = -1
 
-# async def main():
-#     doc_path = os.path.join(env.PATH_FOLDER_LATEX, "doc.tex")
-#     audio_dir = os.path.join(env.PATH_FOLDER_PROJECT, "audio")
-#     os.makedirs(audio_dir, exist_ok=True)
+                # Duyệt từng ký tự để tìm dấu ngoặc đóng tương ứng
+                for i in range(content_start, len(content)):
+                    if content[i] == "{":
+                        open_braces += 1
+                    elif content[i] == "}":
+                        if open_braces == 0:
+                            content_end = i
+                            break
+                        else:
+                            open_braces -= 1
 
-#     input_files = parse_doc_inputs(doc_path)
-#     if not input_files:
-#         print("No input files found in doc.tex.")
-#         return
+                if content_end != -1:
+                    notes_content.append(content[content_start:content_end])
+                    idx = content_end + 1
+                else:
+                    idx = (
+                        content_start + 6
+                    )  # Nếu lỗi cú pháp thiếu ngoặc, bỏ qua và đi tiếp
 
-#     segment_paths = []
-#     for rel_path in input_files:
-#         # Resolve path
-#         tex_path = os.path.join(env.PATH_FOLDER_LATEX, rel_path)
-#         if not tex_path.endswith('.tex'):
-#             tex_path += '.tex'
+            # 2. Xử lý làm sạch nội dung
+            cleaned_lines = []
+            for note in notes_content:
+                # Bỏ nội dung comment (bắt đầu bằng %)
+                note = re.sub(r"%.*$", "", note, flags=re.MULTILINE)
 
-#         if not os.path.exists(tex_path):
-#             print(f"Warning: File {tex_path} does not exist. Skipping.")
-#             continue
+                # Tách thành từng dòng
+                lines = note.split("\n")
+                for line in lines:
+                    # Bỏ \hrule và xóa khoảng trắng thừa ở 2 đầu
+                    line = line.replace(r"\hrule", "").strip()
 
-#         with open(tex_path, 'r', encoding='utf-8') as f:
-#             content = f.read()
+                    # Bỏ qua các dòng rỗng
+                    if line:
+                        cleaned_lines.append(line)
 
-#         notes = extract_notes_from_tex(content)
-#         for note in notes:
-#             cleaned = clean_note_text(note)
-#             if not cleaned:
-#                 continue
+            if cleaned_lines:
+                all_cleaned_lines[path] = cleaned_lines
 
-#             # Compute MD5 hash
-#             note_hash = hashlib.md5(cleaned.encode('utf-8')).hexdigest()
-#             seg_file = os.path.join(audio_dir, f"{note_hash}.mp3")
+        except FileNotFoundError:
+            print(f"[LỖI] Không tìm thấy file: {path}")
+        except Exception as e:
+            print(f"[LỖI] Lỗi đọc file {path}: {e}")
 
-#             if not os.path.exists(seg_file):
-#                 print(f"Generating audio for new/modified note: {note_hash}")
-#                 await generate_tts(cleaned, seg_file)
-#             else:
-#                 print(f"Using cached audio: {note_hash}")
+    return all_cleaned_lines
 
-#             segment_paths.append(seg_file)
 
-#     if not segment_paths:
-#         print("No audio segments to combine.")
-#         return
+# --- ĐOẠN CODE THÊM MỚI: TÍNH MÃ BĂM VÀ TẠO AUDIO ---
 
-#     # Concatenate all segment MP3 files
-#     output_audio = os.path.join(audio_dir, "audio.mp3")
-#     print(f"Combining {len(segment_paths)} audio segments into {output_audio}...")
-#     with open(output_audio, 'wb') as out_f:
-#         for seg_path in segment_paths:
-#             with open(seg_path, 'rb') as in_f:
-#                 out_f.write(in_f.read())
 
-#     print("Audio processing complete!")
+def generate_audio_from_lines(results, output_dir_str):
+    """Tính mã băm md5 cho từng dòng và dùng pyttsx3 để xuất thành file audio."""
+    output_dir = Path(output_dir_str)
+    output_dir.mkdir(parents=True, exist_ok=True)  # Tạo thư mục nếu chưa có
 
-# if __name__ == "__main__":
-#     asyncio.run(main())
+    # Khởi tạo engine pyttsx3
+    engine = pyttsx3.init()
+
+    # Cài đặt tốc độ nói (tùy chỉnh nếu cần, mặc định thường là 200)
+    engine.setProperty("rate", 180)
+
+    print(f"\nBắt đầu tạo audio và lưu vào: {output_dir}\n")
+
+    for p, lines in results.items():
+        print(f"-> Đang xử lý file: {Path(p).name}")
+        for line in lines:
+            # 1. Tính mã băm MD5 từ nội dung dòng (chuẩn hóa UTF-8)
+            # Mã băm MD5 luôn có độ dài cố định 32 ký tự Hex
+            line_hash = hashlib.md5(line.encode("utf-8")).hexdigest()
+
+            # Định dạng tên file: bằng mã băm
+            audio_file_path = output_dir / f"{line_hash}.mp3"
+
+            # Kiểm tra nếu file đã tồn tại thì bỏ qua (tiết kiệm thời gian chạy lại)
+            if audio_file_path.exists():
+                print(f"   [Đã có] {line_hash}.mp3 <- '{line[:30]}...'")
+                continue
+
+            # 2. Tạo file âm thanh từ text
+            try:
+                print(f"   [Tạo mới] {line_hash}.mp3 <- '{line[:30]}...'")
+                engine.save_to_file(line, str(audio_file_path))
+                # Phải gọi runAndWait() để pyttsx3 thực hiện việc ghi file
+                engine.runAndWait()
+            except Exception as e:
+                print(f"   [LỖI] Không thể tạo âm thanh cho dòng '{line}': {e}")
+
+
+# Thực thi đoạn mã
+if __name__ == "__main__":
+    # Đường dẫn file gốc
+    file_path = r"C:\Users\Admin\Documents\GitHub\docs-slide\latex\doc.tex"
+    # Thư mục lưu file audio theo yêu cầu
+    audio_output_dir = r"C:\Users\Admin\Documents\GitHub\docs-slide\audio"
+
+    # Bước 1: Trích xuất danh sách file
+    paths = extract_tex_paths(file_path)
+
+    print(f"Đang xử lý nội dung note từ {len(paths)} file...")
+    print("=" * 70)
+
+    # Bước 2: Trích xuất và làm sạch nội dung note
+    results = extract_and_clean_notes(paths)
+
+    # Bước 3: Tính mã băm và tạo file âm thanh
+    generate_audio_from_lines(results, audio_output_dir)
+
+    print("\n" + "=" * 70)
+    print("Hoàn tất quá trình trích xuất và tạo âm thanh.")
