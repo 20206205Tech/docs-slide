@@ -7,7 +7,7 @@
 
 \note{
 
-Dịch vụ thanh toán
+dịch vụ thanh toán
 \hrule
 
 % chịu trách nhiệm
@@ -16,23 +16,23 @@ Dịch vụ thanh toán
 % quản lý thuê bao người dùng
 % và tích hợp với cổng thanh toán.
 
-Dùng redis để cache gói và
-kết hợp bullMQ để hẹn giờ hết hạn thanh toán
+dùng redis để cache gói và
+kết hợp bullmq để hẹn giờ hết hạn thanh toán
 \hrule
 
-Khi nhận được thông báo IPN từ cổng thanh toán
-Dịch vụ thanh toán sẽ gọi supabase
+khi nhận được thông báo ipn từ cổng thanh toán
+dịch vụ thanh toán sẽ gọi supabase
 để lấy thông tin của người dùng
 và gửi email
 \hrule
 
-Khi người dùng thực hiện thanh toán thành công,
+khi người dùng thực hiện thanh toán thành công,
 dịch vụ này sẽ phát đi sự kiện
-vào hệ thống Kafka
+vào hệ thống kafka
 \hrule
 
 để các dịch vụ khác
 như tài liệu và trò chuyện
-cập nhật quyền VIP cho người dùng.
+cập nhật quyền vip cho người dùng.
 }
 \end{frame}
