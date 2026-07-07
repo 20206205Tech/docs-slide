@@ -1,8 +1,9 @@
+import asyncio
 import hashlib
 import re
 from pathlib import Path
 
-import pyttsx3
+import edge_tts
 
 
 def extract_tex_paths(doc_file_path):
@@ -31,7 +32,6 @@ def extract_tex_paths(doc_file_path):
 
 def extract_and_clean_notes(file_paths):
     """Trích xuất nội dung \note{...}, xử lý ngoặc nhọn lồng nhau (nested braces),
-
     và làm sạch văn bản theo yêu cầu.
     """
     all_cleaned_lines = {}
@@ -103,34 +103,69 @@ def extract_and_clean_notes(file_paths):
 # --- ĐOẠN CODE THÊM MỚI: TÍNH MÃ BĂM VÀ TẠO AUDIO ---
 
 
-def generate_audio_from_lines(results, output_dir_str):
-    output_dir = Path(output_dir_str)
-    output_dir.mkdir(parents=True, exist_ok=True)
+# Hàm bất đồng bộ để gọi edge-tts
+async def _create_edge_audio(text, output_file):
+    # Sử dụng giọng nữ tiếng Việt mặc định của Microsoft (HoaiMy)
+    communicate = edge_tts.Communicate(text, "vi-VN-HoaiMyNeural")
+    await communicate.save(output_file)
 
-    print(f"\nBắt đầu tạo audio và lưu vào: {output_dir}\n")
+
+def generate_and_merge_audio(results, base_output_dir_str):
+    base_dir = Path(base_output_dir_str)
+
+    # Khởi tạo thư mục chuck và merge
+    chuck_dir = base_dir / "chuck"
+    merge_dir = base_dir / "merge"
+    chuck_dir.mkdir(parents=True, exist_ok=True)
+    merge_dir.mkdir(parents=True, exist_ok=True)
+
+    print(f"\nBắt đầu tạo audio bằng Edge TTS...\n")
+    print(f" - Thư mục file nhỏ: {chuck_dir}")
+    print(f" - Thư mục file ghép: {merge_dir}\n")
 
     for p, lines in results.items():
         print(f"-> Đang xử lý file: {Path(p).name}")
 
-        # KHỞI TẠO LẠI ENGINE Ở ĐÂY ĐỂ TRÁNH TREO
-        engine = pyttsx3.init()
-        engine.setProperty("rate", 180)
+        chunk_files = []
+        combined_text = ""
 
+        # 1. Tạo các file nhỏ trong /chuck
         for line in lines:
             line_hash = hashlib.md5(line.encode("utf-8")).hexdigest()
-            audio_file_path = output_dir / f"{line_hash}.mp3"
+            audio_file_path = chuck_dir / f"{line_hash}.mp3"
+
+            # Lưu lại danh sách file nhỏ để ghép và text tổng để làm hash cho file merge
+            chunk_files.append(audio_file_path)
+            combined_text += line + "\n"
 
             if audio_file_path.exists():
+                print(f"   [Đã có] chuck/{line_hash}.mp3")
                 continue
 
             try:
-                engine.save_to_file(line, str(audio_file_path))
-                engine.runAndWait()
+                print(f"   [Tạo mới] chuck/{line_hash}.mp3 <- '{line[:30]}...'")
+                asyncio.run(_create_edge_audio(line, str(audio_file_path)))
             except Exception as e:
                 print(f"   [LỖI] Không thể tạo âm thanh: {e}")
 
-        # Xóa engine sau khi xong file để giải phóng bộ nhớ
-        del engine
+        # 2. Ghép các file nhỏ thành file lớn trong /merge
+        if chunk_files:
+            # Tạo mã băm cho file tổng dựa trên toàn bộ nội dung text của file đó
+            merge_hash = hashlib.md5(combined_text.encode("utf-8")).hexdigest()
+            merged_file_path = merge_dir / f"{merge_hash}.mp3"
+
+            print(f" => Đang ghép các file thành: merge/{merge_hash}.mp3")
+            try:
+                # Mở file merge ở chế độ ghi nhị phân (append/write binary)
+                with open(merged_file_path, "wb") as outfile:
+                    for chunk_path in chunk_files:
+                        if chunk_path.exists():
+                            # Đọc từng file nhỏ và nối thẳng dữ liệu vào file lớn
+                            with open(chunk_path, "rb") as infile:
+                                outfile.write(infile.read())
+                print(f"    [Thành công] Đã lưu file merge!\n")
+            except Exception as e:
+                print(f"    [LỖI] Không thể ghép file: {e}\n")
 
 
 # Thực thi đoạn mã
@@ -149,8 +184,8 @@ if __name__ == "__main__":
     # Bước 2: Trích xuất và làm sạch nội dung note
     results = extract_and_clean_notes(paths)
 
-    # Bước 3: Tính mã băm và tạo file âm thanh
-    generate_audio_from_lines(results, audio_output_dir)
+    # Bước 3: Tính mã băm, tạo file âm thanh nhỏ, và ghép thành file lớn
+    generate_and_merge_audio(results, audio_output_dir)
 
     print("\n" + "=" * 70)
-    print("Hoàn tất quá trình trích xuất và tạo âm thanh.")
+    print("Hoàn tất quá trình trích xuất, tạo âm thanh và ghép file.")
