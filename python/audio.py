@@ -100,7 +100,7 @@ def extract_and_clean_notes(file_paths):
     return all_cleaned_lines
 
 
-# --- ĐOẠN CODE THÊM MỚI: TÍNH MÃ BĂM VÀ TẠO AUDIO ---
+# --- ĐOẠN CODE TẠO VÀ GHÉP AUDIO ---
 
 
 # Hàm bất đồng bộ để gọi edge-tts
@@ -122,6 +122,9 @@ def generate_and_merge_audio(results, base_output_dir_str):
     print(f"\nBắt đầu tạo audio bằng Edge TTS...\n")
     print(f" - Thư mục file nhỏ: {chuck_dir}")
     print(f" - Thư mục file ghép: {merge_dir}\n")
+
+    # Danh sách lưu các file đã merge theo đúng thứ tự
+    ordered_merged_files = []
 
     for p, lines in results.items():
         print(f"-> Đang xử lý file: {Path(p).name}")
@@ -154,6 +157,9 @@ def generate_and_merge_audio(results, base_output_dir_str):
             merge_hash = hashlib.md5(combined_text.encode("utf-8")).hexdigest()
             merged_file_path = merge_dir / f"{merge_hash}.mp3"
 
+            # Thêm vào danh sách theo thứ tự
+            ordered_merged_files.append(merged_file_path)
+
             print(f" => Đang ghép các file thành: merge/{merge_hash}.mp3")
             try:
                 # Mở file merge ở chế độ ghi nhị phân (append/write binary)
@@ -167,13 +173,39 @@ def generate_and_merge_audio(results, base_output_dir_str):
             except Exception as e:
                 print(f"    [LỖI] Không thể ghép file: {e}\n")
 
+    return ordered_merged_files
+
+
+def create_final_master_audio(ordered_merged_files, final_audio_path):
+    """Nối tất cả các file trong thư mục merge thành một file duy nhất"""
+    print(f"\nĐang tiến hành ghép tổng thể thành file: {final_audio_path}")
+
+    final_path = Path(final_audio_path)
+
+    # Đảm bảo thư mục cha tồn tại
+    final_path.parent.mkdir(parents=True, exist_ok=True)
+
+    try:
+        with open(final_path, "wb") as outfile:
+            for mp3_file in ordered_merged_files:
+                if mp3_file.exists():
+                    with open(mp3_file, "rb") as infile:
+                        outfile.write(infile.read())
+        print(
+            f"\n[HOÀN TẤT] File audio tổng hợp đã được lưu thành công tại:\n{final_audio_path}"
+        )
+    except Exception as e:
+        print(f"\n[LỖI] Quá trình ghép file tổng hợp thất bại: {e}")
+
 
 # Thực thi đoạn mã
 if __name__ == "__main__":
     # Đường dẫn file gốc
     file_path = r"C:\Users\Admin\Documents\GitHub\docs-slide\latex\doc.tex"
-    # Thư mục lưu file audio theo yêu cầu
+    # Thư mục lưu file audio (cho chuck và merge)
     audio_output_dir = r"C:\Users\Admin\Documents\GitHub\docs-slide\audio"
+    # Đường dẫn file ghép tổng cuối cùng
+    final_audio_file = r"C:\Users\Admin\Documents\GitHub\docs-slide\audio.mp3"
 
     # Bước 1: Trích xuất danh sách file
     paths = extract_tex_paths(file_path)
@@ -184,8 +216,13 @@ if __name__ == "__main__":
     # Bước 2: Trích xuất và làm sạch nội dung note
     results = extract_and_clean_notes(paths)
 
-    # Bước 3: Tính mã băm, tạo file âm thanh nhỏ, và ghép thành file lớn
-    generate_and_merge_audio(results, audio_output_dir)
+    # Bước 3: Tính mã băm, tạo file âm thanh nhỏ, và ghép thành file lớn trong /merge
+    # Hàm này giờ đây sẽ trả về danh sách các file trong /merge theo đúng thứ tự
+    ordered_files = generate_and_merge_audio(results, audio_output_dir)
+
+    # Bước 4: Ghép tất cả các file merge lại thành file tổng audio.mp3
+    if ordered_files:
+        create_final_master_audio(ordered_files, final_audio_file)
 
     print("\n" + "=" * 70)
-    print("Hoàn tất quá trình trích xuất, tạo âm thanh và ghép file.")
+    print("Hoàn tất toàn bộ chu trình xử lý.")
