@@ -10,29 +10,15 @@
 dịch vụ thanh toán
 \hrule
 
-% chịu trách nhiệm
-
-% quản lý thông tin các gói dịch vụ,
-% quản lý thuê bao người dùng
-% và tích hợp với cổng thanh toán.
-
-dùng redis để cache gói và
-kết hợp bullmq để hẹn giờ hết hạn thanh toán
+dùng redis để cache gói và kết hợp bullmq để hẹn giờ hết hạn thanh toán
 \hrule
 
-khi nhận được thông báo ipn từ cổng thanh toán
-dịch vụ thanh toán sẽ gọi supabase
-để lấy thông tin của người dùng
-và gửi email
+khi nhận được thông báo ipn từ cổng thanh toán dịch vụ thanh toán sẽ gọi supabase để lấy thông tin của người dùng và gửi email
 \hrule
 
-khi người dùng thực hiện thanh toán thành công,
-dịch vụ này sẽ phát đi sự kiện
-vào hệ thống kafka
+khi người dùng thực hiện thanh toán thành công, dịch vụ này sẽ phát đi sự kiện vào hệ thống kafka
 \hrule
 
-để các dịch vụ khác
-như tài liệu và trò chuyện
-cập nhật quyền vip cho người dùng.
+để các dịch vụ khác như tài liệu và trò chuyện cập nhật quyền vip cho người dùng.
 }
 \end{frame}
