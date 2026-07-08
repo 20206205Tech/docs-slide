@@ -1,6 +1,7 @@
 import asyncio
 import hashlib
 import re
+import shutil
 from pathlib import Path
 
 import edge_tts
@@ -31,7 +32,7 @@ def extract_tex_paths(doc_file_path):
 
 
 def extract_and_clean_notes(file_paths):
-    """Trích xuất nội dung \note{...}, xử lý ngoặc nhọn lồng nhau (nested braces),
+    """Trích xuất nội dung \\note{...}, xử lý ngoặc nhọn lồng nhau (nested braces),
     và làm sạch văn bản theo yêu cầu.
     """
     all_cleaned_lines = {}
@@ -200,6 +201,22 @@ def create_final_master_audio(ordered_merged_files, final_audio_path):
 
 # Thực thi đoạn mã
 if __name__ == "__main__":
+    # --- XÓA THƯ MỤC CŨ TRƯỚC KHI CHẠY ---
+    dir_to_remove = [
+        Path(r"C:\Users\Admin\Documents\GitHub\docs-slide\audio\chuck"),
+        Path(r"C:\Users\Admin\Documents\GitHub\docs-slide\audio\merge"),
+    ]
+
+    print("Đang dọn dẹp các thư mục cũ...")
+    for d in dir_to_remove:
+        if d.exists() and d.is_dir():
+            try:
+                shutil.rmtree(d)
+                print(f" [OK] Đã xóa thư mục: {d}")
+            except Exception as e:
+                print(f" [LỖI] Không thể xóa thư mục {d}: {e}")
+    print("-" * 70)
+
     # Đường dẫn file gốc
     file_path = r"C:\Users\Admin\Documents\GitHub\docs-slide\latex\doc.tex"
     # Thư mục lưu file audio (cho chuck và merge)
