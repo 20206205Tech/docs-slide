@@ -207,15 +207,17 @@ if __name__ == "__main__":
         Path(r"C:\Users\Admin\Documents\GitHub\docs-slide\audio\merge"),
     ]
 
-    print("Đang dọn dẹp các thư mục cũ...")
-    for d in dir_to_remove:
-        if d.exists() and d.is_dir():
-            try:
-                shutil.rmtree(d)
-                print(f" [OK] Đã xóa thư mục: {d}")
-            except Exception as e:
-                print(f" [LỖI] Không thể xóa thư mục {d}: {e}")
-    print("-" * 70)
+    is_delete = False
+    if is_delete:
+        print("Đang dọn dẹp các thư mục cũ...")
+        for d in dir_to_remove:
+            if d.exists() and d.is_dir():
+                try:
+                    shutil.rmtree(d)
+                    print(f" [OK] Đã xóa thư mục: {d}")
+                except Exception as e:
+                    print(f" [LỖI] Không thể xóa thư mục {d}: {e}")
+        print("-" * 70)
 
     # Đường dẫn file gốc
     file_path = r"C:\Users\Admin\Documents\GitHub\docs-slide\latex\doc.tex"
