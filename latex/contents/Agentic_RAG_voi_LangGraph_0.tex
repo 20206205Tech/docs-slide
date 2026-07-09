@@ -4,39 +4,26 @@
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth,height=0.74\textheight,keepaspectratio]{pictures/LangGraph/LangGraph0.png}
-\caption{Sơ đồ LangGraph của dự án}
+\caption{Sơ đồ LangGraph của hệ thống}
 \end{figure}
 
 \note{
 
-Đây là toàn bộ sơ đồ Agentic RAG của dự án
+đây là sơ đồ ây gen tíc rag của hệ thống
 \hrule
 
-Ở chế độ fast RAG
+ở chế độ fast rag chỉ dùng phân loại để giảm tài nguyên truy xuất dữ liệu
 
-chỉ dùng phân loại
-
-để giảm tài nguyên truy xuất dữ liệu
-
-và thực hiện trả lời
-với dữ liệu đã truy xuất
-
-phù hợp với kiến trúc RAG cơ bản
+và thực hiện trả lời với dữ liệu đã truy xuất phù hợp với kiến trúc rag cơ bản
 \hrule
 
-Ở chế độ voice
+ở chế độ voice do đã có llm ở sử dụng tool côn linh
 
-do đã có LLM ở sử dụng tool calling
-(lấy thông tin nhân vật và search law....)
+và người dùng không nhập đường dẫn bằng giọng nói
 
-VÀ
+nên sẽ bỏ qua phân loại và xử lý đường dẫn
 
-Người dùng không nhập đường dẫn url
-bằng giọng nói
-
-nên sẽ bỏ qua phân loại và linker
-
-thực hiện luôn việc trích xuất số hiệu VBPL
+thực hiện luôn việc trích xuất số hiệu văn bản pháp luật
 
 }
 \end{frame}

@@ -7,32 +7,21 @@
 
 \note{
 
-Dịch vụ tài liệu
+dịch vụ tài liệu, tiếp nhận và xử lý tài liệu do người dùng vip tải lên.
 \hrule
 
-tiếp nhận,
-và xử lý
-tài liệu do người dùng VIP tải lên.
+do công việc xử lý phức tạp khi nhận được tài liệu,
+
+dịch vụ sẽ gửi yêu cầu xử lý thông qua cê lê di và ra bít em quy tới document worker.
 \hrule
 
-Do công việc xử lý phức tạp
-Khi nhận được tài liệu
+document worker dùng docling trích xuất nội dung sang định dạng mắc đao,
 \hrule
 
-dịch vụ sẽ gửi yêu cầu xử lý
-thông qua Celery
-và RabbitMQ tới Document Worker.
-\hrule
-
-Dùng Docling trích xuất nội dung sang định dạng Markdown,
-\hrule
-
-tự động tóm tắt
-và tiến hành vector hóa
-để lưu trữ vào Vector Database Milvus
+document worker tự động tóm tắt và tiến hành vector hóa để lưu trữ vào cơ sở dữ liệu vector miu vớt
 
 \hrule
-Tái sử dụng kết quả nếu trùng lặp
+tái sử dụng kết quả nếu tài liệu trùng lặp từ cùng người dùng (so sánh kích thước và mã băm)
 
 }
 \end{frame}

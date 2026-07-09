@@ -6,33 +6,16 @@
 \end{figure}
 
 \note{
+chi tiết về dịch vụ thanh toán, dùng re đít để cache gói
 
-Dịch vụ thanh toán
+và kết hợp bullmq để hẹn giờ hết hạn thanh toán
 \hrule
 
-% chịu trách nhiệm
-
-% quản lý thông tin các gói dịch vụ,
-% quản lý thuê bao người dùng
-% và tích hợp với cổng thanh toán.
-
-Dùng redis để cache gói và
-kết hợp bullMQ để hẹn giờ hết hạn thanh toán
+khi nhận được thông báo từ cổng thanh toán, dịch vụ thanh toán
+sẽ gọi dịch vụ xác thực
+để lấy thông tin của người dùng và gửi email
 \hrule
 
-Khi nhận được thông báo IPN từ cổng thanh toán
-Dịch vụ thanh toán sẽ gọi supabase
-để lấy thông tin của người dùng
-và gửi email
-\hrule
-
-Khi người dùng thực hiện thanh toán thành công,
-dịch vụ này sẽ phát đi sự kiện
-vào hệ thống Kafka
-\hrule
-
-để các dịch vụ khác
-như tài liệu và trò chuyện
-cập nhật quyền VIP cho người dùng.
+khi người dùng thực hiện thanh toán thành công, dịch vụ này sẽ phát đi sự kiện vào hệ thống kafka . để các dịch vụ khác như tài liệu và trò chuyện cập nhật quyền vip cho người dùng.
 }
 \end{frame}

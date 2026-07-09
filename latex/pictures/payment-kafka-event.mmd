@@ -68,9 +68,9 @@ PaymentService <-->|"Cache và BullMQ"| Redis
 PaymentService <-->|"Xử lý giao dịch (IPN)"| PaymentGateway
 PaymentService <-->|"Lấy thông tin người dùng"| AuthService
 PaymentService <-->|"Gửi email"| Brevo
-PaymentService -->|"Publish Event: payment_success"| Kafka
+PaymentService -->|"Publish Event: SubscriptionPurchasedEvent"| Kafka
 
 %% ConversationService <-->|"Event: Chat & Share"| Kafka
 
-Kafka -.->|"Consume Event: payment_success"| DocumentService
-Kafka -.->|"Consume Event: payment_success"| ConversationService
+Kafka -.->|"Consume Event: SubscriptionPurchasedEvent"| DocumentService
+Kafka -.->|"Consume Event: SubscriptionPurchasedEvent"| ConversationService

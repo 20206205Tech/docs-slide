@@ -7,43 +7,23 @@
 
 \note{
 
-Khi dịch vụ trò chuyện
-nhận được sự kiện thanh toán thành công
+dịch vụ trò chuyện nhận được sự kiện thanh toán thành công, người dùng vip
+
+có thể gửi yêu cầu văn bản qua text tương tự người dùng cơ bản nhưng có thêm biến suy luận bằng true
+
 \hrule
 
-Người dùng VIP
-
-có thể gửi yêu cầu văn bản qua TEXT tương tự người dùng cơ bản nhưng có
-thêm biến suy luận = TRUE
-Dịch vụ trò chuyện
-sẽ gọi gRPC tới dịch vụ chatbot python AI
+dịch vụ trò chuyện sẽ gọi di a pi ci tới dịch vụ chatbot python ây ai
 \hrule
 
-Khi cần xử lý
-chia sẻ trò chuyện
-hoặc thu hồi
-hoặc xóa
-thì giao tiếp qua
-RabbitMQ
+khi cần xử lý xóa trò chuyện, chia sẻ trò chuyện hoặc thu hồi chia sẻ thì giao tiếp qua ra bít em quy
 \hrule
 
-Dịch vụ trò chuyện
-tạo token livekit,
-VIP dùng token để kết nối,
-python chủ động lắng nghe và trả lời âm thanh với người dùng
+trong chức năng giọng nói dịch vụ trò chuyện tạo token livekit,
 
-% Sơ đồ mối quan hệ giữa Dịch vụ trò chuyện (NestJS)
-% và Dịch vụ chatbot (Python).
+người dùng vip dùng token để kết nối,
 
-% % Dịch vụ trò chuyện chịu trách nhiệm quản lý
-% trò chuyện của người dùng,
-% lưu trữ lịch sử chat,
-% quản lý thư mục,
-% chia sẻ trò chuyện.
+python ây dừn chủ động lắng nghe và trả lời với người dùng
 
-% Khi có tin nhắn mới, dịch vụ trò chuyện
-% sẽ gửi yêu cầu qua giao thức gRPC hiệu năng cao
-% đến dịch vụ chatbot (Python) để xử lý logic Agentic RAG
-% và trả về câu trả lời dưới dạng stream.
 }
 \end{frame}
