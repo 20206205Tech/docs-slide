@@ -208,6 +208,8 @@ if __name__ == "__main__":
     ]
 
     is_delete = False
+    # is_delete = True
+
     if is_delete:
         print("Đang dọn dẹp các thư mục cũ...")
         for d in dir_to_remove:
