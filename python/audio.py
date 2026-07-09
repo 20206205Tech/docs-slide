@@ -1,5 +1,6 @@
 import asyncio
 import hashlib
+import os
 import re
 import shutil
 from pathlib import Path
@@ -247,3 +248,9 @@ if __name__ == "__main__":
 
     print("\n" + "=" * 70)
     print("Hoàn tất toàn bộ chu trình xử lý.")
+
+    # Đường dẫn file (sử dụng đường dẫn hệ thống thay vì file:///)
+    file_path = r"C:\Users\Admin\Documents\GitHub\docs-slide\audio.mp3"
+
+    # Mở file bằng ứng dụng mặc định
+    os.startfile(file_path)
