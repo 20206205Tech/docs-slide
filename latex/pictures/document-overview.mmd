@@ -70,7 +70,7 @@ DocumentService -->|"Gửi tác vụ bất đồng bộ"| RabbitMQ
 RabbitMQ -->|"Nhận tác vụ xử lý"| DocumentWorker
 
 %% Event Broker
-Kafka -.->|"Consume: payment_success \n(Cập nhật VIP subscription)"| DocumentService
+Kafka -.->|"Cập nhật gói thuê bao VIP"| DocumentService
 
 %% Giao tiếp CSDL & Storage của Document Domain
 DocumentService -->|"Đọc/Ghi dữ liệu"| Postgres

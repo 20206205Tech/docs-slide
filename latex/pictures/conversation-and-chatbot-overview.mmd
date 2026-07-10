@@ -78,7 +78,7 @@ ChatbotService["Chatbot Service (LangGraph)"]:::internal_python
 ConvService["Conversation Service"]:::internal_nest
 
 %% Các liên kết luồng dữ liệu
-Kafka -->|"Event: payment_success"| ConvService
+Kafka -->|"Cập nhật gói thuê bao VIP"| ConvService
 ConvService <-->|"gRPC (query,chat_id,file_ids,use_reasoning)"| ChatbotService
 
 ConvService -->|"Publish: chat_deletions & share_events"| RabbitMQ
