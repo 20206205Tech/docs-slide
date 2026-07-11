@@ -155,14 +155,14 @@ def generate_and_merge_audio(results, base_output_dir_str):
 
         # 2. Ghép các file nhỏ thành file lớn trong /merge
         if chunk_files:
-            # Tạo mã băm cho file tổng dựa trên toàn bộ nội dung text của file đó
-            merge_hash = hashlib.md5(combined_text.encode("utf-8")).hexdigest()
-            merged_file_path = merge_dir / f"{merge_hash}.mp3"
+            # Sử dụng tên file latex gốc làm tên file merge thay vì dùng hash
+            file_stem = Path(p).stem
+            merged_file_path = merge_dir / f"{file_stem}.mp3"
 
             # Thêm vào danh sách theo thứ tự
             ordered_merged_files.append(merged_file_path)
 
-            print(f" => Đang ghép các file thành: merge/{merge_hash}.mp3")
+            print(f" => Đang ghép các file thành: merge/{file_stem}.mp3")
             try:
                 # Mở file merge ở chế độ ghi nhị phân (append/write binary)
                 with open(merged_file_path, "wb") as outfile:
