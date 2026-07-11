@@ -8,14 +8,16 @@
 \note{
 chi tiết về dịch vụ thanh toán, dùng re đít để cache gói
 
-và kết hợp bullmq để hẹn giờ hết hạn thanh toán
+và kết hợp bull mờ quy để hẹn giờ hết hạn thanh toán
 \hrule
+khi người dùng thực hiện thanh toán thành công,
 
-khi nhận được thông báo từ cổng thanh toán, dịch vụ thanh toán
-sẽ gọi dịch vụ xác thực
+dịch vụ thanh toán nhận được thông báo từ cổng thanh toán,
+
+dịch vụ thanh toán sẽ gọi dịch vụ xác thực
 để lấy thông tin của người dùng và gửi email
 \hrule
+dịch vụ thanh toán sẽ phát đi sự kiện vào hệ thống kafka . để các dịch vụ khác như tài liệu và trò chuyện cập nhật quyền vip cho người dùng.
 
-khi người dùng thực hiện thanh toán thành công, dịch vụ này sẽ phát đi sự kiện vào hệ thống kafka . để các dịch vụ khác như tài liệu và trò chuyện cập nhật quyền vip cho người dùng.
 }
 \end{frame}
