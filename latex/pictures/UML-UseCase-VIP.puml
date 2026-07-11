@@ -10,18 +10,27 @@ actor "LiveKit" as LiveKit << System >>
 VIP -|> User
 
 rectangle "Chức năng dành cho VIP" {
+  usecase "Hỏi đáp pháp lý" as UC_Chat #06b6d4
   usecase "Sử dụng reasoning nâng cao" as UC_AdvancedReasoning #ec4899
   usecase "Tải lên tài liệu" as UC_UploadDocument #ef4444
   usecase "Theo dõi trạng thái\nxử lý tài liệu" as UC_DocumentStatus #ef4444
   usecase "Thử lại xử lý\ntài liệu lỗi" as UC_RetryDocument #ef4444
   usecase "Đàm thoại trực tiếp với AI\nbằng giọng nói" as UC_VoiceChat #ec4899
+
+  ' Các quan hệ mở rộng (tùy chọn bổ trợ cho phiên hỏi đáp)
+  UC_AdvancedReasoning ..> UC_Chat : <<extend>>
+  UC_UploadDocument ..> UC_Chat : <<extend>>
+
+  ' Tiến trình bắt buộc sau khi tải tài liệu
+  UC_UploadDocument ..> UC_DocumentStatus : <<include>>
+  ' Chỉ khi tài liệu bị lỗi mới cần thử lại (tùy chọn)
+  UC_RetryDocument ..> UC_DocumentStatus : <<extend>>
 }
 
-VIP -- UC_AdvancedReasoning #blue
+User -- UC_Chat #blue
 VIP -- UC_VoiceChat #blue
+' Admin/VIP tương tác trực tiếp với các tính năng gốc của mình
 VIP -- UC_UploadDocument #blue
-VIP -- UC_DocumentStatus #blue
-VIP -- UC_RetryDocument #blue
 
 UC_VoiceChat --- LiveKit #green
 @enduml
