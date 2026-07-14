@@ -1,0 +1,129 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+' ==========================================
+' 1. DEFINING ACTORS & EXTERNAL SYSTEMS
+' ==========================================
+actor "Guest" as Guest
+actor "User" as User
+actor "VIP" as VIP
+actor "Admin" as Admin
+
+together {
+  actor "Supabase" as Supabase << System >>
+  actor "Payment Gateway" as PaymentGateway << System >>
+  actor "Neon API" as NeonAPI << System >>
+  actor "ElevenLabs" as ElevenLabs << System >>
+  actor "LiveKit" as LiveKit << System >>
+}
+
+' ==========================================
+' 2. ACTOR INHERITANCE
+' ==========================================
+User -|> Guest
+VIP -|> User
+Admin -|> User
+
+' ==========================================
+' 3. USE CASES BY MODULE
+' ==========================================
+
+rectangle "Chức năng dành cho Guest" {
+  usecase "Xem trang chủ" as UC_Home #e5e7eb
+  usecase "Xem giới thiệu hệ thống" as UC_Intro #e5e7eb
+  usecase "Xem bảng giá gói thuê bao VIP" as UC_Pricing #f59e0b
+  usecase "Nghe thử giọng nói" as UC_SampleVoice #06b6d4
+  usecase "Đăng ký với Email" as UC_Register #00a86b
+  usecase "Đăng nhập với Email hoặc Google" as UC_Login #00a86b
+  usecase "Xem chia sẻ công khai" as UC_PublicShare #ec4899
+
+  UC_Home ..> UC_Intro : <<include>>
+  UC_Home ..> UC_Pricing : <<include>>
+  UC_Home ..> UC_SampleVoice : <<include>>
+' }
+
+' rectangle "Chức năng dành cho User" {
+  usecase "Quản lý bảo mật 2FA" as UC_MFA #00a86b
+  usecase "Quản lý hồ sơ cá nhân" as UC_Profile #00a86b
+  usecase "Đổi / Quên mật khẩu" as UC_Password #00a86b
+
+  usecase "Hỏi đáp pháp lý" as UC_Chat #ec4899
+  usecase "Đánh dấu trò chuyện" as UC_Bookmark #ec4899
+  usecase "Chia sẻ trò chuyện" as UC_Share #ec4899
+
+  usecase "Mua gói thuê bao VIP" as UC_PurchaseVIP #f59e0b
+  usecase "Tra cứu lịch sử giao dịch" as UC_TransactionHistory #f59e0b
+
+  usecase "Cấu hình cài đặt" as UC_Settings #3b82f6
+' }
+
+' rectangle "Chức năng dành cho VIP" {
+  usecase "Sử dụng reasoning nâng cao" as UC_AdvancedReasoning #ec4899
+  usecase "Tải lên tài liệu" as UC_UploadDocument #ef4444
+  usecase "Theo dõi trạng thái\nxử lý tài liệu" as UC_DocumentStatus #ef4444
+  usecase "Thử lại xử lý\ntài liệu lỗi" as UC_RetryDocument #ef4444
+  usecase "Đàm thoại trực tiếp với AI\nbằng giọng nói" as UC_VoiceChat #ec4899
+
+  UC_AdvancedReasoning ..> UC_Chat : <<extend>>
+  UC_UploadDocument ..> UC_Chat : <<extend>>
+  UC_UploadDocument ..> UC_DocumentStatus : <<include>>
+  UC_RetryDocument ..> UC_DocumentStatus : <<extend>>
+' }
+
+' rectangle "Chức năng dành cho Admin" {
+  usecase "Quản lý nhân vật" as UC_ManagePersona #06b6d4
+  usecase "Quản lý giọng nói\n(Engine, Voice)" as UC_ManageVoice #06b6d4
+  usecase "Đồng bộ giọng nói\nElevenLabs" as UC_SyncElevenLabs #06b6d4
+  usecase "Quản lý gói thuê bao VIP" as UC_ManagePlans #f59e0b
+  usecase "Theo dõi luồng dữ liệu" as UC_PipelineReport #a076e9
+
+  UC_SyncElevenLabs ..> UC_ManageVoice : <<extend>>
+}
+
+' ==========================================
+' 4. RELATIONSHIPS & CONNECTIONS
+' ==========================================
+
+' Guest Connections
+Guest -- UC_Home #blue
+Guest -- UC_Register #blue
+Guest -- UC_Login #blue
+Guest -- UC_PublicShare #blue
+
+UC_Register -- Supabase #green
+UC_Login -- Supabase #green
+
+' User Connections
+User -- UC_MFA #blue
+User -- UC_Profile #blue
+User -- UC_Password #blue
+User -- UC_Settings #blue
+User -- UC_Chat #blue
+User -- UC_Bookmark #blue
+User -- UC_Share #blue
+User -- UC_PurchaseVIP #blue
+User -- UC_TransactionHistory #blue
+
+UC_MFA --- Supabase #green
+UC_Profile --- Supabase #green
+UC_Password --- Supabase #green
+UC_PurchaseVIP --- PaymentGateway #green
+UC_Settings --- NeonAPI #green
+
+' VIP Connections
+VIP -- UC_VoiceChat #blue
+VIP -- UC_UploadDocument #blue
+
+UC_VoiceChat --- LiveKit #green
+
+' Admin Connections
+Admin -- UC_ManagePersona #blue
+Admin -- UC_ManageVoice #blue
+Admin -- UC_ManagePlans #blue
+Admin -- UC_PipelineReport #blue
+
+UC_SyncElevenLabs --- ElevenLabs #green
+
+@enduml
