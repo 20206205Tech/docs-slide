@@ -42,9 +42,9 @@ rectangle "Chức năng dành cho Guest" {
   UC_Home ..> UC_Intro : <<include>>
   UC_Home ..> UC_Pricing : <<include>>
   UC_Home ..> UC_SampleVoice : <<include>>
-}
+' }
 
-rectangle "Chức năng dành cho User" {
+' rectangle "Chức năng dành cho User" {
   usecase "Quản lý bảo mật 2FA" as UC_MFA #00a86b
   usecase "Quản lý hồ sơ cá nhân" as UC_Profile #00a86b
   usecase "Đổi / Quên mật khẩu" as UC_Password #00a86b
@@ -57,9 +57,9 @@ rectangle "Chức năng dành cho User" {
   usecase "Tra cứu lịch sử giao dịch" as UC_TransactionHistory #f59e0b
 
   usecase "Cấu hình cài đặt" as UC_Settings #3b82f6
-}
+' }
 
-rectangle "Chức năng dành cho VIP" {
+' rectangle "Chức năng dành cho VIP" {
   usecase "Sử dụng reasoning nâng cao" as UC_AdvancedReasoning #ec4899
   usecase "Tải lên tài liệu" as UC_UploadDocument #ef4444
   usecase "Theo dõi trạng thái\nxử lý tài liệu" as UC_DocumentStatus #ef4444
@@ -70,9 +70,9 @@ rectangle "Chức năng dành cho VIP" {
   UC_UploadDocument ..> UC_Chat : <<extend>>
   UC_UploadDocument ..> UC_DocumentStatus : <<include>>
   UC_RetryDocument ..> UC_DocumentStatus : <<extend>>
-}
+' }
 
-rectangle "Chức năng dành cho Admin" {
+' rectangle "Chức năng dành cho Admin" {
   usecase "Quản lý nhân vật" as UC_ManagePersona #06b6d4
   usecase "Quản lý giọng nói\n(Engine, Voice)" as UC_ManageVoice #06b6d4
   usecase "Đồng bộ giọng nói\nElevenLabs" as UC_SyncElevenLabs #06b6d4
