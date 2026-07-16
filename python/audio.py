@@ -33,11 +33,65 @@ def extract_tex_paths(doc_file_path):
     return full_paths
 
 
-def extract_and_clean_notes(file_paths):
-    """Trích xuất các câu comment nằm ngay bên dưới mỗi \\end{frame}.
+def extract_note_blocks(content):
+    """Trích xuất toàn bộ khối \\note{...}, hỗ trợ ngoặc nhọn lồng nhau."""
+    note_blocks = []
+    idx = 0
 
-    Script bỏ qua nội dung \\note{...}. Chỉ các dòng dạng "% câu đọc"
-    liên tiếp sau \\end{frame} mới được đưa vào audio.
+    while True:
+        start_idx = content.find(r"\note{", idx)
+        if start_idx == -1:
+            break
+
+        open_braces = 0
+        content_start = start_idx + len(r"\note{")
+        content_end = -1
+
+        for i in range(content_start, len(content)):
+            if content[i] == "{":
+                open_braces += 1
+            elif content[i] == "}":
+                if open_braces == 0:
+                    content_end = i
+                    break
+                open_braces -= 1
+
+        if content_end == -1:
+            idx = content_start
+            continue
+
+        note_blocks.append(content[content_start:content_end])
+        idx = content_end + 1
+
+    return note_blocks
+
+
+def clean_note_text(note_text):
+    """Làm sạch nội dung trong \\note{...} thành danh sách câu đọc."""
+    cleaned_lines = []
+    note_text = re.sub(r"%.*$", "", note_text, flags=re.MULTILINE)
+
+    for line in note_text.splitlines():
+        line = line.replace(r"\hrule", "").strip()
+
+        if line:
+            cleaned_lines.append(line)
+
+    return cleaned_lines
+
+
+def clean_frame_comment_line(raw_line):
+    """Làm sạch một dòng comment sau \\end{frame}."""
+    line = raw_line.strip().lstrip("%").strip()
+    line = line.replace(r"\hrule", "").strip()
+    return line
+
+
+def extract_and_clean_notes(file_paths):
+    """Trích xuất câu đọc theo từng frame.
+
+    Ưu tiên các dòng comment "% ..." ngay bên dưới \\end{frame}.
+    Nếu frame đó không có comment đọc, dùng nội dung trong \\note{...}.
     """
     all_cleaned_lines = {}
 
@@ -47,14 +101,28 @@ def extract_and_clean_notes(file_paths):
                 lines = f.readlines()
 
             cleaned_lines = []
+            current_frame_lines = []
+            inside_frame = False
             i = 0
 
             while i < len(lines):
+                if r"\begin{frame}" in lines[i]:
+                    inside_frame = True
+                    current_frame_lines = []
+
+                if inside_frame:
+                    current_frame_lines.append(lines[i])
+
                 if r"\end{frame}" not in lines[i]:
                     i += 1
                     continue
 
+                frame_text = "".join(current_frame_lines)
+                inside_frame = False
+                current_frame_lines = []
+
                 i += 1
+                frame_comment_lines = []
 
                 while i < len(lines):
                     raw_line = lines[i].strip()
@@ -66,13 +134,19 @@ def extract_and_clean_notes(file_paths):
                     if not raw_line.startswith("%"):
                         break
 
-                    line = raw_line.lstrip("%").strip()
-                    line = line.replace(r"\hrule", "").strip()
+                    line = clean_frame_comment_line(raw_line)
 
                     if line:
-                        cleaned_lines.append(line)
+                        frame_comment_lines.append(line)
 
                     i += 1
+
+                if frame_comment_lines:
+                    cleaned_lines.extend(frame_comment_lines)
+                    continue
+
+                for note in extract_note_blocks(frame_text):
+                    cleaned_lines.extend(clean_note_text(note))
 
             if cleaned_lines:
                 all_cleaned_lines[path] = cleaned_lines
