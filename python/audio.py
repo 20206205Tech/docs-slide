@@ -84,6 +84,58 @@ def extract_and_clean_notes(file_paths):
     return all_cleaned_lines
 
 
+def lowercase_frame_comment_text(file_paths):
+    """Chuyển các câu comment sau \\end{frame} về chữ thường."""
+    for path in file_paths:
+        tex_path = Path(path)
+
+        try:
+            lines = tex_path.read_text(encoding="utf-8").splitlines(keepends=True)
+        except FileNotFoundError:
+            print(f"[LỖI] Không tìm thấy file: {tex_path}")
+            continue
+        except Exception as e:
+            print(f"[LỖI] Lỗi đọc file {tex_path}: {e}")
+            continue
+
+        changed = False
+        result = []
+        i = 0
+
+        while i < len(lines):
+            result.append(lines[i])
+
+            if r"\end{frame}" not in lines[i]:
+                i += 1
+                continue
+
+            i += 1
+
+            while i < len(lines):
+                raw_line = lines[i]
+                stripped = raw_line.strip()
+
+                if stripped == "":
+                    result.append(raw_line)
+                    i += 1
+                    continue
+
+                if not stripped.startswith("%"):
+                    break
+
+                lowered_line = raw_line.lower()
+                result.append(lowered_line)
+                changed = changed or lowered_line != raw_line
+                i += 1
+
+        if i < len(lines):
+            result.extend(lines[i:])
+
+        if changed:
+            tex_path.write_text("".join(result), encoding="utf-8")
+            print(f"Updated lowercase comments: {tex_path}")
+
+
 # --- ĐOẠN CODE TẠO VÀ GHÉP AUDIO ---
 
 
@@ -213,6 +265,9 @@ if __name__ == "__main__":
 
     # Bước 1: Trích xuất danh sách file
     paths = extract_tex_paths(file_path)
+
+    # Chuyển các câu comment sau \end{frame} về chữ thường trước khi tạo audio
+    lowercase_frame_comment_text(paths)
 
     print(f"Đang xử lý các câu comment sau \\end{{frame}} từ {len(paths)} file...")
     print("=" * 70)
