@@ -45,9 +45,9 @@ jobs:
         if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
         run: uv sync
 
-      - name: Generate Audio from LaTeX
-        if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
-        run: uv run python python/audio.py
+      # - name: Generate Audio from LaTeX
+      #   if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
+      #   run: uv run python python/audio.py
 
       - name: Upload Dev Audio to Google Drive
         if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
