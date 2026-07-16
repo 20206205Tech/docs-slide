@@ -33,63 +33,45 @@ def extract_tex_paths(doc_file_path):
 
 
 def extract_and_clean_notes(file_paths):
-    """Trích xuất nội dung \\note{...}, xử lý ngoặc nhọn lồng nhau (nested braces),
-    và làm sạch văn bản theo yêu cầu.
+    """Trích xuất các câu comment nằm ngay bên dưới mỗi \\end{frame}.
+
+    Script bỏ qua nội dung \\note{...}. Chỉ các dòng dạng "% câu đọc"
+    liên tiếp sau \\end{frame} mới được đưa vào audio.
     """
     all_cleaned_lines = {}
 
     for path in file_paths:
         try:
             with open(path, "r", encoding="utf-8") as f:
-                content = f.read()
+                lines = f.readlines()
 
-            notes_content = []
-            idx = 0
-
-            # 1. Trích xuất toàn bộ khối \note{...}
-            while True:
-                start_idx = content.find(r"\note{", idx)
-                if start_idx == -1:
-                    break
-
-                open_braces = 0
-                content_start = start_idx + 6  # Bỏ qua chuỗi '\note{'
-                content_end = -1
-
-                # Duyệt từng ký tự để tìm dấu ngoặc đóng tương ứng
-                for i in range(content_start, len(content)):
-                    if content[i] == "{":
-                        open_braces += 1
-                    elif content[i] == "}":
-                        if open_braces == 0:
-                            content_end = i
-                            break
-                        else:
-                            open_braces -= 1
-
-                if content_end != -1:
-                    notes_content.append(content[content_start:content_end])
-                    idx = content_end + 1
-                else:
-                    idx = (
-                        content_start + 6
-                    )  # Nếu lỗi cú pháp thiếu ngoặc, bỏ qua và đi tiếp
-
-            # 2. Xử lý làm sạch nội dung
             cleaned_lines = []
-            for note in notes_content:
-                # Bỏ nội dung comment (bắt đầu bằng %)
-                note = re.sub(r"%.*$", "", note, flags=re.MULTILINE)
+            i = 0
 
-                # Tách thành từng dòng
-                lines = note.split("\n")
-                for line in lines:
-                    # Bỏ \hrule và xóa khoảng trắng thừa ở 2 đầu
+            while i < len(lines):
+                if r"\end{frame}" not in lines[i]:
+                    i += 1
+                    continue
+
+                i += 1
+
+                while i < len(lines):
+                    raw_line = lines[i].strip()
+
+                    if raw_line == "":
+                        i += 1
+                        continue
+
+                    if not raw_line.startswith("%"):
+                        break
+
+                    line = raw_line.lstrip("%").strip()
                     line = line.replace(r"\hrule", "").strip()
 
-                    # Bỏ qua các dòng rỗng
                     if line:
                         cleaned_lines.append(line)
+
+                    i += 1
 
             if cleaned_lines:
                 all_cleaned_lines[path] = cleaned_lines
@@ -100,6 +82,58 @@ def extract_and_clean_notes(file_paths):
             print(f"[LỖI] Lỗi đọc file {path}: {e}")
 
     return all_cleaned_lines
+
+
+def lowercase_frame_comment_text(file_paths):
+    """Chuyển các câu comment sau \\end{frame} về chữ thường."""
+    for path in file_paths:
+        tex_path = Path(path)
+
+        try:
+            lines = tex_path.read_text(encoding="utf-8").splitlines(keepends=True)
+        except FileNotFoundError:
+            print(f"[LỖI] Không tìm thấy file: {tex_path}")
+            continue
+        except Exception as e:
+            print(f"[LỖI] Lỗi đọc file {tex_path}: {e}")
+            continue
+
+        changed = False
+        result = []
+        i = 0
+
+        while i < len(lines):
+            result.append(lines[i])
+
+            if r"\end{frame}" not in lines[i]:
+                i += 1
+                continue
+
+            i += 1
+
+            while i < len(lines):
+                raw_line = lines[i]
+                stripped = raw_line.strip()
+
+                if stripped == "":
+                    result.append(raw_line)
+                    i += 1
+                    continue
+
+                if not stripped.startswith("%"):
+                    break
+
+                lowered_line = raw_line.lower()
+                result.append(lowered_line)
+                changed = changed or lowered_line != raw_line
+                i += 1
+
+        if i < len(lines):
+            result.extend(lines[i:])
+
+        if changed:
+            tex_path.write_text("".join(result), encoding="utf-8")
+            print(f"Updated lowercase comments: {tex_path}")
 
 
 # --- ĐOẠN CODE TẠO VÀ GHÉP AUDIO ---
@@ -129,26 +163,46 @@ def generate_and_merge_audio(results, base_output_dir_str):
     ordered_merged_files = []
 
     for p, lines in results.items():
+        file_stem = Path(p).stem
+        file_chunk_dir = chuck_dir / file_stem
+        file_chunk_dir.mkdir(parents=True, exist_ok=True)
+
         print(f"-> Đang xử lý file: {Path(p).name}")
 
         chunk_files = []
         combined_text = ""
 
-        # 1. Tạo các file nhỏ trong /chuck
+        # 1. Tạo các file nhỏ trong /chuck/<ten_file_latex>
         for line in lines:
             line_hash = hashlib.md5(line.encode("utf-8")).hexdigest()
-            audio_file_path = chuck_dir / f"{line_hash}.mp3"
+            audio_file_path = file_chunk_dir / f"{line_hash}.mp3"
+            old_audio_file_path = chuck_dir / f"{line_hash}.mp3"
 
             # Lưu lại danh sách file nhỏ để ghép và text tổng để làm hash cho file merge
             chunk_files.append(audio_file_path)
             combined_text += line + "\n"
 
             if audio_file_path.exists():
-                print(f"   [Đã có] chuck/{line_hash}.mp3")
+                if old_audio_file_path.exists():
+                    old_audio_file_path.unlink()
+                    print(f"   [Xóa cũ] chuck/{line_hash}.mp3")
+
+                print(f"   [Đã có] chuck/{file_stem}/{line_hash}.mp3")
+                continue
+
+            if old_audio_file_path.exists():
+                shutil.move(str(old_audio_file_path), str(audio_file_path))
+                print(
+                    f"   [Chuyển] chuck/{line_hash}.mp3 -> "
+                    f"chuck/{file_stem}/{line_hash}.mp3"
+                )
                 continue
 
             try:
-                print(f"   [Tạo mới] chuck/{line_hash}.mp3 <- '{line[:30]}...'")
+                print(
+                    f"   [Tạo mới] chuck/{file_stem}/{line_hash}.mp3 "
+                    f"<- '{line[:30]}...'"
+                )
                 asyncio.run(_create_edge_audio(line, str(audio_file_path)))
             except Exception as e:
                 print(f"   [LỖI] Không thể tạo âm thanh: {e}")
@@ -156,7 +210,6 @@ def generate_and_merge_audio(results, base_output_dir_str):
         # 2. Ghép các file nhỏ thành file lớn trong /merge
         if chunk_files:
             # Sử dụng tên file latex gốc làm tên file merge thay vì dùng hash
-            file_stem = Path(p).stem
             merged_file_path = merge_dir / f"{file_stem}.mp3"
 
             # Thêm vào danh sách theo thứ tự
@@ -232,10 +285,13 @@ if __name__ == "__main__":
     # Bước 1: Trích xuất danh sách file
     paths = extract_tex_paths(file_path)
 
-    print(f"Đang xử lý nội dung note từ {len(paths)} file...")
+    # Chuyển các câu comment sau \end{frame} về chữ thường trước khi tạo audio
+    lowercase_frame_comment_text(paths)
+
+    print(f"Đang xử lý các câu comment sau \\end{{frame}} từ {len(paths)} file...")
     print("=" * 70)
 
-    # Bước 2: Trích xuất và làm sạch nội dung note
+    # Bước 2: Trích xuất và làm sạch các câu comment sau \end{frame}
     results = extract_and_clean_notes(paths)
 
     # Bước 3: Tính mã băm, tạo file âm thanh nhỏ, và ghép thành file lớn trong /merge

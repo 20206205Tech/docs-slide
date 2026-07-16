@@ -95,13 +95,6 @@ repos:
         files: \.tex$
         pass_filenames: false
 
-      - id: lowercase-note-text
-        name: Lowercase LaTeX Note Text
-        entry: python python/lowercase_note_text.py
-        language: python
-        files: \.tex$
-        pass_filenames: false
-
       - id: generate-audio-from-latex-notes
         name: Generate Audio from LaTeX Notes
         entry: python python/audio.py
