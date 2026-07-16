@@ -163,26 +163,46 @@ def generate_and_merge_audio(results, base_output_dir_str):
     ordered_merged_files = []
 
     for p, lines in results.items():
+        file_stem = Path(p).stem
+        file_chunk_dir = chuck_dir / file_stem
+        file_chunk_dir.mkdir(parents=True, exist_ok=True)
+
         print(f"-> Đang xử lý file: {Path(p).name}")
 
         chunk_files = []
         combined_text = ""
 
-        # 1. Tạo các file nhỏ trong /chuck
+        # 1. Tạo các file nhỏ trong /chuck/<ten_file_latex>
         for line in lines:
             line_hash = hashlib.md5(line.encode("utf-8")).hexdigest()
-            audio_file_path = chuck_dir / f"{line_hash}.mp3"
+            audio_file_path = file_chunk_dir / f"{line_hash}.mp3"
+            old_audio_file_path = chuck_dir / f"{line_hash}.mp3"
 
             # Lưu lại danh sách file nhỏ để ghép và text tổng để làm hash cho file merge
             chunk_files.append(audio_file_path)
             combined_text += line + "\n"
 
             if audio_file_path.exists():
-                print(f"   [Đã có] chuck/{line_hash}.mp3")
+                if old_audio_file_path.exists():
+                    old_audio_file_path.unlink()
+                    print(f"   [Xóa cũ] chuck/{line_hash}.mp3")
+
+                print(f"   [Đã có] chuck/{file_stem}/{line_hash}.mp3")
+                continue
+
+            if old_audio_file_path.exists():
+                shutil.move(str(old_audio_file_path), str(audio_file_path))
+                print(
+                    f"   [Chuyển] chuck/{line_hash}.mp3 -> "
+                    f"chuck/{file_stem}/{line_hash}.mp3"
+                )
                 continue
 
             try:
-                print(f"   [Tạo mới] chuck/{line_hash}.mp3 <- '{line[:30]}...'")
+                print(
+                    f"   [Tạo mới] chuck/{file_stem}/{line_hash}.mp3 "
+                    f"<- '{line[:30]}...'"
+                )
                 asyncio.run(_create_edge_audio(line, str(audio_file_path)))
             except Exception as e:
                 print(f"   [LỖI] Không thể tạo âm thanh: {e}")
@@ -190,7 +210,6 @@ def generate_and_merge_audio(results, base_output_dir_str):
         # 2. Ghép các file nhỏ thành file lớn trong /merge
         if chunk_files:
             # Sử dụng tên file latex gốc làm tên file merge thay vì dùng hash
-            file_stem = Path(p).stem
             merged_file_path = merge_dir / f"{file_stem}.mp3"
 
             # Thêm vào danh sách theo thứ tự
