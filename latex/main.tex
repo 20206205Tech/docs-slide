@@ -46,7 +46,6 @@ pdfauthor={Vũ Văn Nghĩa - 20206205}
 \setbeamerfont{tiny}{size=\tiny}
 
 \theoremstyle{plain}
-\renewcommand{\thetable}{\Roman{table}}
 
 \mode<presentation>
 \setbeamertemplate{navigation symbols}{}
@@ -84,6 +83,8 @@ Lớp: & Toán Tin 02 - K65
 \numberwithin{equation}{section}
 \numberwithin{figure}{section}
 \renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\numberwithin{table}{section}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
 \renewcommand{\figurename}{Hình}
 \renewcommand{\tablename}{Bảng}
 \usepackage{array}
