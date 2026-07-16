@@ -305,11 +305,12 @@ if __name__ == "__main__":
     print("\n" + "=" * 70)
     print("Hoàn tất toàn bộ chu trình xử lý.")
 
-    # Đường dẫn file (sử dụng đường dẫn hệ thống thay vì file:///)
-    file_path = r"C:\Users\Admin\Documents\GitHub\docs-slide\audio.mp3"
+    file_path_mp3 = r"C:\Users\Admin\Documents\GitHub\docs-slide\audio.mp3"
+    file_path_pdf = r"C:\Users\Admin\Documents\GitHub\docs-slide\latex\main.pdf"
 
     # is_open = False
     is_open = True
-    # Mở file bằng ứng dụng mặc định
+
     if is_open:
-        os.startfile(file_path)
+        os.startfile(file_path_mp3)
+        os.startfile(file_path_pdf)
