@@ -33,63 +33,45 @@ def extract_tex_paths(doc_file_path):
 
 
 def extract_and_clean_notes(file_paths):
-    """Trích xuất nội dung \\note{...}, xử lý ngoặc nhọn lồng nhau (nested braces),
-    và làm sạch văn bản theo yêu cầu.
+    """Trích xuất các câu comment nằm ngay bên dưới mỗi \\end{frame}.
+
+    Script bỏ qua nội dung \\note{...}. Chỉ các dòng dạng "% câu đọc"
+    liên tiếp sau \\end{frame} mới được đưa vào audio.
     """
     all_cleaned_lines = {}
 
     for path in file_paths:
         try:
             with open(path, "r", encoding="utf-8") as f:
-                content = f.read()
+                lines = f.readlines()
 
-            notes_content = []
-            idx = 0
-
-            # 1. Trích xuất toàn bộ khối \note{...}
-            while True:
-                start_idx = content.find(r"\note{", idx)
-                if start_idx == -1:
-                    break
-
-                open_braces = 0
-                content_start = start_idx + 6  # Bỏ qua chuỗi '\note{'
-                content_end = -1
-
-                # Duyệt từng ký tự để tìm dấu ngoặc đóng tương ứng
-                for i in range(content_start, len(content)):
-                    if content[i] == "{":
-                        open_braces += 1
-                    elif content[i] == "}":
-                        if open_braces == 0:
-                            content_end = i
-                            break
-                        else:
-                            open_braces -= 1
-
-                if content_end != -1:
-                    notes_content.append(content[content_start:content_end])
-                    idx = content_end + 1
-                else:
-                    idx = (
-                        content_start + 6
-                    )  # Nếu lỗi cú pháp thiếu ngoặc, bỏ qua và đi tiếp
-
-            # 2. Xử lý làm sạch nội dung
             cleaned_lines = []
-            for note in notes_content:
-                # Bỏ nội dung comment (bắt đầu bằng %)
-                note = re.sub(r"%.*$", "", note, flags=re.MULTILINE)
+            i = 0
 
-                # Tách thành từng dòng
-                lines = note.split("\n")
-                for line in lines:
-                    # Bỏ \hrule và xóa khoảng trắng thừa ở 2 đầu
+            while i < len(lines):
+                if r"\end{frame}" not in lines[i]:
+                    i += 1
+                    continue
+
+                i += 1
+
+                while i < len(lines):
+                    raw_line = lines[i].strip()
+
+                    if raw_line == "":
+                        i += 1
+                        continue
+
+                    if not raw_line.startswith("%"):
+                        break
+
+                    line = raw_line.lstrip("%").strip()
                     line = line.replace(r"\hrule", "").strip()
 
-                    # Bỏ qua các dòng rỗng
                     if line:
                         cleaned_lines.append(line)
+
+                    i += 1
 
             if cleaned_lines:
                 all_cleaned_lines[path] = cleaned_lines
@@ -232,10 +214,10 @@ if __name__ == "__main__":
     # Bước 1: Trích xuất danh sách file
     paths = extract_tex_paths(file_path)
 
-    print(f"Đang xử lý nội dung note từ {len(paths)} file...")
+    print(f"Đang xử lý các câu comment sau \\end{{frame}} từ {len(paths)} file...")
     print("=" * 70)
 
-    # Bước 2: Trích xuất và làm sạch nội dung note
+    # Bước 2: Trích xuất và làm sạch các câu comment sau \end{frame}
     results = extract_and_clean_notes(paths)
 
     # Bước 3: Tính mã băm, tạo file âm thanh nhỏ, và ghép thành file lớn trong /merge
