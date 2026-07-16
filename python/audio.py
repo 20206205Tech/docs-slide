@@ -3,6 +3,7 @@ import hashlib
 import os
 import re
 import shutil
+import time
 from pathlib import Path
 
 import edge_tts
@@ -313,4 +314,5 @@ if __name__ == "__main__":
 
     if is_open:
         os.startfile(file_path_mp3)
+        time.sleep(2)
         os.startfile(file_path_pdf)
