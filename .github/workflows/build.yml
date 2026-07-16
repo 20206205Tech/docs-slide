@@ -26,23 +26,23 @@ jobs:
       # 1. CHUẨN BỊ MÔI TRƯỜNG PYTHON VÀ DOPPLER SỚM
       # =========================================================
       - name: Install Doppler CLI
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
         uses: dopplerhq/cli-action@v1
 
       - name: Install uv
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
         uses: astral-sh/setup-uv@v5
         with:
           enable-cache: true
 
       - name: Set up Python
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
         uses: actions/setup-python@v5
         with:
           python-version-file: ".python-version"
 
       - name: Install dependencies
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
         run: uv sync
 
       # =========================================================
@@ -58,7 +58,7 @@ jobs:
         run: mv latex/main.pdf latex/dev-VuVanNghia-20206205.pdf
 
       - name: Upload Dev PDF to Google Drive
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
         env:
           DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
           PDF_FILE_NAME: dev-VuVanNghia-20206205.pdf
@@ -105,10 +105,10 @@ jobs:
           publish_dir: ./public
 
       - name: Upload Prod PDF to Google Drive
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
         env:
           DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
           PDF_FILE_NAME: VuVanNghia-20206205.pdf
-          DRIVE_FOLDER_ID: 1TbMNTUkGjA3EUbt-8BYMx2oDWkntDqXM
+          DRIVE_FOLDER_ID: ${{ github.event_name == 'pull_request' && '1t6vSPxsAJmo-yTUYrxclnna0omL3q3OE' || '1TbMNTUkGjA3EUbt-8BYMx2oDWkntDqXM' }}
         run: |
           doppler run -p 20206205tech -c prod -- uv run python python/upload_to_drive.py
