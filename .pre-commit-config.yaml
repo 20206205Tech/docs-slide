@@ -99,6 +99,6 @@ repos:
         name: Generate Audio from LaTeX Notes
         entry: python python/audio.py
         language: python
-        # files: \.tex$
+        files: \.tex$
         pass_filenames: false
         additional_dependencies: ["edge-tts"]
