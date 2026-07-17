@@ -33,16 +33,28 @@ Sơ đồ kiến trúc và dịch vụ của hệ thống
 
 % dịch vụ thanh toán được tự phát triển và triển khai trên hê rô cu
 
-% % dịch vụ thanh toán nhận được thông báo từ cổng thanh toán,
+% dịch vụ thanh toán nhận được thông báo từ cổng thanh toán,
 
-% % dịch vụ thanh toán sẽ phát đi sự kiện vào hệ thống kafka . để các dịch vụ khác như tài liệu và trò chuyện cập nhật quyền vip cho người dùng.
+% dịch vụ thanh toán sẽ phát đi sự kiện vào hệ thống kafka . để các dịch vụ khác như tài liệu và trò chuyện cập nhật quyền vip cho người dùng.
 
-% % \hrule
+% \hrule
 
-% % dịch vụ tài liệu, tiếp nhận và xử lý tài liệu do người dùng vip tải lên.
+% dịch vụ tài liệu, tiếp nhận và xử lý tài liệu do người dùng vip tải lên.
 
-% % \hrule
+% \hrule
 
-% % do công việc xử lý phức tạp khi nhận được tài liệu,
+% do công việc xử lý phức tạp khi nhận được tài liệu,
 
-% % dịch vụ sẽ gửi yêu cầu xử lý thông qua cê lê di và ra bít em quy tới document worker.
+% dịch vụ sẽ gửi yêu cầu xử lý thông qua cê lê di và ra bít em quy tới document worker.
+
+% với dịch vụ trò chuyện , người dùng vip có thể gửi yêu cầu văn bản qua text tương tự người dùng cơ bản nhưng có thêm biến suy luận bằng true
+
+% \hrule
+
+% dịch vụ trò chuyện sẽ gọi di a pi xi tới dịch vụ chatbot pai từn ây ai
+
+% \hrule
+
+% khi cần xử lý xóa trò chuyện, chia sẻ trò chuyện hoặc thu hồi chia sẻ thì giao tiếp qua ra bít em quy
+
+% \hrule
