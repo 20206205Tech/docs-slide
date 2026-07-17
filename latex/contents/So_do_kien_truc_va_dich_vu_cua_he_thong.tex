@@ -2,18 +2,85 @@
 
 \begin{figure}[H]
 \centering
-\caption{Sơ đồ kiến trúc và dịch vụ của hệ thống}
 \includegraphics[width=\linewidth,height=0.740\textheight,keepaspectratio]{pictures/Microservice/new/0.excalidraw.png}
+
+\caption{Sơ đồ kiến trúc và dịch vụ của hệ thống}
+
 \end{figure}
 
 \note{
 
 \hrule
 
-đây là sơ đồ dịch vụ của hệ thống
-
-\hrule
+Sơ đồ kiến trúc và dịch vụ của hệ thống
 
 }
 \end{frame}
-% đây là sơ đồ dịch vụ của hệ thống
+
+% do khối lượng công việc ây ai langgraph xử lý phức tạp và tốn kém .
+
+% hệ thống sử dụng kiến trúc microservice chia nhỏ hệ thống lớn thành các dịch vụ nhỏ
+
+% \hrule
+
+% dịch vụ văn bản pháp luật và pháp điển thống kê dữ liệu đang có trong cơ sở dữ liệu
+
+% \hrule
+
+% tận dụng giải pháp có sẵn supabase, xác thực tài khoản, xác thực đa yếu tố, cấp phát dây đắc liu ti . dịch vụ cài đặt dùng neon rest api (lưu key và va liu ) với bảo mật cấp hàng a eo ét
+
+% \hrule
+
+% dịch vụ thanh toán được tự phát triển và triển khai trên hê rô cu
+
+% dịch vụ thanh toán nhận được thông báo từ cổng thanh toán,
+
+% dịch vụ thanh toán sẽ phát đi sự kiện vào hệ thống kafka . để các dịch vụ khác như tài liệu và trò chuyện cập nhật quyền vip cho người dùng.
+
+% \hrule
+
+% dịch vụ tài liệu, tiếp nhận và xử lý tài liệu do người dùng vip tải lên.
+
+% \hrule
+
+% do công việc xử lý phức tạp khi nhận được tài liệu,
+
+% dịch vụ sẽ gửi yêu cầu xử lý thông qua cê lê di và ra bít em quy tới document worker.
+
+% với dịch vụ trò chuyện , người dùng vip có thể gửi yêu cầu văn bản qua text tương tự người dùng cơ bản nhưng có thêm biến suy luận bằng true
+
+% \hrule
+
+% dịch vụ trò chuyện sẽ gọi di a pi xi tới dịch vụ chatbot pai từn ây ai
+
+% \hrule
+
+% khi cần xử lý xóa trò chuyện, chia sẻ trò chuyện hoặc thu hồi chia sẻ thì giao tiếp qua ra bít em quy
+
+% \hrule
+
+% trong chức năng giọng nói dịch vụ trò chuyện tạo token livekit,
+
+% người dùng vip dùng token để kết nối,
+
+% pai từn ây dừn chủ động lắng nghe và trả lời với người dùng
+
+% \hrule
+
+% để vận hành microservice hiệu quả
+
+% cần quá trình tự động
+
+% loại bỏ sự can thiệp thủ công dễ gây lỗi
+
+% \hrule
+
+% dự án sử dụng xi ai xi đi bằng github ách sừn
+
+% kết hợp terraform để xây dựng hạ tầng
+
+% chạy công việc đường ống dữ liệu
+
+% cấu hình kong api gateway
+
+% thực hiện kiểm thử và xây dựng docker image cho các dịch vụ
