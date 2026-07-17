@@ -3,7 +3,6 @@ import hashlib
 import os
 import re
 import shutil
-import time
 from pathlib import Path
 
 import edge_tts
@@ -384,9 +383,9 @@ if __name__ == "__main__":
     file_path_pdf = r"C:\Users\Admin\Documents\GitHub\docs-slide\latex\main.pdf"
 
     is_open = False
-    # is_open = True
+    is_open = True
 
     if is_open:
         os.startfile(file_path_mp3)
-        time.sleep(2)
+        # time.sleep(2)
         os.startfile(file_path_pdf)
