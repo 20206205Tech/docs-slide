@@ -380,7 +380,7 @@ if __name__ == "__main__":
     print("Hoàn tất toàn bộ chu trình xử lý.")
 
     file_path_mp3 = r"C:\Users\Admin\Documents\GitHub\docs-slide\audio.mp3"
-    file_path_pdf = r"C:\Users\Admin\Documents\GitHub\docs-slide\latex\main.pdf"
+    # file_path_pdf = r"C:\Users\Admin\Documents\GitHub\docs-slide\latex\main.pdf"
 
     is_open = False
     is_open = True
@@ -388,4 +388,4 @@ if __name__ == "__main__":
     if is_open:
         os.startfile(file_path_mp3)
         # time.sleep(2)
-        os.startfile(file_path_pdf)
+        # os.startfile(file_path_pdf)

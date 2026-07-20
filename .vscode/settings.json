@@ -13,6 +13,6 @@
     "*.pdf": "latex-workshop-pdf-hook"
   },
   "latex-workshop.formatting.latex": "latexindent",
-  // "latex-workshop.latex.autoBuild.run": "onFileChange",
-  "latex-workshop.latex.autoBuild.run": "never"
+  "latex-workshop.latex.autoBuild.run": "onFileChange",
+  // "latex-workshop.latex.autoBuild.run": "never"
 }
